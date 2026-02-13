@@ -62,8 +62,8 @@ const LanguageSelector = () => {
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center backdrop-blur-xl"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 8%, 0.7)" }}
+              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.92)" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
@@ -95,8 +95,8 @@ const LanguageSelector = () => {
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center backdrop-blur-xl"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 8%, 0.7)" }}
+              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.92)" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
