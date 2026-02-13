@@ -19,9 +19,9 @@ const LanguageSelector = () => {
         className="relative z-10 text-center max-w-lg">
 
         <div className="flex items-center justify-center gap-5 mb-10">
-          <img src={trueLegacyLogo} alt="True Legacy" className="h-14 md:h-20 w-auto" />
+          <img src={mehdiLogo} alt="Mehdi Cohen" className="h-16 md:h-24 w-auto" />
           <div className="h-12 w-px bg-accent/30" />
-          <img src={mehdiLogo} alt="Mehdi Cohen" className="h-10 md:h-14 w-auto" />
+          <img src={trueLegacyLogo} alt="True Legacy" className="h-20 md:h-28 w-auto" />
         </div>
 
         <p className="text-accent font-mono font-medium text-xs uppercase tracking-[0.4em] mb-4">
