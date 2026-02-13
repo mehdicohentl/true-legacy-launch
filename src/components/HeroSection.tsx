@@ -106,7 +106,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
           </motion.a>
 
           <motion.a
-            href="https://truelegacyworld.com"
+            href={lang === "en" ? "https://form.jotform.com/260232994952060" : "https://form.jotform.com/260246489849069"}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03, y: -2 }}
