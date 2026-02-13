@@ -13,8 +13,8 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       headline2: "Start Building.",
       desc: "Every person on this team started exactly where you are right now — scrolling, wondering, hoping. The difference? They clicked the button. They said yes. They chose themselves.",
       quote: "\"The best time to start was yesterday. The second best time is right now.\"",
-      cta: "Join True Legacy World",
-      cta2: "Watch How We Do It",
+      cta: "Start Building With True Legacy",
+      cta2: "See How The Team Operates",
       stats: [
         { num: "50+", label: "Years Enagic" },
         { num: "100+", label: "Countries" },
@@ -28,8 +28,8 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       headline2: "Empieza a Construir.",
       desc: "Cada persona en este equipo empezó exactamente donde tú estás ahora — navegando, preguntándose, esperando. ¿La diferencia? Hicieron clic en el botón. Dijeron que sí. Se eligieron a sí mismos.",
       quote: "\"El mejor momento para empezar fue ayer. El segundo mejor momento es ahora mismo.\"",
-      cta: "Únete a True Legacy World",
-      cta2: "Mira Cómo Lo Hacemos",
+      cta: "Empieza a Construir Con True Legacy",
+      cta2: "Mira Como Opera El Equipo",
       stats: [
         { num: "50+", label: "Años Enagic" },
         { num: "100+", label: "Países" },
