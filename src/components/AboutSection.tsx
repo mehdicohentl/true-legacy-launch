@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import mehdiPortrait from "@/assets/mehdi-portrait.jpg";
 import mehdiAwards from "@/assets/mehdi-awards.jpg";
 import mehdiEnagic from "@/assets/mehdi-enagic.jpg";
-
+import mehdiLifestyle from "@/assets/mehdi-lifestyle.jpg";
 interface AboutSectionProps {
   lang: "en" | "es";
 }
@@ -24,7 +24,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
       p1: "Mehdi Cohen isn't a motivational speaker. He's proof. From immigrant roots to leading one of the fastest-growing teams in the Enagic network — his story isn't about luck. It's about the decision to never settle.",
       p2: "Today, he leads the True Legacy team — a movement of ordinary people doing extraordinary things. Health. Wealth. Purpose. All three, or none at all.",
       video: "Watch the Full Story →",
-      imgLabels: ["The Journey", "The Recognition", "The Mission"],
+      imgLabels: ["The Journey", "The Recognition", "The Mission", "The Lifestyle"],
     },
     es: {
       micro: "El Hombre Detrás de la Misión",
@@ -34,7 +34,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
       p1: "Mehdi Cohen no es un orador motivacional. Es la prueba viviente. De raíces inmigrantes a liderar uno de los equipos de más rápido crecimiento en la red Enagic — su historia no se trata de suerte. Se trata de la decisión de nunca conformarse.",
       p2: "Hoy, lidera el equipo True Legacy — un movimiento de personas comunes haciendo cosas extraordinarias. Salud. Riqueza. Propósito. Los tres, o ninguno.",
       video: "Ver la Historia Completa →",
-      imgLabels: ["El Camino", "El Reconocimiento", "La Misión"],
+      imgLabels: ["El Camino", "El Reconocimiento", "La Misión", "El Estilo de Vida"],
     },
   };
 
@@ -120,8 +120,8 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
         </div>
 
         {/* Photo gallery — separate row, full width */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-          {[mehdiPortrait, mehdiAwards, mehdiEnagic].map((img, i) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {[mehdiPortrait, mehdiAwards, mehdiEnagic, mehdiLifestyle].map((img, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -133,7 +133,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
               <img
                 src={img}
                 alt={t[lang].imgLabels[i]}
-                className="rounded-xl w-full h-48 sm:h-56 md:h-64 object-cover border border-border/50 group-hover:border-accent/30 transition-all duration-500 group-hover:scale-[1.02]"
+                className="rounded-xl w-full h-64 sm:h-72 md:h-80 object-cover object-top border border-border/50 group-hover:border-accent/30 transition-all duration-500 group-hover:scale-[1.02]"
               />
               <span className="absolute bottom-3 left-3 font-mono text-xs uppercase tracking-[0.2em] text-foreground/80 bg-background/70 backdrop-blur-sm px-3 py-1.5 rounded font-bold">
                 {t[lang].imgLabels[i]}
