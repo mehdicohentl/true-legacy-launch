@@ -102,7 +102,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
         {/* CTA row */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
           <motion.a
-            href="https://truelegacyworld.com"
+            href={lang === "en" ? "https://form.jotform.com/260232994952060" : "https://form.jotform.com/260246489849069"}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
