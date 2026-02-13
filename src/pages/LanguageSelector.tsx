@@ -70,14 +70,13 @@ const LanguageSelector = () => {
 
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col items-center">
-              <div className="flex gap-3 mb-4">
+              <div className="flex gap-4 mb-4">
                 {["🇨🇴", "🇵🇾", "🇧🇷", "🇲🇽"].map((flag, i) => (
                   <motion.span
                     key={flag}
-                    className="text-5xl"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 + i * 0.15, duration: 0.5, ease: "easeOut" }}
+                    className="text-6xl"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ delay: i * 0.2, duration: 1.5, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}
                     whileHover={{ scale: 1.3, rotate: [0, -10, 10, 0] }}
                   >
                     {flag}
