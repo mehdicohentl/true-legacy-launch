@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 interface EmGuardeSectionProps {
   lang: "en" | "es";
 }
 
 const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
-  const [showDetails, setShowDetails] = useState(false);
 
   const t = {
     en: {
@@ -47,12 +45,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
         {
           num: "1",
           title: "Make Payment",
-          desc: "Pay by credit card (single payment):",
-          links: [
-            { label: "For US orders, click here", url: "https://shop.enagic-my.com/product/emguarde-us-only/" },
-            { label: "For Canada/Mexico orders, click here", url: "https://shop.enagic-my.com/product/emguarde/" },
-          ],
-          extra: "You may select your preferred currency: USD or MYR. You can also add accessories (pouch and USB cable) to be shipped with your order.",
+          desc: "Pay by credit card (single payment). For US orders visit: shop.enagic-my.com/product/emguarde-us-only/ — For Canada/Mexico orders visit: shop.enagic-my.com/product/emguarde/ — You may select your preferred currency: USD or MYR. You can also add accessories (pouch and USB cable) to be shipped with your order.",
         },
         {
           num: "2",
@@ -143,12 +136,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
         {
           num: "1",
           title: "Realizar el Pago",
-          desc: "Paga con tarjeta de crédito (pago único):",
-          links: [
-            { label: "Para pedidos en USA, haz clic aquí", url: "https://shop.enagic-my.com/product/emguarde-us-only/" },
-            { label: "Para pedidos de Canadá/México, haz clic aquí", url: "https://shop.enagic-my.com/product/emguarde/" },
-          ],
-          extra: "Puedes seleccionar tu moneda preferida: USD o MYR. También puedes agregar accesorios (funda y cable USB) para enviar junto con tu pedido.",
+          desc: "Paga con tarjeta de crédito (pago único). Para pedidos en USA visita: shop.enagic-my.com/product/emguarde-us-only/ — Para pedidos de Canadá/México visita: shop.enagic-my.com/product/emguarde/ — Puedes seleccionar tu moneda preferida: USD o MYR. También puedes agregar accesorios (funda y cable USB) para enviar junto con tu pedido.",
         },
         {
           num: "2",
@@ -345,75 +333,21 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           </div>
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* Purchase Instructions - Always Visible */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+          className="space-y-12"
         >
-          <motion.a
-            href="https://shop.enagic-my.com/product/emguarde-us-only/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg>
-            {c.ctaBuy}
-          </motion.a>
-          <motion.a
-            href="https://shop.enagic-my.com/product/emguarde/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl font-body font-bold text-base uppercase tracking-[0.1em] border border-primary/30 text-foreground hover:border-primary/60 hover:bg-primary/5 transition-all"
-          >
-            {c.ctaBuyOther}
-          </motion.a>
-        </motion.div>
-
-        <div className="flex justify-center gap-6 mb-10">
-          <motion.a
-            href="https://www.youtube.com/watch?v=rNLBZ1NEtDI"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ x: 8 }}
-            className="inline-flex items-center gap-3 group"
-          >
-            <span className="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 transition-all">
-              <svg className="w-4 h-4 text-primary ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
-            </span>
-            <span className="font-body font-bold text-sm text-foreground uppercase tracking-[0.1em]">{c.ctaVideo}</span>
-          </motion.a>
-        </div>
-
-        <p className="text-center text-xs text-foreground/40 font-mono tracking-wider mb-12">{c.distributorId}</p>
-
-        {/* Expandable Details Section */}
-        <div className="text-center mb-8">
-          <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-bold text-sm uppercase tracking-[0.1em] border border-border/50 text-foreground/80 hover:border-accent/40 hover:bg-accent/5 transition-all"
-          >
-            <svg className={`w-4 h-4 transition-transform ${showDetails ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-            {showDetails ? c.showLess : c.showMore}
-          </button>
-        </div>
-
-        {showDetails && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            className="space-y-12"
-          >
             {/* Purchase Flow */}
             <div className="relative rounded-2xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
               <div className="relative m-px rounded-2xl bg-card p-8 md:p-12">
-                <h3 className="text-2xl md:text-3xl font-display font-black text-foreground mb-8">{c.purchaseFlowTitle}</h3>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-8">
+                  <h3 className="text-2xl md:text-3xl font-display font-black text-foreground">{c.purchaseFlowTitle}</h3>
+                  <span className="inline-flex items-center px-5 py-2 rounded-full bg-accent/15 border border-accent/30 font-body font-black text-base md:text-lg text-accent tracking-wide">{c.distributorId}</span>
+                </div>
                 <div className="space-y-8">
                   {c.steps.map((step, i) => (
                     <div key={i} className="flex gap-5">
@@ -423,21 +357,6 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                       <div className="flex-1">
                         <h4 className="font-body font-bold text-lg text-foreground mb-2">{step.title}</h4>
                         <p className="font-body text-base text-foreground/70 font-medium leading-relaxed mb-3">{step.desc}</p>
-                        {"links" in step && step.links && (
-                          <div className="space-y-2 mb-3">
-                            {step.links.map((link, j) => (
-                              <a
-                                key={j}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block font-body font-bold text-sm text-primary hover:text-primary/80 underline transition-colors"
-                              >
-                                → {link.label}
-                              </a>
-                            ))}
-                          </div>
-                        )}
                         {"contacts" in step && step.contacts && (
                           <div className="space-y-1 mb-3">
                             {step.contacts.map((c2, j) => (
@@ -520,7 +439,6 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               </div>
             </div>
           </motion.div>
-        )}
       </div>
     </section>
   );
