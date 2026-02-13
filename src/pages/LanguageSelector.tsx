@@ -16,8 +16,8 @@ const LanguageSelector = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-center max-w-lg"
-      >
+        className="relative z-10 text-center max-w-lg">
+
         <div className="flex items-center justify-center gap-5 mb-10">
           <img src={trueLegacyLogo} alt="True Legacy" className="h-14 md:h-20 w-auto" />
           <div className="h-12 w-px bg-accent/30" />
@@ -30,7 +30,7 @@ const LanguageSelector = () => {
 
         <h1 className="text-4xl md:text-6xl font-display font-black mb-4 leading-[1.05]">
           One Decision<br />
-          <span className="text-gradient-gold italic">Changes Everything.</span>
+          <span className="text-gradient-gold italic font-mono">Changes Everything.</span>
         </h1>
 
         <p className="text-muted-foreground font-body text-base md:text-lg mb-14 leading-relaxed max-w-md mx-auto">
@@ -43,8 +43,8 @@ const LanguageSelector = () => {
             whileHover={{ scale: 1.04, y: -6 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400 }}
-            className="group relative px-14 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient"
-          >
+            className="group relative px-14 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
+
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
               <span className="text-6xl mb-4 block flag-hover inline-block">🇺🇸</span>
@@ -58,8 +58,8 @@ const LanguageSelector = () => {
             whileHover={{ scale: 1.04, y: -6 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400 }}
-            className="group relative px-14 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient"
-          >
+            className="group relative px-14 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
+
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
               <span className="text-6xl mb-4 block flag-hover inline-block">🇲🇽</span>
@@ -69,8 +69,8 @@ const LanguageSelector = () => {
           </motion.button>
         </div>
       </motion.div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default LanguageSelector;
