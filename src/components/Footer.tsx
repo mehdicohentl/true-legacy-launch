@@ -11,9 +11,9 @@ const Footer = ({ lang }: FooterProps) => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
           <div className="flex items-center gap-4">
-            <img src={mehdiLogo} alt="Mehdi Cohen" className="h-12 md:h-14 w-auto" />
-            <div className="h-8 w-px bg-accent/20" />
-            <img src={trueLegacyLogo} alt="True Legacy" className="h-14 md:h-16 w-auto" />
+            <img src={mehdiLogo} alt="Mehdi Cohen" className="h-16 md:h-20 w-auto" />
+            <div className="h-10 w-px bg-accent/20" />
+            <img src={trueLegacyLogo} alt="True Legacy" className="h-20 md:h-24 w-auto" />
           </div>
 
           <div className="flex items-center gap-8">
