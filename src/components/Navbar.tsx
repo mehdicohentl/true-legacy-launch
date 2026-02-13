@@ -58,7 +58,7 @@ const Navbar = ({ lang }: NavbarProps) => {
 
         <div className="flex items-center gap-4">
           <a
-            href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t"
+            href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016"
             target="_blank"
             rel="noopener noreferrer"
             className="flag-hover cursor-pointer"
