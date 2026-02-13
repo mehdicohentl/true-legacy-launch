@@ -17,16 +17,16 @@ const Footer = ({ lang }: FooterProps) => {
           </div>
 
           <div className="flex items-center gap-8">
-            <a href={lang === "en" ? "https://form.jotform.com/260232994952060" : "https://form.jotform.com/260246489849069"} target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+            <a href={lang === "en" ? "https://form.jotform.com/260232994952060" : "https://form.jotform.com/260246489849069"} target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
               {lang === "en" ? "Join Team" : "Únete"}
             </a>
-            <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+            <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
               YouTube
             </a>
-            <a href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+            <a href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
               {lang === "en" ? "Get Water" : "Obtener Agua"}
             </a>
-            <a href="mailto:emgsales@enagic-my.com" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+            <a href="mailto:emgsales@enagic-my.com" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
               {lang === "en" ? "Contact" : "Contacto"}
             </a>
           </div>

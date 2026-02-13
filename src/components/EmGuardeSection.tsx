@@ -94,7 +94,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-base md:text-lg text-secondary-foreground font-body leading-[1.9] mb-10 font-light">
+            <p className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] mb-10 font-medium">
               {t[lang].desc}
             </p>
 
@@ -106,8 +106,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                   <span className="text-5xl font-display font-black text-foreground">{t[lang].price}</span>
                   <span className="text-sm text-accent font-mono uppercase tracking-wider pb-2">USD</span>
                 </div>
-                <p className="text-sm text-secondary-foreground font-body mb-1">{t[lang].priceSub}</p>
-                <p className="text-xs text-muted-foreground font-body">{t[lang].shipping}</p>
+                <p className="text-sm text-foreground/70 font-body font-medium mb-1">{t[lang].priceSub}</p>
+                <p className="text-sm text-foreground/60 font-body font-medium">{t[lang].shipping}</p>
               </div>
             </div>
 

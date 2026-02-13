@@ -60,7 +60,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
         {/* Quote */}
         <motion.blockquote
           {...fadeIn}
-          className="max-w-3xl mx-auto text-center text-lg md:text-xl font-display italic text-foreground/70 leading-relaxed mb-20 px-4"
+          className="max-w-3xl mx-auto text-center text-lg md:text-2xl font-display italic text-foreground/80 leading-relaxed mb-20 px-4"
         >
           {t[lang].quote}
           <span className="block mt-4 font-mono text-[10px] not-italic uppercase tracking-[0.3em] text-accent">
@@ -71,10 +71,10 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
         <div className="grid lg:grid-cols-2 gap-20 items-start">
           {/* Text side */}
           <motion.div {...fadeIn}>
-            <p className="text-base md:text-lg text-secondary-foreground font-body leading-[1.9] mb-6 font-light">
+            <p className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] mb-6 font-medium">
               {t[lang].p1}
             </p>
-            <p className="text-base md:text-lg text-secondary-foreground font-body leading-[1.9] mb-10 font-light">
+            <p className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] mb-10 font-medium">
               {t[lang].p2}
             </p>
 
