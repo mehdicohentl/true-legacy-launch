@@ -37,59 +37,32 @@ const LanguageSelector = () => {
           Select your language to discover how thousands are building wealth & health — starting from zero.
         </p>
 
-        <div className="flex flex-col gap-8 justify-center items-center w-full max-w-2xl mx-auto">
-          {/* USA Section */}
+        <div className="flex gap-10 justify-center items-center">
+          {/* English */}
           <motion.button
             onClick={() => navigate("/en")}
-            whileHover={{ scale: 1.03, y: -6 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400 }}
-            className="group relative w-full px-10 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
-
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            className="group relative w-36 h-36 rounded-full glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             <div className="relative z-10 flex flex-col items-center">
-              <motion.img
-                src="https://flagcdn.com/w160/us.png"
-                alt="USA"
-                className="h-16 w-auto rounded-md shadow-lg mb-4"
-                animate={{ rotateY: [0, 360] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 4, ease: "easeInOut" }}
-              />
-              <span className="font-display font-bold text-2xl text-foreground block">English</span>
-              <span className="text-xs text-muted-foreground font-mono mt-2 block tracking-wider uppercase">United States</span>
+              <span className="font-display font-bold text-lg text-foreground">English</span>
+              <span className="text-[10px] text-muted-foreground font-mono mt-1 tracking-wider uppercase">USA</span>
             </div>
           </motion.button>
 
-          {/* South America Section */}
+          {/* Español */}
           <motion.button
             onClick={() => navigate("/es")}
-            whileHover={{ scale: 1.03, y: -6 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400 }}
-            className="group relative w-full px-10 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
-
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            className="group relative w-36 h-36 rounded-full glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             <div className="relative z-10 flex flex-col items-center">
-              <div className="flex gap-4 mb-4">
-                {[
-                  { code: "co", alt: "Colombia" },
-                  { code: "py", alt: "Paraguay" },
-                  { code: "br", alt: "Brasil" },
-                  { code: "mx", alt: "México" },
-                ].map((flag, i) => (
-                  <motion.img
-                    key={flag.code}
-                    src={`https://flagcdn.com/w80/${flag.code}.png`}
-                    alt={flag.alt}
-                    className="h-12 w-auto rounded-sm shadow-md"
-                    animate={{ y: [0, -6, 0] }}
-                    transition={{ delay: i * 0.2, duration: 1.5, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}
-                    whileHover={{ scale: 1.3, rotate: [0, -10, 10, 0] }}
-                  />
-                ))}
-              </div>
-              <span className="font-display font-bold text-2xl text-foreground block">Español</span>
-              <span className="text-xs text-muted-foreground font-mono mt-2 block tracking-wider uppercase">Colombia · Paraguay · Brasil · México</span>
+              <span className="font-display font-bold text-lg text-foreground">Español</span>
+              <span className="text-[10px] text-muted-foreground font-mono mt-1 tracking-wider uppercase leading-tight text-center">LATAM</span>
             </div>
           </motion.button>
         </div>
