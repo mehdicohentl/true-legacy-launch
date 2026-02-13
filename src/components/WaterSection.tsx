@@ -5,6 +5,8 @@ interface WaterSectionProps {
   lang: "en" | "es";
 }
 
+const WATER_LINK = "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016";
+
 const WaterSection = ({ lang }: WaterSectionProps) => {
   const t = {
     en: {
@@ -18,10 +20,15 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
         { title: "Medical-Grade Technology", desc: "The same machines used in Japanese hospitals since 1974" },
         { title: "7 pH Levels", desc: "From strong acidic (disinfectant) to strong alkaline (health)" },
       ],
+      buyGuideTitle: "How to Get Your Kangen Water Machine",
+      buyGuideSteps: [
+        "Click the button below — it will take you to the official Enagic ordering page.",
+        "Select your country (USA, Canada, Mexico, or your region).",
+        "Choose the Kangen Water machine that fits your needs.",
+        "Complete your order — it's that simple!",
+      ],
+      buyGuideNote: "You'll be ordering directly through Enagic's official system. Safe, secure, and backed by 50+ years of excellence.",
       cta: "Get The Healing Water Now",
-      free: "Your Body is Begging For Better Water.",
-      freeDesc: "Get the free guide that breaks down exactly what's in your tap water — and what Kangen Water does differently. No email required. Just click.",
-      freeCta: "Get The Free Water Guide →",
     },
     es: {
       micro: "La Base de Todo",
@@ -34,10 +41,15 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
         { title: "Tecnología de Grado Médico", desc: "Las mismas máquinas usadas en hospitales japoneses desde 1974" },
         { title: "7 Niveles de pH", desc: "Desde ácido fuerte (desinfectante) hasta alcalino fuerte (salud)" },
       ],
+      buyGuideTitle: "Cómo Obtener Tu Máquina de Agua Kangen",
+      buyGuideSteps: [
+        "Haz clic en el botón de abajo — te llevará a la página oficial de pedidos de Enagic.",
+        "Selecciona tu país (USA, Canadá, México o tu región).",
+        "Elige la máquina de Agua Kangen que se adapte a tus necesidades.",
+        "Completa tu pedido — ¡así de simple!",
+      ],
+      buyGuideNote: "Estarás ordenando directamente a través del sistema oficial de Enagic. Seguro, protegido y respaldado por más de 50 años de excelencia.",
       cta: "Obtener El Agua Sanadora Ahora",
-      free: "Tu Cuerpo Está Pidiendo Mejor Agua.",
-      freeDesc: "Obtén la guía gratuita que explica exactamente qué hay en tu agua del grifo — y qué hace diferente el Agua Kangen. Sin email. Solo haz clic.",
-      freeCta: "Obtener La Guía Gratuita →",
     },
   };
 
@@ -73,7 +85,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,7 +95,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               {t[lang].desc}
             </p>
 
-            {/* Benefits as cards instead of checkmarks */}
+            {/* Benefits as cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               {t[lang].benefits.map((b, i) => (
                 <motion.div
@@ -100,17 +112,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 </motion.div>
               ))}
             </div>
-
-            <motion.a
-              href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="cta-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-3 px-12 py-5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
-            >
-              {t[lang].cta}
-            </motion.a>
           </motion.div>
 
           <motion.div
@@ -121,41 +122,55 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           >
             <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 via-transparent to-primary/8 rounded-2xl blur-2xl" />
             <img src={productsBanner} alt="Kangen Water & EmGuarde Products" className="relative rounded-2xl border border-border/50 w-full shadow-deep" />
-            {/* Corner accents */}
             <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
             <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
           </motion.div>
         </div>
 
-        {/* Free PDF CTA — redesigned */}
+        {/* Water Buying Guide */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-28"
+          className="mb-16"
         >
           <div className="relative rounded-2xl overflow-hidden">
-            {/* Gradient border effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded-2xl" />
-            <div className="relative m-px rounded-2xl bg-card p-10 md:p-16 text-center">
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent mb-4">Free · No Email Required · Instant Access</p>
-              <h3 className="text-3xl md:text-5xl font-display font-black mb-5 leading-tight">
-                {t[lang].free}
+            <div className="absolute inset-0 bg-gradient-to-r from-accent/15 via-primary/10 to-accent/15 rounded-2xl" />
+            <div className="relative m-px rounded-2xl bg-card p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-display font-black text-foreground mb-8 text-center">
+                {t[lang].buyGuideTitle}
               </h3>
-              <p className="text-foreground/70 font-body text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-medium">
-                {t[lang].freeDesc}
+
+              <div className="max-w-2xl mx-auto space-y-5 mb-8">
+                {t[lang].buyGuideSteps.map((step, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center">
+                      <span className="font-display font-black text-accent text-sm">{i + 1}</span>
+                    </div>
+                    <p className="font-body text-base md:text-lg text-foreground/80 font-medium leading-relaxed pt-1.5">
+                      {step}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-center text-sm text-foreground/60 font-body font-medium italic mb-8 max-w-xl mx-auto">
+                {t[lang].buyGuideNote}
               </p>
-              <motion.a
-                href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.04, y: -3 }}
-                whileTap={{ scale: 0.97 }}
-                className="cta-shimmer inline-flex items-center gap-3 px-12 py-6 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" /></svg>
-                {t[lang].freeCta}
-              </motion.a>
+
+              <div className="flex justify-center">
+                <motion.a
+                  href={WATER_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="cta-shimmer inline-flex items-center gap-3 px-12 py-6 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  {t[lang].cta}
+                </motion.a>
+              </div>
             </div>
           </div>
         </motion.div>
