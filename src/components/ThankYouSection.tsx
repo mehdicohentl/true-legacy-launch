@@ -12,7 +12,7 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
     : "Gracias por tomarte el tiempo de conocer lo que hacemos. Esto es personal.";
 
   return (
-    <section className="py-28 bg-background relative overflow-hidden noise-overlay">
+    <section className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
       <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-accent/4 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-4 relative z-10 max-w-4xl">
@@ -22,8 +22,8 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-accent/80 mb-4">
-            {lang === "en" ? "Before You Go" : "Antes De Irte"}
+           <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-4">
+             {lang === "en" ? "Before You Go" : "Antes De Irte"}
           </p>
           <h2 className="text-3xl md:text-5xl font-display font-black mb-4">{title}</h2>
           <p className="text-foreground/70 font-body text-base md:text-lg max-w-xl mx-auto font-medium">{sub}</p>

@@ -42,7 +42,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
   };
 
   return (
-    <section id="water" className="py-28 bg-card relative overflow-hidden noise-overlay">
+    <section id="water" className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
       {/* Background image with heavy overlay */}
       <div className="absolute inset-0">
         <img src={productsBanner} alt="" className="w-full h-full object-cover opacity-8" />
@@ -54,7 +54,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-[10px] uppercase tracking-[0.4em] text-accent/80 mb-6 text-center"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-6 text-center"
         >
           {t[lang].micro}
         </motion.p>
@@ -65,7 +65,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[0.92] mb-4">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92] mb-4">
             <span className="text-foreground">{t[lang].headline}</span>
           </h2>
           <p className="text-lg md:text-2xl font-display italic text-gradient-gold max-w-3xl mx-auto">
@@ -73,7 +73,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -94,7 +94,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   transition={{ delay: i * 0.08 }}
                   className="glass-card rounded-xl p-5 hover:border-accent/30 transition-all duration-300 group"
                 >
-                  <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent mb-2 block">0{i + 1}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-2 block">0{i + 1}</span>
                   <h4 className="font-body font-bold text-base text-foreground mb-1">{b.title}</h4>
                   <p className="font-body text-sm text-foreground/70 leading-relaxed font-medium">{b.desc}</p>
                 </motion.div>
@@ -138,7 +138,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             {/* Gradient border effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded-2xl" />
             <div className="relative m-px rounded-2xl bg-card p-10 md:p-16 text-center">
-              <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-accent mb-4">Free · No Email Required · Instant Access</p>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent mb-4">Free · No Email Required · Instant Access</p>
               <h3 className="text-3xl md:text-5xl font-display font-black mb-5 leading-tight">
                 {t[lang].free}
               </h3>

@@ -40,7 +40,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
   };
 
   return (
-    <section id="join" className="py-28 bg-card relative overflow-hidden noise-overlay">
+    <section id="join" className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/4 via-transparent to-accent/4" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/4 rounded-full blur-[180px]" />
 
@@ -49,7 +49,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-[10px] uppercase tracking-[0.4em] text-accent/80 mb-6 text-center"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-6 text-center"
         >
           {t[lang].micro}
         </motion.p>
@@ -60,7 +60,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[0.92]">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92]">
             <span className="text-foreground">{t[lang].headline}</span><br />
             <span className="text-gradient-gold italic">{t[lang].headline2}</span>
           </h2>
@@ -94,7 +94,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           {t[lang].stats.map((s, i) => (
             <div key={i} className="text-center">
               <span className="text-4xl md:text-6xl font-display font-black text-gradient-gold block">{s.num}</span>
-              <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mt-2 block">{s.label}</span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/60 mt-2 block">{s.label}</span>
             </div>
           ))}
         </motion.div>
