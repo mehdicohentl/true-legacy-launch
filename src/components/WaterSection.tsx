@@ -8,68 +8,95 @@ interface WaterSectionProps {
 const WaterSection = ({ lang }: WaterSectionProps) => {
   const t = {
     en: {
-      tag: "Transform Your Health",
-      headline: "Kangen Water",
-      subline: "Ionized Alkaline Water That Changes Lives",
-      desc: "For over 50 years, Enagic has been producing the world's finest water ionization systems. Kangen Water® is not just water — it's a lifestyle revolution that starts from within.",
-      benefits: ["Antioxidant-Rich Hydrogen Water", "Medical-Grade Electrolysis Technology", "7 Different pH Levels for Every Need", "Used by Hospitals & Athletes Worldwide"],
-      cta: "Learn More About Kangen Water",
-      free: "🎁 Get Your FREE Healing Water Guide",
-      freeDesc: "Discover how ionized water can transform your health — completely free, no strings attached.",
+      micro: "The Foundation of Everything",
+      headline: "This Isn't Just Water.",
+      headline2: "It's a Weapon Against Aging, Disease & Mediocrity.",
+      desc: "Your body is 70% water. What if the water you've been drinking your entire life has been working against you? Kangen Water is medical-grade, hydrogen-rich, ionized water used by over 6,500 doctors in Japan. It's not a trend — it's 50 years of proven science.",
+      benefits: [
+        { title: "Antioxidant Power", desc: "More powerful than vitamin C — neutralizes free radicals on contact" },
+        { title: "Micro-Clustered Hydration", desc: "Penetrates cells 6x faster than regular water" },
+        { title: "Medical-Grade Technology", desc: "The same machines used in Japanese hospitals since 1974" },
+        { title: "7 pH Levels", desc: "From strong acidic (disinfectant) to strong alkaline (health)" },
+      ],
+      cta: "See Why 500,000+ Families Made The Switch",
+      free: "Your Body is Begging For Better Water.",
+      freeDesc: "Get the free guide that breaks down exactly what's in your tap water — and what Kangen Water does differently. No email required. Just click.",
+      freeCta: "Get The Free Water Guide →",
     },
     es: {
-      tag: "Transforma Tu Salud",
-      headline: "Agua Kangen",
-      subline: "Agua Alcalina Ionizada Que Cambia Vidas",
-      desc: "Por más de 50 años, Enagic ha producido los mejores sistemas de ionización de agua del mundo. Agua Kangen® no es solo agua — es una revolución de estilo de vida que comienza desde adentro.",
-      benefits: ["Agua Rica en Hidrógeno Antioxidante", "Tecnología de Electrólisis de Grado Médico", "7 Niveles de pH Para Cada Necesidad", "Usado por Hospitales y Atletas Mundialmente"],
-      cta: "Aprende Más Sobre Agua Kangen",
-      free: "🎁 Obtén Tu Guía GRATUITA de Agua Curativa",
-      freeDesc: "Descubre cómo el agua ionizada puede transformar tu salud — completamente gratis, sin compromiso.",
+      micro: "La Base de Todo",
+      headline: "Esto No Es Solo Agua.",
+      headline2: "Es un Arma Contra el Envejecimiento, la Enfermedad y la Mediocridad.",
+      desc: "Tu cuerpo es 70% agua. ¿Qué pasaría si el agua que has estado tomando toda tu vida ha estado trabajando en tu contra? El Agua Kangen es agua ionizada, rica en hidrógeno, de grado médico, usada por más de 6,500 médicos en Japón. No es una moda — son 50 años de ciencia comprobada.",
+      benefits: [
+        { title: "Poder Antioxidante", desc: "Más poderoso que la vitamina C — neutraliza radicales libres al contacto" },
+        { title: "Hidratación Micro-Agrupada", desc: "Penetra las células 6x más rápido que el agua regular" },
+        { title: "Tecnología de Grado Médico", desc: "Las mismas máquinas usadas en hospitales japoneses desde 1974" },
+        { title: "7 Niveles de pH", desc: "Desde ácido fuerte (desinfectante) hasta alcalino fuerte (salud)" },
+      ],
+      cta: "Descubre Por Qué 500,000+ Familias Hicieron El Cambio",
+      free: "Tu Cuerpo Está Pidiendo Mejor Agua.",
+      freeDesc: "Obtén la guía gratuita que explica exactamente qué hay en tu agua del grifo — y qué hace diferente el Agua Kangen. Sin email. Solo haz clic.",
+      freeCta: "Obtener La Guía Gratuita →",
     },
   };
 
   return (
-    <section id="water" className="py-24 bg-card relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <img src={productsBanner} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/90" />
+    <section id="water" className="py-28 bg-card relative overflow-hidden noise-overlay">
+      {/* Background image with heavy overlay */}
+      <div className="absolute inset-0">
+        <img src={productsBanner} alt="" className="w-full h-full object-cover opacity-8" />
+        <div className="absolute inset-0 bg-gradient-to-b from-card via-card/95 to-card" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="font-mono text-[10px] uppercase tracking-[0.4em] text-accent/80 mb-6 text-center"
+        >
+          {t[lang].micro}
+        </motion.p>
+
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-accent font-body font-bold text-sm uppercase tracking-[0.25em]">{t[lang].tag}</span>
-          <h2 className="text-4xl md:text-6xl font-display font-black mt-3 text-gradient-gold">{t[lang].headline}</h2>
-          <p className="text-xl text-muted-foreground font-body mt-4">{t[lang].subline}</p>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[0.92] mb-4">
+            <span className="text-foreground">{t[lang].headline}</span>
+          </h2>
+          <p className="text-lg md:text-2xl font-display italic text-gradient-gold max-w-3xl mx-auto">
+            {t[lang].headline2}
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg text-muted-foreground font-body leading-relaxed mb-8">{t[lang].desc}</p>
+            <p className="text-base md:text-lg text-secondary-foreground font-body leading-[1.9] mb-12 font-light">
+              {t[lang].desc}
+            </p>
 
-            <div className="space-y-4 mb-10">
+            {/* Benefits as cards instead of checkmarks */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               {t[lang].benefits.map((b, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-3"
+                  transition={{ delay: i * 0.08 }}
+                  className="glass-card rounded-xl p-5 hover:border-accent/30 transition-all duration-300 group"
                 >
-                  <span className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                  </span>
-                  <span className="font-body font-semibold text-foreground">{b}</span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent mb-2 block">0{i + 1}</span>
+                  <h4 className="font-body font-bold text-sm text-foreground mb-1">{b.title}</h4>
+                  <p className="font-body text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -78,9 +105,9 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-body font-bold text-base uppercase tracking-widest bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
             >
               {t[lang].cta}
             </motion.a>
@@ -92,32 +119,44 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             viewport={{ once: true }}
             className="relative"
           >
-            <img src={productsBanner} alt="Kangen Water Products" className="rounded-xl border border-border w-full" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 via-transparent to-primary/8 rounded-2xl blur-2xl" />
+            <img src={productsBanner} alt="Kangen Water & EmGuarde Products" className="relative rounded-2xl border border-border/50 w-full shadow-deep" />
+            {/* Corner accents */}
+            <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
+            <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
           </motion.div>
         </div>
 
-        {/* Free PDF CTA */}
+        {/* Free PDF CTA — redesigned */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 bg-secondary rounded-2xl p-8 md:p-12 border border-accent/20 text-center relative overflow-hidden"
+          className="mt-28"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-primary/5" />
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-4xl font-display font-black mb-4">{t[lang].free}</h3>
-            <p className="text-muted-foreground font-body text-lg mb-8 max-w-xl mx-auto">{t[lang].freeDesc}</p>
-            <motion.a
-              href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-lg uppercase tracking-widest bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-              {lang === "en" ? "Download Now — It's Free" : "Descárgalo Ahora — Es Gratis"}
-            </motion.a>
+          <div className="relative rounded-2xl overflow-hidden">
+            {/* Gradient border effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded-2xl" />
+            <div className="relative m-px rounded-2xl bg-card p-10 md:p-16 text-center">
+              <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-accent mb-4">Free · No Email Required · Instant Access</p>
+              <h3 className="text-3xl md:text-5xl font-display font-black mb-5 leading-tight">
+                {t[lang].free}
+              </h3>
+              <p className="text-muted-foreground font-body text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-light">
+                {t[lang].freeDesc}
+              </p>
+              <motion.a
+                href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.04, y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer inline-flex items-center gap-3 px-12 py-6 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" /></svg>
+                {t[lang].freeCta}
+              </motion.a>
+            </div>
           </div>
         </motion.div>
       </div>
