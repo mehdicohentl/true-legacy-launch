@@ -23,7 +23,7 @@ const Footer = ({ lang }: FooterProps) => {
             <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
               YouTube
             </a>
-            <a href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
+            <a href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
               {lang === "en" ? "Get Water" : "Obtener Agua"}
             </a>
             <a href="mailto:emgsales@enagic-my.com" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground/70 hover:text-accent transition-colors">
