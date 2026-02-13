@@ -18,7 +18,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
         { title: "Medical-Grade Technology", desc: "The same machines used in Japanese hospitals since 1974" },
         { title: "7 pH Levels", desc: "From strong acidic (disinfectant) to strong alkaline (health)" },
       ],
-      cta: "See Why 500,000+ Families Made The Switch",
+      cta: "Get The Healing Water Now",
       free: "Your Body is Begging For Better Water.",
       freeDesc: "Get the free guide that breaks down exactly what's in your tap water — and what Kangen Water does differently. No email required. Just click.",
       freeCta: "Get The Free Water Guide →",
@@ -34,7 +34,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
         { title: "Tecnología de Grado Médico", desc: "Las mismas máquinas usadas en hospitales japoneses desde 1974" },
         { title: "7 Niveles de pH", desc: "Desde ácido fuerte (desinfectante) hasta alcalino fuerte (salud)" },
       ],
-      cta: "Descubre Por Qué 500,000+ Familias Hicieron El Cambio",
+      cta: "Obtener El Agua Sanadora Ahora",
       free: "Tu Cuerpo Está Pidiendo Mejor Agua.",
       freeDesc: "Obtén la guía gratuita que explica exactamente qué hay en tu agua del grifo — y qué hace diferente el Agua Kangen. Sin email. Solo haz clic.",
       freeCta: "Obtener La Guía Gratuita →",
@@ -107,7 +107,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+              className="cta-shimmer w-full sm:w-auto inline-flex items-center justify-center gap-3 px-12 py-5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
             >
               {t[lang].cta}
             </motion.a>

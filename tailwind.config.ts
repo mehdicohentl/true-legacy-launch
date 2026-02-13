@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "serif"],
+        display: ["DM Sans", "sans-serif"],
         body: ["Montserrat", "sans-serif"],
         mono: ["Space Grotesk", "monospace"],
       },
