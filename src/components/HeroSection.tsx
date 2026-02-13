@@ -60,7 +60,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             <span className="block text-4xl md:text-6xl lg:text-7xl text-gradient-gold">{t[lang].headline3}</span>
           </h1>
 
-          <p className="text-sm md:text-base text-muted-foreground font-body leading-[1.8] max-w-2xl mx-auto mb-8 font-light">
+          <p className="text-base md:text-xl text-foreground/80 font-body leading-[1.8] max-w-2xl mx-auto mb-8 font-medium">
             {t[lang].sub}
           </p>
         </motion.div>
@@ -99,9 +99,9 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="cta-shimmer flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow transition-all"
+            className="cta-shimmer flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow transition-all"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             {t[lang].cta1}
           </motion.a>
 
@@ -111,9 +111,9 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] border border-foreground/20 text-foreground hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
+            className="cta-shimmer flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow transition-all"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
             {t[lang].cta2}
           </motion.a>
         </motion.div>

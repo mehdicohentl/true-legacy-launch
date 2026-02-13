@@ -70,7 +70,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-base md:text-lg text-secondary-foreground font-body leading-[1.9] text-center max-w-2xl mx-auto mb-10 font-light"
+          className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] text-center max-w-2xl mx-auto mb-10 font-medium"
         >
           {t[lang].desc}
         </motion.p>
@@ -79,7 +79,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center font-display italic text-xl md:text-2xl text-foreground/60 mb-14 max-w-2xl mx-auto"
+          className="text-center font-display italic text-xl md:text-2xl text-foreground/80 mb-14 max-w-2xl mx-auto"
         >
           {t[lang].quote}
         </motion.blockquote>
@@ -125,7 +125,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           </motion.a>
         </div>
 
-        <p className="text-center font-body text-sm text-muted-foreground font-light italic max-w-xl mx-auto">
+        <p className="text-center font-body text-base text-foreground/70 font-medium italic max-w-xl mx-auto">
           {t[lang].bottom}
         </p>
       </div>

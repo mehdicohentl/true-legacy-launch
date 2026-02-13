@@ -26,7 +26,7 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
             {lang === "en" ? "Before You Go" : "Antes De Irte"}
           </p>
           <h2 className="text-3xl md:text-5xl font-display font-black mb-4">{title}</h2>
-          <p className="text-muted-foreground font-body text-base max-w-xl mx-auto font-light">{sub}</p>
+          <p className="text-foreground/70 font-body text-base md:text-lg max-w-xl mx-auto font-medium">{sub}</p>
         </motion.div>
 
         <motion.div

@@ -79,7 +79,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-base md:text-lg text-secondary-foreground font-body leading-[1.9] mb-12 font-light">
+            <p className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] mb-12 font-medium">
               {t[lang].desc}
             </p>
 
@@ -95,8 +95,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   className="glass-card rounded-xl p-5 hover:border-accent/30 transition-all duration-300 group"
                 >
                   <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-accent mb-2 block">0{i + 1}</span>
-                  <h4 className="font-body font-bold text-sm text-foreground mb-1">{b.title}</h4>
-                  <p className="font-body text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
+                  <h4 className="font-body font-bold text-base text-foreground mb-1">{b.title}</h4>
+                  <p className="font-body text-sm text-foreground/70 leading-relaxed font-medium">{b.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -142,7 +142,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               <h3 className="text-3xl md:text-5xl font-display font-black mb-5 leading-tight">
                 {t[lang].free}
               </h3>
-              <p className="text-muted-foreground font-body text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-light">
+              <p className="text-foreground/70 font-body text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-medium">
                 {t[lang].freeDesc}
               </p>
               <motion.a
