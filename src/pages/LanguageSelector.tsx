@@ -48,13 +48,13 @@ const LanguageSelector = () => {
 
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col items-center">
-              <motion.span
-                className="text-7xl mb-4 block"
+              <motion.img
+                src="https://flagcdn.com/w160/us.png"
+                alt="USA"
+                className="h-16 w-auto rounded-md shadow-lg mb-4"
                 animate={{ rotateY: [0, 360] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 4, ease: "easeInOut" }}
-              >
-                🇺🇸
-              </motion.span>
+              />
               <span className="font-display font-bold text-2xl text-foreground block">English</span>
               <span className="text-xs text-muted-foreground font-mono mt-2 block tracking-wider uppercase">United States</span>
             </div>
@@ -71,16 +71,21 @@ const LanguageSelector = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col items-center">
               <div className="flex gap-4 mb-4">
-                {["🇨🇴", "🇵🇾", "🇧🇷", "🇲🇽"].map((flag, i) => (
-                  <motion.span
-                    key={flag}
-                    className="text-6xl"
+                {[
+                  { code: "co", alt: "Colombia" },
+                  { code: "py", alt: "Paraguay" },
+                  { code: "br", alt: "Brasil" },
+                  { code: "mx", alt: "México" },
+                ].map((flag, i) => (
+                  <motion.img
+                    key={flag.code}
+                    src={`https://flagcdn.com/w80/${flag.code}.png`}
+                    alt={flag.alt}
+                    className="h-12 w-auto rounded-sm shadow-md"
                     animate={{ y: [0, -6, 0] }}
                     transition={{ delay: i * 0.2, duration: 1.5, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}
                     whileHover={{ scale: 1.3, rotate: [0, -10, 10, 0] }}
-                  >
-                    {flag}
-                  </motion.span>
+                  />
                 ))}
               </div>
               <span className="font-display font-bold text-2xl text-foreground block">Español</span>
