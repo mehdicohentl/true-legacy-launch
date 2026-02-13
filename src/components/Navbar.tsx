@@ -38,9 +38,9 @@ const Navbar = ({ lang }: NavbarProps) => {
     >
       <div className="container mx-auto flex items-center justify-between py-3.5 px-4">
         <div className="flex items-center gap-4">
-          <img src={trueLegacyLogo} alt="True Legacy" className="h-12 md:h-14 w-auto" />
-          <div className="h-7 w-px bg-accent/30" />
-          <img src={mehdiLogo} alt="Mehdi Cohen" className="h-10 md:h-12 w-auto" />
+          <img src={mehdiLogo} alt="Mehdi Cohen" className="h-12 md:h-16 w-auto" />
+          <div className="h-8 w-px bg-accent/30" />
+          <img src={trueLegacyLogo} alt="True Legacy" className="h-14 md:h-18 w-auto" />
         </div>
 
         <div className="hidden md:flex items-center gap-8">
