@@ -35,16 +35,16 @@ const LanguageSelector = () => {
         </div>
 
         <p className="text-accent font-mono font-bold text-xs uppercase tracking-[0.4em] mb-3">
-          Your journey starts here
+          Your future starts here
         </p>
 
         <h1 className="text-3xl md:text-5xl font-display font-black mb-3 leading-[1.05]">
-          One Decision<br />
-          <span className="text-gradient-gold italic font-mono">Changes Everything.</span>
+          Build Your Legacy.<br />
+          <span className="text-gradient-gold italic font-mono">Change Your Life.</span>
         </h1>
 
         <p className="text-foreground font-body font-bold text-sm md:text-base mb-6 leading-relaxed max-w-sm mx-auto">
-          Discover <span className="text-accent">Kangen Water</span> — the healing water trusted by millions worldwide. Select your language below.
+          Join thousands building <span className="text-accent">wealth & health</span> with True Legacy. Get <span className="text-accent">Kangen Water</span>, <span className="text-accent">EmGuarde</span>, and a real path to financial freedom — starting from zero.
         </p>
 
         <div className="flex gap-8 md:gap-12 justify-center items-center mb-8">
@@ -114,7 +114,7 @@ const LanguageSelector = () => {
         </div>
 
         <p className="text-foreground/80 font-mono text-[10px] uppercase tracking-[0.3em] font-bold">
-          Kangen Water · EmGuarde · True Legacy
+          Kangen Water · EmGuarde · Financial Freedom
         </p>
       </motion.div>
     </div>
