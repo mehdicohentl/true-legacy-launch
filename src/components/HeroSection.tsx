@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import trueLegacyLogo from "@/assets/true-legacy-logo.png";
-import mehdiLogo from "@/assets/mehdi-logo.png";
+import combinedLogo from "@/assets/combined-logo.png";
 
 interface HeroSectionProps {
   lang: "en" | "es";
