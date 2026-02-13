@@ -91,7 +91,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] mb-12 font-medium">
+            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-12 font-bold">
               {t[lang].desc}
             </p>
 
@@ -108,7 +108,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 >
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-2 block">0{i + 1}</span>
                   <h4 className="font-body font-bold text-base text-foreground mb-1">{b.title}</h4>
-                  <p className="font-body text-sm text-foreground/70 leading-relaxed font-medium">{b.desc}</p>
+                  <p className="font-body text-sm text-foreground font-bold leading-relaxed">{b.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -147,14 +147,14 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center">
                       <span className="font-display font-black text-accent text-sm">{i + 1}</span>
                     </div>
-                    <p className="font-body text-base md:text-lg text-foreground/80 font-medium leading-relaxed pt-1.5">
+                    <p className="font-body text-base md:text-lg text-foreground font-bold leading-relaxed pt-1.5">
                       {step}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <p className="text-center text-sm text-foreground/60 font-body font-medium italic mb-8 max-w-xl mx-auto">
+              <p className="text-center text-sm text-foreground font-body font-bold italic mb-8 max-w-xl mx-auto">
                 {t[lang].buyGuideNote}
               </p>
 

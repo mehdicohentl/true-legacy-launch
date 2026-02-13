@@ -70,7 +70,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] text-center max-w-2xl mx-auto mb-10 font-medium"
+          className="text-base md:text-lg text-foreground font-body leading-[1.9] text-center max-w-2xl mx-auto mb-10 font-bold"
         >
           {t[lang].desc}
         </motion.p>
@@ -79,7 +79,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center font-display italic text-xl md:text-2xl text-foreground/80 mb-14 max-w-2xl mx-auto"
+          className="text-center font-display italic text-xl md:text-2xl text-foreground mb-14 max-w-2xl mx-auto"
         >
           {t[lang].quote}
         </motion.blockquote>
@@ -94,7 +94,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           {t[lang].stats.map((s, i) => (
             <div key={i} className="text-center">
               <span className="text-4xl md:text-6xl font-display font-black text-gradient-gold block">{s.num}</span>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/60 mt-2 block">{s.label}</span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-foreground font-bold mt-2 block">{s.label}</span>
             </div>
           ))}
         </motion.div>
@@ -125,7 +125,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           </motion.a>
         </div>
 
-        <p className="text-center font-body text-base text-foreground/70 font-medium italic max-w-xl mx-auto">
+        <p className="text-center font-body text-base text-foreground font-bold italic max-w-xl mx-auto">
           {t[lang].bottom}
         </p>
       </div>

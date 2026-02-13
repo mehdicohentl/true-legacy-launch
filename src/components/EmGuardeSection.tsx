@@ -241,19 +241,19 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] mb-6 font-medium">
+            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
               {c.intro}
             </p>
-            <p className="text-base md:text-lg text-foreground/80 font-body leading-[1.9] mb-6 font-medium">
+            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
               {c.intro2}
             </p>
-            <p className="text-base md:text-lg text-foreground/70 font-body leading-[1.9] mb-6 font-medium">
+            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
               {c.history}
             </p>
             <p className="text-base font-body font-bold text-accent mb-4">
               ⚠️ {c.privateImport}
             </p>
-            <p className="text-sm text-foreground/60 font-body font-medium">
+            <p className="text-sm text-foreground font-body font-bold">
               {c.contact}
             </p>
           </motion.div>
@@ -305,18 +305,18 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                   <div className="flex items-end gap-3 mb-2">
                     <span className="text-5xl md:text-6xl font-display font-black text-foreground">{c.price}</span>
                   </div>
-                  <p className="text-sm text-foreground/50 font-body font-medium mb-6">{c.priceLocal}</p>
+                  <p className="text-sm text-foreground font-body font-bold mb-6">{c.priceLocal}</p>
 
                   <h4 className="font-body font-bold text-base text-foreground mb-3">{c.shippingTitle}</h4>
                   <div className="space-y-2 mb-4">
                     {c.shippingItems.map((s, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <span className="font-body font-bold text-sm text-foreground">{s.country}:</span>
-                        <span className="font-body text-sm text-foreground/70 font-medium">{s.fee} ({s.method})</span>
+                        <span className="font-body text-sm text-foreground font-bold">{s.fee} ({s.method})</span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-foreground/50 font-body italic">{c.shippingNote}</p>
+                  <p className="text-xs text-foreground/90 font-body italic font-bold">{c.shippingNote}</p>
                 </div>
 
                 {/* Quick facts */}
@@ -324,7 +324,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                   {c.quickFacts.map((f, i) => (
                     <div key={i} className="glass-card rounded-lg p-4 text-center">
                       <span className="block font-body font-bold text-base text-foreground">{f.value}</span>
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60 mt-1">{f.label}</span>
+                      <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/90 mt-1 font-bold">{f.label}</span>
                     </div>
                   ))}
                 </div>
@@ -356,16 +356,16 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                       </div>
                       <div className="flex-1">
                         <h4 className="font-body font-bold text-lg text-foreground mb-2">{step.title}</h4>
-                        <p className="font-body text-base text-foreground/70 font-medium leading-relaxed mb-3">{step.desc}</p>
+                        <p className="font-body text-base text-foreground font-bold leading-relaxed mb-3">{step.desc}</p>
                         {"contacts" in step && step.contacts && (
                           <div className="space-y-1 mb-3">
                             {step.contacts.map((c2, j) => (
-                              <p key={j} className="font-mono text-sm text-foreground/60 font-medium">{c2}</p>
+                              <p key={j} className="font-mono text-sm text-foreground font-bold">{c2}</p>
                             ))}
                           </div>
                         )}
                         {"extra" in step && step.extra && (
-                          <p className="font-body text-sm text-foreground/50 font-medium italic">{step.extra}</p>
+                          <p className="font-body text-sm text-foreground/90 font-bold italic">{step.extra}</p>
                         )}
                       </div>
                     </div>
@@ -406,14 +406,14 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                   {c.commissions.map((com, i) => (
                     <div key={i} className="glass-card rounded-xl p-6">
                       <h4 className="font-body font-bold text-base text-accent mb-1">{com.type}</h4>
-                      <p className="font-body text-sm text-foreground/60 font-medium mb-3">{com.desc}</p>
+                      <p className="font-body text-sm text-foreground font-bold mb-3">{com.desc}</p>
                       <p className="font-display font-black text-2xl text-foreground">{com.amount}</p>
                     </div>
                   ))}
                 </div>
                 <div className="space-y-3">
                   {c.commissionNotes.map((note, i) => (
-                    <p key={i} className="font-body text-sm text-foreground/60 font-medium leading-relaxed">
+                    <p key={i} className="font-body text-sm text-foreground font-bold leading-relaxed">
                       • {note}
                     </p>
                   ))}
@@ -428,13 +428,13 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                 <h3 className="text-2xl md:text-3xl font-display font-black text-foreground mb-8">{c.registrationTitle}</h3>
                 <div className="space-y-4 mb-6">
                   {c.registrationItems.map((item, i) => (
-                    <p key={i} className="font-body text-base text-foreground/70 font-medium leading-relaxed">
+                    <p key={i} className="font-body text-base text-foreground font-bold leading-relaxed">
                       • {item}
                     </p>
                   ))}
                 </div>
                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/15">
-                  <p className="font-body text-sm text-foreground/70 font-medium leading-relaxed">{c.coolingOff}</p>
+                  <p className="font-body text-sm text-foreground font-bold leading-relaxed">{c.coolingOff}</p>
                 </div>
               </div>
             </div>
