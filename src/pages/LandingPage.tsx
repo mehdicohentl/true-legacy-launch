@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import WaterSection from "@/components/WaterSection";
 import EmGuardeSection from "@/components/EmGuardeSection";
 import JoinTeamSection from "@/components/JoinTeamSection";
+import ThankYouSection from "@/components/ThankYouSection";
 import Footer from "@/components/Footer";
 
 interface LandingPageProps {
@@ -19,6 +20,7 @@ const LandingPage = ({ lang }: LandingPageProps) => {
       <WaterSection lang={lang} />
       <EmGuardeSection lang={lang} />
       <JoinTeamSection lang={lang} />
+      <ThankYouSection lang={lang} />
       <Footer lang={lang} />
     </div>
   );
