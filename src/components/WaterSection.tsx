@@ -23,7 +23,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       buyGuideTitle: "How to Get Your Kangen Water Machine",
       buyGuideSteps: [
         "Click the button below — it will take you to the official Enagic ordering page.",
-        "Select your country (USA, Canada, Mexico, or your region).",
+        "Select your country (USA, Canada, or your South American region).",
         "Choose the Kangen Water machine that fits your needs.",
         "Complete your order — it's that simple!",
       ],
@@ -44,7 +44,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       buyGuideTitle: "Cómo Obtener Tu Máquina de Agua Kangen",
       buyGuideSteps: [
         "Haz clic en el botón de abajo — te llevará a la página oficial de pedidos de Enagic.",
-        "Selecciona tu país (USA, Canadá, México o tu región).",
+        "Selecciona tu país (USA, Canadá o tu región de Sudamérica).",
         "Elige la máquina de Agua Kangen que se adapte a tus necesidades.",
         "Completa tu pedido — ¡así de simple!",
       ],
