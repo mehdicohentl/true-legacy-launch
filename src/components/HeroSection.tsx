@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import combinedLogo from "@/assets/combined-logo.png";
+import mehdiHeadshot from "@/assets/mehdi-headshot.png";
 
 interface HeroSectionProps {
   lang: "en" | "es";
@@ -44,14 +45,17 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="w-full max-w-4xl text-center"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-6"
-          >
-            {t[lang].micro}
-          </motion.p>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <img src={mehdiHeadshot} alt="Mehdi Cohen" className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover object-top border-2 border-accent/40" />
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold"
+            >
+              {t[lang].micro}
+            </motion.p>
+          </div>
 
            <h1 className="font-display font-black leading-[0.9] mb-6">
              <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline1}</span>

@@ -55,10 +55,13 @@ const Navbar = ({ lang }: NavbarProps) => {
 
         <div className="flex items-center gap-4">
           <a
-            href="/"
+            href={lang === "en" ? "/es" : "/en"}
             className="flag-hover cursor-pointer"
+            title={lang === "en" ? "Cambiar a Español" : "Switch to English"}
           >
-            <span className="text-2xl" role="img" aria-label="American Flag">🇺🇸</span>
+            <span className="text-2xl" role="img" aria-label={lang === "en" ? "Spanish" : "English"}>
+              {lang === "en" ? "🇪🇸" : "🇺🇸"}
+            </span>
           </a>
 
           {/* Mobile menu toggle */}
