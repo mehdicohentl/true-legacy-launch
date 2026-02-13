@@ -1,4 +1,5 @@
 import trueLegacyLogo from "@/assets/true-legacy-logo.png";
+import mehdiLogo from "@/assets/mehdi-logo.png";
 
 interface FooterProps {
   lang: "en" | "es";
@@ -6,23 +7,43 @@ interface FooterProps {
 
 const Footer = ({ lang }: FooterProps) => {
   return (
-    <footer className="py-12 bg-background border-t border-border">
-      <div className="container mx-auto px-4 text-center">
-        <img src={trueLegacyLogo} alt="True Legacy" className="h-12 w-auto mx-auto mb-6" />
-        <p className="text-muted-foreground font-body text-sm mb-2">
-          Mehdi Cohen — True Legacy World | Enagic® Independent Distributor
-        </p>
-        <p className="text-muted-foreground font-body text-xs mb-4">
-          ID# 37000004829
-        </p>
-        <div className="flex justify-center gap-6 text-muted-foreground text-xs font-body">
-          <a href="https://truelegacyworld.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">truelegacyworld.com</a>
-          <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">YouTube</a>
-          <a href="mailto:emgsales@enagic-my.com" className="hover:text-accent transition-colors">Contact</a>
+    <footer className="py-16 bg-background border-t border-border/30 relative">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+          <div className="flex items-center gap-4">
+            <img src={trueLegacyLogo} alt="True Legacy" className="h-10 w-auto" />
+            <div className="h-6 w-px bg-accent/20" />
+            <img src={mehdiLogo} alt="Mehdi Cohen" className="h-8 w-auto" />
+          </div>
+
+          <div className="flex items-center gap-8">
+            <a href="https://truelegacyworld.com" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+              {lang === "en" ? "Join Team" : "Únete"}
+            </a>
+            <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+              YouTube
+            </a>
+            <a href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+              {lang === "en" ? "Get Water" : "Obtener Agua"}
+            </a>
+            <a href="mailto:emgsales@enagic-my.com" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors">
+              {lang === "en" ? "Contact" : "Contacto"}
+            </a>
+          </div>
         </div>
-        <p className="text-muted-foreground/50 font-body text-[10px] mt-8">
-          © {new Date().getFullYear()} mehdicohen.com — All rights reserved.
-        </p>
+
+        <div className="h-px w-full bg-border/30 mb-8" />
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="font-body text-xs text-muted-foreground/60">
+              Mehdi Cohen — Enagic® Independent Distributor · ID# 37000004829
+            </p>
+          </div>
+          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground/40">
+            © {new Date().getFullYear()} mehdicohen.com
+          </p>
+        </div>
       </div>
     </footer>
   );

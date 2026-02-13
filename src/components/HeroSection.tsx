@@ -8,66 +8,72 @@ interface HeroSectionProps {
 const HeroSection = ({ lang }: HeroSectionProps) => {
   const t = {
     en: {
-      tagline: "True Legacy World",
-      headline: "Build Your Life.",
-      subline: "Regardless of Where You Came From.",
-      desc: "Your background doesn't define your future. With the right system, the right water, and the right team — you write your own story.",
-      cta1: "Get Your Kangen Water",
-      cta2: "Join The Team",
+      micro: "Mehdi Cohen · True Legacy World",
+      headline1: "Your Story",
+      headline2: "Doesn't End",
+      headline3: "Where You Started.",
+      sub: "I went from nothing to building a global team, changing lives through health & financial freedom. Now it's your turn.",
+      cta1: "I Want The Water",
+      cta2: "I Want The Business",
+      proof: "Join 50+ years of Enagic excellence",
     },
     es: {
-      tagline: "True Legacy World",
-      headline: "Construye Tu Vida.",
-      subline: "Sin Importar De Dónde Vengas.",
-      desc: "Tu origen no define tu futuro. Con el sistema correcto, el agua correcta y el equipo correcto — tú escribes tu propia historia.",
-      cta1: "Obtén Tu Agua Kangen",
-      cta2: "Únete Al Equipo",
+      micro: "Mehdi Cohen · True Legacy World",
+      headline1: "Tu Historia",
+      headline2: "No Termina",
+      headline3: "Donde Empezaste.",
+      sub: "Pasé de no tener nada a construir un equipo global, cambiando vidas a través de la salud y la libertad financiera. Ahora es tu turno.",
+      cta1: "Quiero El Agua",
+      cta2: "Quiero El Negocio",
+      proof: "Únete a 50+ años de excelencia Enagic",
     },
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden pt-20">
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: "linear-gradient(hsl(213 70% 45% / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(213 70% 45% / 0.1) 1px, transparent 1px)",
-        backgroundSize: "60px 60px"
-      }} />
+    <section className="relative min-h-screen flex items-center bg-hero-gradient noise-overlay overflow-hidden pt-16">
+      {/* Ambient orbs */}
+      <div className="absolute top-20 right-1/4 w-[500px] h-[500px] bg-primary/6 rounded-full blur-[150px]" />
+      <div className="absolute bottom-20 left-10 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[100px]" />
 
-      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      {/* Thin horizontal line accent */}
+      <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent" />
+
+      <div className="container mx-auto px-4 grid lg:grid-cols-12 gap-8 items-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-7"
         >
-          <motion.span
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="inline-block px-4 py-1.5 rounded-full bg-secondary text-accent font-body font-bold text-xs uppercase tracking-[0.25em] mb-6 border border-accent/20"
+            transition={{ delay: 0.4 }}
+            className="font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] text-accent/80 mb-8"
           >
-            {t[lang].tagline}
-          </motion.span>
+            {t[lang].micro}
+          </motion.p>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black leading-[0.9] mb-2">
-            <span className="text-foreground">{t[lang].headline}</span>
+          <h1 className="font-display font-black leading-[0.88] mb-8">
+            <span className="block text-5xl md:text-7xl lg:text-[5.5rem] text-foreground">{t[lang].headline1}</span>
+            <span className="block text-5xl md:text-7xl lg:text-[5.5rem] text-foreground/60">{t[lang].headline2}</span>
+            <span className="block text-5xl md:text-7xl lg:text-[5.5rem] text-gradient-gold italic">{t[lang].headline3}</span>
           </h1>
-          <h2 className="text-2xl md:text-4xl font-display font-bold text-gradient-gold mb-6">
-            {t[lang].subline}
-          </h2>
 
-          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-lg mb-10">
-            {t[lang].desc}
+          <p className="text-base md:text-lg text-muted-foreground font-body leading-[1.8] max-w-xl mb-12 font-light">
+            {t[lang].sub}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <motion.a
               href="https://information.enagic.com/home/article/TRAkt4bArepUdoS2JU9t"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-body font-bold text-base uppercase tracking-widest bg-accent text-accent-foreground shadow-gold animate-pulse-glow transition-all"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.15em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow transition-all"
             >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
               {t[lang].cta1}
             </motion.a>
 
@@ -75,27 +81,40 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
               href="https://truelegacyworld.com"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-body font-bold text-base uppercase tracking-widest border-2 border-primary text-primary-foreground bg-primary/10 hover:bg-primary/20 shadow-glow transition-all"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.15em] border border-foreground/20 text-foreground hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
             >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
               {t[lang].cta2}
             </motion.a>
           </div>
+
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60">
+            ── {t[lang].proof}
+          </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="relative flex justify-center"
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-5 relative flex justify-center"
         >
-          <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl" />
-          <img
-            src={mehdiHero}
-            alt="Mehdi Cohen"
-            className="relative z-10 w-full max-w-md lg:max-w-lg object-cover rounded-2xl"
-          />
+          {/* Glow behind image */}
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/15 via-primary/5 to-transparent rounded-3xl blur-3xl scale-110" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-accent/10 blur-[60px]" />
+          
+          <div className="relative">
+            <img
+              src={mehdiHero}
+              alt="Mehdi Cohen — Team Leader, True Legacy World"
+              className="relative z-10 w-full max-w-sm lg:max-w-md object-cover rounded-2xl shadow-deep"
+            />
+            {/* Accent corner marks */}
+            <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-lg z-20" />
+            <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-lg z-20" />
+          </div>
         </motion.div>
       </div>
     </section>
