@@ -49,16 +49,16 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] text-accent/80 mb-6"
+            className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-6"
           >
             {t[lang].micro}
           </motion.p>
 
-          <h1 className="font-display font-black leading-[0.9] mb-6">
-            <span className="block text-4xl md:text-6xl lg:text-7xl text-foreground">{t[lang].headline1}</span>
-            <span className="block text-4xl md:text-6xl lg:text-7xl text-foreground/60">{t[lang].headline2}</span>
-            <span className="block text-4xl md:text-6xl lg:text-7xl text-gradient-gold">{t[lang].headline3}</span>
-          </h1>
+           <h1 className="font-display font-black leading-[0.9] mb-6">
+             <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline1}</span>
+             <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground/60">{t[lang].headline2}</span>
+             <span className="block text-3xl md:text-5xl lg:text-7xl text-gradient-gold">{t[lang].headline3}</span>
+           </h1>
 
           <p className="text-base md:text-xl text-foreground/80 font-body leading-[1.8] max-w-2xl mx-auto mb-8 font-medium">
             {t[lang].sub}
@@ -118,9 +118,9 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
           </motion.a>
         </motion.div>
 
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60">
-          {t[lang].proof}
-        </p>
+         <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/40">
+           {t[lang].proof}
+         </p>
       </div>
     </section>
   );

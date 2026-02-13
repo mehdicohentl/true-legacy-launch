@@ -49,7 +49,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
   };
 
   return (
-    <section id="emguarde" className="py-28 bg-background relative overflow-hidden noise-overlay">
+    <section id="emguarde" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
       <div className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-accent/4 rounded-full blur-[120px]" />
 
@@ -58,7 +58,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-[10px] uppercase tracking-[0.4em] text-accent/80 mb-6 text-center"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-6 text-center"
         >
           {t[lang].micro}
         </motion.p>
@@ -69,7 +69,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[0.92]">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92]">
             <span className="text-foreground">{t[lang].headline}</span><br />
             <span className="text-gradient-primary italic">{t[lang].headline2}</span>
           </h2>
@@ -82,13 +82,13 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           viewport={{ once: true }}
           className="flex justify-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card font-mono text-[10px] uppercase tracking-[0.25em] text-primary border border-primary/20">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card font-mono text-xs uppercase tracking-[0.2em] text-primary border border-primary/20">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             {t[lang].badge}
           </span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -112,11 +112,11 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             </div>
 
             {/* Quick specs */}
-            <div className="grid grid-cols-4 gap-3 mb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
               {t[lang].features.map((f, i) => (
                 <div key={i} className="glass-card rounded-lg p-3 text-center">
                   <span className="block font-body font-bold text-sm text-foreground">{f.value}</span>
-                  <span className="block font-mono text-[8px] uppercase tracking-[0.2em] text-muted-foreground mt-1">{f.label}</span>
+                  <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60 mt-1">{f.label}</span>
                 </div>
               ))}
             </div>
@@ -146,8 +146,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               </motion.a>
             </div>
 
-            <p className="text-[10px] text-muted-foreground font-mono tracking-wider">{t[lang].ctaNote}</p>
-            <p className="text-[10px] text-muted-foreground/60 font-mono tracking-wider mt-2">{t[lang].contact}</p>
+             <p className="text-xs text-foreground/50 font-mono tracking-wider">{t[lang].ctaNote}</p>
+             <p className="text-xs text-foreground/40 font-mono tracking-wider mt-2">{t[lang].contact}</p>
           </motion.div>
 
           <motion.div

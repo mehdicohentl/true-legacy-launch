@@ -36,12 +36,12 @@ const Footer = ({ lang }: FooterProps) => {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <p className="font-body text-xs text-muted-foreground/60">
-              Mehdi Cohen — Enagic® Independent Distributor · ID# 37000004829
-            </p>
+           <p className="font-body text-sm text-foreground/50 font-medium">
+             Mehdi Cohen — Enagic® Independent Distributor · ID# 37000004829
+           </p>
           </div>
-          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground/40">
-            © {new Date().getFullYear()} mehdicohen.com
+         <p className="font-mono text-xs uppercase tracking-[0.15em] text-foreground/30">
+           © {new Date().getFullYear()} mehdicohen.com
           </p>
         </div>
       </div>
