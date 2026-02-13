@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import trueLegacyLogo from "@/assets/true-legacy-logo.png";
-import mehdiLogo from "@/assets/mehdi-logo.png";
+import combinedLogo from "@/assets/combined-logo.png";
 
 const LanguageSelector = () => {
   const navigate = useNavigate();
@@ -18,10 +17,8 @@ const LanguageSelector = () => {
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 text-center max-w-lg">
 
-        <div className="flex items-center justify-center gap-5 mb-10">
-          <img src={mehdiLogo} alt="Mehdi Cohen" className="h-16 md:h-24 w-auto" />
-          <div className="h-12 w-px bg-accent/30" />
-          <img src={trueLegacyLogo} alt="True Legacy" className="h-20 md:h-28 w-auto" />
+        <div className="flex items-center justify-center mb-10">
+          <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-20 md:h-32 w-auto" />
         </div>
 
         <p className="text-accent font-mono font-medium text-xs uppercase tracking-[0.4em] mb-4">

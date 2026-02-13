@@ -1,5 +1,4 @@
-import trueLegacyLogo from "@/assets/true-legacy-logo.png";
-import mehdiLogo from "@/assets/mehdi-logo.png";
+import combinedLogo from "@/assets/combined-logo.png";
 
 interface FooterProps {
   lang: "en" | "es";
@@ -11,9 +10,7 @@ const Footer = ({ lang }: FooterProps) => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
           <div className="flex items-center gap-4">
-            <img src={mehdiLogo} alt="Mehdi Cohen" className="h-16 md:h-20 w-auto" />
-            <div className="h-10 w-px bg-accent/20" />
-            <img src={trueLegacyLogo} alt="True Legacy" className="h-20 md:h-24 w-auto" />
+            <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-20 md:h-24 w-auto" />
           </div>
 
           <div className="flex items-center gap-8">
