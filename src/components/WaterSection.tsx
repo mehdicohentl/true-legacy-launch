@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import productsBanner from "@/assets/products-banner.png";
+import kangenMachine from "@/assets/kangen-water-machine.png";
 
 interface WaterSectionProps {
   lang: "en" | "es";
@@ -12,7 +12,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
     en: {
       micro: "The Foundation of Everything",
       headline: "This Isn't Just Water.",
-      headline2: "It's a Weapon Against Aging, Disease & Mediocrity.",
+      headline2: "It's Kangen Water — The Healing Water.",
       desc: "Your body is 70% water. What if the water you've been drinking your entire life has been working against you? Kangen Water is medical-grade, hydrogen-rich, ionized water used by over 6,500 doctors in Japan. It's not a trend — it's 50 years of proven science.",
       benefits: [
         { title: "Antioxidant Power", desc: "More powerful than vitamin C — neutralizes free radicals on contact" },
@@ -28,12 +28,12 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
         "Complete your order — it's that simple!",
       ],
       buyGuideNote: "You'll be ordering directly through Enagic's official system. Safe, secure, and backed by 50+ years of excellence.",
-      cta: "Get The Healing Water Now",
+      cta: "Get Your Kangen Water Machine Now",
     },
     es: {
       micro: "La Base de Todo",
       headline: "Esto No Es Solo Agua.",
-      headline2: "Es un Arma Contra el Envejecimiento, la Enfermedad y la Mediocridad.",
+      headline2: "Es Agua Kangen — El Agua Sanadora.",
       desc: "Tu cuerpo es 70% agua. ¿Qué pasaría si el agua que has estado tomando toda tu vida ha estado trabajando en tu contra? El Agua Kangen es agua ionizada, rica en hidrógeno, de grado médico, usada por más de 6,500 médicos en Japón. No es una moda — son 50 años de ciencia comprobada.",
       benefits: [
         { title: "Poder Antioxidante", desc: "Más poderoso que la vitamina C — neutraliza radicales libres al contacto" },
@@ -49,24 +49,20 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
         "Completa tu pedido — ¡así de simple!",
       ],
       buyGuideNote: "Estarás ordenando directamente a través del sistema oficial de Enagic. Seguro, protegido y respaldado por más de 50 años de excelencia.",
-      cta: "Obtener El Agua Sanadora Ahora",
+      cta: "Obtener Tu Máquina de Agua Kangen Ahora",
     },
   };
 
   return (
     <section id="water" className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
-      {/* Background image with heavy overlay */}
-      <div className="absolute inset-0">
-        <img src={productsBanner} alt="" className="w-full h-full object-cover opacity-8" />
-        <div className="absolute inset-0 bg-gradient-to-b from-card via-card/95 to-card" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-card via-card/95 to-card" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-6 text-center"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-6 text-center"
         >
           {t[lang].micro}
         </motion.p>
@@ -80,7 +76,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92] mb-4">
             <span className="text-foreground">{t[lang].headline}</span>
           </h2>
-          <p className="text-lg md:text-2xl font-display italic text-gradient-gold max-w-3xl mx-auto">
+          <p className="text-lg md:text-2xl font-display italic text-gradient-gold max-w-3xl mx-auto font-bold">
             {t[lang].headline2}
           </p>
         </motion.div>
@@ -106,22 +102,27 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   transition={{ delay: i * 0.08 }}
                   className="glass-card rounded-xl p-5 hover:border-accent/30 transition-all duration-300 group"
                 >
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-2 block">0{i + 1}</span>
-                  <h4 className="font-body font-bold text-base text-foreground mb-1">{b.title}</h4>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-2 block font-bold">0{i + 1}</span>
+                  <h4 className="font-body font-black text-base text-foreground mb-1">{b.title}</h4>
                   <p className="font-body text-sm text-foreground font-bold leading-relaxed">{b.desc}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
+          {/* Kangen Water Machine Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative flex items-center justify-center"
           >
             <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 via-transparent to-primary/8 rounded-2xl blur-2xl" />
-            <img src={productsBanner} alt="Kangen Water & EmGuarde Products" className="relative rounded-2xl border border-border/50 w-full shadow-deep" />
+            <img
+              src={kangenMachine}
+              alt="Kangen Water Machine - LeveLuk SD501"
+              className="relative w-full max-w-md mx-auto drop-shadow-2xl"
+            />
             <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
             <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
           </motion.div>
@@ -165,7 +166,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
-                  className="cta-shimmer inline-flex items-center gap-3 px-12 py-6 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+                  className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                   {t[lang].cta}
