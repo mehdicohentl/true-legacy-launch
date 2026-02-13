@@ -6,7 +6,7 @@ import Globe from "@/components/Globe";
 const pulseRing = {
   initial: { scale: 1, opacity: 0.5 },
   animate: {
-    scale: [1, 1.25, 1],
+    scale: [1, 1.3, 1],
     opacity: [0.5, 0, 0.5],
     transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" as const },
   },
@@ -28,42 +28,41 @@ const LanguageSelector = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-center max-w-lg"
+        className="relative z-10 text-center w-full max-w-xl"
       >
-        <div className="flex items-center justify-center mb-10">
-          <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-20 md:h-32 w-auto" />
+        <div className="flex items-center justify-center mb-6">
+          <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-16 md:h-28 w-auto" />
         </div>
 
-        <p className="text-accent font-mono font-medium text-xs uppercase tracking-[0.4em] mb-4">
+        <p className="text-accent font-mono font-bold text-xs uppercase tracking-[0.4em] mb-3">
           Your journey starts here
         </p>
 
-        <h1 className="text-4xl md:text-6xl font-display font-black mb-4 leading-[1.05]">
+        <h1 className="text-3xl md:text-5xl font-display font-black mb-3 leading-[1.05]">
           One Decision<br />
           <span className="text-gradient-gold italic font-mono">Changes Everything.</span>
         </h1>
 
-        <p className="text-muted-foreground font-body text-base md:text-lg mb-14 leading-relaxed max-w-md mx-auto">
-          Select your language to discover how thousands are building wealth & health — starting from zero.
+        <p className="text-foreground font-body font-bold text-sm md:text-base mb-6 leading-relaxed max-w-sm mx-auto">
+          Discover <span className="text-accent">Kangen Water</span> — the healing water trusted by millions worldwide. Select your language below.
         </p>
 
-        <div className="flex gap-12 justify-center items-center">
+        <div className="flex gap-8 md:gap-12 justify-center items-center mb-8">
           {/* English */}
           <div className="relative flex items-center justify-center">
-            {/* Animated pulse ring */}
             <motion.div
               variants={pulseRing}
               initial="initial"
               animate="animate"
-              className="absolute w-36 h-36 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
+              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
             />
             <motion.button
               onClick={() => navigate("/en")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.92)" }}
+              className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
@@ -75,8 +74,8 @@ const LanguageSelector = () => {
                 }}
               />
               <div className="relative z-10 flex flex-col items-center">
-                <span className="font-display font-bold text-lg text-foreground group-hover:text-accent transition-colors duration-300">English</span>
-                <span className="text-[10px] text-muted-foreground font-mono mt-1 tracking-wider uppercase">USA</span>
+                <span className="font-display font-black text-lg text-foreground group-hover:text-accent transition-colors duration-300">English</span>
+                <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">USA</span>
               </div>
             </motion.button>
           </div>
@@ -87,16 +86,15 @@ const LanguageSelector = () => {
               variants={pulseRing}
               initial="initial"
               animate="animate"
-              style={{ animationDelay: "1.25s" }}
-              className="absolute w-36 h-36 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
+              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
             />
             <motion.button
               onClick={() => navigate("/es")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.92)" }}
+              className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
@@ -108,12 +106,16 @@ const LanguageSelector = () => {
                 }}
               />
               <div className="relative z-10 flex flex-col items-center">
-                <span className="font-display font-bold text-lg text-foreground group-hover:text-accent transition-colors duration-300">Español</span>
-                <span className="text-[10px] text-muted-foreground font-mono mt-1 tracking-wider uppercase leading-tight text-center">LATAM</span>
+                <span className="font-display font-black text-lg text-foreground group-hover:text-accent transition-colors duration-300">Español</span>
+                <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">LATAM</span>
               </div>
             </motion.button>
           </div>
         </div>
+
+        <p className="text-foreground/80 font-mono text-[10px] uppercase tracking-[0.3em] font-bold">
+          Kangen Water · EmGuarde · True Legacy
+        </p>
       </motion.div>
     </div>
   );

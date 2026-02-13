@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import emguardeDevice from "@/assets/emguarde-device.png";
 
 interface EmGuardeSectionProps {
   lang: "en" | "es";
@@ -38,8 +39,6 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
       ctaBuy: "Purchase EmGuarde (USA)",
       ctaBuyOther: "Purchase EmGuarde (Canada/Mexico)",
       ctaVideo: "Watch EmGuarde In Action →",
-      showMore: "View Full Details & Commission Info",
-      showLess: "Hide Details",
       purchaseFlowTitle: "How to Purchase EmGuarde",
       steps: [
         {
@@ -129,8 +128,6 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
       ctaBuy: "Comprar EmGuarde (USA)",
       ctaBuyOther: "Comprar EmGuarde (Canadá/México)",
       ctaVideo: "Ver EmGuarde en Acción →",
-      showMore: "Ver Detalles Completos y Comisiones",
-      showLess: "Ocultar Detalles",
       purchaseFlowTitle: "Cómo Comprar EmGuarde",
       steps: [
         {
@@ -204,7 +201,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-6 text-center"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-6 text-center"
         >
           {c.micro}
         </motion.p>
@@ -228,13 +225,13 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           viewport={{ once: true }}
           className="flex justify-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card font-mono text-xs uppercase tracking-[0.2em] text-primary border border-primary/20">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card font-mono text-xs uppercase tracking-[0.2em] text-accent border border-accent/20 font-bold">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             {c.badge}
           </span>
         </motion.div>
 
-        {/* Intro + Video grid */}
+        {/* Intro + EmGuarde Image & Video grid */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -264,6 +261,17 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             viewport={{ once: true }}
             className="space-y-6"
           >
+            {/* EmGuarde Device Image */}
+            <div className="relative flex items-center justify-center py-8">
+              <div className="absolute -inset-3 bg-primary/8 rounded-2xl blur-2xl" />
+              <img
+                src={emguardeDevice}
+                alt="EmGuarde Device - EMF Protection"
+                className="relative w-full max-w-[280px] mx-auto drop-shadow-2xl"
+              />
+            </div>
+
+            {/* Videos */}
             <div className="relative">
               <div className="absolute -inset-3 bg-primary/8 rounded-2xl blur-2xl" />
               <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 shadow-deep">
@@ -301,13 +309,13 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 {/* Price */}
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-3">{c.salesDate}</p>
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">{c.salesDate}</p>
                   <div className="flex items-end gap-3 mb-2">
                     <span className="text-5xl md:text-6xl font-display font-black text-foreground">{c.price}</span>
                   </div>
                   <p className="text-sm text-foreground font-body font-bold mb-6">{c.priceLocal}</p>
 
-                  <h4 className="font-body font-bold text-base text-foreground mb-3">{c.shippingTitle}</h4>
+                  <h4 className="font-body font-black text-base text-foreground mb-3">{c.shippingTitle}</h4>
                   <div className="space-y-2 mb-4">
                     {c.shippingItems.map((s, i) => (
                       <div key={i} className="flex items-center gap-3">
@@ -316,15 +324,15 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-foreground/90 font-body italic font-bold">{c.shippingNote}</p>
+                  <p className="text-xs text-foreground font-body italic font-bold">{c.shippingNote}</p>
                 </div>
 
                 {/* Quick facts */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {c.quickFacts.map((f, i) => (
                     <div key={i} className="glass-card rounded-lg p-4 text-center">
-                      <span className="block font-body font-bold text-base text-foreground">{f.value}</span>
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/90 mt-1 font-bold">{f.label}</span>
+                      <span className="block font-body font-black text-base text-foreground">{f.value}</span>
+                      <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-accent mt-1 font-bold">{f.label}</span>
                     </div>
                   ))}
                 </div>
@@ -333,7 +341,37 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           </div>
         </motion.div>
 
-        {/* Purchase Instructions - Always Visible */}
+        {/* Buy CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+        >
+          <motion.a
+            href="https://shop.enagic-my.com/product/emguarde-us-only/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.04, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            {c.ctaBuy}
+          </motion.a>
+
+          <motion.a
+            href="https://shop.enagic-my.com/product/emguarde/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 md:px-10 md:py-6 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-accent/40 text-foreground hover:border-accent hover:bg-accent/10 transition-all duration-300"
+          >
+            {c.ctaBuyOther}
+          </motion.a>
+        </motion.div>
+
+        {/* Purchase Instructions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -352,20 +390,20 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                   {c.steps.map((step, i) => (
                     <div key={i} className="flex gap-5">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
-                        <span className="font-display font-black text-primary text-sm">{step.num}</span>
+                        <span className="font-display font-black text-accent text-sm">{step.num}</span>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-body font-bold text-lg text-foreground mb-2">{step.title}</h4>
+                        <h4 className="font-body font-black text-lg text-foreground mb-2">{step.title}</h4>
                         <p className="font-body text-base text-foreground font-bold leading-relaxed mb-3">{step.desc}</p>
                         {"contacts" in step && step.contacts && (
                           <div className="space-y-1 mb-3">
                             {step.contacts.map((c2, j) => (
-                              <p key={j} className="font-mono text-sm text-foreground font-bold">{c2}</p>
+                              <p key={j} className="font-mono text-sm text-accent font-bold">{c2}</p>
                             ))}
                           </div>
                         )}
                         {"extra" in step && step.extra && (
-                          <p className="font-body text-sm text-foreground/90 font-bold italic">{step.extra}</p>
+                          <p className="font-body text-sm text-foreground font-bold italic">{step.extra}</p>
                         )}
                       </div>
                     </div>
@@ -373,7 +411,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                 </div>
 
                 <div className="mt-8 p-4 rounded-xl bg-destructive/10 border border-destructive/20">
-                  <p className="font-body text-sm text-foreground/80 font-bold">⚠️ {c.importNotice}</p>
+                  <p className="font-body text-sm text-foreground font-bold">⚠️ {c.importNotice}</p>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-4">
@@ -381,7 +419,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                     href="https://information.enagic.com/pdf/HOW_TO_MAKE_PAYMENT_FOR_OVERSEAS_EMGUARDE.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body font-bold text-sm text-primary hover:text-primary/80 underline"
+                    className="font-body font-bold text-sm text-accent hover:text-accent/80 underline"
                   >
                     📄 {c.paymentGuide}
                   </a>
@@ -389,7 +427,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                     href="https://information.enagic.com/pdf/Cooling-Off-Period.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body font-bold text-sm text-primary hover:text-primary/80 underline"
+                    className="font-body font-bold text-sm text-accent hover:text-accent/80 underline"
                   >
                     📄 {c.coolingOffLink}
                   </a>
@@ -405,7 +443,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                 <div className="space-y-6 mb-8">
                   {c.commissions.map((com, i) => (
                     <div key={i} className="glass-card rounded-xl p-6">
-                      <h4 className="font-body font-bold text-base text-accent mb-1">{com.type}</h4>
+                      <h4 className="font-body font-black text-base text-accent mb-1">{com.type}</h4>
                       <p className="font-body text-sm text-foreground font-bold mb-3">{com.desc}</p>
                       <p className="font-display font-black text-2xl text-foreground">{com.amount}</p>
                     </div>
