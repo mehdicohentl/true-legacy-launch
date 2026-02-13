@@ -37,34 +37,55 @@ const LanguageSelector = () => {
           Select your language to discover how thousands are building wealth & health — starting from zero.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-5 justify-center">
+        <div className="flex flex-col gap-8 justify-center items-center w-full max-w-2xl mx-auto">
+          {/* USA Section */}
           <motion.button
             onClick={() => navigate("/en")}
-            whileHover={{ scale: 1.04, y: -6 }}
+            whileHover={{ scale: 1.03, y: -6 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400 }}
-            className="group relative px-14 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
+            className="group relative w-full px-10 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
 
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative z-10">
-              <span className="text-6xl mb-4 block flag-hover inline-block">🇺🇸</span>
+            <div className="relative z-10 flex flex-col items-center">
+              <motion.span
+                className="text-7xl mb-4 block"
+                animate={{ rotateY: [0, 360] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 4, ease: "easeInOut" }}
+              >
+                🇺🇸
+              </motion.span>
               <span className="font-display font-bold text-2xl text-foreground block">English</span>
               <span className="text-xs text-muted-foreground font-mono mt-2 block tracking-wider uppercase">United States</span>
             </div>
           </motion.button>
 
+          {/* South America Section */}
           <motion.button
             onClick={() => navigate("/es")}
-            whileHover={{ scale: 1.04, y: -6 }}
+            whileHover={{ scale: 1.03, y: -6 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400 }}
-            className="group relative px-14 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
+            className="group relative w-full px-10 py-8 rounded-2xl glass-card hover:bg-secondary/80 transition-all duration-500 overflow-hidden border-gradient">
 
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative z-10">
-              <span className="text-6xl mb-4 block flag-hover inline-block">🇲🇽</span>
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="flex gap-3 mb-4">
+                {["🇨🇴", "🇵🇾", "🇧🇷", "🇲🇽"].map((flag, i) => (
+                  <motion.span
+                    key={flag}
+                    className="text-5xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 + i * 0.15, duration: 0.5, ease: "easeOut" }}
+                    whileHover={{ scale: 1.3, rotate: [0, -10, 10, 0] }}
+                  >
+                    {flag}
+                  </motion.span>
+                ))}
+              </div>
               <span className="font-display font-bold text-2xl text-foreground block">Español</span>
-              <span className="text-xs text-muted-foreground font-mono mt-2 block tracking-wider uppercase">México & Latinoamérica</span>
+              <span className="text-xs text-muted-foreground font-mono mt-2 block tracking-wider uppercase">Colombia · Paraguay · Brasil · México</span>
             </div>
           </motion.button>
         </div>
