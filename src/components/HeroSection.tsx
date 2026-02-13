@@ -56,11 +56,11 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
 
            <h1 className="font-display font-black leading-[0.9] mb-6">
              <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline1}</span>
-             <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground/60">{t[lang].headline2}</span>
+             <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline2}</span>
              <span className="block text-3xl md:text-5xl lg:text-7xl text-gradient-gold">{t[lang].headline3}</span>
            </h1>
 
-          <p className="text-base md:text-xl text-foreground/80 font-body leading-[1.8] max-w-2xl mx-auto mb-8 font-medium">
+          <p className="text-base md:text-xl text-foreground font-body leading-[1.8] max-w-2xl mx-auto mb-8 font-bold">
             {t[lang].sub}
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
           </motion.a>
         </motion.div>
 
-         <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/40">
+         <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/90 font-bold">
            {t[lang].proof}
          </p>
       </div>
