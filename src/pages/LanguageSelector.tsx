@@ -55,15 +55,15 @@ const LanguageSelector = () => {
               variants={pulseRing}
               initial="initial"
               animate="animate"
-              className="absolute w-40 h-40 rounded-full border-2 border-accent/40"
+              className="absolute w-36 h-36 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
             />
             <motion.button
               onClick={() => navigate("/en")}
-              whileHover={{ scale: 1.12, boxShadow: "0 0 40px 8px hsla(43, 50%, 60%, 0.35)" }}
+              whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="group relative w-36 h-36 rounded-full glass-card transition-all duration-500 overflow-hidden border border-accent/20 hover:border-accent/60 flex items-center justify-center backdrop-blur-md"
-              style={{ boxShadow: "0 0 20px 2px hsla(43, 50%, 60%, 0.12)" }}
+              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center backdrop-blur-xl"
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 8%, 0.7)" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
@@ -88,15 +88,15 @@ const LanguageSelector = () => {
               initial="initial"
               animate="animate"
               style={{ animationDelay: "1.25s" }}
-              className="absolute w-40 h-40 rounded-full border-2 border-accent/40"
+              className="absolute w-36 h-36 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
             />
             <motion.button
               onClick={() => navigate("/es")}
-              whileHover={{ scale: 1.12, boxShadow: "0 0 40px 8px hsla(43, 50%, 60%, 0.35)" }}
+              whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="group relative w-36 h-36 rounded-full glass-card transition-all duration-500 overflow-hidden border border-accent/20 hover:border-accent/60 flex items-center justify-center backdrop-blur-md"
-              style={{ boxShadow: "0 0 20px 2px hsla(43, 50%, 60%, 0.12)" }}
+              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center backdrop-blur-xl"
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 8%, 0.7)" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div

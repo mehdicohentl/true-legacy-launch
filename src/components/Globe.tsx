@@ -57,12 +57,14 @@ const RotatingGlobe = () => {
 
 const Globe = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
-      <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
-        <ambientLight intensity={0.3} />
-        <pointLight position={[5, 5, 5]} intensity={0.5} color="#c9a962" />
-        <RotatingGlobe />
-      </Canvas>
+    <div className="absolute inset-0 pointer-events-none flex items-center justify-center" style={{ zIndex: 0 }}>
+      <div className="w-[280px] h-[280px] md:w-[500px] md:h-[500px]">
+        <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
+          <ambientLight intensity={0.3} />
+          <pointLight position={[5, 5, 5]} intensity={0.5} color="#c9a962" />
+          <RotatingGlobe />
+        </Canvas>
+      </div>
     </div>
   );
 };
