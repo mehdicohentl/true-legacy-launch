@@ -59,8 +59,8 @@ const Navbar = ({ lang }: NavbarProps) => {
             className="flag-hover cursor-pointer"
             title={lang === "en" ? "Cambiar a Español" : "Switch to English"}
           >
-            <span className="text-2xl" role="img" aria-label={lang === "en" ? "Spanish" : "English"}>
-              {lang === "en" ? "🇪🇸" : "🇺🇸"}
+            <span className="text-sm font-mono font-bold text-foreground uppercase tracking-wider">
+              {lang === "en" ? "ES" : "EN"}
             </span>
           </a>
 
