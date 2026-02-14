@@ -147,25 +147,18 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           </motion.div>
         </div>
 
-        {/* Free PDF CTA - below videos */}
+        {/* Application process explainer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-16"
+          className="max-w-2xl mx-auto text-center mb-10"
         >
-          <motion.a
-            href="https://mehdicohen1.systeme.io/mehdicohen-00d27fa4"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.04, y: -3 }}
-            whileTap={{ scale: 0.97 }}
-            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
-            style={{ boxShadow: "var(--shadow-emguarde)" }}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            {c.ctaPdf}
-          </motion.a>
+          <p className="text-base md:text-lg font-body font-bold text-foreground leading-relaxed">
+            {lang === "en"
+              ? "EmGuarde is available through an application process — it's a private import from Malaysia. Click below to learn more, get a free info PDF, or book a call with our team to walk you through the purchase."
+              : "EmGuarde está disponible a través de un proceso de solicitud — es una importación privada de Malasia. Haz clic abajo para obtener más información, descargar un PDF gratuito o agendar una llamada con nuestro equipo para guiarte en la compra."}
+          </p>
         </motion.div>
 
         {/* CTA buttons */}
@@ -173,7 +166,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap"
         >
           <motion.a
             href="https://mehdicohen1.systeme.io/mehdicohen-00d27fa4"
@@ -195,6 +188,17 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg>
             {lang === "en" ? "How to Buy EmGuarde" : "Cómo Comprar EmGuarde"}
+          </motion.a>
+          <motion.a
+            href="https://calendly.com/aquacharged/true-legacy-one-on-one"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.04, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground hover:bg-accent/90 transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            {lang === "en" ? "Book an EmGuarde Info Call" : "Agenda una Llamada Informativa"}
           </motion.a>
         </motion.div>
 
