@@ -60,7 +60,7 @@ const Navbar = ({ lang }: NavbarProps) => {
             title={lang === "en" ? "Cambiar a Español" : "Switch to English"}
           >
             <span className="text-sm font-mono font-bold text-foreground uppercase tracking-wider">
-              {lang === "en" ? "ES" : "EN"}
+              {lang === "en" ? "LATAM" : "EN"}
             </span>
           </a>
 
