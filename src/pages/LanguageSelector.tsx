@@ -43,8 +43,8 @@ const LanguageSelector = () => {
           <span className="text-gradient-gold italic font-mono">Change Your Life.</span>
         </h1>
 
-        <p className="text-foreground font-body font-bold text-sm md:text-base mb-6 leading-relaxed max-w-sm mx-auto">
-          Join thousands building <span className="text-accent">The EmGuarde</span> with True Legacy. Get <span className="text-accent">Kangen Water</span>, <span className="text-accent">EmGuarde</span>, and a real path to financial freedom — starting from zero.
+        <p className="text-foreground font-body font-bold text-sm md:text-base mb-6 leading-relaxed max-w-sm mx-auto">Join thousands of people who are building a career with True Legacy. Get Kangen Water, The EmGuarde and a real path to financial freedom — starting from zero.
+          <span className="text-accent">The EmGuarde</span> with True Legacy. Get <span className="text-accent">Kangen Water</span>, <span className="text-accent">EmGuarde</span>, and a real path to financial freedom — starting from zero.
         </p>
 
         <div className="flex gap-8 md:gap-12 justify-center items-center mb-8">
