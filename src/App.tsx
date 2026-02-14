@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LanguageSelector from "./pages/LanguageSelector";
 import LandingPage from "./pages/LandingPage";
+import EmGuardePurchase from "./pages/EmGuardePurchase";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,6 +20,8 @@ const App = () => (
           <Route path="/" element={<LanguageSelector />} />
           <Route path="/en" element={<LandingPage lang="en" />} />
           <Route path="/es" element={<LandingPage lang="es" />} />
+          <Route path="/emguarde" element={<EmGuardePurchase lang="en" />} />
+          <Route path="/es/emguarde" element={<EmGuardePurchase lang="es" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
