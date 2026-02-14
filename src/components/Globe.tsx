@@ -6,50 +6,68 @@ import * as THREE from "three";
 const RotatingGlobe = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   const wireRef = useRef<THREE.Mesh>(null);
+  const outerRef = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
     if (meshRef.current) {
-      meshRef.current.rotation.y = t * 0.15;
-      meshRef.current.rotation.x = Math.sin(t * 0.1) * 0.1;
+      meshRef.current.rotation.y = t * 0.12;
+      meshRef.current.rotation.x = Math.sin(t * 0.08) * 0.15;
     }
     if (wireRef.current) {
-      wireRef.current.rotation.y = t * 0.12;
-      wireRef.current.rotation.x = Math.sin(t * 0.1) * 0.1;
+      wireRef.current.rotation.y = t * 0.1;
+      wireRef.current.rotation.x = Math.sin(t * 0.08) * 0.15;
+    }
+    if (outerRef.current) {
+      outerRef.current.rotation.y = -t * 0.05;
+      outerRef.current.rotation.z = Math.sin(t * 0.06) * 0.1;
     }
   });
 
   return (
     <group>
       {/* Inner glowing sphere */}
-      <Sphere ref={meshRef} args={[1.8, 64, 64]}>
+      <Sphere ref={meshRef} args={[2.2, 64, 64]}>
         <MeshDistortMaterial
-          color="#c9a962"
-          emissive="#c9a962"
-          emissiveIntensity={0.15}
+          color="#00d9ff"
+          emissive="#00b8d4"
+          emissiveIntensity={0.08}
           transparent
-          opacity={0.12}
-          distort={0.2}
-          speed={1.5}
+          opacity={0.08}
+          distort={0.15}
+          speed={1.2}
         />
       </Sphere>
       {/* Wireframe overlay */}
-      <Sphere ref={wireRef} args={[1.82, 32, 32]}>
+      <Sphere ref={wireRef} args={[2.22, 40, 40]}>
         <meshBasicMaterial
-          color="#c9a962"
+          color="#00d9ff"
           wireframe
           transparent
-          opacity={0.2}
+          opacity={0.12}
         />
       </Sphere>
-      {/* Outer glow ring */}
+      {/* Outer shell - faint */}
+      <Sphere ref={outerRef} args={[2.5, 24, 24]}>
+        <meshBasicMaterial
+          color="#4dd0e1"
+          wireframe
+          transparent
+          opacity={0.06}
+        />
+      </Sphere>
+      {/* Orbital rings */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <torusGeometry args={[2.2, 0.02, 16, 100]} />
-        <meshBasicMaterial color="#c9a962" transparent opacity={0.3} />
+        <torusGeometry args={[2.7, 0.015, 16, 120]} />
+        <meshBasicMaterial color="#00d9ff" transparent opacity={0.2} />
       </mesh>
-      <mesh rotation={[Math.PI / 2.5, 0.3, 0]}>
-        <torusGeometry args={[2.4, 0.015, 16, 100]} />
-        <meshBasicMaterial color="#c9a962" transparent opacity={0.15} />
+      <mesh rotation={[Math.PI / 2.3, 0.4, 0]}>
+        <torusGeometry args={[2.85, 0.01, 16, 120]} />
+        <meshBasicMaterial color="#4dd0e1" transparent opacity={0.1} />
+      </mesh>
+      <mesh rotation={[Math.PI / 3, -0.2, 0.3]}>
+        <torusGeometry args={[2.95, 0.008, 16, 120]} />
+        <meshBasicMaterial color="#00d9ff" transparent opacity={0.08} />
       </mesh>
     </group>
   );
@@ -57,11 +75,12 @@ const RotatingGlobe = () => {
 
 const Globe = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none flex items-center justify-center" style={{ zIndex: 0 }}>
-      <div className="w-[280px] h-[280px] md:w-[500px] md:h-[500px]">
-        <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
-          <ambientLight intensity={0.3} />
-          <pointLight position={[5, 5, 5]} intensity={0.5} color="#c9a962" />
+    <div className="absolute inset-0 pointer-events-none flex items-center justify-center" style={{ zIndex: 1 }}>
+      <div className="w-[340px] h-[340px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px]">
+        <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
+          <ambientLight intensity={0.2} />
+          <pointLight position={[5, 5, 5]} intensity={0.4} color="#00d9ff" />
+          <pointLight position={[-5, -3, 3]} intensity={0.2} color="#4dd0e1" />
           <RotatingGlobe />
         </Canvas>
       </div>

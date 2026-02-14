@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import combinedLogo from "@/assets/combined-logo.png";
 import Globe from "@/components/Globe";
-import wavePortrait from "@/assets/wave-portrait.png";
-import waveLandscape from "@/assets/wave-landscape.png";
+import AnimatedWaveBackground from "@/components/AnimatedWaveBackground";
 
 const pulseRing = {
   initial: { scale: 1, opacity: 0.5 },
@@ -19,29 +18,20 @@ const LanguageSelector = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden flex flex-col items-center justify-center px-4">
-      {/* Animated wave background layers */}
-      <div className="wave-layer wave-layer-1" style={{ backgroundImage: `url(${waveLandscape})` }} />
-      <div className="wave-layer wave-layer-2" style={{ backgroundImage: `url(${wavePortrait})`, transform: 'scaleX(-1)' }} />
-      <div className="wave-layer wave-layer-3" style={{ backgroundImage: `url(${waveLandscape})`, transform: 'rotate(180deg)' }} />
-      
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-background/40 z-[1]" />
+      {/* Animated flowing wave background */}
+      <AnimatedWaveBackground />
 
-      {/* 3D Globe background */}
-      <div className="relative z-[2]">
-        <Globe />
-      </div>
+      {/* 3D Globe - centered behind content */}
+      <Globe />
 
-      {/* Ambient light effects */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/8 rounded-full blur-[120px] z-[2]" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/6 rounded-full blur-[120px] z-[2]" />
-
+      {/* Main content - sits on top of globe */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-center w-full max-w-xl" style={{ zIndex: 5 }}>
-
+        className="relative text-center w-full max-w-xl flex flex-col items-center justify-center"
+        style={{ zIndex: 5 }}
+      >
         <div className="flex items-center justify-center mb-6">
           <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-16 md:h-28 w-auto" />
         </div>
@@ -59,6 +49,7 @@ const LanguageSelector = () => {
           I built my legacy from immigrant beginnings. Now, I'm handing you the blueprint. This isn't just water or another gadget—this is the map to your freedom. If you're done waiting and ready to build your legacy, step in now.
         </p>
 
+        {/* Language buttons - visually inside the globe */}
         <div className="flex gap-8 md:gap-12 justify-center items-center mb-8">
           {/* English */}
           <div className="relative flex items-center justify-center">
@@ -66,25 +57,23 @@ const LanguageSelector = () => {
               variants={pulseRing}
               initial="initial"
               animate="animate"
-              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40" />
-
+              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
+            />
             <motion.button
               onClick={() => navigate("/en")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(185, 100%, 50%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(185, 100%, 50%, 0.2)", background: "hsla(205, 55%, 6%, 0.95)" }}>
-
+              style={{ boxShadow: "0 0 25px 4px hsla(185, 100%, 50%, 0.2)", background: "hsla(205, 55%, 6%, 0.85)" }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
                 className="absolute inset-0 rounded-full"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                style={{
-                  background: "conic-gradient(from 0deg, transparent, hsla(185, 100%, 50%, 0.15), transparent)"
-                }} />
-
+                style={{ background: "conic-gradient(from 0deg, transparent, hsla(185, 100%, 50%, 0.15), transparent)" }}
+              />
               <div className="relative z-10 flex flex-col items-center">
                 <span className="font-display font-black text-lg text-foreground group-hover:text-accent transition-colors duration-300">English</span>
                 <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">USA</span>
@@ -98,25 +87,23 @@ const LanguageSelector = () => {
               variants={pulseRing}
               initial="initial"
               animate="animate"
-              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40" />
-
+              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
+            />
             <motion.button
               onClick={() => navigate("/es")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(185, 100%, 50%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(185, 100%, 50%, 0.2)", background: "hsla(205, 55%, 6%, 0.95)" }}>
-
+              style={{ boxShadow: "0 0 25px 4px hsla(185, 100%, 50%, 0.2)", background: "hsla(205, 55%, 6%, 0.85)" }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
                 className="absolute inset-0 rounded-full"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 1 }}
-                style={{
-                  background: "conic-gradient(from 0deg, transparent, hsla(185, 100%, 50%, 0.15), transparent)"
-                }} />
-
+                style={{ background: "conic-gradient(from 0deg, transparent, hsla(185, 100%, 50%, 0.15), transparent)" }}
+              />
               <div className="relative z-10 flex flex-col items-center">
                 <span className="font-display font-black text-lg text-foreground group-hover:text-accent transition-colors duration-300">Español</span>
                 <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">LATAM</span>
@@ -124,13 +111,9 @@ const LanguageSelector = () => {
             </motion.button>
           </div>
         </div>
-
-        
-
-
       </motion.div>
-    </div>);
-
+    </div>
+  );
 };
 
 export default LanguageSelector;
