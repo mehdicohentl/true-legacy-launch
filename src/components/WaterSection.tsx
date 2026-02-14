@@ -12,8 +12,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
     en: {
       micro: "The Foundation of Everything",
       headline: "This Isn't Just Water.",
-      headline2: "It's Kangen Water — The Healing Water.",
-      desc: "Your body is 70% water. What if the water you've been drinking your entire life has been working against you? Kangen Water is medical-grade, hydrogen-rich, ionized water used by over 6,500 doctors in Japan. It's not a trend — it's 50 years of proven science.",
+      headline2: "It's Kangen Water — The Power of Hydrogen.",
+      desc: "Your body is 70% water. What if the water you've been drinking has been working against you? Kangen Water is the ultimate biohacking tool — medical-grade, hydrogen-rich, ionized water trusted by over 6,500 doctors in Japan. Elite biohackers know: optimal hydration at the cellular level is the foundation of peak performance. This isn't a trend — it's 50 years of proven science.",
       benefits: [
         { title: "Antioxidant Power", desc: "More powerful than vitamin C — neutralizes free radicals on contact" },
         { title: "Micro-Clustered Hydration", desc: "Penetrates cells 6x faster than regular water" },
@@ -33,8 +33,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
     es: {
       micro: "La Base de Todo",
       headline: "Esto No Es Solo Agua.",
-      headline2: "Es Agua Kangen — El Agua Sanadora.",
-      desc: "Tu cuerpo es 70% agua. ¿Qué pasaría si el agua que has estado tomando toda tu vida ha estado trabajando en tu contra? El Agua Kangen es agua ionizada, rica en hidrógeno, de grado médico, usada por más de 6,500 médicos en Japón. No es una moda — son 50 años de ciencia comprobada.",
+      headline2: "Es Agua Kangen — El Poder del Hidrógeno.",
+      desc: "Tu cuerpo es 70% agua. ¿Qué pasaría si el agua que has estado tomando ha estado trabajando en tu contra? El Agua Kangen es la herramienta definitiva de biohacking — agua ionizada, rica en hidrógeno, de grado médico, en la que confían más de 6,500 médicos en Japón. Los biohackers de élite lo saben: la hidratación óptima a nivel celular es la base del máximo rendimiento. No es una moda — son 50 años de ciencia comprobada.",
       benefits: [
         { title: "Poder Antioxidante", desc: "Más poderoso que la vitamina C — neutraliza radicales libres al contacto" },
         { title: "Hidratación Micro-Agrupada", desc: "Penetra las células 6x más rápido que el agua regular" },
