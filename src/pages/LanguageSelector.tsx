@@ -8,8 +8,8 @@ const pulseRing = {
   animate: {
     scale: [1, 1.3, 1],
     opacity: [0.5, 0, 0.5],
-    transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" as const },
-  },
+    transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut" as const }
+  }
 };
 
 const LanguageSelector = () => {
@@ -28,8 +28,8 @@ const LanguageSelector = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-center w-full max-w-xl"
-      >
+        className="relative z-10 text-center w-full max-w-xl">
+
         <div className="flex items-center justify-center mb-6">
           <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-16 md:h-28 w-auto" />
         </div>
@@ -44,7 +44,7 @@ const LanguageSelector = () => {
         </h1>
 
         <p className="text-foreground font-body font-bold text-sm md:text-base mb-6 leading-relaxed max-w-sm mx-auto">
-          Join thousands building <span className="text-accent">wealth & health</span> with True Legacy. Get <span className="text-accent">Kangen Water</span>, <span className="text-accent">EmGuarde</span>, and a real path to financial freedom — starting from zero.
+          Join thousands building <span className="text-accent">The EmGuarde</span> with True Legacy. Get <span className="text-accent">Kangen Water</span>, <span className="text-accent">EmGuarde</span>, and a real path to financial freedom — starting from zero.
         </p>
 
         <div className="flex gap-8 md:gap-12 justify-center items-center mb-8">
@@ -54,25 +54,25 @@ const LanguageSelector = () => {
               variants={pulseRing}
               initial="initial"
               animate="animate"
-              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
-            />
+              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40" />
+
             <motion.button
               onClick={() => navigate("/en")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}
-            >
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}>
+
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
                 className="absolute inset-0 rounded-full"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 style={{
-                  background: "conic-gradient(from 0deg, transparent, hsla(43, 50%, 60%, 0.15), transparent)",
-                }}
-              />
+                  background: "conic-gradient(from 0deg, transparent, hsla(43, 50%, 60%, 0.15), transparent)"
+                }} />
+
               <div className="relative z-10 flex flex-col items-center">
                 <span className="font-display font-black text-lg text-foreground group-hover:text-accent transition-colors duration-300">English</span>
                 <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">USA</span>
@@ -86,25 +86,25 @@ const LanguageSelector = () => {
               variants={pulseRing}
               initial="initial"
               animate="animate"
-              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40"
-            />
+              className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40" />
+
             <motion.button
               onClick={() => navigate("/es")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}
-            >
+              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}>
+
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
                 className="absolute inset-0 rounded-full"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 1 }}
                 style={{
-                  background: "conic-gradient(from 0deg, transparent, hsla(43, 50%, 60%, 0.15), transparent)",
-                }}
-              />
+                  background: "conic-gradient(from 0deg, transparent, hsla(43, 50%, 60%, 0.15), transparent)"
+                }} />
+
               <div className="relative z-10 flex flex-col items-center">
                 <span className="font-display font-black text-lg text-foreground group-hover:text-accent transition-colors duration-300">Español</span>
                 <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">LATAM</span>
@@ -117,8 +117,8 @@ const LanguageSelector = () => {
           Kangen Water · EmGuarde · Financial Freedom
         </p>
       </motion.div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default LanguageSelector;
