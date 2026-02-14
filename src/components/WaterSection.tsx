@@ -159,7 +159,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 {t[lang].buyGuideNote}
               </p>
 
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <motion.a
                   href={WATER_LINK}
                   target="_blank"
@@ -170,6 +170,17 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                   {t[lang].cta}
+                </motion.a>
+                <motion.a
+                  href="https://mehdicohen1.systeme.io/mehdicohen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                  {lang === "en" ? "Get Free Kangen Water PDF" : "Obtener PDF Gratis del Agua Kangen"}
                 </motion.a>
               </div>
             </div>
