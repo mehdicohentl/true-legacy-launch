@@ -36,8 +36,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
         { label: "SP Status", value: "3 Months" },
         { label: "Delivery", value: "10–14 Days" },
       ],
-      ctaBuy: "Purchase EmGuarde (USA)",
-      ctaBuyOther: "Purchase EmGuarde (Canada/Mexico)",
+      ctaPdf: "Get a Free EmGuarde PDF",
       ctaVideo: "Watch EmGuarde In Action →",
       purchaseFlowTitle: "How to Purchase EmGuarde",
       steps: [
@@ -125,8 +124,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
         { label: "Estado SP", value: "3 Meses" },
         { label: "Entrega", value: "10–14 Días" },
       ],
-      ctaBuy: "Comprar EmGuarde (USA)",
-      ctaBuyOther: "Comprar EmGuarde (Canadá/México)",
+      ctaPdf: "Obtén un PDF Gratis del EmGuarde",
       ctaVideo: "Ver EmGuarde en Acción →",
       purchaseFlowTitle: "Cómo Comprar EmGuarde",
       steps: [
@@ -341,15 +339,15 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           </div>
         </motion.div>
 
-        {/* Buy CTAs */}
+        {/* Free PDF CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          className="flex justify-center mb-16"
         >
           <motion.a
-            href="https://shop.enagic-my.com/product/emguarde-us-only/"
+            href="https://mehdicohen1.systeme.io/mehdicohen-00d27fa4"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
@@ -357,18 +355,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
             style={{ boxShadow: "var(--shadow-emguarde)" }}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-            {c.ctaBuy}
-          </motion.a>
-
-          <motion.a
-            href="https://shop.enagic-my.com/product/emguarde/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            className="inline-flex items-center justify-center gap-3 px-8 py-5 md:px-10 md:py-6 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-emguarde/40 text-emguarde hover:border-emguarde hover:bg-emguarde/10 transition-all duration-300"
-          >
-            {c.ctaBuyOther}
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            {c.ctaPdf}
           </motion.a>
         </motion.div>
 
