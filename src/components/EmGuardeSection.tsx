@@ -76,8 +76,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
       importNotice: "Import fees, GST, or VAT may apply once the shipment reaches your country. Any additional customs charges must be paid by the recipient.",
       commissionTitle: "Commission Structure",
       commissions: [
-        { type: "Kangen Distributors", desc: "(those who have purchased any core products — Kangen Machines, Anespa, Ukon DD or Ukon Sigma)", amount: "MYR 392 / per point" },
-        { type: "EmGuarde-Only Distributors", desc: "(new distributors who joined by purchasing emGuarde, no core products)", amount: "MYR 305 / per point" },
+        { type: "Kangen Distributors", desc: "(those who have purchased any core products — Kangen Machines, Anespa, Ukon DD or Ukon Sigma)", amount: "$80 USD / per point" },
+        { type: "EmGuarde-Only Distributors", desc: "(new distributors who joined by purchasing emGuarde, no core products)", amount: "$65 USD / per point" },
       ],
       commissionNotes: [
         "Commissions may vary slightly based on exchange rates.",
@@ -165,8 +165,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
       importNotice: "Pueden aplicar tarifas de importación, GST o IVA una vez que el envío llegue a tu país. Cualquier cargo aduanero adicional debe ser pagado por el destinatario.",
       commissionTitle: "Estructura de Comisiones",
       commissions: [
-        { type: "Distribuidores Kangen", desc: "(quienes han comprado productos principales — Máquinas Kangen, Anespa, Ukon DD o Ukon Sigma)", amount: "MYR 392 / por punto" },
-        { type: "Distribuidores Solo EmGuarde", desc: "(nuevos distribuidores que se unieron comprando emGuarde, sin productos principales)", amount: "MYR 305 / por punto" },
+        { type: "Distribuidores Kangen", desc: "(quienes han comprado productos principales — Máquinas Kangen, Anespa, Ukon DD o Ukon Sigma)", amount: "$80 USD / por punto" },
+        { type: "Distribuidores Solo EmGuarde", desc: "(nuevos distribuidores que se unieron comprando emGuarde, sin productos principales)", amount: "$65 USD / por punto" },
       ],
       commissionNotes: [
         "Las comisiones pueden variar ligeramente según los tipos de cambio.",
