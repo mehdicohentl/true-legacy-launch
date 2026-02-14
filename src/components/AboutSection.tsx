@@ -3,6 +3,7 @@ import mehdiPortrait from "@/assets/mehdi-portrait.jpg";
 import mehdiAwards from "@/assets/mehdi-awards.jpg";
 import mehdiEnagic from "@/assets/mehdi-enagic.jpg";
 import mehdiLifestyle from "@/assets/mehdi-lifestyle.jpg";
+import mehdiHeadshot from "@/assets/mehdi-headshot.png";
 interface AboutSectionProps {
   lang: "en" | "es";
 }
@@ -63,9 +64,12 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
           className="max-w-3xl mx-auto text-center text-base md:text-2xl font-display italic text-foreground leading-relaxed mb-16 md:mb-20 px-4"
         >
           {t[lang].quote}
-          <span className="block mt-4 font-mono text-xs not-italic uppercase tracking-[0.3em] text-accent">
-            — Mehdi Cohen
-          </span>
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <img src={mehdiHeadshot} alt="Mehdi Cohen" className="w-12 h-12 rounded-full object-cover object-top border-2 border-accent/40" />
+            <span className="font-mono text-xs not-italic uppercase tracking-[0.3em] text-accent font-bold">
+              — Mehdi Cohen
+            </span>
+          </div>
         </motion.blockquote>
 
         {/* Two column: text left, video right */}
