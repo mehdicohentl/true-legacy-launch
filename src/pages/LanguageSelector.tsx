@@ -34,17 +34,17 @@ const LanguageSelector = () => {
           <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-16 md:h-28 w-auto" />
         </div>
 
-        <p className="text-accent font-mono font-bold text-xs uppercase tracking-[0.4em] mb-3">
-          Your future starts here
-        </p>
-
-        <h1 className="text-3xl md:text-5xl font-display font-black mb-3 leading-[1.05]">
+        <h1 className="text-3xl md:text-5xl font-display font-black mb-2 leading-[1.05]">
           Build Your Legacy.<br />
-          <span className="text-gradient-gold italic font-mono">Change Your Life.</span>
+          <span className="text-gradient-gold">Own Your Freedom.</span>
         </h1>
 
-        <p className="text-foreground font-body font-bold text-sm md:text-base mb-6 leading-relaxed max-w-sm mx-auto">Join thousands of people who are building a career with True Legacy. Get Kangen Water, The EmGuarde and a real path to financial freedom — starting from zero.
-          <span className="text-accent">The EmGuarde</span> with True Legacy. Get <span className="text-accent">Kangen Water</span>, <span className="text-accent">EmGuarde</span>, and a real path to financial freedom — starting from zero.
+        <p className="text-accent font-mono font-bold text-xs uppercase tracking-[0.3em] mb-5">
+          This Is Where Your Future Begins
+        </p>
+
+        <p className="text-foreground/90 font-body font-bold text-sm md:text-base mb-8 leading-relaxed max-w-md mx-auto">
+          I built my legacy from immigrant beginnings. Now, I'm handing you the blueprint. This isn't just water or another gadget—this is the map to your freedom. If you're done waiting and ready to build your legacy, step in now.
         </p>
 
         <div className="flex gap-8 md:gap-12 justify-center items-center mb-8">
