@@ -18,83 +18,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
       privateImport: "Please note that this is a private import product from Malaysia.",
       contact: "For more information, contact emgsales@enagic-my.com or WhatsApp: +60133096234",
       badge: "Launching in USA, Canada & Mexico",
-      salesDate: "Sales Start Date: November 1, 2024",
-      price: "$1,520 USD",
-      priceLocal: "(MYR 6,620)",
-      shippingTitle: "Shipping Fees",
-      shippingItems: [
-        { country: "USA", fee: "$160 USD", method: "DHL" },
-        { country: "Canada", fee: "$160 USD", method: "DHL" },
-        { country: "Mexico", fee: "$160 USD", method: "FedEx" },
-      ],
-      shippingNote: "Shipping fees are subject to change based on airfare fluctuations and will be reviewed and updated monthly.",
-      quickFacts: [
-        { label: "Contents", value: "1 Unit" },
-        { label: "Payment", value: "Visa / MC" },
-        { label: "Warranty", value: "1 Year" },
-        { label: "Limit", value: "5 Units" },
-        { label: "SP Status", value: "3 Months" },
-        { label: "Delivery", value: "10–14 Days" },
-      ],
       ctaPdf: "Get a Free EmGuarde PDF",
-      ctaVideo: "Watch EmGuarde In Action →",
-      purchaseFlowTitle: "How to Purchase EmGuarde",
-      steps: [
-        {
-          num: "1",
-          title: "Make Payment",
-          desc: "Pay by credit card (single payment). For US orders visit: shop.enagic-my.com/product/emguarde-us-only/ — For Canada/Mexico orders visit: shop.enagic-my.com/product/emguarde/ — You may select your preferred currency: USD or MYR. You can also add accessories (pouch and USB cable) to be shipped with your order.",
-        },
-        {
-          num: "2",
-          title: "Submit Your Application",
-          desc: "Take a screenshot of your payment confirmation email. Attach it along with your completed emGuarde Product Application Form. Email both documents to your GOC:",
-          contacts: [
-            "USA: goc.usa@enagic.com",
-            "Canada: goc.can@enagic.com",
-            "Mexico: goc.mx@enagic.com",
-          ],
-          extra: "CC: emgsales@enagic-my.com",
-        },
-        {
-          num: "3",
-          title: "Order Confirmation",
-          desc: "The GOC will register your order and the Malaysia Office will process it. Once payment is verified, shipment will be scheduled and you will receive a tracking number.",
-        },
-        {
-          num: "4",
-          title: "Shipping",
-          desc: "Malaysia inventory staff will ship the emGuarde. The warranty period begins from the invoice date.",
-        },
-        {
-          num: "5",
-          title: "Receive Your Product",
-          desc: "Delivery takes approximately 10–14 working days to USA, Canada and Mexico.",
-        },
-      ],
-      importNotice: "Import fees, GST, or VAT may apply once the shipment reaches your country. Any additional customs charges must be paid by the recipient.",
-      commissionTitle: "Commission Structure",
-      commissions: [
-        { type: "Kangen Distributors", desc: "(those who have purchased any core products — Kangen Machines, Anespa, Ukon DD or Ukon Sigma)", amount: "$80 USD / per point" },
-        { type: "EmGuarde-Only Distributors", desc: "(new distributors who joined by purchasing emGuarde, no core products)", amount: "$65 USD / per point" },
-      ],
-      commissionNotes: [
-        "Commissions may vary slightly based on exchange rates.",
-        "A 10% withholding tax will be applied to commissions paid to non-resident distributors (USA, Canada, Mexico), in accordance with Malaysian tax regulations.",
-        "Distributors within the 8-point system can earn commission even if they have not purchased emGuarde.",
-      ],
-      registrationTitle: "Registration & Policies",
-      registrationItems: [
-        "ID# will be issued for each emGuarde purchase. Only one (1) emGuarde distributor account is allowed — subsequent purchases will be User accounts.",
-        "Enroller: Not allowed.",
-        "Count for 1A to 6A Achievements: 1 unit",
-        "Title Incentives, Bonuses, Awards: 0.5 unit",
-        "Return Policy: Refer to Enagic® Malaysia Sdn Bhd's website — www.enagic-my.com",
-      ],
-      coolingOff: "Option to waive the cooling-off period: You may waive the cooling-off period (shipment proceeds immediately) or keep your right to cancel during the cooling-off period (shipment proceeds after 10 working days).",
-      coolingOffLink: "Submit Cooling Off Period Form",
-      paymentGuide: "Payment guide",
-      distributorId: "Distributor ID# 37000004829",
     },
     es: {
       micro: "Ahora Disponible en USA, Canadá y México",
@@ -106,83 +30,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
       privateImport: "Ten en cuenta que este es un producto de importación privada desde Malasia.",
       contact: "Para más información, contacta emgsales@enagic-my.com o WhatsApp: +60133096234",
       badge: "Lanzamiento en USA, Canadá y México",
-      salesDate: "Fecha de Inicio de Ventas: 1 de Noviembre, 2024",
-      price: "$1,520 USD",
-      priceLocal: "(MYR 6,620)",
-      shippingTitle: "Costos de Envío",
-      shippingItems: [
-        { country: "USA", fee: "$160 USD", method: "DHL" },
-        { country: "Canadá", fee: "$160 USD", method: "DHL" },
-        { country: "México", fee: "$160 USD", method: "FedEx" },
-      ],
-      shippingNote: "Los costos de envío están sujetos a cambios según las fluctuaciones del flete aéreo y se revisarán y actualizarán mensualmente.",
-      quickFacts: [
-        { label: "Contenido", value: "1 Unidad" },
-        { label: "Pago", value: "Visa / MC" },
-        { label: "Garantía", value: "1 Año" },
-        { label: "Límite", value: "5 Unidades" },
-        { label: "Estado SP", value: "3 Meses" },
-        { label: "Entrega", value: "10–14 Días" },
-      ],
       ctaPdf: "Obtén un PDF Gratis del EmGuarde",
-      ctaVideo: "Ver EmGuarde en Acción →",
-      purchaseFlowTitle: "Cómo Comprar EmGuarde",
-      steps: [
-        {
-          num: "1",
-          title: "Realizar el Pago",
-          desc: "Paga con tarjeta de crédito (pago único). Para pedidos en USA visita: shop.enagic-my.com/product/emguarde-us-only/ — Para pedidos de Canadá/México visita: shop.enagic-my.com/product/emguarde/ — Puedes seleccionar tu moneda preferida: USD o MYR. También puedes agregar accesorios (funda y cable USB) para enviar junto con tu pedido.",
-        },
-        {
-          num: "2",
-          title: "Enviar Tu Solicitud",
-          desc: "Toma una captura de pantalla de tu confirmación de pago por email. Adjúntala junto con tu Formulario de Solicitud de Producto emGuarde. Envía ambos documentos a tu GOC:",
-          contacts: [
-            "USA: goc.usa@enagic.com",
-            "Canadá: goc.can@enagic.com",
-            "México: goc.mx@enagic.com",
-          ],
-          extra: "CC: emgsales@enagic-my.com",
-        },
-        {
-          num: "3",
-          title: "Confirmación de Pedido",
-          desc: "El GOC registrará tu pedido y la oficina de Malasia lo procesará. Una vez verificado el pago, se programará el envío y recibirás un número de seguimiento.",
-        },
-        {
-          num: "4",
-          title: "Envío",
-          desc: "El personal de inventario de Malasia enviará el emGuarde. El período de garantía comienza desde la fecha de la factura.",
-        },
-        {
-          num: "5",
-          title: "Recibe Tu Producto",
-          desc: "La entrega toma aproximadamente 10–14 días hábiles a USA, Canadá y México.",
-        },
-      ],
-      importNotice: "Pueden aplicar tarifas de importación, GST o IVA una vez que el envío llegue a tu país. Cualquier cargo aduanero adicional debe ser pagado por el destinatario.",
-      commissionTitle: "Estructura de Comisiones",
-      commissions: [
-        { type: "Distribuidores Kangen", desc: "(quienes han comprado productos principales — Máquinas Kangen, Anespa, Ukon DD o Ukon Sigma)", amount: "$80 USD / por punto" },
-        { type: "Distribuidores Solo EmGuarde", desc: "(nuevos distribuidores que se unieron comprando emGuarde, sin productos principales)", amount: "$65 USD / por punto" },
-      ],
-      commissionNotes: [
-        "Las comisiones pueden variar ligeramente según los tipos de cambio.",
-        "Se aplicará un impuesto de retención del 10% a las comisiones pagadas a distribuidores no residentes (USA, Canadá, México), de acuerdo con las regulaciones fiscales de Malasia.",
-        "Los distribuidores dentro del sistema de 8 puntos pueden ganar comisión incluso si no han comprado emGuarde.",
-      ],
-      registrationTitle: "Registro y Políticas",
-      registrationItems: [
-        "Se emitirá un ID# por cada compra de emGuarde. Solo se permite una (1) cuenta de distribuidor emGuarde — las compras posteriores serán cuentas de Usuario.",
-        "Patrocinador: No permitido.",
-        "Cuenta para Logros 1A a 6A: 1 unidad",
-        "Incentivos de Título, Bonos, Premios: 0.5 unidad",
-        "Política de Devolución: Consulta el sitio web de Enagic® Malaysia Sdn Bhd — www.enagic-my.com",
-      ],
-      coolingOff: "Opción de renunciar al período de enfriamiento: Puedes renunciar al período de enfriamiento (el envío procede inmediatamente) o mantener tu derecho a cancelar durante el período de enfriamiento (el envío procede después de 10 días hábiles).",
-      coolingOffLink: "Enviar Formulario de Período de Enfriamiento",
-      paymentGuide: "Guía de pago",
-      distributorId: "ID de Distribuidor# 37000004829",
     },
   };
 
@@ -320,58 +168,25 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           </motion.a>
         </motion.div>
 
-        {/* Pricing + Quick Facts */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <div className="relative rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-emguarde/15 to-emguarde/10" />
-            <div className="relative m-px rounded-2xl bg-secondary p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-10 items-center">
-                {/* Price */}
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-emguarde font-bold mb-3">{c.salesDate}</p>
-                  <div className="flex items-end gap-3 mb-2">
-                    <span className="text-5xl md:text-6xl font-display font-black text-foreground">{c.price}</span>
-                  </div>
-                  <p className="text-sm text-foreground font-body font-bold mb-6">{c.priceLocal}</p>
-
-                  <h4 className="font-body font-black text-base text-foreground mb-3">{c.shippingTitle}</h4>
-                  <div className="space-y-2 mb-4">
-                    {c.shippingItems.map((s, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <span className="font-body font-bold text-sm text-foreground">{s.country}:</span>
-                        <span className="font-body text-sm text-foreground font-bold">{s.fee} ({s.method})</span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-foreground font-body italic font-bold">{c.shippingNote}</p>
-                </div>
-
-                {/* Quick facts */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {c.quickFacts.map((f, i) => (
-                    <div key={i} className="glass-card rounded-lg p-4 text-center">
-                      <span className="block font-body font-black text-base text-foreground">{f.value}</span>
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-emguarde mt-1 font-bold">{f.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* How to Buy Button → links to /emguarde page */}
+        {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
+          <motion.a
+            href="https://mehdicohen1.systeme.io/mehdicohen-00d27fa4"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.04, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
+            style={{ boxShadow: "var(--shadow-emguarde)" }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            {c.ctaPdf}
+          </motion.a>
           <motion.a
             href={lang === "en" ? "/emguarde" : "/es/emguarde"}
             whileHover={{ scale: 1.04, y: -3 }}
