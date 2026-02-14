@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import combinedLogo from "@/assets/combined-logo.png";
 import Globe from "@/components/Globe";
+import wavePortrait from "@/assets/wave-portrait.png";
+import waveLandscape from "@/assets/wave-landscape.png";
 
 const pulseRing = {
   initial: { scale: 1, opacity: 0.5 },
@@ -16,19 +18,29 @@ const LanguageSelector = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-hero-gradient noise-overlay flex flex-col items-center justify-center relative overflow-hidden px-4">
+    <div className="min-h-screen bg-background relative overflow-hidden flex flex-col items-center justify-center px-4">
+      {/* Animated wave background layers */}
+      <div className="wave-layer wave-layer-1" style={{ backgroundImage: `url(${waveLandscape})` }} />
+      <div className="wave-layer wave-layer-2" style={{ backgroundImage: `url(${wavePortrait})`, transform: 'scaleX(-1)' }} />
+      <div className="wave-layer wave-layer-3" style={{ backgroundImage: `url(${waveLandscape})`, transform: 'rotate(180deg)' }} />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-background/40 z-[1]" />
+
       {/* 3D Globe background */}
-      <Globe />
+      <div className="relative z-[2]">
+        <Globe />
+      </div>
 
       {/* Ambient light effects */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/8 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/6 rounded-full blur-[120px]" />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/8 rounded-full blur-[120px] z-[2]" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/6 rounded-full blur-[120px] z-[2]" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-center w-full max-w-xl">
+        className="relative z-10 text-center w-full max-w-xl" style={{ zIndex: 5 }}>
 
         <div className="flex items-center justify-center mb-6">
           <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-16 md:h-28 w-auto" />
