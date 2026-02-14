@@ -58,11 +58,11 @@ const LanguageSelector = () => {
 
             <motion.button
               onClick={() => navigate("/en")}
-              whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
+              whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(185, 100%, 50%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}>
+              style={{ boxShadow: "0 0 25px 4px hsla(185, 100%, 50%, 0.2)", background: "hsla(205, 55%, 6%, 0.95)" }}>
 
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
@@ -70,7 +70,7 @@ const LanguageSelector = () => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 style={{
-                  background: "conic-gradient(from 0deg, transparent, hsla(43, 50%, 60%, 0.15), transparent)"
+                  background: "conic-gradient(from 0deg, transparent, hsla(185, 100%, 50%, 0.15), transparent)"
                 }} />
 
               <div className="relative z-10 flex flex-col items-center">
@@ -90,11 +90,11 @@ const LanguageSelector = () => {
 
             <motion.button
               onClick={() => navigate("/es")}
-              whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(43, 50%, 60%, 0.4)" }}
+              whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(185, 100%, 50%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="group relative w-28 h-28 md:w-36 md:h-36 rounded-full transition-all duration-500 overflow-hidden border-2 border-accent/40 hover:border-accent flex items-center justify-center"
-              style={{ boxShadow: "0 0 25px 4px hsla(43, 50%, 60%, 0.2)", background: "hsla(0, 0%, 5%, 0.95)" }}>
+              style={{ boxShadow: "0 0 25px 4px hsla(185, 100%, 50%, 0.2)", background: "hsla(205, 55%, 6%, 0.95)" }}>
 
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               <motion.div
@@ -102,7 +102,7 @@ const LanguageSelector = () => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 1 }}
                 style={{
-                  background: "conic-gradient(from 0deg, transparent, hsla(43, 50%, 60%, 0.15), transparent)"
+                  background: "conic-gradient(from 0deg, transparent, hsla(185, 100%, 50%, 0.15), transparent)"
                 }} />
 
               <div className="relative z-10 flex flex-col items-center">
