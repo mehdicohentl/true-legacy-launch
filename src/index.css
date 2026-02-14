@@ -186,48 +186,56 @@
     z-index: 0;
   }
 
-  @keyframes waveFlow1 {
-    0% { transform: translateX(0) translateY(0) scale(1.1); opacity: 0.4; }
-    50% { transform: translateX(30px) translateY(-15px) scale(1.15); opacity: 0.6; }
-    100% { transform: translateX(0) translateY(0) scale(1.1); opacity: 0.4; }
-  }
-
-  @keyframes waveFlow2 {
-    0% { transform: translateX(0) translateY(0) scale(1.15); opacity: 0.3; }
-    50% { transform: translateX(-40px) translateY(20px) scale(1.2); opacity: 0.5; }
-    100% { transform: translateX(0) translateY(0) scale(1.15); opacity: 0.3; }
-  }
-
-  @keyframes waveFlow3 {
-    0% { transform: translateX(0) translateY(0) scale(1.2); opacity: 0.2; }
-    50% { transform: translateX(50px) translateY(-10px) scale(1.25); opacity: 0.35; }
-    100% { transform: translateX(0) translateY(0) scale(1.2); opacity: 0.2; }
-  }
-
-  .wave-layer {
-    position: absolute;
-    inset: -10%;
-    background-size: cover;
-    background-position: center;
+  /* Flowing SVG wave animations */
+  .wave-svg-1 {
+    animation: svgWaveFlow1 20s ease-in-out infinite;
     will-change: transform;
-    pointer-events: none;
+  }
+  .wave-svg-2 {
+    animation: svgWaveFlow2 15s ease-in-out infinite;
+    will-change: transform;
+  }
+  .wave-svg-3 {
+    animation: svgWaveFlow3 12s ease-in-out infinite;
+    will-change: transform;
+  }
+  .flowing-line {
+    animation: flowingLine 10s ease-in-out infinite;
+    will-change: transform;
+  }
+  .flowing-line-2 {
+    animation: flowingLine2 14s ease-in-out infinite;
+    will-change: transform;
   }
 
-  .wave-layer-1 {
-    animation: waveFlow1 20s ease-in-out infinite;
+  @keyframes svgWaveFlow1 {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-25%); }
   }
-
-  .wave-layer-2 {
-    animation: waveFlow2 15s ease-in-out infinite;
-    filter: blur(2px);
+  @keyframes svgWaveFlow2 {
+    0%, 100% { transform: translateX(-10%); }
+    50% { transform: translateX(-35%); }
   }
-
-  .wave-layer-3 {
-    animation: waveFlow3 10s ease-in-out infinite;
-    filter: blur(4px);
+  @keyframes svgWaveFlow3 {
+    0%, 100% { transform: translateX(-5%); }
+    50% { transform: translateX(-30%); }
+  }
+  @keyframes flowingLine {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-15%) translateY(-8px); }
+    50% { transform: translateX(-30%) translateY(5px); }
+    75% { transform: translateX(-15%) translateY(-3px); }
+  }
+  @keyframes flowingLine2 {
+    0%, 100% { transform: translateX(-5%) translateY(0); }
+    33% { transform: translateX(-20%) translateY(10px); }
+    66% { transform: translateX(-35%) translateY(-5px); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .wave-layer { animation: none !important; }
+    .wave-svg-1, .wave-svg-2, .wave-svg-3,
+    .flowing-line, .flowing-line-2 {
+      animation: none !important;
+    }
   }
 }
