@@ -84,7 +84,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
             </p>
 
             <motion.a
-              href="https://www.youtube.com/watch?v=86KYc3Gl3vw"
+              href={lang === "es" ? "https://youtu.be/ANey4YDlVrw?si=lKzAIE6AqBxQ4vQ6" : "https://www.youtube.com/watch?v=86KYc3Gl3vw"}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ x: 8 }}
@@ -110,7 +110,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
             <div className="absolute -inset-3 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-xl" />
             <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 shadow-deep">
               <iframe
-                src="https://www.youtube.com/embed/86KYc3Gl3vw"
+                src={lang === "es" ? "https://www.youtube.com/embed/ANey4YDlVrw" : "https://www.youtube.com/embed/86KYc3Gl3vw"}
                 title="Mehdi Cohen Story"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
