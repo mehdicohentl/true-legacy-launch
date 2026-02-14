@@ -113,9 +113,9 @@ const LanguageSelector = () => {
           </div>
         </div>
 
-        <p className="text-foreground/80 font-mono text-[10px] uppercase tracking-[0.3em] font-bold">
-          Kangen Water · EmGuarde · Financial Freedom
-        </p>
+        
+
+
       </motion.div>
     </div>);
 
