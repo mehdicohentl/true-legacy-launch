@@ -56,6 +56,10 @@ export default {
           DEFAULT: "hsl(var(--gold))",
           foreground: "hsl(var(--gold-foreground))",
         },
+        emguarde: {
+          DEFAULT: "hsl(var(--emguarde))",
+          foreground: "hsl(var(--emguarde-foreground))",
+        },
         navy: {
           DEFAULT: "hsl(var(--navy))",
           light: "hsl(var(--navy-light))",

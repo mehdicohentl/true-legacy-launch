@@ -192,8 +192,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
 
   return (
     <section id="emguarde" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
-      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-accent/4 rounded-full blur-[120px]" />
+      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-emguarde/5 rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-emguarde/4 rounded-full blur-[120px]" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -201,7 +201,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-6 text-center"
+          className="font-mono text-xs uppercase tracking-[0.3em] text-emguarde font-bold mb-6 text-center"
         >
           {c.micro}
         </motion.p>
@@ -214,7 +214,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
         >
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92]">
             <span className="text-foreground">{c.headline}</span><br />
-            <span className="text-gradient-primary italic">{c.headline2}</span>
+            <span className="text-gradient-emguarde italic">{c.headline2}</span>
           </h2>
         </motion.div>
 
@@ -225,8 +225,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           viewport={{ once: true }}
           className="flex justify-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card font-mono text-xs uppercase tracking-[0.2em] text-accent border border-accent/20 font-bold">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card font-mono text-xs uppercase tracking-[0.2em] text-emguarde border border-emguarde/20 font-bold">
+            <span className="w-2 h-2 rounded-full bg-emguarde animate-pulse" />
             {c.badge}
           </span>
         </motion.div>
@@ -247,7 +247,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
               {c.history}
             </p>
-            <p className="text-base font-body font-bold text-accent mb-4">
+            <p className="text-base font-body font-bold text-emguarde mb-4">
               ⚠️ {c.privateImport}
             </p>
             <p className="text-sm text-foreground font-body font-bold">
@@ -263,7 +263,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           >
             {/* EmGuarde Device Image */}
             <div className="relative flex items-center justify-center py-8">
-              <div className="absolute -inset-3 bg-primary/8 rounded-2xl blur-2xl" />
+              <div className="absolute -inset-3 bg-emguarde/8 rounded-2xl blur-2xl" />
               <img
                 src={emguardeDevice}
                 alt="EmGuarde Device - EMF Protection"
@@ -273,8 +273,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
 
             {/* Videos */}
             <div className="relative">
-              <div className="absolute -inset-3 bg-primary/8 rounded-2xl blur-2xl" />
-              <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 shadow-deep">
+              <div className="absolute -inset-3 bg-emguarde/8 rounded-2xl blur-2xl" />
+              <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                 <iframe
                   src="https://www.youtube.com/embed/rNLBZ1NEtDI"
                   title="EmGuarde Review"
@@ -284,7 +284,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                 />
               </div>
             </div>
-            <div className="aspect-video rounded-xl overflow-hidden border border-border/30">
+            <div className="aspect-video rounded-xl overflow-hidden border border-emguarde/20">
               <iframe
                 src="https://www.youtube.com/embed/I8fFj7-FaPw"
                 title="EmGuarde Presentation"
@@ -304,12 +304,12 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           className="mb-12"
         >
           <div className="relative rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/15 to-accent/10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-emguarde/15 to-emguarde/10" />
             <div className="relative m-px rounded-2xl bg-secondary p-8 md:p-12">
               <div className="grid md:grid-cols-2 gap-10 items-center">
                 {/* Price */}
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3">{c.salesDate}</p>
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-emguarde font-bold mb-3">{c.salesDate}</p>
                   <div className="flex items-end gap-3 mb-2">
                     <span className="text-5xl md:text-6xl font-display font-black text-foreground">{c.price}</span>
                   </div>
@@ -332,7 +332,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                   {c.quickFacts.map((f, i) => (
                     <div key={i} className="glass-card rounded-lg p-4 text-center">
                       <span className="block font-body font-black text-base text-foreground">{f.value}</span>
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-accent mt-1 font-bold">{f.label}</span>
+                      <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-emguarde mt-1 font-bold">{f.label}</span>
                     </div>
                   ))}
                 </div>
@@ -354,7 +354,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.97 }}
-            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
+            style={{ boxShadow: "var(--shadow-emguarde)" }}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             {c.ctaBuy}
@@ -365,7 +366,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
-            className="inline-flex items-center justify-center gap-3 px-8 py-5 md:px-10 md:py-6 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-accent/40 text-foreground hover:border-accent hover:bg-accent/10 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 md:px-10 md:py-6 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-emguarde/40 text-emguarde hover:border-emguarde hover:bg-emguarde/10 transition-all duration-300"
           >
             {c.ctaBuyOther}
           </motion.a>
@@ -380,17 +381,17 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
         >
             {/* Purchase Flow */}
             <div className="relative rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emguarde/5 to-emguarde/5" />
               <div className="relative m-px rounded-2xl bg-card p-8 md:p-12">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-8">
                   <h3 className="text-2xl md:text-3xl font-display font-black text-foreground">{c.purchaseFlowTitle}</h3>
-                  <span className="inline-flex items-center px-5 py-2 rounded-full bg-accent/15 border border-accent/30 font-body font-black text-base md:text-lg text-accent tracking-wide">{c.distributorId}</span>
+                  <span className="inline-flex items-center px-5 py-2 rounded-full bg-emguarde/15 border border-emguarde/30 font-body font-black text-base md:text-lg text-emguarde tracking-wide">{c.distributorId}</span>
                 </div>
                 <div className="space-y-8">
                   {c.steps.map((step, i) => (
                     <div key={i} className="flex gap-5">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
-                        <span className="font-display font-black text-accent text-sm">{step.num}</span>
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emguarde/20 border border-emguarde/30 flex items-center justify-center">
+                        <span className="font-display font-black text-emguarde text-sm">{step.num}</span>
                       </div>
                       <div className="flex-1">
                         <h4 className="font-body font-black text-lg text-foreground mb-2">{step.title}</h4>
@@ -398,7 +399,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                         {"contacts" in step && step.contacts && (
                           <div className="space-y-1 mb-3">
                             {step.contacts.map((c2, j) => (
-                              <p key={j} className="font-mono text-sm text-accent font-bold">{c2}</p>
+                              <p key={j} className="font-mono text-sm text-emguarde font-bold">{c2}</p>
                             ))}
                           </div>
                         )}
@@ -419,7 +420,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                     href="https://information.enagic.com/pdf/HOW_TO_MAKE_PAYMENT_FOR_OVERSEAS_EMGUARDE.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body font-bold text-sm text-accent hover:text-accent/80 underline"
+                    className="font-body font-bold text-sm text-emguarde hover:text-emguarde/80 underline"
                   >
                     📄 {c.paymentGuide}
                   </a>
@@ -427,7 +428,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                     href="https://information.enagic.com/pdf/Cooling-Off-Period.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body font-bold text-sm text-accent hover:text-accent/80 underline"
+                    className="font-body font-bold text-sm text-emguarde hover:text-emguarde/80 underline"
                   >
                     📄 {c.coolingOffLink}
                   </a>
@@ -437,13 +438,13 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
 
             {/* Commission Info */}
             <div className="relative rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emguarde/5 to-emguarde/5" />
               <div className="relative m-px rounded-2xl bg-card p-8 md:p-12">
                 <h3 className="text-2xl md:text-3xl font-display font-black text-foreground mb-8">{c.commissionTitle}</h3>
                 <div className="space-y-6 mb-8">
                   {c.commissions.map((com, i) => (
-                    <div key={i} className="glass-card rounded-xl p-6">
-                      <h4 className="font-body font-black text-base text-accent mb-1">{com.type}</h4>
+                    <div key={i} className="glass-card rounded-xl p-6 border border-emguarde/10">
+                      <h4 className="font-body font-black text-base text-emguarde mb-1">{com.type}</h4>
                       <p className="font-body text-sm text-foreground font-bold mb-3">{com.desc}</p>
                       <p className="font-display font-black text-2xl text-foreground">{com.amount}</p>
                     </div>
@@ -461,7 +462,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
 
             {/* Registration & Policies */}
             <div className="relative rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emguarde/5 to-transparent" />
               <div className="relative m-px rounded-2xl bg-card p-8 md:p-12">
                 <h3 className="text-2xl md:text-3xl font-display font-black text-foreground mb-8">{c.registrationTitle}</h3>
                 <div className="space-y-4 mb-6">
@@ -471,7 +472,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                     </p>
                   ))}
                 </div>
-                <div className="p-4 rounded-xl bg-primary/5 border border-primary/15">
+                <div className="p-4 rounded-xl bg-emguarde/5 border border-emguarde/15">
                   <p className="font-body text-sm text-foreground font-bold leading-relaxed">{c.coolingOff}</p>
                 </div>
               </div>
