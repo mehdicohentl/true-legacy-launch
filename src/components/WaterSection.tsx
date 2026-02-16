@@ -15,10 +15,10 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       headline2: "It's Kangen Water — The Power of Hydrogen.",
       desc: "The Foundation of Everything:\n\nThis Isn't Just Water.\n\nIt's Kangen Water—The Power of Molecular Hydrogen.\n\nYour body is 70% water. What if the water you've been drinking your entire life has been working against you? Kangen Water is medical-grade, hydrogen-rich, ionized water used by over 6,500 doctors in Japan. It's not a trend; it's 51-plus years of proven science.",
       benefits: [
-        { title: "Antioxidant Power", desc: "More powerful than vitamin C — neutralizes free radicals on contact" },
-        { title: "Micro-Clustered Hydration", desc: "Penetrates cells 6x faster than regular water" },
+        { title: "Antioxidant Power", desc: "More powerful than vitamin C, neutralizes free radicals on contact" },
+        { title: "Cellular Hydration", desc: "Penetrates cells 6x faster than regular water" },
         { title: "Medical-Grade Technology", desc: "The same machines used in Japanese hospitals since 1974" },
-        { title: "7 pH Levels", desc: "From strong acidic (disinfectant) to strong alkaline (health)" },
+        { title: "7 pH Levels", desc: "From strong acidic disinfectant (hypochlorous acid) to strong alkaline oil emulsifier" },
       ],
       buyGuideTitle: "How to Get Your Kangen Water Machine",
       buyGuideSteps: [
