@@ -22,8 +22,8 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
       headline: "I Didn't Have a Plan B.",
       headline2: "I Made Plan A Work.",
       quote: "\"Watching my mother struggle shaped my resolve—every 'no' became fuel, every closed door a wall I broke through.\"",
-      p1: "Mehdi Cohen isn't a motivational speaker he's proof. From undocumented immigrant roots to leading one of the fastest-growing teams in Enagic, his journey defies luck it's about the decision never to settle.",
-      p2: "Today, he leads the True Legacy team a movement of ordinary people doing extraordinary things health, wealth, purpose all three, or none at all.",
+      p1: "The Man Behind the Mission.\n\nI didn't have a Plan B I made Plan A work.\n\nWatching my mother struggle shaped my resolve—every 'no' became fuel, every closed door a wall I broke through.\n\nMehdi Cohen isn't a motivational speaker he's proof. From undocumented immigrant roots to leading one of the fastest-growing teams in Enagic, his journey defies luck it's about the decision never to settle. Today, he leads the True Legacy team a movement of ordinary people doing extraordinary things health, wealth, purpose all three, or none at all.",
+      p2: "",
       video: "Watch the Full Story →",
       imgLabels: ["The Journey", "The Recognition", "The Mission", "The Lifestyle"],
     },
@@ -32,8 +32,8 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
       headline: "No Tenía Plan B.",
       headline2: "Hice Que el Plan A Funcionara.",
       quote: "\"Ver a mi madre luchar forjó mi determinación—cada 'no' se convirtió en combustible, cada puerta cerrada en un muro que derribé.\"",
-      p1: "Mehdi Cohen no es un orador motivacional, es la prueba viviente. De raíces como inmigrante indocumentado a liderar uno de los equipos de más rápido crecimiento en Enagic, su camino desafía la suerte, se trata de la decisión de nunca conformarse.",
-      p2: "Hoy lidera el equipo True Legacy, un movimiento de personas comunes haciendo cosas extraordinarias: salud, riqueza, propósito, los tres o ninguno.",
+      p1: "El Hombre Detrás de la Misión.\n\nNo tenía un Plan B, hice que el Plan A funcionara.\n\nVer a mi madre luchar forjó mi determinación—cada 'no' se convirtió en combustible, cada puerta cerrada en un muro que derribé.\n\nMehdi Cohen no es un orador motivacional, es la prueba viviente. De raíces como inmigrante indocumentado a liderar uno de los equipos de más rápido crecimiento en Enagic, su camino desafía la suerte, se trata de la decisión de nunca conformarse. Hoy lidera el equipo True Legacy, un movimiento de personas comunes haciendo cosas extraordinarias: salud, riqueza, propósito, los tres o ninguno.",
+      p2: "",
       video: "Ver la Historia Completa →",
       imgLabels: ["El Camino", "El Reconocimiento", "La Misión", "El Estilo de Vida"],
     },
@@ -76,12 +76,14 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16">
           {/* Text side */}
           <motion.div {...fadeIn}>
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
+            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold whitespace-pre-line">
               {t[lang].p1}
             </p>
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-10 font-bold">
-              {t[lang].p2}
-            </p>
+            {t[lang].p2 && (
+              <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-10 font-bold">
+                {t[lang].p2}
+              </p>
+            )}
 
             <motion.a
               href={lang === "es" ? "https://youtu.be/ANey4YDlVrw?si=lKzAIE6AqBxQ4vQ6" : "https://www.youtube.com/watch?v=86KYc3Gl3vw"}
