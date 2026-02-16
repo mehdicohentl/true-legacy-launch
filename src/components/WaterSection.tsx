@@ -13,7 +13,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       micro: "The Foundation of Everything",
       headline: "This Isn't Just Water.",
       headline2: "It's Kangen Water — The Power of Hydrogen.",
-      desc: "Your body is 70% water. What if the water you've been drinking has been working against you? Kangen Water is the ultimate biohacking tool — medical-grade, hydrogen-rich, ionized water trusted by over 6,500 doctors in Japan. Elite biohackers know: optimal hydration at the cellular level is the foundation of peak performance. This isn't a trend — it's 50 years of proven science.",
+      desc: "The Foundation of Everything:\n\nThis Isn't Just Water.\n\nIt's Kangen Water—The Power of Molecular Hydrogen.\n\nYour body is 70% water. What if the water you've been drinking your entire life has been working against you? Kangen Water is medical-grade, hydrogen-rich, ionized water used by over 6,500 doctors in Japan. It's not a trend; it's 51-plus years of proven science.\n\n1. Antioxidant Power—More powerful than vitamin C, neutralizes free radicals on contact.\n\n2. Cellular Hydration—Penetrates cells 6x faster than regular water.\n\n3. Medical-Grade Technology—The same machines used in Japanese hospitals since 1974.\n\n4. 7 pH Levels—from strong acidic disinfectant (hypochlorous acid) to strong alkaline oil emulsifier.",
       benefits: [
         { title: "Antioxidant Power", desc: "More powerful than vitamin C — neutralizes free radicals on contact" },
         { title: "Micro-Clustered Hydration", desc: "Penetrates cells 6x faster than regular water" },
@@ -34,7 +34,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       micro: "La Base de Todo",
       headline: "Esto No Es Solo Agua.",
       headline2: "Es Agua Kangen — El Poder del Hidrógeno.",
-      desc: "Tu cuerpo es 70% agua. ¿Qué pasaría si el agua que has estado tomando ha estado trabajando en tu contra? El Agua Kangen es la herramienta definitiva de biohacking — agua ionizada, rica en hidrógeno, de grado médico, en la que confían más de 6,500 médicos en Japón. Los biohackers de élite lo saben: la hidratación óptima a nivel celular es la base del máximo rendimiento. No es una moda — son 50 años de ciencia comprobada.",
+      desc: "La Base de Todo:\n\nEsto No Es Solo Agua.\n\nEs Agua Kangen—El Poder del Hidrógeno Molecular.\n\nTu cuerpo es 70% agua. ¿Qué pasaría si el agua que has estado tomando toda tu vida ha estado trabajando en tu contra? El Agua Kangen es agua ionizada, rica en hidrógeno, de grado médico, usada por más de 6,500 médicos en Japón. No es una moda; son más de 51 años de ciencia comprobada.\n\n1. Poder Antioxidante—Más poderoso que la vitamina C, neutraliza radicales libres al contacto.\n\n2. Hidratación Celular—Penetra las células 6x más rápido que el agua regular.\n\n3. Tecnología de Grado Médico—Las mismas máquinas usadas en hospitales japoneses desde 1974.\n\n4. 7 Niveles de pH—desde ácido fuerte desinfectante (ácido hipocloroso) hasta alcalino fuerte emulsionante de aceite.",
       benefits: [
         { title: "Poder Antioxidante", desc: "Más poderoso que la vitamina C — neutraliza radicales libres al contacto" },
         { title: "Hidratación Micro-Agrupada", desc: "Penetra las células 6x más rápido que el agua regular" },
@@ -87,7 +87,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-12 font-bold">
+            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-12 font-bold whitespace-pre-line">
               {t[lang].desc}
             </p>
 
