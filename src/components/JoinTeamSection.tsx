@@ -17,7 +17,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       cta2: "See How The Team Operates",
       stats: [
         { num: "51+", label: "Years Enagic" },
-        { num: "100+", label: "Countries" },
+        { num: "170+", label: "Countries" },
         { num: "1", label: "Decision Away" },
       ],
       bottom: "Your background, your age, your education — none of it matters here. What matters is your decision.",
@@ -32,7 +32,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       cta2: "Mira Como Opera El Equipo",
       stats: [
         { num: "51+", label: "Años Enagic" },
-        { num: "100+", label: "Países" },
+        { num: "170+", label: "Países" },
         { num: "1", label: "Decisión" },
       ],
       bottom: "Tu origen, tu edad, tu educación — nada de eso importa aquí. Lo que importa es tu decisión.",
