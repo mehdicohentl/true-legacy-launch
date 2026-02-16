@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import combinedLogo from "@/assets/combined-logo.png";
+import mehdiWelcome from "@/assets/mehdi-welcome.png";
 import Globe from "@/components/Globe";
 import AnimatedWaveBackground from "@/components/AnimatedWaveBackground";
 
@@ -111,6 +112,15 @@ const LanguageSelector = () => {
             </motion.button>
           </div>
         </div>
+
+        <motion.img
+          src={mehdiWelcome}
+          alt="Mehdi Cohen"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="w-48 md:w-64 mx-auto drop-shadow-2xl"
+        />
       </motion.div>
     </div>);
 
