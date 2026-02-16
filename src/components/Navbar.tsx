@@ -11,7 +11,7 @@ const Navbar = ({ lang }: NavbarProps) => {
   
   const links = lang === "en"
     ? [
-        { id: "water", label: "The Water" },
+        { id: "water", label: "Kangen Water" },
         { id: "story", label: "Mehdi's Story" },
         { id: "emguarde", label: "EmGuarde" },
         { id: "join", label: "Build With Us" },
