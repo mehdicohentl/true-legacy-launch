@@ -46,6 +46,22 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
             />
           </div>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-10"
+        >
+          <a
+            href="https://calendly.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-accent text-accent-foreground font-bold rounded-full px-8 py-4 text-base md:text-lg shadow-gold hover:scale-105 transition-transform duration-200 cta-shimmer"
+          >
+            {lang === "en" ? "Book a 30-Minute Clarity Call" : "Reserva una Llamada de Claridad de 30 Minutos"}
+          </a>
+        </motion.div>
       </div>
     </section>
   );
