@@ -13,17 +13,17 @@ const Footer = ({ lang }: FooterProps) => {
             <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-20 md:h-24 w-auto" />
           </div>
 
-          <div className="flex items-center gap-8">
-            <a href={lang === "en" ? "https://form.jotform.com/260232994952060" : "https://form.jotform.com/260246489849069"} target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-8">
+            <a href={lang === "en" ? "https://form.jotform.com/260232994952060" : "https://form.jotform.com/260246489849069"} target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
               {lang === "en" ? "Join Team" : "Únete"}
             </a>
-            <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
+            <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
               YouTube
             </a>
-            <a href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016" target="_blank" rel="noopener noreferrer" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
+            <a href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016" target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
               {lang === "en" ? "Kangen Water" : "Agua Kangen"}
             </a>
-            <a href="mailto:emgsales@enagic-my.com" className="font-body text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
+            <a href="mailto:emgsales@enagic-my.com" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
               {lang === "en" ? "Contact" : "Contacto"}
             </a>
           </div>
