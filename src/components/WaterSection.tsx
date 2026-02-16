@@ -22,12 +22,13 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       ],
       buyGuideTitle: "How to Get Your Kangen Water Machine",
       buyGuideSteps: [
-        "Click the button below — it will take you to the official Enagic ordering page.",
-        "Select your country (USA, Canada, or your South American region).",
-        "Choose the Kangen Water machine that fits your needs.",
-        "Complete your order — it's that simple!",
+        "Click the button below to visit the official Enagic ordering page.",
+        "Select your country from the listed options, like the U.S. or Canada. If you're in South America, contact us directly to get started, and we'll guide you through the steps.",
+        "Choose the Kangen Water machine that fits your needs (we recommend the K8).",
+        "Complete your order—it's that simple.",
       ],
-      buyGuideNote: "You'll be ordering directly through Enagic's official system. Safe, secure, and backed by 50+ years of excellence.",
+      buyGuideNote: "You'll be ordering directly through Enagic's official system—safe, secure, and backed by 51+ years of excellence.",
+      needHelp: "Need help? Connect with us",
       cta: "Get Your Kangen Water Machine Now",
     },
     es: {
@@ -43,12 +44,13 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       ],
       buyGuideTitle: "Cómo Obtener Tu Máquina de Agua Kangen",
       buyGuideSteps: [
-        "Haz clic en el botón de abajo — te llevará a la página oficial de pedidos de Enagic.",
-        "Selecciona tu país (USA, Canadá o tu región de Sudamérica).",
-        "Elige la máquina de Agua Kangen que se adapte a tus necesidades.",
-        "Completa tu pedido — ¡así de simple!",
+        "Haz clic en el botón de abajo para visitar la página oficial de pedidos de Enagic.",
+        "Selecciona tu país de las opciones disponibles, como EE.UU. o Canadá. Si estás en Sudamérica, contáctanos directamente para comenzar y te guiaremos a través de los pasos.",
+        "Elige la máquina de Agua Kangen que se adapte a tus necesidades (recomendamos la K8).",
+        "Completa tu pedido—así de simple.",
       ],
-      buyGuideNote: "Estarás ordenando directamente a través del sistema oficial de Enagic. Seguro, protegido y respaldado por más de 50 años de excelencia.",
+      buyGuideNote: "Estarás ordenando directamente a través del sistema oficial de Enagic—seguro, protegido y respaldado por más de 51 años de excelencia.",
+      needHelp: "¿Necesitas ayuda? Conéctate con nosotros",
       cta: "Obtener Tu Máquina de Agua Kangen Ahora",
     },
   };
@@ -183,6 +185,10 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   {lang === "en" ? "Get a Free Kangen Water PDF" : "Obtén un PDF Gratis del Agua Kangen"}
                 </motion.a>
               </div>
+
+              <p className="text-center text-sm text-accent font-body font-bold mt-6">
+                {t[lang].needHelp}
+              </p>
             </div>
           </div>
         </motion.div>
