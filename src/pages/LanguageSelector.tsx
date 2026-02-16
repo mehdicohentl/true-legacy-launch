@@ -77,7 +77,7 @@ const LanguageSelector = () => {
 
               <div className="relative z-10 flex flex-col items-center">
                 <span className="font-display font-black text-lg text-foreground group-hover:text-accent transition-colors duration-300">English</span>
-                <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">USA</span>
+                <span className="text-[10px] text-accent font-mono mt-1 tracking-wider uppercase font-bold">GLOBAL</span>
               </div>
             </motion.button>
           </div>
