@@ -54,7 +54,7 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
           className="text-center mt-10"
         >
           <a
-            href="https://calendly.com"
+            href="https://calendly.com/aquacharged/true-legacy-one-on-one"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-accent text-accent-foreground font-bold rounded-full px-8 py-4 text-base md:text-lg shadow-gold hover:scale-105 transition-transform duration-200 cta-shimmer"
