@@ -18,7 +18,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
       sub: "I rose from zero to lead a global movement, changing lives through health and financial freedom—now it's your turn to rise.",
       cta1: "Get Your Kangen Water Machine",
       cta2: "Make Income With True Legacy",
-      proof: "Join 50+ years of Enagic excellence",
+      proof: "Join 51+ years of Enagic excellence",
     },
     es: {
       micro: "Mehdi Cohen · True Legacy World",
@@ -28,7 +28,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
       sub: "Pasé de cero a liderar un movimiento global, cambiando vidas a través de la salud y la libertad financiera—ahora es tu turno de surgir.",
       cta1: "Obtener Tu Máquina de Agua Kangen",
       cta2: "Genera Ingresos Con True Legacy",
-      proof: "Unete a 50+ anos de excelencia Enagic",
+      proof: "Unete a 51+ anos de excelencia Enagic",
     },
   };
 
