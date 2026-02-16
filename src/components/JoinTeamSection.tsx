@@ -16,7 +16,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       cta: "Start Building With True Legacy",
       cta2: "See How The Team Operates",
       stats: [
-        { num: "50+", label: "Years Enagic" },
+        { num: "51+", label: "Years Enagic" },
         { num: "100+", label: "Countries" },
         { num: "1", label: "Decision Away" },
       ],
@@ -31,7 +31,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       cta: "Empieza a Construir Con True Legacy",
       cta2: "Mira Como Opera El Equipo",
       stats: [
-        { num: "50+", label: "Años Enagic" },
+        { num: "51+", label: "Años Enagic" },
         { num: "100+", label: "Países" },
         { num: "1", label: "Decisión" },
       ],
