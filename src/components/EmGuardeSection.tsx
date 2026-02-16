@@ -9,27 +9,23 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
 
   const t = {
     en: {
-      micro: "Now Available in USA, Canada & Mexico",
-      headline: "EmGuarde",
-      headline2: "EMF Protection by Enagic",
-      intro: "Embracing the philosophy of \"True Health,\" Enagic has been dedicated to manufacturing and selling a range of products — the Leveluk series, Anespa, Ukon products, Kangen Air and Kangen Farm products — all aimed at enhancing overall health and well-being.",
-      intro2: "Now, we are excited to introduce our new product, \"emGuarde\" — the device which reduces or mitigates the disruptive effects of electromagnetic fields (EMFs) produced by electronic devices, aiming to create a more balanced and healthier environment.",
-      history: "First launched in Malaysia in May 2023, emGuarde is now also being sold in Malaysia, Hong Kong, Singapore, Dubai, Indonesia, Philippines, Thailand, Australia and Europe. We are pleased to announce it is now available in the North American region — USA, Canada, and Mexico.",
-      privateImport: "Please note that this is a private import product from Malaysia.",
-      contact: "For more information, contact emgsales@enagic-my.com or WhatsApp: +60133096234",
-      badge: "Launching in USA, Canada & Mexico",
+      micro: "Now Available in the U.S., Canada, and Mexico",
+      headline: "EmGuarde:",
+      headline2: "EMF Protection by Enagic.",
+      intro: "EmGuarde is Enagic's newest innovation, designed to reduce the harmful effects of EMFs from everyday electronic devices—helping you create a cleaner, healthier environment.",
+      history: "After a successful launch in Malaysia, EmGuarde is now available in the U.S., Canada, and Mexico.",
+      applicationProcess: "EmGuarde is only available through an application process—it is a private import from Malaysia. Click below to get a free info PDF or book a call with our team to walk you through the purchase.",
+      badge: "Now Available in the U.S., Canada, and Mexico",
       ctaPdf: "Get a Free EmGuarde PDF",
     },
     es: {
-      micro: "Ahora Disponible en USA, Canadá y México",
-      headline: "EmGuarde",
-      headline2: "Protección EMF por Enagic",
-      intro: "Abrazando la filosofía de \"Salud Verdadera,\" Enagic se ha dedicado a fabricar y vender una gama de productos — la serie Leveluk, Anespa, productos Ukon, Kangen Air y productos Kangen Farm — todos dirigidos a mejorar la salud y el bienestar general.",
-      intro2: "Ahora, estamos emocionados de presentar nuestro nuevo producto, \"emGuarde\" — el dispositivo que reduce o mitiga los efectos disruptivos de los campos electromagnéticos (EMF) producidos por dispositivos electrónicos, con el objetivo de crear un ambiente más equilibrado y saludable.",
-      history: "Lanzado por primera vez en Malasia en mayo de 2023, emGuarde ahora también se vende en Malasia, Hong Kong, Singapur, Dubái, Indonesia, Filipinas, Tailandia, Australia y Europa. Nos complace anunciar que ahora está disponible en la región de América del Norte — USA, Canadá y México.",
-      privateImport: "Ten en cuenta que este es un producto de importación privada desde Malasia.",
-      contact: "Para más información, contacta emgsales@enagic-my.com o WhatsApp: +60133096234",
-      badge: "Lanzamiento en USA, Canadá y México",
+      micro: "Ahora Disponible en EE.UU., Canadá y México",
+      headline: "EmGuarde:",
+      headline2: "Protección EMF por Enagic.",
+      intro: "EmGuarde es la innovación más reciente de Enagic, diseñada para reducir los efectos dañinos de los EMF de los dispositivos electrónicos cotidianos—ayudándote a crear un ambiente más limpio y saludable.",
+      history: "Después de un lanzamiento exitoso en Malasia, EmGuarde ahora está disponible en EE.UU., Canadá y México.",
+      applicationProcess: "EmGuarde solo está disponible a través de un proceso de solicitud—es una importación privada de Malasia. Haz clic abajo para obtener un PDF informativo gratuito o agenda una llamada con nuestro equipo para guiarte en la compra.",
+      badge: "Ahora Disponible en EE.UU., Canadá y México",
       ctaPdf: "Obtén un PDF Gratis del EmGuarde",
     },
   };
@@ -88,16 +84,10 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               {c.intro}
             </p>
             <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
-              {c.intro2}
-            </p>
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
               {c.history}
             </p>
-            <p className="text-base font-body font-bold text-emguarde mb-4">
-              ⚠️ {c.privateImport}
-            </p>
-            <p className="text-sm text-foreground font-body font-bold">
-              {c.contact}
+            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] font-bold">
+              {c.applicationProcess}
             </p>
           </motion.div>
 
@@ -146,20 +136,6 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             </div>
           </motion.div>
         </div>
-
-        {/* Application process explainer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-2xl mx-auto text-center mb-10"
-        >
-          <p className="text-base md:text-lg font-body font-bold text-foreground leading-relaxed">
-            {lang === "en"
-              ? "EmGuarde is available through an application process — it's a private import from Malaysia. Click below to learn more, get a free info PDF, or book a call with our team to walk you through the purchase."
-              : "EmGuarde está disponible a través de un proceso de solicitud — es una importación privada de Malasia. Haz clic abajo para obtener más información, descargar un PDF gratuito o agendar una llamada con nuestro equipo para guiarte en la compra."}
-          </p>
-        </motion.div>
 
         {/* CTA buttons */}
         <motion.div
