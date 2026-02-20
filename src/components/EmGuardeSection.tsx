@@ -106,7 +106,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                 className="relative w-full max-w-[280px] mx-auto drop-shadow-2xl" />
               <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-emguarde/60 rounded-tr-lg" />
               <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-emguarde/60 rounded-tl-lg" />
-              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-emguarde/60 rounded-bl-lg" />
+              
               <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-emguarde/60 rounded-br-lg" />
             </div>
 
