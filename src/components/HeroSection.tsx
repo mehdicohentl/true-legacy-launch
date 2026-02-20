@@ -26,7 +26,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
       headline2: "—Apenas Está",
       headline3: "Comenzando.",
       sub: "Pasé de cero a liderar un movimiento global, cambiando vidas a través de la salud y la libertad financiera—ahora es tu turno de surgir.",
-      cta1: "Obtener Tu Máquina de Agua Kangen",
+      cta1: "OBTEN TU MÁQUINA DE AGUA KANGEN (EE. UU., Australia, Dubai, etc.)",
       cta2: "Genera Ingresos Con True Legacy",
       proof: "Unete a 51+ anos de excelencia Enagic",
     },
