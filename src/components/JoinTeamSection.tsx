@@ -114,7 +114,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           </motion.a>
 
           <motion.a
-            href="https://www.youtube.com/@Mehdicohen/videos"
+            href="https://www.youtube.com/@mehdicohen-TL"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
