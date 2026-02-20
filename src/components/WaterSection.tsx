@@ -15,21 +15,21 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       headline2: "It's Kangen Water — The Power of Hydrogen.",
       desc: "The Foundation of Everything:\n\nThis Isn't Just Water.\n\nIt's Kangen Water—The Power of Molecular Hydrogen.\n\nYour body is 70% water. What if the water you've been drinking your entire life has been working against you? Kangen Water is medical-grade, hydrogen-rich, ionized water used by over 6,500 doctors in Japan. It's not a trend; it's 51-plus years of proven science.",
       benefits: [
-        { title: "Antioxidant Power", desc: "More powerful than vitamin C, neutralizes free radicals on contact" },
-        { title: "Cellular Hydration", desc: "Penetrates cells 6x faster than regular water" },
-        { title: "Medical-Grade Technology", desc: "The same machines used in Japanese hospitals since 1974" },
-        { title: "7 pH Levels", desc: "From strong acidic disinfectant (hypochlorous acid) to strong alkaline oil emulsifier" },
-      ],
+      { title: "Antioxidant Power", desc: "More powerful than vitamin C, neutralizes free radicals on contact" },
+      { title: "Cellular Hydration", desc: "Penetrates cells 6x faster than regular water" },
+      { title: "Medical-Grade Technology", desc: "The same machines used in Japanese hospitals since 1974" },
+      { title: "7 pH Levels", desc: "From strong acidic disinfectant (hypochlorous acid) to strong alkaline oil emulsifier" }],
+
       buyGuideTitle: "How to Get Your Kangen Water Machine",
       buyGuideSteps: [
-        "Click the button below to visit the official Enagic ordering page.",
-        "Select your country from the listed options, like the U.S. or Canada. If you're in South America, contact us directly to get started, and we'll guide you through the steps.",
-        "Choose the Kangen Water machine that fits your needs (we recommend the K8).",
-        "Complete your order—it's that simple.",
-      ],
+      "Click the button below to visit the official Enagic ordering page.",
+      "Select your country from the listed options, like the U.S. or Canada. If you're in South America, contact us directly to get started, and we'll guide you through the steps.",
+      "Choose the Kangen Water machine that fits your needs (we recommend the K8).",
+      "Complete your order—it's that simple."],
+
       buyGuideNote: "You'll be ordering directly through Enagic's official system—safe, secure, and backed by 51+ years of excellence.",
       needHelp: "Need help? Connect with us",
-      cta: "Get Your Kangen Water Machine Now",
+      cta: "Get Your Kangen Water Machine Now"
     },
     es: {
       micro: "La Base de Todo",
@@ -37,22 +37,22 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       headline2: "Es Agua Kangen — El Poder del Hidrógeno.",
       desc: "La Base de Todo:\n\nEsto No Es Solo Agua.\n\nEs Agua Kangen—El Poder del Hidrógeno Molecular.\n\nTu cuerpo es 70% agua. ¿Qué pasaría si el agua que has estado tomando toda tu vida ha estado trabajando en tu contra? El Agua Kangen es agua ionizada, rica en hidrógeno, de grado médico, usada por más de 6,500 médicos en Japón. No es una moda; son más de 51 años de ciencia comprobada.\n\n1. Poder Antioxidante—Más poderoso que la vitamina C, neutraliza radicales libres al contacto.\n\n2. Hidratación Celular—Penetra las células 6x más rápido que el agua regular.\n\n3. Tecnología de Grado Médico—Las mismas máquinas usadas en hospitales japoneses desde 1974.\n\n4. 7 Niveles de pH—desde ácido fuerte desinfectante (ácido hipocloroso) hasta alcalino fuerte emulsionante de aceite.",
       benefits: [
-        { title: "Poder Antioxidante", desc: "Más poderoso que la vitamina C — neutraliza radicales libres al contacto" },
-        { title: "Hidratación Micro-Agrupada", desc: "Penetra las células 6x más rápido que el agua regular" },
-        { title: "Tecnología de Grado Médico", desc: "Las mismas máquinas usadas en hospitales japoneses desde 1974" },
-        { title: "7 Niveles de pH", desc: "Desde ácido fuerte (desinfectante) hasta alcalino fuerte (salud)" },
-      ],
+      { title: "Poder Antioxidante", desc: "Más poderoso que la vitamina C — neutraliza radicales libres al contacto" },
+      { title: "Hidratación Micro-Agrupada", desc: "Penetra las células 6x más rápido que el agua regular" },
+      { title: "Tecnología de Grado Médico", desc: "Las mismas máquinas usadas en hospitales japoneses desde 1974" },
+      { title: "7 Niveles de pH", desc: "Desde ácido fuerte (desinfectante) hasta alcalino fuerte (salud)" }],
+
       buyGuideTitle: "Cómo Obtener Tu Máquina de Agua Kangen",
       buyGuideSteps: [
-        "Haz clic en el botón de abajo para visitar la página oficial de pedidos de Enagic.",
-        "Selecciona tu país de las opciones disponibles, como EE.UU. o Canadá. Si estás en Sudamérica, contáctanos directamente para comenzar y te guiaremos a través de los pasos.",
-        "Elige la máquina de Agua Kangen que se adapte a tus necesidades (recomendamos la K8).",
-        "Completa tu pedido—así de simple.",
-      ],
+      "Haz clic en el botón de abajo para visitar la página oficial de pedidos de Enagic.",
+      "Selecciona tu país de las opciones disponibles, como EE.UU. o Canadá. Si estás en Sudamérica, contáctanos directamente para comenzar y te guiaremos a través de los pasos.",
+      "Elige la máquina de Agua Kangen que se adapte a tus necesidades (recomendamos la K8).",
+      "Completa tu pedido—así de simple."],
+
       buyGuideNote: "Estarás ordenando directamente a través del sistema oficial de Enagic—seguro, protegido y respaldado por más de 51 años de excelencia.",
       needHelp: "¿Necesitas ayuda? Conéctate con nosotros",
-      cta: "Obtener Tu Máquina de Agua Kangen Ahora",
-    },
+      cta: "Obtener Tu Máquina de Agua Kangen Ahora"
+    }
   };
 
   return (
@@ -64,8 +64,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-6 text-center"
-        >
+          className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-6 text-center">
+
           {t[lang].micro}
         </motion.p>
 
@@ -73,8 +73,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
-        >
+          className="text-center mb-20">
+
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92] mb-4">
             <span className="text-foreground">{t[lang].headline}</span>
           </h2>
@@ -87,28 +87,28 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-12 font-bold whitespace-pre-line">
-              {t[lang].desc}
-            </p>
+            viewport={{ once: true }}>
+
+            
+
+
 
             {/* Benefits as cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-              {t[lang].benefits.map((b, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="glass-card rounded-xl p-5 hover:border-accent/30 transition-all duration-300 group"
-                >
+              {t[lang].benefits.map((b, i) =>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass-card rounded-xl p-5 hover:border-accent/30 transition-all duration-300 group">
+
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-2 block font-bold">0{i + 1}</span>
                   <h4 className="font-body font-black text-base text-foreground mb-1">{b.title}</h4>
                   <p className="font-body text-sm text-foreground font-bold leading-relaxed">{b.desc}</p>
                 </motion.div>
-              ))}
+              )}
             </div>
           </motion.div>
 
@@ -117,14 +117,14 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative flex items-center justify-center"
-          >
+            className="relative flex items-center justify-center">
+
             <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 via-transparent to-primary/8 rounded-2xl blur-2xl" />
             <img
               src={kangenMachine}
               alt="Kangen Water Machine - LeveLuk SD501"
-              className="relative w-full max-w-md mx-auto drop-shadow-2xl"
-            />
+              className="relative w-full max-w-md mx-auto drop-shadow-2xl" />
+
             <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
             <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
           </motion.div>
@@ -135,8 +135,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
-        >
+          className="mb-16">
+
           <div className="relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-accent/15 via-primary/10 to-accent/15 rounded-2xl" />
             <div className="relative m-px rounded-2xl bg-card p-8 md:p-12">
@@ -145,8 +145,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               </h3>
 
               <div className="max-w-2xl mx-auto space-y-5 mb-8">
-                {t[lang].buyGuideSteps.map((step, i) => (
-                  <div key={i} className="flex gap-4 items-start">
+                {t[lang].buyGuideSteps.map((step, i) =>
+                <div key={i} className="flex gap-4 items-start">
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center">
                       <span className="font-display font-black text-accent text-sm">{i + 1}</span>
                     </div>
@@ -154,7 +154,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                       {step}
                     </p>
                   </div>
-                ))}
+                )}
               </div>
 
               <p className="text-center text-sm text-foreground font-body font-bold italic mb-8 max-w-xl mx-auto">
@@ -168,8 +168,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
-                  className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow"
-                >
+                  className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow">
+
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                   {t[lang].cta}
                 </motion.a>
@@ -179,8 +179,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
-                >
+                  className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors">
+
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                   {lang === "en" ? "Get a Free Kangen Water PDF" : "Obtén un PDF Gratis del Agua Kangen"}
                 </motion.a>
@@ -193,8 +193,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default WaterSection;
