@@ -75,7 +75,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           viewport={{ once: true }}
           className="text-center mb-20">
 
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92] mb-4">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05] mb-4">
             <span className="text-foreground">{t[lang].headline}</span>
           </h2>
           <p className="text-lg md:text-2xl font-display italic text-gradient-gold max-w-3xl mx-auto font-bold">
