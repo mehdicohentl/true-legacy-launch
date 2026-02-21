@@ -178,7 +178,7 @@ const EmGuardePurchase = ({ lang }: EmGuardePurchaseProps) => {
         <div className="container mx-auto flex items-center justify-between py-3.5 px-4">
           <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-14 md:h-18 w-auto" />
           <button
-            onClick={() => navigate(lang === "en" ? "/en" : "/es")}
+            onClick={() => navigate(lang === "en" ? "/global" : "/latam")}
             className="font-mono text-xs font-bold text-foreground/70 hover:text-foreground uppercase tracking-[0.15em]"
           >
             {c.back}

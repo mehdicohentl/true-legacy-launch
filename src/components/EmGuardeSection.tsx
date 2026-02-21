@@ -159,7 +159,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             {c.ctaPdf}
           </motion.a>
           <motion.a
-            href={lang === "en" ? "/emguarde" : "/es/emguarde"}
+            href={lang === "en" ? "/global/emguarde" : "/latam/emguarde"}
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-emguarde text-emguarde hover:bg-emguarde/10 transition-colors">
