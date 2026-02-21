@@ -53,8 +53,8 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
         {/* Headline */}
         <motion.div {...fadeIn} className="text-center mb-6">
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05]">
-            <span className="text-foreground">{t[lang].headline}</span><br />
-            <span className="text-gradient-gold italic">{t[lang].headline2}</span>
+            <span className="text-foreground">{lang === "en" ? "Who Is Mehdi Cohen?" : "¿Quién Es Mehdi Cohen?"}</span><br />
+            <span className="text-gradient-gold italic">{lang === "en" ? "The True Legacy Story" : "La Historia de True Legacy"}</span>
           </h2>
         </motion.div>
 
@@ -65,7 +65,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
         >
           {t[lang].quote}
           <div className="flex items-center justify-center gap-3 mt-6">
-            <img src={mehdiHeadshot} alt="Mehdi Cohen" className="w-12 h-12 rounded-full object-cover object-top border-2 border-accent/40" />
+            <img src={mehdiHeadshot} alt="Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com" className="w-12 h-12 rounded-full object-cover object-top border-2 border-accent/40" />
             <span className="font-mono text-xs not-italic uppercase tracking-[0.3em] text-accent font-bold">
               — Mehdi Cohen
             </span>
@@ -138,7 +138,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
             >
               <img
                 src={img}
-                alt={t[lang].imgLabels[i]}
+                alt={`Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com — ${t[lang].imgLabels[i]}`}
                 className="rounded-xl w-full h-64 sm:h-72 md:h-80 object-cover object-top border border-border/50 group-hover:border-accent/30 transition-all duration-500 group-hover:scale-[1.02]"
               />
               <span className="absolute bottom-3 left-3 font-mono text-xs uppercase tracking-[0.2em] text-foreground/80 bg-background/70 backdrop-blur-sm px-3 py-1.5 rounded font-bold">
