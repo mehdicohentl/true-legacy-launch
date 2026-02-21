@@ -119,7 +119,7 @@ const LanguageSelector = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="w-48 md:w-64 mx-auto drop-shadow-2xl"
+          className="w-48 md:w-64 mx-auto drop-shadow-2xl -mt-6 md:-mt-10"
         />
       </motion.div>
     </div>);
