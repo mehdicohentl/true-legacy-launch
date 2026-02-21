@@ -61,8 +61,8 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           className="text-center mb-8"
         >
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05]">
-            <span className="text-foreground">{t[lang].headline}</span><br />
-            <span className="text-gradient-gold italic">{t[lang].headline2}</span>
+            <span className="text-foreground">{lang === "en" ? "Join the Global True Legacy Team" : "Únete al Equipo Global True Legacy"}</span><br />
+            <span className="text-gradient-gold italic">{lang === "en" ? "Build Income in 51+ Countries" : "Genera Ingresos en 51+ Países"}</span>
           </h2>
         </motion.div>
 

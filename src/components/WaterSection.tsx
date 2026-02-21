@@ -76,10 +76,10 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           className="text-center mb-20">
 
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05] mb-4">
-            <span className="text-foreground">{t[lang].headline}</span>
+            <span className="text-foreground">{lang === "en" ? "Kangen Water — The Wellness Foundation" : "Agua Kangen — La Base del Bienestar"}</span>
           </h2>
           <p className="text-lg md:text-2xl font-display italic text-gradient-gold max-w-3xl mx-auto font-bold">
-            {t[lang].headline2}
+            {lang === "en" ? "Scale Your Body and Your Income With Alkaline Ionized Water" : "Escala Tu Cuerpo y Tus Ingresos Con Agua Alcalina Ionizada"}
           </p>
         </motion.div>
 
@@ -122,7 +122,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 via-transparent to-primary/8 rounded-2xl blur-2xl" />
             <img
               src={kangenMachine}
-              alt="Kangen Water Machine - LeveLuk SD501"
+              alt="Mehdi Cohen True Legacy CEO Kangen K8 water machine alkaline ionized water wellness mehdicohen.com"
               className="relative w-full max-w-md mx-auto drop-shadow-2xl" />
 
             <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />

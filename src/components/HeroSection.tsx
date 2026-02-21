@@ -12,9 +12,9 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
   const t = {
     en: {
       micro: "Mehdi Cohen · True Legacy World",
-      headline1: "Your Story Isn't Over",
-      headline2: "—It's Just",
-      headline3: "Getting Started.",
+      headline1: "Mehdi Cohen — CEO Building",
+      headline2: "Wealth, Health",
+      headline3: "& Legacies Through True Legacy.",
       sub: "I rose from zero to lead a global movement, changing lives through health and financial freedom—now it's your turn to rise.",
       cta1: "Get Your Kangen Water Machine",
       cta2: "Make Income With True Legacy",
@@ -22,9 +22,9 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
     },
     es: {
       micro: "Mehdi Cohen · True Legacy World",
-      headline1: "Tu Historia No Terminó",
-      headline2: "—Apenas Está",
-      headline3: "Comenzando.",
+      headline1: "Mehdi Cohen — CEO Construyendo",
+      headline2: "Riqueza, Salud",
+      headline3: "& Legados Con True Legacy.",
       sub: "Pasé de cero a liderar un movimiento global, cambiando vidas a través de la salud y la libertad financiera—ahora es tu turno de surgir.",
       cta1: "OBTEN TU MÁQUINA DE AGUA KANGEN (EE. UU., Australia, Dubai, etc.)",
       cta2: "Genera Ingresos Con True Legacy",
@@ -46,7 +46,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
           className="w-full max-w-4xl text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-6">
-            <img src={mehdiHeadshot} alt="Mehdi Cohen" className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover object-top border-2 border-accent/40" />
+            <img src={mehdiHeadshot} alt="Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com" className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover object-top border-2 border-accent/40" />
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -57,7 +57,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             </motion.p>
           </div>
 
-           <h1 className="font-display font-black leading-[1] mb-6">
+           <h1 className="font-display font-black leading-[1.1] mb-6">
              <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline1}</span>
              <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline2}</span>
              <span className="block text-3xl md:text-5xl lg:text-7xl text-gradient-gold">{t[lang].headline3}</span>

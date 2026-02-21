@@ -7,6 +7,13 @@ import LanguageSelector from "./pages/LanguageSelector";
 import LandingPage from "./pages/LandingPage";
 import EmGuardePurchase from "./pages/EmGuardePurchase";
 import NotFound from "./pages/NotFound";
+import WhoIsMehdiCohen from "./pages/seo/WhoIsMehdiCohen";
+import WhatIsTrueLegacy from "./pages/seo/WhatIsTrueLegacy";
+import KangenWaterExplained from "./pages/seo/KangenWaterExplained";
+import JoinTrueLegacy from "./pages/seo/JoinTrueLegacy";
+import CeoDailyProtocol from "./pages/seo/CeoDailyProtocol";
+import WealthHealthLegacy from "./pages/seo/WealthHealthLegacy";
+import BookACall from "./pages/seo/BookACall";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +29,14 @@ const App = () => (
           <Route path="/latam" element={<LandingPage lang="es" />} />
           <Route path="/global/emguarde" element={<EmGuardePurchase lang="en" />} />
           <Route path="/latam/emguarde" element={<EmGuardePurchase lang="es" />} />
+          {/* SEO Landing Pages */}
+          <Route path="/who-is-mehdi-cohen" element={<WhoIsMehdiCohen />} />
+          <Route path="/what-is-true-legacy" element={<WhatIsTrueLegacy />} />
+          <Route path="/kangen-water-explained" element={<KangenWaterExplained />} />
+          <Route path="/join-true-legacy" element={<JoinTrueLegacy />} />
+          <Route path="/ceo-daily-protocol" element={<CeoDailyProtocol />} />
+          <Route path="/wealth-health-legacy" element={<WealthHealthLegacy />} />
+          <Route path="/book-a-call" element={<BookACall />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
