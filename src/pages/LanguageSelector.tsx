@@ -61,7 +61,7 @@ const LanguageSelector = () => {
               className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40" />
 
             <motion.button
-              onClick={() => navigate("/en")}
+              onClick={() => navigate("/global")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(185, 100%, 50%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -91,7 +91,7 @@ const LanguageSelector = () => {
               className="absolute w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-accent/40" />
 
             <motion.button
-              onClick={() => navigate("/es")}
+              onClick={() => navigate("/latam")}
               whileHover={{ scale: 1.12, boxShadow: "0 0 50px 12px hsla(185, 100%, 50%, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}

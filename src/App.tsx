@@ -18,10 +18,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LanguageSelector />} />
-          <Route path="/en" element={<LandingPage lang="en" />} />
-          <Route path="/es" element={<LandingPage lang="es" />} />
-          <Route path="/emguarde" element={<EmGuardePurchase lang="en" />} />
-          <Route path="/es/emguarde" element={<EmGuardePurchase lang="es" />} />
+          <Route path="/global" element={<LandingPage lang="en" />} />
+          <Route path="/latam" element={<LandingPage lang="es" />} />
+          <Route path="/global/emguarde" element={<EmGuardePurchase lang="en" />} />
+          <Route path="/latam/emguarde" element={<EmGuardePurchase lang="es" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

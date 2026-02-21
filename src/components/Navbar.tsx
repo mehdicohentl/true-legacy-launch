@@ -55,7 +55,7 @@ const Navbar = ({ lang }: NavbarProps) => {
 
         <div className="flex items-center gap-4">
           <a
-            href={lang === "en" ? "/es" : "/en"}
+            href={lang === "en" ? "/latam" : "/global"}
             className="flag-hover cursor-pointer"
             title={lang === "en" ? "Cambiar a Español" : "Switch to English"}
           >
