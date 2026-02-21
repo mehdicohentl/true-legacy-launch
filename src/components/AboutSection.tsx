@@ -52,7 +52,7 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
 
         {/* Headline */}
         <motion.div {...fadeIn} className="text-center mb-6">
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[0.92]">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05]">
             <span className="text-foreground">{t[lang].headline}</span><br />
             <span className="text-gradient-gold italic">{t[lang].headline2}</span>
           </h2>
