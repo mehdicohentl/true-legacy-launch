@@ -57,7 +57,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             </motion.p>
           </div>
 
-           <h1 className="font-display font-black leading-[0.9] mb-6">
+           <h1 className="font-display font-black leading-[1] mb-6">
              <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline1}</span>
              <span className="block text-3xl md:text-5xl lg:text-7xl text-foreground">{t[lang].headline2}</span>
              <span className="block text-3xl md:text-5xl lg:text-7xl text-gradient-gold">{t[lang].headline3}</span>
