@@ -6,6 +6,7 @@ import EmGuardeSection from "@/components/EmGuardeSection";
 import JoinTeamSection from "@/components/JoinTeamSection";
 import ThankYouSection from "@/components/ThankYouSection";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 interface LandingPageProps {
   lang: "en" | "es";
@@ -19,6 +20,39 @@ const LandingPage = ({ lang }: LandingPageProps) => {
       <AboutSection lang={lang} />
       <WaterSection lang={lang} />
       <EmGuardeSection lang={lang} />
+
+      {/* Event CTA strip */}
+      <section className="py-10 bg-card/50 border-y border-accent/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/3 via-transparent to-accent/3" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
+          >
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-destructive" />
+              </span>
+              <p className="font-display font-black text-base md:text-lg text-foreground">
+                {lang === "en" ? "Live Zoom Event — Learn How to Earn $5K+/Month" : "Evento en Vivo — Aprende a Generar $5K+ USD/Mes"}
+              </p>
+            </div>
+            <motion.a
+              href={lang === "en" ? "/global/events" : "/latam/events"}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body font-black text-sm uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold transition-all"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+              {lang === "en" ? "See Event Details" : "Ver Detalles del Evento"}
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
       <JoinTeamSection lang={lang} />
       <ThankYouSection lang={lang} />
       <Footer lang={lang} />
