@@ -14,12 +14,14 @@ const Navbar = ({ lang }: NavbarProps) => {
         { id: "water", label: "Kangen Water" },
         { id: "story", label: "Mehdi's Story" },
         { id: "emguarde", label: "EmGuarde" },
+        { id: "event", label: "Live Event" },
         { id: "join", label: "Build With Us" },
       ]
     : [
         { id: "water", label: "El Agua" },
         { id: "story", label: "Historia" },
         { id: "emguarde", label: "EmGuarde" },
+        { id: "event", label: "Evento" },
         { id: "join", label: "Únete" },
       ];
 
