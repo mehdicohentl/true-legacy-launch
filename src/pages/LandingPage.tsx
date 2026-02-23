@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WaterSection from "@/components/WaterSection";
 import EmGuardeSection from "@/components/EmGuardeSection";
-import EventSection from "@/components/EventSection";
 import JoinTeamSection from "@/components/JoinTeamSection";
 import ThankYouSection from "@/components/ThankYouSection";
 import Footer from "@/components/Footer";
@@ -20,7 +19,6 @@ const LandingPage = ({ lang }: LandingPageProps) => {
       <AboutSection lang={lang} />
       <WaterSection lang={lang} />
       <EmGuardeSection lang={lang} />
-      <EventSection lang={lang} />
       <JoinTeamSection lang={lang} />
       <ThankYouSection lang={lang} />
       <Footer lang={lang} />

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LanguageSelector from "./pages/LanguageSelector";
 import LandingPage from "./pages/LandingPage";
 import EmGuardePurchase from "./pages/EmGuardePurchase";
+import EventsPage from "./pages/EventsPage";
 import NotFound from "./pages/NotFound";
 import WhoIsMehdiCohen from "./pages/seo/WhoIsMehdiCohen";
 import WhatIsTrueLegacy from "./pages/seo/WhatIsTrueLegacy";
@@ -29,6 +30,8 @@ const App = () => (
           <Route path="/latam" element={<LandingPage lang="es" />} />
           <Route path="/global/emguarde" element={<EmGuardePurchase lang="en" />} />
           <Route path="/latam/emguarde" element={<EmGuardePurchase lang="es" />} />
+          <Route path="/global/events" element={<EventsPage lang="en" />} />
+          <Route path="/latam/events" element={<EventsPage lang="es" />} />
           {/* SEO Landing Pages */}
           <Route path="/who-is-mehdi-cohen" element={<WhoIsMehdiCohen />} />
           <Route path="/what-is-true-legacy" element={<WhatIsTrueLegacy />} />

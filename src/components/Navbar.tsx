@@ -14,16 +14,16 @@ const Navbar = ({ lang }: NavbarProps) => {
         { id: "water", label: "Kangen Water" },
         { id: "story", label: "Mehdi's Story" },
         { id: "emguarde", label: "EmGuarde" },
-        { id: "event", label: "Live Event" },
         { id: "join", label: "Build With Us" },
       ]
     : [
         { id: "water", label: "El Agua" },
         { id: "story", label: "Historia" },
         { id: "emguarde", label: "EmGuarde" },
-        { id: "event", label: "Evento" },
         { id: "join", label: "Únete" },
       ];
+
+  const eventLink = lang === "en" ? "/global/events" : "/latam/events";
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -53,6 +53,13 @@ const Navbar = ({ lang }: NavbarProps) => {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
             </button>
           ))}
+          <a
+            href={eventLink}
+            className="text-xs font-mono font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.15em] relative group"
+          >
+            {lang === "en" ? "Live Event" : "Evento"}
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
+          </a>
         </div>
 
         <div className="flex items-center gap-4">
@@ -98,6 +105,12 @@ const Navbar = ({ lang }: NavbarProps) => {
               {link.label}
             </button>
           ))}
+          <a
+            href={eventLink}
+            className="block w-full text-left text-base font-body font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.1em] py-3"
+          >
+            {lang === "en" ? "🔴 Live Event" : "🔴 Evento"}
+          </a>
         </motion.div>
       )}
     </motion.nav>
