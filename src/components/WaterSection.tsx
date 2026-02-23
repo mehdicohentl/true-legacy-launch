@@ -51,7 +51,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
 
       buyGuideNote: "Estarás ordenando directamente a través del sistema oficial de Enagic—seguro, protegido y respaldado por más de 51 años de excelencia.",
       needHelp: "¿Necesitas ayuda? Conéctate con nosotros",
-      cta: "Obtener Tu Máquina de Agua Kangen Ahora"
+      cta: "Obtener Tu Máquina de Agua Kangen Ahora (EE. UU., Australia, Dubai, etc.)"
     }
   };
 
