@@ -37,7 +37,7 @@ const LandingPage = ({ lang }: LandingPageProps) => {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-destructive" />
               </span>
               <p className="font-display font-black text-base md:text-lg text-foreground">
-                {lang === "en" ? "Live Zoom Event — Learn How to Earn $5K+/Month" : "Evento en Vivo — Aprende a Generar $5K+ USD/Mes"}
+                {lang === "en" ? "Live Zoom Event — Improve Your Health and Income" : "Evento en Vivo — Mejora tu Salud e Ingresos"}
               </p>
             </div>
             <motion.a
