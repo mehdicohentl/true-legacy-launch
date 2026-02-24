@@ -22,9 +22,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       date: "Every Thursday",
       time: "8:00 PM EST / 5:00 PM PST",
       ctaMain: "Join the Live Zoom Now",
-      ctaAgenda: "View Meeting Agenda",
       zoomLink: "https://us02web.zoom.us/j/87614486219?pwd=YcmJqE7nyYnShh2jdFVz4kRdFygQpv.1",
-      agendaLink: "https://docs.zoom.us/agenda/doc/8b7a37f9-01f6-4316-ac10-689e42042ffa",
       meetingId: "876 1448 6219",
       passcode: "Truelegacy",
       hosts: "Hosted by Mehdi Cohen & Zah Naderi",
@@ -49,9 +47,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       date: "24 de Febrero, 2026",
       time: "8:00 PM (Hora de Bogotá) — 8 PM EST / 5 PM PST",
       ctaMain: "Únete al Zoom en Vivo",
-      ctaAgenda: "Ver Agenda del Evento",
       zoomLink: "https://us02web.zoom.us/j/83000043957?pwd=QtD967lagWROXR8ajaMkmNhhuxM09y.1",
-      agendaLink: "",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
       hosts: "Presentado por Mehdi Cohen",
@@ -176,17 +172,6 @@ const EventSection = ({ lang }: EventSectionProps) => {
                 </svg>
                 {c.ctaMain}
               </motion.a>
-              {c.agendaLink && (
-                <motion.a
-                  href={c.agendaLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03 }}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-5 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] border border-foreground/15 text-foreground hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
-                >
-                  {c.ctaAgenda}
-                </motion.a>
-              )}
             </div>
           </motion.div>
         </div>
