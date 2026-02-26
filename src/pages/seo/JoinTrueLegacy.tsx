@@ -55,7 +55,7 @@ const JoinTrueLegacy = () => {
           </section>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="https://form.jotform.com/260232994952060" target="_blank" rel="noopener noreferrer" className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow">
+            <a href="https://form.jotform.com/260564894519066" target="_blank" rel="noopener noreferrer" className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow">
               Apply to Join True Legacy Now
             </a>
             <a href="https://calendly.com/aquacharged/true-legacy-one-on-one" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors">

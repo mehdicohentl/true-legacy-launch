@@ -212,7 +212,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
             {c.ctaEmguarde}
           </a>
           <a
-            href={lang === "en" ? "https://form.jotform.com/260232994952060" : "https://form.jotform.com/260246489849069"}
+            href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-body font-bold text-xs uppercase tracking-[0.1em] border border-foreground/15 text-foreground hover:border-accent/30 hover:bg-accent/5 transition-colors"
