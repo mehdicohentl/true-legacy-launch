@@ -47,7 +47,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       date: "24 de Febrero, 2026",
       time: "8:00 PM (Hora de Bogotá) — 8 PM EST / 5 PM PST",
       ctaMain: "Regístrate para el Evento Zoom",
-      zoomLink: "https://form.jotform.com/260565024605048",
+      zoomLink: "https://form.jotform.com/260565932103049",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
       hosts: "Presentado por Mehdi Cohen",
