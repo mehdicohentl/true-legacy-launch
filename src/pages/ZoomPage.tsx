@@ -14,15 +14,15 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       meetingId: "876 1448 6219",
       passcode: "Truelegacy",
       date: "Every Thursday",
-      time: "8:00 PM EST / 5:00 PM PST",
+      time: "8:00 PM EST / 5:00 PM PST"
     },
     es: {
       link: "https://us02web.zoom.us/j/83000043957?pwd=QtD967lagWROXR8ajaMkmNhhuxM09y.1",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
       date: "Cada Martes",
-      time: "8:00 PM (Hora de Bogotá) — 8 PM EST / 5 PM PST",
-    },
+      time: "8:00 PM (Hora de Bogotá) — 8 PM EST / 5 PM PST"
+    }
   };
 
   const t = {
@@ -34,7 +34,7 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       idLabel: "Meeting ID",
       passLabel: "Passcode",
       note: "Bookmark this page — it will always have the latest Zoom link.",
-      back: "← Back to Home",
+      back: "← Back to Home"
     },
     es: {
       heading: "¡Estás Registrado!",
@@ -44,8 +44,8 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       idLabel: "ID de Reunión",
       passLabel: "Código de Acceso",
       note: "Guarda esta página — siempre tendrá el enlace de Zoom más reciente.",
-      back: "← Volver al Inicio",
-    },
+      back: "← Volver al Inicio"
+    }
   };
 
   const c = t[lang];
@@ -60,14 +60,14 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 w-full max-w-lg text-center space-y-8"
-      >
+        className="relative z-10 w-full max-w-lg text-center space-y-8">
+
         {/* Logo */}
         <img
           src={combinedLogo}
           alt="Mehdi Cohen True Legacy"
-          className="h-16 md:h-20 mx-auto opacity-90"
-        />
+          className="h-16 md:h-20 mx-auto opacity-90" />
+
 
         {/* Heading */}
         <div>
@@ -94,15 +94,15 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
 
         {/* Join CTA with Zoom branding */}
         <div className="space-y-4">
-          <img src={zoomLogo} alt="Zoom" className="h-8 mx-auto" />
+          
           <motion.a
             href={z.link}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.12em] bg-[hsl(213,100%,50%)] text-white shadow-lg w-full sm:w-auto"
-          >
+            className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.12em] bg-[hsl(213,100%,50%)] text-white shadow-lg w-full sm:w-auto">
+
             <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
               <path d="M4.585 6.836h8.98c1.246 0 2.254 1.009 2.254 2.254v4.57c0 .476-.146.917-.396 1.283l3.098-2.141c.346-.239.794-.037.794.358v3.68c0 .395-.448.597-.794.358l-3.098-2.141c.25.366.396.807.396 1.283v.24c0 1.246-1.008 2.254-2.254 2.254H4.585c-1.245 0-2.254-1.008-2.254-2.254V9.09c0-1.245 1.009-2.254 2.254-2.254z" />
             </svg>
@@ -116,13 +116,13 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
         {/* Back link */}
         <a
           href={lang === "en" ? "/global" : "/latam"}
-          className="inline-block font-body text-sm text-accent/70 hover:text-accent transition-colors font-bold"
-        >
+          className="inline-block font-body text-sm text-accent/70 hover:text-accent transition-colors font-bold">
+
           {c.back}
         </a>
       </motion.div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default ZoomPage;
