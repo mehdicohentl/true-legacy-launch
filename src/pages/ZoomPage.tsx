@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import mehdiLogo from "@/assets/mehdi-logo.png";
+import combinedLogo from "@/assets/combined-logo.png";
+import zoomLogo from "@/assets/zoom-logo.png";
 
 interface ZoomPageProps {
   lang: "en" | "es";
@@ -63,9 +64,9 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       >
         {/* Logo */}
         <img
-          src={mehdiLogo}
-          alt="Mehdi Cohen Logo"
-          className="h-14 mx-auto opacity-90"
+          src={combinedLogo}
+          alt="Mehdi Cohen True Legacy"
+          className="h-16 md:h-20 mx-auto opacity-90"
         />
 
         {/* Heading */}
@@ -90,6 +91,9 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
             <span>{c.passLabel}: {z.passcode}</span>
           </div>
         </div>
+
+        {/* Zoom logo */}
+        <img src={zoomLogo} alt="Zoom" className="h-10 mx-auto opacity-80" />
 
         {/* Join CTA */}
         <motion.a
