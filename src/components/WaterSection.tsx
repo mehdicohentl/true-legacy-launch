@@ -19,17 +19,17 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       { title: "Cellular Hydration", desc: "Penetrates cells 6x faster than regular water" },
       { title: "Medical-Grade Technology", desc: "The same machines used in Japanese hospitals since 1974" },
       { title: "7 pH Levels", desc: "From strong acidic disinfectant (hypochlorous acid) to strong alkaline oil emulsifier" }],
-
       buyGuideTitle: "How to Get Your Kangen Water Machine",
       buyGuideSteps: [
       "Click the button below to visit the official Enagic ordering page.",
       "Select your country from the listed options, like the U.S. or Canada. If you're in South America, contact us directly to get started, and we'll guide you through the steps.",
       "Choose the Kangen Water machine that fits your needs (we recommend the K8).",
       "Complete your order—it's that simple."],
-
       buyGuideNote: "You'll be ordering directly through Enagic's official system—safe, secure, and backed by 51+ years of excellence.",
       needHelp: "Need help? Connect with us",
-      cta: "Get Your Kangen Water Machine Now"
+      cta: "Get Your Kangen Water Machine Now",
+      ewgCta: "Check Your Tap Water Quality",
+      demoTitle: "Watch the Kangen Water Demo",
     },
     es: {
       micro: "La Base de Todo",
@@ -41,17 +41,17 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
       { title: "Hidratación Micro-Agrupada", desc: "Penetra las células 6x más rápido que el agua regular" },
       { title: "Tecnología de Grado Médico", desc: "Las mismas máquinas usadas en hospitales japoneses desde 1974" },
       { title: "7 Niveles de pH", desc: "Desde ácido fuerte (desinfectante) hasta alcalino fuerte (salud)" }],
-
       buyGuideTitle: "Cómo Obtener Tu Máquina de Agua Kangen",
       buyGuideSteps: [
       "Haz clic en el botón de abajo para visitar la página oficial de pedidos de Enagic.",
       "Selecciona tu país de las opciones disponibles, como EE.UU. o Canadá. Si estás en Sudamérica, contáctanos directamente para comenzar y te guiaremos a través de los pasos.",
       "Elige la máquina de Agua Kangen que se adapte a tus necesidades (recomendamos la K8).",
       "Completa tu pedido—así de simple."],
-
       buyGuideNote: "Estarás ordenando directamente a través del sistema oficial de Enagic—seguro, protegido y respaldado por más de 51 años de excelencia.",
       needHelp: "¿Necesitas ayuda? Conéctate con nosotros",
-      cta: "Obtener Tu Máquina de Agua Kangen Ahora (EE. UU., Australia, Dubai, etc.)"
+      cta: "Obtener Tu Máquina de Agua Kangen Ahora (EE. UU., Australia, Dubai, etc.)",
+      ewgCta: "Revisa la Calidad de Tu Agua del Grifo",
+      demoTitle: "Mira la Demostración del Agua Kangen",
     }
   };
 
@@ -65,7 +65,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-6 text-center">
-
           {t[lang].micro}
         </motion.p>
 
@@ -74,7 +73,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-20">
-
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05] mb-4">
             <span className="text-foreground">{lang === "en" ? "Kangen Water — The Wellness Foundation" : "Agua Kangen — La Base del Bienestar"}</span>
           </h2>
@@ -88,11 +86,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}>
-
-            
-
-
-
             {/* Benefits as cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
               {t[lang].benefits.map((b, i) =>
@@ -103,7 +96,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 className="glass-card rounded-xl p-5 hover:border-accent/30 transition-all duration-300 group">
-
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-2 block font-bold">0{i + 1}</span>
                   <h4 className="font-body font-black text-base text-foreground mb-1">{b.title}</h4>
                   <p className="font-body text-sm text-foreground font-bold leading-relaxed">{b.desc}</p>
@@ -112,21 +104,39 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
             </div>
           </motion.div>
 
-          {/* Kangen Water Machine Image */}
+          {/* Kangen Water Machine Image + Demo Video */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative flex items-center justify-center">
+            className="space-y-8">
+            <div className="relative flex items-center justify-center">
+              <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 via-transparent to-primary/8 rounded-2xl blur-2xl" />
+              <img
+                src={kangenMachine}
+                alt="Mehdi Cohen True Legacy CEO Kangen K8 water machine alkaline ionized water wellness mehdicohen.com"
+                className="relative w-full max-w-md mx-auto drop-shadow-2xl" />
+              <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
+            </div>
 
-            <div className="absolute -inset-4 bg-gradient-to-br from-accent/8 via-transparent to-primary/8 rounded-2xl blur-2xl" />
-            <img
-              src={kangenMachine}
-              alt="Mehdi Cohen True Legacy CEO Kangen K8 water machine alkaline ionized water wellness mehdicohen.com"
-              className="relative w-full max-w-md mx-auto drop-shadow-2xl" />
-
-            <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
-            <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
+            {/* Kangen Water Demo Video */}
+            <div className="relative">
+              <div className="absolute -inset-2 bg-accent/8 rounded-2xl blur-2xl" />
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3 text-center">
+                {t[lang].demoTitle}
+              </p>
+              <div className="relative aspect-video rounded-xl overflow-hidden border border-accent/20 shadow-deep">
+                <iframe
+                  src="https://www.youtube.com/embed/fJdfllJpdAg"
+                  title="Kangen Water Demo"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -136,7 +146,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-16">
-
           <div className="relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-accent/15 via-primary/10 to-accent/15 rounded-2xl" />
             <div className="relative m-px rounded-2xl bg-card p-8 md:p-12">
@@ -161,7 +170,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 {t[lang].buyGuideNote}
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
                 <motion.a
                   href={WATER_LINK}
                   target="_blank"
@@ -169,7 +178,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
                   className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow">
-
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                   {t[lang].cta}
                 </motion.a>
@@ -180,9 +188,18 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors">
-
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                   {lang === "en" ? "Get a Free Kangen Water PDF" : "Obtén un PDF Gratis del Agua Kangen"}
+                </motion.a>
+                <motion.a
+                  href="https://www.ewg.org/tapwater/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-xl font-body font-black text-xs md:text-sm uppercase tracking-[0.1em] border-2 border-foreground/20 text-foreground/70 hover:text-accent hover:border-accent/40 transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  {t[lang].ewgCta}
                 </motion.a>
               </div>
 
@@ -194,7 +211,6 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
         </motion.div>
       </div>
     </section>);
-
 };
 
 export default WaterSection;

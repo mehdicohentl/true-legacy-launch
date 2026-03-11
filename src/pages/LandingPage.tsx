@@ -5,6 +5,7 @@ import WaterSection from "@/components/WaterSection";
 import EmGuardeSection from "@/components/EmGuardeSection";
 import JoinTeamSection from "@/components/JoinTeamSection";
 import ThankYouSection from "@/components/ThankYouSection";
+import ResourcesSection from "@/components/ResourcesSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
@@ -55,6 +56,7 @@ const LandingPage = ({ lang }: LandingPageProps) => {
 
       <JoinTeamSection lang={lang} />
       <ThankYouSection lang={lang} />
+      <ResourcesSection lang={lang} />
       <Footer lang={lang} />
 
       {/* Floating WhatsApp button – Spanish/LATAM only */}
