@@ -58,7 +58,7 @@ const ZoomGateway = () => {
     "w-full rounded-xl bg-background/60 border border-border/30 px-4 py-3.5 text-foreground placeholder:text-foreground/40 font-body text-sm focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/30 transition-colors";
 
   return (
-    <section className="py-16 md:py-24 bg-background relative overflow-hidden noise-overlay">
+    <section id="zoom-gateway" className="py-16 md:py-24 bg-background relative overflow-hidden noise-overlay">
       <div className="absolute inset-0 bg-gradient-to-b from-accent/3 via-transparent to-primary/3" />
       <div className="container mx-auto px-4 relative z-10 max-w-2xl">
         <AnimatePresence mode="wait">
