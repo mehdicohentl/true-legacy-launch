@@ -13,7 +13,7 @@ const EventsPage = ({ lang }: EventsPageProps) => {
       <Navbar lang={lang} />
       <div className="pt-20">
         <EventSection lang={lang} />
-        {lang === "en" && <ZoomGateway />}
+        <ZoomGateway lang={lang} />
       </div>
       <Footer lang={lang} />
     </div>
