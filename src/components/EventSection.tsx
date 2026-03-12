@@ -22,8 +22,8 @@ const EventSection = ({ lang }: EventSectionProps) => {
       dateLabel: "Zoom Date",
       date: "Every Thursday",
       time: "8:00 PM EST / 5:00 PM PST",
-      ctaMain: "Register for the Zoom Event",
-      zoomLink: "https://form.jotform.com/260565024605048",
+      ctaMain: "Access the Zoom Event",
+      zoomLink: "#zoom-gateway",
       meetingId: "876 1448 6219",
       passcode: "Truelegacy",
       hosts: "Hosted by Mehdi Cohen & Zah Naderi",
@@ -163,8 +163,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
             <div className="flex flex-col sm:flex-row gap-3">
               <motion.a
                 href={c.zoomLink}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(lang === "es" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
