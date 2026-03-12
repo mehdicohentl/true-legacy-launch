@@ -23,7 +23,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       date: "Every Thursday",
       time: "8:00 PM EST / 5:00 PM PST",
       ctaMain: "Access the Zoom Event",
-      zoomLink: "https://form.jotform.com/260565024605048",
+      zoomLink: "#zoom-gateway",
       meetingId: "876 1448 6219",
       passcode: "Truelegacy",
       hosts: "Hosted by Mehdi Cohen & Zah Naderi",
