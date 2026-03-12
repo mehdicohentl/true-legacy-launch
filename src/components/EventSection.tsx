@@ -42,6 +42,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       topics: [
         "Tecnología de biohacking que el mercado desea",
         "Cómo generar $5K a $10K USD al mes con propósito",
+        "Escapa de la rutina del 9 a 5",
         "Una visión global para expandir y crecer más allá de las fronteras",
       ],
       dateLabel: "Fecha del Zoom",
