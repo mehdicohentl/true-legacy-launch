@@ -16,6 +16,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       topics: [
         "Biohacking technology the marketplace is craving",
         "How to build $5K to $10K per month with purpose",
+        "Escape the 9 to 5 rat race",
         "A global vision to expand and build beyond borders",
       ],
       dateLabel: "Zoom Date",
@@ -41,6 +42,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       topics: [
         "Tecnología de biohacking que el mercado desea",
         "Cómo generar $5K a $10K USD al mes con propósito",
+        "Escapa de la rutina del 9 a 5",
         "Una visión global para expandir y crecer más allá de las fronteras",
       ],
       dateLabel: "Fecha del Zoom",
