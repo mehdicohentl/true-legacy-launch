@@ -22,7 +22,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       dateLabel: "Zoom Date",
       date: "Every Thursday",
       time: "8:00 PM EST / 5:00 PM PST",
-      ctaMain: "Register for the Zoom Event",
+      ctaMain: "Access the Zoom Event",
       zoomLink: "https://form.jotform.com/260565024605048",
       meetingId: "876 1448 6219",
       passcode: "Truelegacy",
