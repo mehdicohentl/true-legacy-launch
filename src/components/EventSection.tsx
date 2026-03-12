@@ -48,8 +48,8 @@ const EventSection = ({ lang }: EventSectionProps) => {
       dateLabel: "Fecha del Zoom",
       date: "Cada Martes",
       time: "7:00 PM (Hora de Colombia) — 8:00 PM EST / 5:00 PM PST",
-      ctaMain: "Regístrate para el Evento Zoom",
-      zoomLink: "https://form.jotform.com/260565932103049",
+      ctaMain: "Acceder al Evento Zoom",
+      zoomLink: "#zoom-gateway",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
       hosts: "Presentado por Mehdi Cohen",
@@ -163,7 +163,6 @@ const EventSection = ({ lang }: EventSectionProps) => {
             <div className="flex flex-col sm:flex-row gap-3">
               <motion.a
                 href={c.zoomLink}
-                {...(lang === "es" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
