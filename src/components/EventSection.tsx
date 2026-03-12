@@ -163,7 +163,6 @@ const EventSection = ({ lang }: EventSectionProps) => {
             <div className="flex flex-col sm:flex-row gap-3">
               <motion.a
                 href={c.zoomLink}
-                {...(lang === "es" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
