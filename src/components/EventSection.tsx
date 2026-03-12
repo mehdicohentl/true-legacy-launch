@@ -16,6 +16,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       topics: [
         "Biohacking technology the marketplace is craving",
         "How to build $5K to $10K per month with purpose",
+        "Escape the 9 to 5 rat race",
         "A global vision to expand and build beyond borders",
       ],
       dateLabel: "Zoom Date",
