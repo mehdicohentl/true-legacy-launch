@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      zoom_registrations: {
+        Row: {
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          phone: string
+          registered_at: string | null
+        }
+        Insert: {
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          phone: string
+          registered_at?: string | null
+        }
+        Update: {
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          phone?: string
+          registered_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
