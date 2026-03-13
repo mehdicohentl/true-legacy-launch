@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import eventGlobal from "@/assets/event-global.png";
+import eventGlobal from "@/assets/event-global-flyer.jpg";
 import eventLatam from "@/assets/event-latam.jpg";
 
 interface EventSectionProps {
