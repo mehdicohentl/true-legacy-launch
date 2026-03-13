@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import combinedLogo from "@/assets/combined-logo.png";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface NavbarProps {
   lang: "en" | "es";
@@ -8,6 +9,11 @@ interface NavbarProps {
 
 const Navbar = ({ lang }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  const landingPath = lang === "en" ? "/global" : "/latam";
+  const isOnLandingPage = location.pathname === landingPath;
   
   const links = lang === "en"
     ? [
@@ -28,7 +34,11 @@ const Navbar = ({ lang }: NavbarProps) => {
   const eventLink = lang === "en" ? "/global/events" : "/latam/events";
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (isOnLandingPage) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`${landingPath}#${id}`);
+    }
     setMenuOpen(false);
   };
 
