@@ -70,7 +70,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
   const zoomUrl = ZOOM_URLS[lang];
   const [state, setState] = useState<GatewayState>("question");
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", referral: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleYes = () => {
