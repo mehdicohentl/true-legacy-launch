@@ -160,6 +160,9 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
                   <input type="tel" placeholder={c.phone} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputClass} />
                   {errors.phone && <p className="text-destructive text-xs mt-1 font-body">{errors.phone}</p>}
                 </div>
+                <div>
+                  <input type="text" placeholder={c.referral} value={form.referral} onChange={(e) => setForm({ ...form, referral: e.target.value })} className={inputClass} />
+                </div>
                 <motion.button type="submit" disabled={submitting} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-60">
                   {submitting ? c.submitting : c.submit}
                 </motion.button>
