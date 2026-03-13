@@ -45,6 +45,7 @@ const t = {
     lastName: "Apellido",
     email: "Correo Electrónico",
     phone: "Número de Teléfono",
+    referral: "¿Quién te refirió? (Opcional)",
     submit: "Registrarse y Unirse a la Llamada",
     submitting: "Registrando...",
     successHeading: "Bienvenido a True Legacy World",
