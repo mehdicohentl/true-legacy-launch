@@ -21,6 +21,7 @@ const t = {
     lastName: "Last Name",
     email: "Email Address",
     phone: "Phone Number",
+    referral: "Who Referred You? (Optional)",
     submit: "Register and Join the Call",
     submitting: "Registering...",
     successHeading: "Welcome to True Legacy World",
@@ -44,6 +45,7 @@ const t = {
     lastName: "Apellido",
     email: "Correo Electrónico",
     phone: "Número de Teléfono",
+    referral: "¿Quién te refirió? (Opcional)",
     submit: "Registrarse y Unirse a la Llamada",
     submitting: "Registrando...",
     successHeading: "Bienvenido a True Legacy World",
@@ -68,7 +70,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
   const zoomUrl = ZOOM_URLS[lang];
   const [state, setState] = useState<GatewayState>("question");
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", referral: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleYes = () => {
@@ -99,6 +101,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
       last_name: form.lastName.trim(),
       email: form.email.trim(),
       phone: form.phone.trim(),
+      referral: form.referral.trim() || null,
     });
 
     if (error) {
@@ -157,6 +160,9 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
                 <div>
                   <input type="tel" placeholder={c.phone} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputClass} />
                   {errors.phone && <p className="text-destructive text-xs mt-1 font-body">{errors.phone}</p>}
+                </div>
+                <div>
+                  <input type="text" placeholder={c.referral} value={form.referral} onChange={(e) => setForm({ ...form, referral: e.target.value })} className={inputClass} />
                 </div>
                 <motion.button type="submit" disabled={submitting} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-60">
                   {submitting ? c.submitting : c.submit}
