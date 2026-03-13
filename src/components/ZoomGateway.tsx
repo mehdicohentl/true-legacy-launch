@@ -176,8 +176,6 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
                 <button type="button" onClick={() => { setState("question"); setErrors({}); }} className="w-full py-3 rounded-xl font-body font-bold text-sm text-foreground/60 hover:text-foreground transition-colors">
                   {c.back}
                 </button>
-                  {submitting ? c.submitting : c.submit}
-                </motion.button>
               </form>
             </motion.div>
           )}
