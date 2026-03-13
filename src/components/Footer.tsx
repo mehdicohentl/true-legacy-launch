@@ -14,7 +14,7 @@ const Footer = ({ lang }: FooterProps) => {
       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
         <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52V6.82a4.84 4.84 0 01-1-.13z"/>
       </svg>
-    ), href: "https://tiktok.com/@aquacharged", label: "TikTok" },
+    ), href: "https://www.tiktok.com/@mehdi_cohen", label: "TikTok" },
     { icon: Mail, href: "mailto:truelegacyworld@gmail.com", label: "Email" },
     { icon: MessageCircle, href: lang === "es" ? "https://wa.me/+573001844049" : "https://wa.me/18649072149", label: "WhatsApp" },
   ];
