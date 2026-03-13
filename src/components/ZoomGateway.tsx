@@ -101,6 +101,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
       last_name: form.lastName.trim(),
       email: form.email.trim(),
       phone: form.phone.trim(),
+      referral: form.referral.trim() || null,
     });
 
     if (error) {

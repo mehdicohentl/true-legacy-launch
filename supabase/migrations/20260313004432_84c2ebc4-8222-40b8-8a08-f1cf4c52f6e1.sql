@@ -1,0 +1,1 @@
+ALTER TABLE public.zoom_registrations ADD COLUMN referral text DEFAULT null;
