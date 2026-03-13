@@ -21,6 +21,7 @@ const t = {
     lastName: "Last Name",
     email: "Email Address",
     phone: "Phone Number",
+    referral: "Who Referred You? (Optional)",
     submit: "Register and Join the Call",
     submitting: "Registering...",
     successHeading: "Welcome to True Legacy World",
