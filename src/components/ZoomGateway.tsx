@@ -90,6 +90,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
     if (!form.email.trim()) e.email = c.errEmail;
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) e.email = c.errEmailInvalid;
     if (!form.phone.trim()) e.phone = c.errPhone;
+    if (!form.referral.trim()) e.referral = c.errReferral;
     return e;
   };
 
