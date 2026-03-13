@@ -33,6 +33,7 @@ const t = {
     errEmail: "Email is required",
     errEmailInvalid: "Invalid email address",
     errPhone: "Phone number is required",
+    errReferral: "This field is required",
   },
   es: {
     heading: "Reserva Tu Lugar",
