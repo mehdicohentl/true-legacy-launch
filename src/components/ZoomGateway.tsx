@@ -59,6 +59,7 @@ const t = {
     errEmail: "El correo es obligatorio",
     errEmailInvalid: "Correo electrónico inválido",
     errPhone: "El teléfono es obligatorio",
+    errReferral: "Este campo es obligatorio",
   },
 };
 
