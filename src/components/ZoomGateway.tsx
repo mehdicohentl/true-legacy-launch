@@ -21,7 +21,8 @@ const t = {
     lastName: "Last Name",
     email: "Email Address",
     phone: "Phone Number",
-    referral: "Who Referred You? (Optional)",
+    referral: "Who Referred You?",
+    back: "← Back",
     submit: "Register and Join the Call",
     submitting: "Registering...",
     successHeading: "Welcome to True Legacy World",
@@ -32,6 +33,7 @@ const t = {
     errEmail: "Email is required",
     errEmailInvalid: "Invalid email address",
     errPhone: "Phone number is required",
+    errReferral: "This field is required",
   },
   es: {
     heading: "Reserva Tu Lugar",
@@ -45,7 +47,8 @@ const t = {
     lastName: "Apellido",
     email: "Correo Electrónico",
     phone: "Número de Teléfono",
-    referral: "¿Quién te refirió? (Opcional)",
+    referral: "¿Quién te refirió?",
+    back: "← Volver",
     submit: "Registrarse y Unirse a la Llamada",
     submitting: "Registrando...",
     successHeading: "Bienvenido a True Legacy World",
@@ -56,6 +59,7 @@ const t = {
     errEmail: "El correo es obligatorio",
     errEmailInvalid: "Correo electrónico inválido",
     errPhone: "El teléfono es obligatorio",
+    errReferral: "Este campo es obligatorio",
   },
 };
 
@@ -86,6 +90,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
     if (!form.email.trim()) e.email = c.errEmail;
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) e.email = c.errEmailInvalid;
     if (!form.phone.trim()) e.phone = c.errPhone;
+    if (!form.referral.trim()) e.referral = c.errReferral;
     return e;
   };
 
@@ -163,10 +168,14 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
                 </div>
                 <div>
                   <input type="text" placeholder={c.referral} value={form.referral} onChange={(e) => setForm({ ...form, referral: e.target.value })} className={inputClass} />
+                  {errors.referral && <p className="text-destructive text-xs mt-1 font-body">{errors.referral}</p>}
                 </div>
                 <motion.button type="submit" disabled={submitting} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-60">
                   {submitting ? c.submitting : c.submit}
                 </motion.button>
+                <button type="button" onClick={() => { setState("question"); setErrors({}); }} className="w-full py-3 rounded-xl font-body font-bold text-sm text-foreground/60 hover:text-foreground transition-colors">
+                  {c.back}
+                </button>
               </form>
             </motion.div>
           )}
