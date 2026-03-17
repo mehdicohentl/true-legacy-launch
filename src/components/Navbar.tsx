@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import combinedLogo from "@/assets/combined-logo.png";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 interface NavbarProps {
   lang: "en" | "es";
@@ -51,7 +51,7 @@ const Navbar = ({ lang }: NavbarProps) => {
     >
       <div className="container mx-auto flex items-center justify-between py-3.5 px-4">
         <div className="flex items-center gap-4">
-          <a href="/"><img src={combinedLogo} alt="Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com" className="h-14 md:h-18 w-auto" /></a>
+          <Link to="/"><img src={combinedLogo} alt="Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com" className="h-14 md:h-18 w-auto" /></Link>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
@@ -65,39 +65,39 @@ const Navbar = ({ lang }: NavbarProps) => {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
             </button>
           ))}
-          <a
-            href={productsLink}
+          <Link
+            to={productsLink}
             className="text-xs font-mono font-bold text-foreground/70 hover:text-foreground transition-colors uppercase tracking-[0.15em] relative group"
           >
             {lang === "en" ? "Products" : "Productos"}
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
-          </a>
-          <a
-            href={resourcesLink}
+          </Link>
+          <Link
+            to={resourcesLink}
             className="text-xs font-mono font-bold text-foreground/70 hover:text-foreground transition-colors uppercase tracking-[0.15em] relative group"
           >
             {lang === "en" ? "Resources" : "Recursos"}
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
-          </a>
-          <a
-            href={eventLink}
+          </Link>
+          <Link
+            to={eventLink}
             className="text-xs font-mono font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.15em] relative group"
           >
             {lang === "en" ? "Live Event" : "Evento"}
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
-          </a>
+          </Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <a
-            href={lang === "en" ? "/latam" : "/global"}
+          <Link
+            to={lang === "en" ? "/latam" : "/global"}
             className="flag-hover cursor-pointer"
             title={lang === "en" ? "Cambiar a Español" : "Switch to English"}
           >
             <span className="text-sm font-mono font-bold text-foreground uppercase tracking-wider">
               {lang === "en" ? "LATAM" : "EN"}
             </span>
-          </a>
+          </Link>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -129,24 +129,27 @@ const Navbar = ({ lang }: NavbarProps) => {
               {link.label}
             </button>
           ))}
-          <a
-            href={productsLink}
+          <Link
+            to={productsLink}
             className="block w-full text-left text-base font-body font-bold text-foreground/80 hover:text-foreground transition-colors uppercase tracking-[0.1em] py-3"
+            onClick={() => setMenuOpen(false)}
           >
             {lang === "en" ? "Products" : "Productos"}
-          </a>
-          <a
-            href={resourcesLink}
+          </Link>
+          <Link
+            to={resourcesLink}
             className="block w-full text-left text-base font-body font-bold text-foreground/80 hover:text-foreground transition-colors uppercase tracking-[0.1em] py-3"
+            onClick={() => setMenuOpen(false)}
           >
             {lang === "en" ? "Resources" : "Recursos"}
-          </a>
-          <a
-            href={eventLink}
+          </Link>
+          <Link
+            to={eventLink}
             className="block w-full text-left text-base font-body font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.1em] py-3"
+            onClick={() => setMenuOpen(false)}
           >
             {lang === "en" ? "Live Event" : "Evento en Vivo"}
-          </a>
+          </Link>
         </motion.div>
       )}
     </motion.nav>

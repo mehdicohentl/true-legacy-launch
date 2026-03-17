@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import combinedLogo from "@/assets/combined-logo.png";
 
@@ -278,13 +279,13 @@ const socials = [
 
         {/* Back to site link */}
         <div className="text-center mt-10">
-          <a
-            href={lang === "en" ? "/global" : "/latam"}
+          <Link
+            to={lang === "en" ? "/global" : "/latam"}
             className="inline-flex items-center gap-2 text-sm font-body font-bold text-white/40 hover:text-white/70 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             {lang === "en" ? "Back to site" : "Volver al sitio"}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import combinedLogo from "@/assets/combined-logo.png";
 import zoomLogo from "@/assets/zoom-logo.png";
 
@@ -114,12 +115,11 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
         <p className="font-mono text-xs text-foreground/40 italic">{c.note}</p>
 
         {/* Back link */}
-        <a
-          href={lang === "en" ? "/global" : "/latam"}
+        <Link
+          to={lang === "en" ? "/global" : "/latam"}
           className="inline-block font-body text-sm text-accent/70 hover:text-accent transition-colors font-bold">
-
           {c.back}
-        </a>
+        </Link>
       </motion.div>
     </div>);
 
