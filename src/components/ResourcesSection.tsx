@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { Filter, Wrench, Droplets, ShoppingBag } from "lucide-react";
+import imgMultipure from "@/assets/product-multipure.png";
+import imgProPump from "@/assets/product-pro-pump.png";
+import imgFaucet from "@/assets/product-ionizer-faucet.png";
+import imgFilters from "@/assets/product-ionfaucet-filters.png";
 
 interface ResourcesSectionProps {
   lang: "en" | "es";
