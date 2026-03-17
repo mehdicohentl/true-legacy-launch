@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import eventGlobal from "@/assets/event-global-flyer.jpg";
 import eventLatam from "@/assets/event-latam-flyer.png";
+import ZoomGateway from "@/components/ZoomGateway";
 
 interface EventSectionProps {
   lang: "en" | "es";
@@ -22,8 +23,6 @@ const EventSection = ({ lang }: EventSectionProps) => {
       dateLabel: "Zoom Date",
       date: "Thursday",
       time: "8:00 PM EST / 5:00 PM PST",
-      ctaMain: "Access the Zoom Event",
-      zoomLink: "#zoom-gateway",
       meetingId: "876 1448 6219",
       passcode: "Truelegacy",
       hosts: "Hosted by Mehdi Cohen & Zah Naderi",
@@ -48,8 +47,6 @@ const EventSection = ({ lang }: EventSectionProps) => {
       dateLabel: "Fecha del Zoom",
       date: "Jueves",
       time: "7:00 PM (Hora de Colombia) — 8:00 PM EST / 5:00 PM PST",
-      ctaMain: "Acceder al Evento Zoom",
-      zoomLink: "#zoom-gateway",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
       hosts: "Presentado por Mehdi Cohen",
@@ -158,35 +155,23 @@ const EventSection = ({ lang }: EventSectionProps) => {
                 <span>Pass: {c.passcode}</span>
               </div>
             </div>
-
-            {/* Main CTA */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <motion.a
-                href={c.zoomLink}
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                {c.ctaMain}
-              </motion.a>
-            </div>
           </motion.div>
         </div>
+
+        {/* Inline Zoom Gateway — Secure Your Spot */}
+        <ZoomGateway lang={lang} />
 
         {/* Bottom quote */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center font-display font-bold italic text-lg text-foreground mb-10 max-w-2xl mx-auto"
+          className="text-center font-display font-bold italic text-lg text-foreground mb-10 max-w-2xl mx-auto mt-14"
         >
           {c.bottomCta}
         </motion.p>
 
-        {/* Secondary CTAs — smaller, not overpowering */}
+        {/* Secondary CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}

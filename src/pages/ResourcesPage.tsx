@@ -20,8 +20,15 @@ interface ResourcesPageProps {
   lang: "en" | "es";
 }
 
+type CategoryKey = "all" | "info" | "tech" | "upgrades";
+
+const ResourcesPage = ({ lang }: ResourcesPageProps) => {
+  const linkedinUrl = lang === "en"
+    ? "https://www.linkedin.com/in/mehdicohen-tl/"
+    : "https://co.linkedin.com/in/mehdi-cohen";
+
 const socials = [
-  { label: "YouTube", href: "https://www.youtube.com/@TrueLegacyWorld", icon: (
+  { label: "YouTube", href: "https://www.youtube.com/@Mehdicohen", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.9 31.9 0 000 12a31.9 31.9 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.9 31.9 0 0024 12a31.9 31.9 0 00-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
   )},
   { label: "Instagram", href: "https://www.instagram.com/truelegacyworld/", icon: (
@@ -30,7 +37,7 @@ const socials = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100063711834790", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1c0 6 4.4 11 10.1 11.9v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.3l-.5 3.5h-2.8v8.4C19.6 23.1 24 18.1 24 12.1z"/></svg>
   )},
-  { label: "TikTok", href: "https://www.tiktok.com/@truelegacyworld", icon: (
+  { label: "TikTok", href: "https://www.tiktok.com/@mehdi_cohen", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 2.8h3a4.5 4.5 0 004 3.8v3.3a7.5 7.5 0 01-4-1.2v5.8a6 6 0 11-5.2-5.9v3.4a2.7 2.7 0 102 2.6V2.8z"/></svg>
   )},
   { label: "Email", href: "mailto:aquacharged@gmail.com", icon: (
@@ -39,25 +46,24 @@ const socials = [
   { label: "WhatsApp", href: "https://wa.me/18649072149", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4zM12 21.8a9.9 9.9 0 01-5-1.4l-.4-.2-3.7 1 1-3.7-.3-.4A9.8 9.8 0 1121.8 12 9.8 9.8 0 0112 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0024 12C24 5.4 18.6 0 12 0z"/></svg>
   )},
+  { label: "LinkedIn", href: linkedinUrl, icon: (
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77A1.75 1.75 0 000 1.73v20.54A1.75 1.75 0 001.77 24h20.45A1.75 1.75 0 0024 22.27V1.73A1.75 1.75 0 0022.22 0z"/></svg>
+  )},
   { label: "Website", href: "https://mehdicohen.com", icon: (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.7 0 3-4 3-9s-1.3-9-3-9m0 18c-1.7 0-3-4-3-9s1.3-9 3-9" /></svg>
   )},
 ];
 
-type CategoryKey = "all" | "info" | "tech" | "upgrades";
+  const transparentThumbs = [
+    "linktree-ewg", "linktree-emguarde", "linktree-emguarde-contact",
+    "linktree-k8", "linktree-kangen8", "linktree-multipure",
+    "linktree-ionfaucet-filters", "linktree-propump", "linktree-faucets",
+    "linktree-ionfaucet-tools",
+  ];
 
-// Transparent PNG thumbnails need a subtle background to be visible on dark bg
-const transparentThumbs = [
-  "linktree-ewg", "linktree-emguarde", "linktree-emguarde-contact",
-  "linktree-k8", "linktree-kangen8", "linktree-multipure",
-  "linktree-ionfaucet-filters", "linktree-propump", "linktree-faucets",
-  "linktree-ionfaucet-tools",
-];
+  const isTransparent = (src: string) =>
+    transparentThumbs.some((t) => src.includes(t));
 
-const isTransparent = (src: string) =>
-  transparentThumbs.some((t) => src.includes(t));
-
-const ResourcesPage = ({ lang }: ResourcesPageProps) => {
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
   const whatsappEmguarde = lang === "es" ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
 
@@ -131,7 +137,7 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
           label: lang === "en"
             ? "How to professionally deep clean Enagic LeveLuk (K8)"
             : "Cómo limpiar profesionalmente tu Enagic LeveLuk (K8)",
-          href: "https://www.youtube.com/@TrueLegacyWorld",
+          href: "https://www.youtube.com/@Mehdicohen",
           image: imgDeepclean,
         },
         {

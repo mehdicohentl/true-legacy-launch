@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EventSection from "@/components/EventSection";
-import ZoomGateway from "@/components/ZoomGateway";
+import EventResourceLinks from "@/components/EventResourceLinks";
 
 interface EventsPageProps {
   lang: "en" | "es";
@@ -13,7 +13,7 @@ const EventsPage = ({ lang }: EventsPageProps) => {
       <Navbar lang={lang} />
       <div className="pt-20">
         <EventSection lang={lang} />
-        <ZoomGateway lang={lang} />
+        <EventResourceLinks lang={lang} />
       </div>
       <Footer lang={lang} />
     </div>

@@ -124,77 +124,74 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
     "w-full rounded-xl bg-background/60 border border-border/30 px-4 py-3.5 text-foreground placeholder:text-foreground/40 font-body text-sm focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/30 transition-colors";
 
   return (
-    <section id="zoom-gateway" className="py-16 md:py-24 bg-background relative overflow-hidden noise-overlay">
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/3 via-transparent to-primary/3" />
-      <div className="container mx-auto px-4 relative z-10 max-w-2xl">
-        <AnimatePresence mode="wait">
-          {state === "question" && (
-            <motion.div key="question" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="text-center">
-              <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-2">{c.heading}</h2>
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-6">{c.subtitle}</p>
-              <div className="w-16 h-px bg-accent/40 mx-auto mb-10" />
-              <p className="font-body text-base md:text-lg text-foreground/90 font-bold mb-8">{c.question}</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} onClick={handleYes} className="flex-1 px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] border border-accent/30 text-accent hover:bg-accent/10 transition-colors">
-                  {c.yes}
-                </motion.button>
-                <motion.button whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} onClick={handleNo} className="flex-1 px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold">
-                  {c.no}
-                </motion.button>
+    <div className="max-w-2xl mx-auto">
+      <AnimatePresence mode="wait">
+        {state === "question" && (
+          <motion.div key="question" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="text-center">
+            <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-2">{c.heading}</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-6">{c.subtitle}</p>
+            <div className="w-16 h-px bg-accent/40 mx-auto mb-10" />
+            <p className="font-body text-base md:text-lg text-foreground/90 font-bold mb-8">{c.question}</p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <motion.button whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} onClick={handleYes} className="flex-1 px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] border border-accent/30 text-accent hover:bg-accent/10 transition-colors">
+                {c.yes}
+              </motion.button>
+              <motion.button whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} onClick={handleNo} className="flex-1 px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold">
+                {c.no}
+              </motion.button>
+            </div>
+          </motion.div>
+        )}
+
+        {state === "form" && (
+          <motion.div key="form" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-2 text-center">{c.formHeading}</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-8 text-center">{c.formSubtitle}</p>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <input type="text" placeholder={c.firstName} value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className={inputClass} />
+                {errors.firstName && <p className="text-destructive text-xs mt-1 font-body">{errors.firstName}</p>}
               </div>
-            </motion.div>
-          )}
+              <div>
+                <input type="text" placeholder={c.lastName} value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} className={inputClass} />
+                {errors.lastName && <p className="text-destructive text-xs mt-1 font-body">{errors.lastName}</p>}
+              </div>
+              <div>
+                <input type="email" placeholder={c.email} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClass} />
+                {errors.email && <p className="text-destructive text-xs mt-1 font-body">{errors.email}</p>}
+              </div>
+              <div>
+                <input type="tel" placeholder={c.phone} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputClass} />
+                {errors.phone && <p className="text-destructive text-xs mt-1 font-body">{errors.phone}</p>}
+              </div>
+              <div>
+                <input type="text" placeholder={c.referral} value={form.referral} onChange={(e) => setForm({ ...form, referral: e.target.value })} className={inputClass} />
+                {errors.referral && <p className="text-destructive text-xs mt-1 font-body">{errors.referral}</p>}
+              </div>
+              <motion.button type="submit" disabled={submitting} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-60">
+                {submitting ? c.submitting : c.submit}
+              </motion.button>
+              <button type="button" onClick={() => { setState("question"); setErrors({}); }} className="w-full py-3 rounded-xl font-body font-bold text-sm text-foreground/60 hover:text-foreground transition-colors">
+                {c.back}
+              </button>
+            </form>
+          </motion.div>
+        )}
 
-          {state === "form" && (
-            <motion.div key="form" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
-              <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-2 text-center">{c.formHeading}</h2>
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-8 text-center">{c.formSubtitle}</p>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input type="text" placeholder={c.firstName} value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className={inputClass} />
-                  {errors.firstName && <p className="text-destructive text-xs mt-1 font-body">{errors.firstName}</p>}
-                </div>
-                <div>
-                  <input type="text" placeholder={c.lastName} value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} className={inputClass} />
-                  {errors.lastName && <p className="text-destructive text-xs mt-1 font-body">{errors.lastName}</p>}
-                </div>
-                <div>
-                  <input type="email" placeholder={c.email} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClass} />
-                  {errors.email && <p className="text-destructive text-xs mt-1 font-body">{errors.email}</p>}
-                </div>
-                <div>
-                  <input type="tel" placeholder={c.phone} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputClass} />
-                  {errors.phone && <p className="text-destructive text-xs mt-1 font-body">{errors.phone}</p>}
-                </div>
-                <div>
-                  <input type="text" placeholder={c.referral} value={form.referral} onChange={(e) => setForm({ ...form, referral: e.target.value })} className={inputClass} />
-                  {errors.referral && <p className="text-destructive text-xs mt-1 font-body">{errors.referral}</p>}
-                </div>
-                <motion.button type="submit" disabled={submitting} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-60">
-                  {submitting ? c.submitting : c.submit}
-                </motion.button>
-                <button type="button" onClick={() => { setState("question"); setErrors({}); }} className="w-full py-3 rounded-xl font-body font-bold text-sm text-foreground/60 hover:text-foreground transition-colors">
-                  {c.back}
-                </button>
-              </form>
-            </motion.div>
-          )}
-
-          {state === "success" && (
-            <motion.div key="success" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="text-center">
-              <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-3">{c.successHeading}</h2>
-              <p className="font-body text-base text-foreground/80 mb-8">{c.successText}</p>
-              <motion.a href={zoomUrl} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="inline-flex w-full items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                {c.joinBtn}
-              </motion.a>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </section>
+        {state === "success" && (
+          <motion.div key="success" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="text-center">
+            <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-3">{c.successHeading}</h2>
+            <p className="font-body text-base text-foreground/80 mb-8">{c.successText}</p>
+            <motion.a href={zoomUrl} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="inline-flex w-full items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              {c.joinBtn}
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
