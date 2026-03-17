@@ -192,7 +192,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       >
         {/* Image */}
         {product.image ? (
-          <div className="relative aspect-square bg-transparent flex items-center justify-center overflow-hidden">
+        <div className={`relative aspect-square flex items-center justify-center overflow-hidden rounded-t-2xl ${product.id === "wagyu" ? "bg-black" : "bg-white"}`} style={{ isolation: "isolate" }}>
             {product.featured && (
               <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
                 {c.featured}
