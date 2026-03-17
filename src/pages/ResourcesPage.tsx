@@ -35,7 +35,7 @@ const socials = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100063711834790", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1c0 6 4.4 11 10.1 11.9v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.3l-.5 3.5h-2.8v8.4C19.6 23.1 24 18.1 24 12.1z"/></svg>
   )},
-  { label: "TikTok", href: "https://www.tiktok.com/@truelegacyworld", icon: (
+  { label: "TikTok", href: "https://www.tiktok.com/@mehdi_cohen", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 2.8h3a4.5 4.5 0 004 3.8v3.3a7.5 7.5 0 01-4-1.2v5.8a6 6 0 11-5.2-5.9v3.4a2.7 2.7 0 102 2.6V2.8z"/></svg>
   )},
   { label: "Email", href: "mailto:aquacharged@gmail.com", icon: (
