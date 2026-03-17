@@ -64,8 +64,8 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
           title: "INFO",
           links: [
             { label: "⚠️ Revisa Tu Agua del Grifo (EWG) ⚠️", href: "https://www.ewg.org/tapwater/", image: undefined },
-            { label: "EmGuarde DEMO", href: "/latam/emguarde", image: imgEmguarde },
-            { label: "Kangen Water DEMO", href: "https://www.youtube.com/watch?v=example", image: imgK8 },
+            { label: "EmGuarde DEMO", href: "https://youtu.be/vPlD1fZEdvE?si=QCrNzTGVsNetRGrS", image: imgEmguarde },
+            { label: "Kangen Water DEMO", href: "https://youtu.be/fJdfllJpdAg?si=c87_3pu1CuJkdJKQ", image: imgK8 },
           ],
         },
         {
