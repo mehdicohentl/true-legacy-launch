@@ -95,7 +95,7 @@ const products: Product[] = [
     nameEs: "Kangen Air",
     descEn: "Revolutionary air purifier combining photocatalysis and UV LED technology. Available in USA & Canada as a private import from Singapore.",
     descEs: "Purificador de aire revolucionario que combina fotocatálisis y tecnología LED UV. Disponible en EE. UU. y Canadá como importación privada desde Singapur.",
-    image: "",
+    image: imgKangenAir,
     type: "kangenair",
   },
   {
