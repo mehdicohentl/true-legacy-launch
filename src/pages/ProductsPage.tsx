@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import productK8 from "@/assets/product-k8.png";
-import productSD501 from "@/assets/product-sd501.png";
-import productAnespa from "@/assets/product-anespa.png";
-import productUkon from "@/assets/product-ukon.png";
 import combinedLogo from "@/assets/combined-logo.png";
 
 interface ProductsPageProps {
@@ -18,7 +14,6 @@ const products = [
     nameEs: "Kangen K8",
     descEn: "The flagship Kangen Water machine with 8 platinum-coated titanium plates. Produces 5 types of water for drinking, cooking, cleaning, and beauty care. The most powerful antioxidant hydration system for your home.",
     descEs: "La máquina insignia de Agua Kangen con 8 placas de titanio recubiertas de platino. Produce 5 tipos de agua para beber, cocinar, limpiar y cuidado de belleza. El sistema de hidratación antioxidante más poderoso para tu hogar.",
-    image: productK8,
     href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016",
     featured: true,
   },
@@ -28,7 +23,6 @@ const products = [
     nameEs: "SD 501 Super",
     descEn: "The enhanced SD 501 with 7 platinum-coated titanium plates and extra-large electrolysis surface. Built for families and heavy use — superior Kangen Water production for households that demand more.",
     descEs: "El SD 501 mejorado con 7 placas de titanio recubiertas de platino y superficie de electrólisis extra grande. Diseñado para familias y uso intensivo — producción superior de Agua Kangen.",
-    image: productSD501,
     href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1007",
   },
   {
@@ -37,7 +31,6 @@ const products = [
     nameEs: "SD 501 DX",
     descEn: "The most popular Kangen Water machine worldwide. 7 platinum-coated titanium plates deliver consistent, high-quality hydrogen-rich water. A proven workhorse trusted by millions.",
     descEs: "La máquina de Agua Kangen más popular del mundo. 7 placas de titanio recubiertas de platino ofrecen agua rica en hidrógeno de alta calidad. Un caballo de batalla confiable por millones.",
-    image: productSD501,
     href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1064",
   },
   {
@@ -46,7 +39,6 @@ const products = [
     nameEs: "Anespa DX",
     descEn: "Transform your shower and bath with mineral ion water. The Anespa DX removes chlorine and adds natural hot spring minerals for softer skin, healthier hair, and a spa-like experience at home.",
     descEs: "Transforma tu ducha y baño con agua de iones minerales. El Anespa DX elimina el cloro y agrega minerales de aguas termales naturales para una piel más suave, cabello más saludable y una experiencia de spa en casa.",
-    image: productAnespa,
     href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1062",
   },
   {
@@ -55,7 +47,6 @@ const products = [
     nameEs: "Ukon Sigma",
     descEn: "Premium wild turmeric supplement from Okinawa, Japan. 100% organic Ukon (turmeric) in easy-to-take capsules. Supports liver health, anti-inflammation, and overall vitality.",
     descEs: "Suplemento premium de cúrcuma silvestre de Okinawa, Japón. 100% orgánico Ukon (cúrcuma) en cápsulas fáciles de tomar. Apoya la salud hepática, antiinflamación y vitalidad general.",
-    image: productUkon,
     href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=2006",
   },
   {
@@ -64,7 +55,6 @@ const products = [
     nameEs: "Kangen Beef SET",
     descEn: "Premium Kangen Farm beef raised with Kangen Water. A unique product from Enagic's farm-to-table initiative. Experience the difference that hydrogen-rich water makes in premium beef quality.",
     descEs: "Carne premium de Kangen Farm criada con Agua Kangen. Un producto único de la iniciativa de granja a mesa de Enagic. Experimenta la diferencia que el agua rica en hidrógeno hace en la calidad de la carne.",
-    image: null,
     href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=2115",
   },
 ];
@@ -76,7 +66,6 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       headline: "Explore the Full Product Line",
       subhead: "Premium Japanese technology for water, wellness, and vitality — trusted by millions worldwide for over 50 years.",
       cta: "Order Now",
-      learnMore: "Learn More",
       kangenAirTitle: "Kangen Air",
       kangenAirDesc: "A revolutionary air purifier combining photocatalysis and UV LED technology. Now available in USA and Canada as a private import from Singapore. Contact kangenair@enagicsg.com for more information.",
       kangenAirAvail: "Available in USA & Canada — Contact for details",
@@ -89,7 +78,6 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       headline: "Explora la Línea Completa de Productos",
       subhead: "Tecnología japonesa premium para agua, bienestar y vitalidad — confiada por millones en todo el mundo durante más de 50 años.",
       cta: "Ordenar Ahora",
-      learnMore: "Más Información",
       kangenAirTitle: "Kangen Air",
       kangenAirDesc: "Un purificador de aire revolucionario que combina fotocatálisis y tecnología LED UV. Ahora disponible en EE. UU. y Canadá como importación privada desde Singapur. Contacta kangenair@enagicsg.com para más información.",
       kangenAirAvail: "Disponible en EE. UU. y Canadá — Contacta para detalles",
@@ -151,25 +139,16 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
                   product.featured ? "md:col-span-2 lg:col-span-1 border-accent/20" : "border-border/20"
                 }`}
               >
-                {/* Image */}
+                {/* Placeholder */}
                 <div className="relative aspect-square bg-background/50 flex items-center justify-center p-6 overflow-hidden">
                   {product.featured && (
                     <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
                       {c.featured}
                     </span>
                   )}
-                  {product.image ? (
-                    <img
-                      src={product.image}
-                      alt={`${lang === "en" ? product.nameEn : product.nameEs} Enagic Kangen Water machine mehdicohen.com`}
-                      className="w-full h-full object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <img src={combinedLogo} alt="True Legacy" className="w-32 opacity-30" />
-                    </div>
-                  )}
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img src={combinedLogo} alt="True Legacy" className="w-32 opacity-30" />
+                  </div>
                 </div>
 
                 {/* Details */}
