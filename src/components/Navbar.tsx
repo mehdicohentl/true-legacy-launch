@@ -20,14 +20,12 @@ const Navbar = ({ lang }: NavbarProps) => {
         { id: "water", label: "Kangen Water" },
         { id: "story", label: "Mehdi's Story" },
         { id: "emguarde", label: "EmGuarde" },
-        { id: "resources", label: "Resources" },
         { id: "join", label: "Build With Us" },
       ]
     : [
         { id: "water", label: "El Agua" },
         { id: "story", label: "Historia" },
         { id: "emguarde", label: "EmGuarde" },
-        { id: "resources", label: "Recursos" },
         { id: "join", label: "Únete" },
       ];
 
@@ -101,7 +99,6 @@ const Navbar = ({ lang }: NavbarProps) => {
             </span>
           </a>
 
-          {/* Mobile menu toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-foreground p-1"
@@ -117,7 +114,6 @@ const Navbar = ({ lang }: NavbarProps) => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
@@ -149,7 +145,7 @@ const Navbar = ({ lang }: NavbarProps) => {
             href={eventLink}
             className="block w-full text-left text-base font-body font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.1em] py-3"
           >
-            {lang === "en" ? "🔴 Live Event" : "🔴 Evento"}
+            {lang === "en" ? "Live Event" : "Evento en Vivo"}
           </a>
         </motion.div>
       )}
