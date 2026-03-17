@@ -1,37 +1,23 @@
 
 
-## Plan: Replace Banner with Clean Logo Header on Mobile
+## Add "Book a 30-Minute Clarity Call" Button Below the Video
 
-The banner image (`linktree-banner.png`) keeps getting cut off on mobile at 390px. Instead of fighting aspect ratios, replace the banner section entirely with a clean, professional header design.
+### Change
 
-### Changes to `src/pages/ResourcesPage.tsx`
+Add a CTA button underneath the YouTube video in `src/components/ThankYouSection.tsx`, with bilingual support (English/Spanish).
 
-**Remove the banner image entirely.** Replace lines 162-201 with:
+### Details
 
-- A dark gradient background section (no photo) with generous padding
-- The `combined-logo.png` (True Legacy + Mehdi Cohen) centered and large
-- Tagline text below
-- Social icons row below that
-- No more aspect ratio issues, no image cut-off
+- **English text**: "Book a 30-Minute Clarity Call"
+- **Spanish text**: "Reserva una Llamada de Claridad de 30 Minutos"
+- Button will be placed after the video `motion.div` (after line 48), centered, with a fade-in animation
+- Styled consistently with existing CTA buttons (accent background, rounded, bold text)
+- Links to an external booking URL (will use a placeholder like Calendly unless a specific link is provided)
 
-The layout becomes:
-```text
-┌──────────────────────────┐
-│                          │
-│   [combined-logo.png]    │
-│   Creating True Health   │
-│   Around the World.      │
-│   ○ ○ ○ ○ ○ ○ ○          │  ← social icons
-│                          │
-├──────────────────────────┤
-│  All | INFO | TECH | UPG │  ← sticky category bar
-├──────────────────────────┤
-│  ... link pills ...      │
-└──────────────────────────┘
-```
+### Technical
 
-- Add a subtle radial gradient or wave-like bg color to keep it visually interesting without an image
-- Logo sized `h-20 sm:h-28 md:h-36` for prominence
-- Remove the `linktreeBanner` import (no longer needed)
-- Keep everything else (category bar, link pills, footer) unchanged
+In `src/components/ThankYouSection.tsx`:
+- Add a new `motion.div` after the video block containing an `<a>` styled as a button
+- Use the same animation pattern (`initial/whileInView`) as the other elements
+- Apply styling matching the site's existing CTA buttons (e.g., `bg-accent text-background font-bold rounded-full px-8 py-4`)
 
