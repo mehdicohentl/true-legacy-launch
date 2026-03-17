@@ -60,6 +60,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Pre-Filtración",
           icon: Filter,
+          image: imgMultipure,
           links: [
             { label: "Pre-Filtros Multipure", href: "https://www.multipure.com/mcardona" },
             { label: "Pre-Filtración Ionfaucet", href: "https://ionfaucet.com/pre-filtration-systems" },
@@ -68,6 +69,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Mejoras y Mantenimiento",
           icon: Wrench,
+          image: imgProPump,
           links: [
             { label: "PRO Pump (Ion Clean)", href: "https://ionfaucet.com/ion-clean-machine-pro/" },
             { label: "Grifos Ionizadores", href: "https://ionfaucet.com/products/faucets/ionizer-faucets" },
@@ -77,6 +79,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Calidad del Agua",
           icon: Droplets,
+          image: imgFilters,
           links: [
             { label: "Revisa Tu Agua del Grifo (EWG)", href: "https://www.ewg.org/tapwater/" },
           ],
@@ -84,6 +87,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Ordena Tu Máquina",
           icon: ShoppingBag,
+          image: imgFaucet,
           links: [
             { label: "Tienda Oficial Enagic", href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016" },
             { label: "Agenda una Llamada", href: "https://calendly.com/aquacharged/true-legacy-one-on-one" },
