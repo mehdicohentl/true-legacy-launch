@@ -8,6 +8,7 @@ import imgSd501super from "@/assets/product-sd501super-real.png";
 import imgJriv from "@/assets/product-jriv-real.png";
 import imgAnespa from "@/assets/product-anespa-real.png";
 import imgWagyu from "@/assets/product-wagyu-real.png";
+import imgKangenAir from "@/assets/kangen-air.png";
 
 interface ProductsPageProps {
   lang: "en" | "es";
@@ -94,7 +95,7 @@ const products: Product[] = [
     nameEs: "Kangen Air",
     descEn: "Revolutionary air purifier combining photocatalysis and UV LED technology. Available in USA & Canada as a private import from Singapore.",
     descEs: "Purificador de aire revolucionario que combina fotocatálisis y tecnología LED UV. Disponible en EE. UU. y Canadá como importación privada desde Singapur.",
-    image: "",
+    image: imgKangenAir,
     type: "kangenair",
   },
   {
@@ -152,13 +153,22 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       featured: "INSIGNIA",
       bookCall: "Agenda una Llamada",
       emguardeTitle: "EmGuarde — Cómo Ordenar",
-      emguardeSteps: [],
+      emguardeSteps: [
+        "Precio: $1,520 USD (más envío)",
+        "ID de Distribuidor#: 37000004828",
+        "Contáctanos para instrucciones paso a paso",
+      ],
       kangenAirTitle: "Kangen Air — Cómo Ordenar",
-      kangenAirPrice: "",
-      kangenAirShipUS: "",
-      kangenAirShipCA: "",
-      kangenAirSteps: [],
-      kangenAirNote: "",
+      kangenAirPrice: "SGD 1,860 (4 unidades: Blanco, Negro, Rosa, Azul)",
+      kangenAirShipUS: "Envío EE.UU.: SGD 250–350",
+      kangenAirShipCA: "Envío Canadá: SGD 280–380",
+      kangenAirSteps: [
+        "Completa el Formulario de Solicitud Kangen Air (disponible en DSP)",
+        "Envía el formulario — Canadá: goc.can@enagic.com | USA: goc.usa@enagic.com",
+        "Una vez aprobado, recibirás el enlace de pago",
+        "Después del pago, el producto se envía desde Singapur",
+      ],
+      kangenAirNote: "Importación privada desde Singapur. Impuestos/aranceles a cargo del cliente.",
       newLabel: "NUEVO",
     },
   };
@@ -188,7 +198,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
                 {c.featured}
               </span>
             )}
-            <img src={product.image} alt={name} className="w-full h-full object-contain p-4" />
+            <img src={product.image} alt={name} className="w-full h-full object-contain p-4 mix-blend-multiply" />
           </div>
         ) : (
           <div className="relative aspect-square bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center p-6">

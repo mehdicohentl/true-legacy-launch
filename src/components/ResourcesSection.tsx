@@ -6,6 +6,7 @@ import imgFilters from "@/assets/product-ionfaucet-filters.png";
 import imgK8 from "@/assets/product-k8.png";
 import imgEmguarde from "@/assets/emguarde-device.png";
 import imgIonfaucetLogo from "@/assets/product-ionfaucet-logo.png";
+import combinedLogo from "@/assets/combined-logo.png";
 
 interface ResourcesSectionProps {
   lang: "en" | "es";
@@ -141,7 +142,9 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
                         <img src={link.image} alt="" className="w-full h-full object-contain" loading="lazy" />
                       </div>
                     ) : (
-                      <div className="w-10 h-10 rounded-full bg-background/20 flex-shrink-0" />
+                      <div className="w-10 h-10 rounded-full overflow-hidden bg-background/30 flex-shrink-0 flex items-center justify-center">
+                        <img src={combinedLogo} alt="" className="w-full h-full object-contain" loading="lazy" />
+                      </div>
                     )}
                     <span className="font-body font-black text-sm text-foreground group-hover:text-accent transition-colors text-center flex-1">
                       {link.label}
