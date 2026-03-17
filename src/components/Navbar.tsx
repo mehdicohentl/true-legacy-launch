@@ -33,6 +33,7 @@ const Navbar = ({ lang }: NavbarProps) => {
 
   const eventLink = lang === "en" ? "/global/events" : "/latam/events";
   const productsLink = lang === "en" ? "/global/products" : "/latam/products";
+  const resourcesLink = lang === "en" ? "/global/resources" : "/latam/resources";
 
   const scrollTo = (id: string) => {
     if (isOnLandingPage) {
