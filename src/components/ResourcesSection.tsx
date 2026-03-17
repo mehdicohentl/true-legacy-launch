@@ -126,6 +126,11 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
                 transition={{ delay: i * 0.08 }}
                 className="glass-card rounded-xl p-6 hover:border-accent/30 transition-all duration-300"
               >
+                {cat.image && (
+                  <div className="w-full h-28 rounded-lg overflow-hidden mb-4 bg-background/30">
+                    <img src={cat.image} alt={cat.title} className="w-full h-full object-contain" loading="lazy" />
+                  </div>
+                )}
                 <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center mb-4">
                   <Icon size={20} className="text-accent" />
                 </div>

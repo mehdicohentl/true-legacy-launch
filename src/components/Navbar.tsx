@@ -126,6 +126,12 @@ const Navbar = ({ lang }: NavbarProps) => {
             </button>
           ))}
           <a
+            href={productsLink}
+            className="block w-full text-left text-base font-body font-bold text-foreground/80 hover:text-foreground transition-colors uppercase tracking-[0.1em] py-3"
+          >
+            {lang === "en" ? "Products" : "Productos"}
+          </a>
+          <a
             href={eventLink}
             className="block w-full text-left text-base font-body font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.1em] py-3"
           >
