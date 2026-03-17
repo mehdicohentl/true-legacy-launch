@@ -379,6 +379,8 @@ const EmGuardePurchase = ({ lang }: EmGuardePurchaseProps) => {
           </svg>
         </a>
       )}
+
+      <Footer lang={lang} />
     </div>
   );
 };

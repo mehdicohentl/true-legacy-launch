@@ -198,7 +198,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
                 {c.featured}
               </span>
             )}
-            <img src={product.image} alt={name} className="w-full h-full object-contain p-4" />
+            <img src={product.image} alt={name} className="w-full h-full object-contain p-4 mix-blend-multiply" />
           </div>
         ) : (
           <div className="relative aspect-square bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center p-6">
