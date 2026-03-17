@@ -6,6 +6,7 @@ import imgFilters from "@/assets/product-ionfaucet-filters.png";
 import imgK8 from "@/assets/product-k8.png";
 import imgEmguarde from "@/assets/emguarde-device.png";
 import imgIonfaucetLogo from "@/assets/product-ionfaucet-logo.png";
+import combinedLogo from "@/assets/combined-logo.png";
 
 interface ResourcesSectionProps {
   lang: "en" | "es";
