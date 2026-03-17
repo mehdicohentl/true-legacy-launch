@@ -75,6 +75,13 @@ const Navbar = ({ lang }: NavbarProps) => {
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
           </a>
           <a
+            href={resourcesLink}
+            className="text-xs font-mono font-bold text-foreground/70 hover:text-foreground transition-colors uppercase tracking-[0.15em] relative group"
+          >
+            {lang === "en" ? "Resources" : "Recursos"}
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
+          </a>
+          <a
             href={eventLink}
             className="text-xs font-mono font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.15em] relative group"
           >
