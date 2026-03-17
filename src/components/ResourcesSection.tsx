@@ -39,7 +39,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "TECH",
           links: [
-            { label: "Contact For EmGuarde", href: "/global/emguarde", image: imgEmguarde },
+            { label: "Contact For EmGuarde", href: "https://wa.me/18649072149", image: imgEmguarde },
             { label: "Kangen 8 💧", href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016", image: imgK8 },
             { label: "Pre Filters (Multipure)", href: "https://www.multipure.com/mcardona", image: imgMultipure },
             { label: "Pre Filters (Ionfaucet)", href: "https://ionfaucet.com/pre-filtration-systems", image: imgFilters },
