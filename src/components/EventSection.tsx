@@ -46,7 +46,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
         "Una visión global para expandir y crecer más allá de las fronteras",
       ],
       dateLabel: "Fecha del Zoom",
-      date: "Martes",
+      date: "Jueves",
       time: "7:00 PM (Hora de Colombia) — 8:00 PM EST / 5:00 PM PST",
       ctaMain: "Acceder al Evento Zoom",
       zoomLink: "#zoom-gateway",
