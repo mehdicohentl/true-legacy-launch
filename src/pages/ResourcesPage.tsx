@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import combinedLogo from "@/assets/combined-logo.png";
-import linktreeBanner from "@/assets/linktree-banner.png";
+
 import imgConsultation from "@/assets/linktree-consultation.jpg";
 import imgEwg from "@/assets/linktree-ewg.png";
 import imgEmguarde from "@/assets/linktree-emguarde.png";
