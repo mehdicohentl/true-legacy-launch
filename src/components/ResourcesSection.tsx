@@ -32,14 +32,14 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
           title: "INFO",
           links: [
             { label: "⚠️ Check EWG's Tap Water ⚠️", href: "https://www.ewg.org/tapwater/", image: undefined },
-            { label: "EmGuarde DEMO", href: "/global/emguarde", image: imgEmguarde },
-            { label: "Kangen Water DEMO", href: "https://www.youtube.com/watch?v=example", image: imgK8 },
+            { label: "EmGuarde DEMO", href: "https://youtu.be/vPlD1fZEdvE?si=QCrNzTGVsNetRGrS", image: imgEmguarde },
+            { label: "Kangen Water DEMO", href: "https://youtu.be/fJdfllJpdAg?si=c87_3pu1CuJkdJKQ", image: imgK8 },
           ],
         },
         {
           title: "TECH",
           links: [
-            { label: "Contact For EmGuarde", href: "/global/emguarde", image: imgEmguarde },
+            { label: "Contact For EmGuarde", href: "https://wa.me/18649072149", image: imgEmguarde },
             { label: "Kangen 8 💧", href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016", image: imgK8 },
             { label: "Pre Filters (Multipure)", href: "https://www.multipure.com/mcardona", image: imgMultipure },
             { label: "Pre Filters (Ionfaucet)", href: "https://ionfaucet.com/pre-filtration-systems", image: imgFilters },
@@ -48,7 +48,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "UPGRADES & MAINTENANCE",
           links: [
-            { label: "How to professionally deep clean Enagic...", href: "https://www.youtube.com/watch?v=example2", image: undefined },
+            { label: "How to professionally deep clean Enagic LeveLuk (K8)", href: "https://www.youtube.com/@TrueLegacyWorld", image: undefined },
             { label: "Buy PRO Pump", href: "https://ionfaucet.com/ion-clean-machine-pro/", image: imgProPump },
             { label: "Ionizer Faucets (Ionfaucet)", href: "https://ionfaucet.com/products/faucets/ionizer-faucets", image: imgFaucet },
             { label: "Ionfaucet tools accessories", href: "https://lddy.no/1mols", image: imgIonfaucetLogo },
@@ -64,14 +64,14 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
           title: "INFO",
           links: [
             { label: "⚠️ Revisa Tu Agua del Grifo (EWG) ⚠️", href: "https://www.ewg.org/tapwater/", image: undefined },
-            { label: "EmGuarde DEMO", href: "/latam/emguarde", image: imgEmguarde },
-            { label: "Kangen Water DEMO", href: "https://www.youtube.com/watch?v=example", image: imgK8 },
+            { label: "EmGuarde DEMO", href: "https://youtu.be/vPlD1fZEdvE?si=QCrNzTGVsNetRGrS", image: imgEmguarde },
+            { label: "Kangen Water DEMO", href: "https://youtu.be/fJdfllJpdAg?si=c87_3pu1CuJkdJKQ", image: imgK8 },
           ],
         },
         {
           title: "TECH",
           links: [
-            { label: "Contacto Para EmGuarde", href: "/latam/emguarde", image: imgEmguarde },
+            { label: "Contacto Para EmGuarde", href: "https://wa.me/573001844049", image: imgEmguarde },
             { label: "Kangen 8 💧", href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016", image: imgK8 },
             { label: "Pre Filtros (Multipure)", href: "https://www.multipure.com/mcardona", image: imgMultipure },
             { label: "Pre Filtros (Ionfaucet)", href: "https://ionfaucet.com/pre-filtration-systems", image: imgFilters },
@@ -80,7 +80,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "MEJORAS Y MANTENIMIENTO",
           links: [
-            { label: "Cómo limpiar profesionalmente tu Enagic...", href: "https://www.youtube.com/watch?v=example2", image: undefined },
+            { label: "Cómo limpiar profesionalmente tu Enagic LeveLuk (K8)", href: "https://www.youtube.com/@TrueLegacyWorld", image: undefined },
             { label: "Comprar PRO Pump", href: "https://ionfaucet.com/ion-clean-machine-pro/", image: imgProPump },
             { label: "Grifos Ionizadores (Ionfaucet)", href: "https://ionfaucet.com/products/faucets/ionizer-faucets", image: imgFaucet },
             { label: "Herramientas y Accesorios Ionfaucet", href: "https://lddy.no/1mols", image: imgIonfaucetLogo },

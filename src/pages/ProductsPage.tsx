@@ -1,93 +1,316 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import combinedLogo from "@/assets/combined-logo.png";
+import imgK8 from "@/assets/product-k8-real.png";
+import imgEmguarde from "@/assets/product-emguarde-real.png";
+import imgSd501dx from "@/assets/product-sd501dx-real.png";
+import imgSd501super from "@/assets/product-sd501super-real.png";
+import imgJriv from "@/assets/product-jriv-real.png";
+import imgAnespa from "@/assets/product-anespa-real.png";
+import imgWagyu from "@/assets/product-wagyu-real.png";
 
 interface ProductsPageProps {
   lang: "en" | "es";
 }
 
-const products = [
+const enagicBase = "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0";
+
+interface Product {
+  id: string;
+  nameEn: string;
+  nameEs: string;
+  descEn: string;
+  descEs: string;
+  image: string;
+  href?: string;
+  featured?: boolean;
+  type?: "emguarde" | "kangenair" | "standard";
+}
+
+const products: Product[] = [
   {
     id: "k8",
-    nameEn: "Kangen K8",
-    nameEs: "Kangen K8",
-    descEn: "The flagship Kangen Water machine with 8 platinum-coated titanium plates. Produces 5 types of water for drinking, cooking, cleaning, and beauty care. The most powerful antioxidant hydration system for your home.",
-    descEs: "La máquina insignia de Agua Kangen con 8 placas de titanio recubiertas de platino. Produce 5 tipos de agua para beber, cocinar, limpiar y cuidado de belleza. El sistema de hidratación antioxidante más poderoso para tu hogar.",
-    href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016",
+    nameEn: "Leveluk K8",
+    nameEs: "Leveluk K8",
+    descEn: "The flagship Kangen Water machine with 8 platinum-coated titanium plates. Produces 5 types of water for drinking, cooking, cleaning, and beauty care.",
+    descEs: "La máquina insignia de Agua Kangen con 8 placas de titanio recubiertas de platino. Produce 5 tipos de agua para beber, cocinar, limpiar y cuidado de belleza.",
+    image: imgK8,
+    href: `${enagicBase}&product_id=1016`,
     featured: true,
+    type: "standard",
+  },
+  {
+    id: "emguarde",
+    nameEn: "EmGuarde",
+    nameEs: "EmGuarde",
+    descEn: "Personal EMF protection device. Shields you from electromagnetic frequencies with cutting-edge Japanese technology.",
+    descEs: "Dispositivo personal de protección contra EMF. Te protege de las frecuencias electromagnéticas con tecnología japonesa de vanguardia.",
+    image: imgEmguarde,
+    type: "emguarde",
+  },
+  {
+    id: "sd501dx",
+    nameEn: "Leveluk SD501 DX",
+    nameEs: "Leveluk SD501 DX",
+    descEn: "The most popular Kangen Water machine worldwide. 7 platinum-coated titanium plates deliver consistent, high-quality hydrogen-rich water.",
+    descEs: "La máquina de Agua Kangen más popular del mundo. 7 placas de titanio recubiertas de platino ofrecen agua rica en hidrógeno de alta calidad.",
+    image: imgSd501dx,
+    href: `${enagicBase}&product_id=1064`,
+    type: "standard",
   },
   {
     id: "sd501-super",
-    nameEn: "SD 501 Super",
-    nameEs: "SD 501 Super",
-    descEn: "The enhanced SD 501 with 7 platinum-coated titanium plates and extra-large electrolysis surface. Built for families and heavy use — superior Kangen Water production for households that demand more.",
-    descEs: "El SD 501 mejorado con 7 placas de titanio recubiertas de platino y superficie de electrólisis extra grande. Diseñado para familias y uso intensivo — producción superior de Agua Kangen.",
-    href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1007",
+    nameEn: "Leveluk Super 501",
+    nameEs: "Leveluk Super 501",
+    descEn: "The enhanced model with 7 platinum-coated titanium plates and extra-large electrolysis surface. Built for families and heavy use.",
+    descEs: "El modelo mejorado con 7 placas de titanio recubiertas de platino y superficie de electrólisis extra grande. Diseñado para familias y uso intensivo.",
+    image: imgSd501super,
+    href: `${enagicBase}&product_id=1007`,
+    type: "standard",
   },
   {
-    id: "sd501-dx",
-    nameEn: "SD 501 DX",
-    nameEs: "SD 501 DX",
-    descEn: "The most popular Kangen Water machine worldwide. 7 platinum-coated titanium plates deliver consistent, high-quality hydrogen-rich water. A proven workhorse trusted by millions.",
-    descEs: "La máquina de Agua Kangen más popular del mundo. 7 placas de titanio recubiertas de platino ofrecen agua rica en hidrógeno de alta calidad. Un caballo de batalla confiable por millones.",
-    href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1064",
+    id: "jr-iv",
+    nameEn: "Leveluk Jr IV",
+    nameEs: "Leveluk Jr IV",
+    descEn: "Compact and affordable entry-level Kangen Water machine. 4 platinum-coated titanium plates — perfect for individuals and small households.",
+    descEs: "Máquina de Agua Kangen compacta y accesible. 4 placas de titanio recubiertas de platino — perfecta para individuos y hogares pequeños.",
+    image: imgJriv,
+    href: `${enagicBase}&product_id=1006`,
+    type: "standard",
   },
   {
     id: "anespa-dx",
     nameEn: "Anespa DX",
     nameEs: "Anespa DX",
-    descEn: "Transform your shower and bath with mineral ion water. The Anespa DX removes chlorine and adds natural hot spring minerals for softer skin, healthier hair, and a spa-like experience at home.",
-    descEs: "Transforma tu ducha y baño con agua de iones minerales. El Anespa DX elimina el cloro y agrega minerales de aguas termales naturales para una piel más suave, cabello más saludable y una experiencia de spa en casa.",
-    href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1062",
+    descEn: "Transform your shower and bath with mineral ion water. Removes chlorine and adds natural hot spring minerals for softer skin and healthier hair.",
+    descEs: "Transforma tu ducha y baño con agua de iones minerales. Elimina el cloro y agrega minerales de aguas termales naturales para una piel más suave.",
+    image: imgAnespa,
+    href: `${enagicBase}&product_id=1062`,
+    type: "standard",
   },
   {
-    id: "ukon-sigma",
-    nameEn: "Ukon Sigma",
-    nameEs: "Ukon Sigma",
-    descEn: "Premium wild turmeric supplement from Okinawa, Japan. 100% organic Ukon (turmeric) in easy-to-take capsules. Supports liver health, anti-inflammation, and overall vitality.",
-    descEs: "Suplemento premium de cúrcuma silvestre de Okinawa, Japón. 100% orgánico Ukon (cúrcuma) en cápsulas fáciles de tomar. Apoya la salud hepática, antiinflamación y vitalidad general.",
-    href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=2006",
+    id: "kangen-air",
+    nameEn: "Kangen Air",
+    nameEs: "Kangen Air",
+    descEn: "Revolutionary air purifier combining photocatalysis and UV LED technology. Available in USA & Canada as a private import from Singapore.",
+    descEs: "Purificador de aire revolucionario que combina fotocatálisis y tecnología LED UV. Disponible en EE. UU. y Canadá como importación privada desde Singapur.",
+    image: "",
+    type: "kangenair",
   },
   {
-    id: "kangen-beef",
-    nameEn: "Kangen Beef SET",
-    nameEs: "Kangen Beef SET",
-    descEn: "Premium Kangen Farm beef raised with Kangen Water. A unique product from Enagic's farm-to-table initiative. Experience the difference that hydrogen-rich water makes in premium beef quality.",
-    descEs: "Carne premium de Kangen Farm criada con Agua Kangen. Un producto único de la iniciativa de granja a mesa de Enagic. Experimenta la diferencia que el agua rica en hidrógeno hace en la calidad de la carne.",
-    href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=2115",
+    id: "wagyu",
+    nameEn: "Kangen Wagyu™",
+    nameEs: "Kangen Wagyu™",
+    descEn: "Premium Kangen Farm beef raised with Kangen Water. A unique farm-to-table initiative — experience the difference hydrogen-rich water makes.",
+    descEs: "Carne premium de Kangen Farm criada con Agua Kangen. Una iniciativa única de granja a mesa — experimenta la diferencia del agua rica en hidrógeno.",
+    image: imgWagyu,
+    href: `${enagicBase}&product_id=2115`,
+    type: "standard",
   },
 ];
 
 const ProductsPage = ({ lang }: ProductsPageProps) => {
+  const isLatam = lang === "es";
+  const whatsapp = "https://wa.me/573001844049";
+
   const t = {
     en: {
       micro: "Official Enagic Products",
       headline: "Explore the Full Product Line",
       subhead: "Premium Japanese technology for water, wellness, and vitality — trusted by millions worldwide for over 50 years.",
-      cta: "Order Now",
-      kangenAirTitle: "Kangen Air",
-      kangenAirDesc: "A revolutionary air purifier combining photocatalysis and UV LED technology. Now available in USA and Canada as a private import from Singapore. Contact kangenair@enagicsg.com for more information.",
-      kangenAirAvail: "Available in USA & Canada — Contact for details",
-      kangenAirCta: "Contact for Kangen Air",
-      bookCall: "Book a Wellness Call",
+      order: "Order Now",
+      howToBuy: "How to Buy",
+      contactWhatsApp: "Contact via WhatsApp",
       featured: "FLAGSHIP",
+      bookCall: "Book a Wellness Call",
+      emguardeTitle: "EmGuarde — How to Order",
+      emguardeSteps: [
+        "Price: $1,520 USD (plus shipping)",
+        "Distributor ID#: 37000004828",
+        "Contact us for step-by-step purchase instructions",
+      ],
+      kangenAirTitle: "Kangen Air — How to Order",
+      kangenAirPrice: "SGD 1,860 (4 units: White, Black, Pink, Blue)",
+      kangenAirShipUS: "Shipping USA: SGD 250–350",
+      kangenAirShipCA: "Shipping Canada: SGD 280–380",
+      kangenAirSteps: [
+        "Fill out the Kangen Air Application Form (found on DSP)",
+        "Email the form — Canada: goc.can@enagic.com | USA: goc.usa@enagic.com",
+        "Once approved, you'll receive the payment link",
+        "After payment, product ships from Singapore",
+      ],
+      kangenAirNote: "Private import from Singapore. Custom duties/taxes covered by customer.",
+      newLabel: "NEW",
     },
     es: {
       micro: "Productos Oficiales Enagic",
-      headline: "Explora la Línea Completa de Productos",
+      headline: "Explora la Línea Completa",
       subhead: "Tecnología japonesa premium para agua, bienestar y vitalidad — confiada por millones en todo el mundo durante más de 50 años.",
-      cta: "Ordenar Ahora",
-      kangenAirTitle: "Kangen Air",
-      kangenAirDesc: "Un purificador de aire revolucionario que combina fotocatálisis y tecnología LED UV. Ahora disponible en EE. UU. y Canadá como importación privada desde Singapur. Contacta kangenair@enagicsg.com para más información.",
-      kangenAirAvail: "Disponible en EE. UU. y Canadá — Contacta para detalles",
-      kangenAirCta: "Contactar por Kangen Air",
-      bookCall: "Agenda una Llamada",
+      order: "Ordenar Ahora",
+      howToBuy: "Cómo Comprar",
+      contactWhatsApp: "Contactar por WhatsApp",
       featured: "INSIGNIA",
+      bookCall: "Agenda una Llamada",
+      emguardeTitle: "EmGuarde — Cómo Ordenar",
+      emguardeSteps: [],
+      kangenAirTitle: "Kangen Air — Cómo Ordenar",
+      kangenAirPrice: "",
+      kangenAirShipUS: "",
+      kangenAirShipCA: "",
+      kangenAirSteps: [],
+      kangenAirNote: "",
+      newLabel: "NUEVO",
     },
   };
 
   const c = t[lang];
+
+  const renderProductCard = (product: Product, i: number) => {
+    const name = lang === "en" ? product.nameEn : product.nameEs;
+    const desc = lang === "en" ? product.descEn : product.descEs;
+
+    return (
+      <motion.div
+        key={product.id}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.05 }}
+        className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 hover:border-accent/30 hover:shadow-gold flex flex-col ${
+          product.featured ? "border-accent/20" : "border-border/20"
+        }`}
+      >
+        {/* Image */}
+        {product.image ? (
+          <div className="relative aspect-square bg-background/50 flex items-center justify-center overflow-hidden">
+            {product.featured && (
+              <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
+                {c.featured}
+              </span>
+            )}
+            <img src={product.image} alt={name} className="w-full h-full object-contain p-4" />
+          </div>
+        ) : (
+          <div className="relative aspect-square bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center p-6">
+            <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-primary text-primary-foreground px-3 py-1 rounded-full font-bold">
+              {c.newLabel}
+            </span>
+            <div className="text-center">
+              <svg className="w-16 h-16 text-primary/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+              </svg>
+              <p className="font-display font-black text-2xl text-foreground">{name}</p>
+            </div>
+          </div>
+        )}
+
+        {/* Details */}
+        <div className="p-5 md:p-6 flex flex-col flex-1">
+          <h3 className="font-display font-black text-lg md:text-xl text-foreground mb-2">{name}</h3>
+          <p className="font-body text-sm text-foreground/60 font-bold leading-relaxed mb-4 flex-1">{desc}</p>
+
+          {/* EmGuarde CTA */}
+          {product.type === "emguarde" && (
+            <>
+              {isLatam ? (
+                <motion.a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-green-600 text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
+                  {c.contactWhatsApp}
+                </motion.a>
+              ) : (
+                <>
+                  <div className="mb-4 p-4 rounded-xl bg-accent/5 border border-accent/10">
+                    <p className="font-display font-black text-sm text-accent mb-2">{c.emguardeTitle}</p>
+                    <ul className="space-y-1">
+                      {c.emguardeSteps.map((step, si) => (
+                        <li key={si} className="font-body text-xs text-foreground/60 font-bold">• {step}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <motion.a
+                    href={`/${lang === "en" ? "global" : "latam"}/emguarde`}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold transition-colors"
+                  >
+                    {c.howToBuy}
+                  </motion.a>
+                </>
+              )}
+            </>
+          )}
+
+          {/* Kangen Air CTA */}
+          {product.type === "kangenair" && (
+            <>
+              {isLatam ? (
+                <motion.a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-green-600 text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
+                  {c.contactWhatsApp}
+                </motion.a>
+              ) : (
+                <>
+                  <div className="mb-4 p-4 rounded-xl bg-primary/5 border border-primary/10 space-y-2">
+                    <p className="font-display font-black text-sm text-primary mb-1">{c.kangenAirTitle}</p>
+                    <p className="font-body text-xs text-foreground/70 font-bold">{c.kangenAirPrice}</p>
+                    <p className="font-body text-xs text-foreground/60 font-bold">{c.kangenAirShipUS}</p>
+                    <p className="font-body text-xs text-foreground/60 font-bold">{c.kangenAirShipCA}</p>
+                    <div className="pt-2 border-t border-primary/10">
+                      <p className="font-mono text-[10px] uppercase tracking-wider text-foreground/50 mb-1">Application Flow</p>
+                      {c.kangenAirSteps.map((step, si) => (
+                        <p key={si} className="font-body text-xs text-foreground/60 font-bold">{si + 1}. {step}</p>
+                      ))}
+                    </div>
+                    <p className="font-mono text-[10px] text-foreground/40 italic mt-2">{c.kangenAirNote}</p>
+                  </div>
+                  <a
+                    href="mailto:kangenair@enagicsg.com"
+                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    {lang === "en" ? "Contact for Kangen Air" : "Contactar por Kangen Air"}
+                  </a>
+                </>
+              )}
+            </>
+          )}
+
+          {/* Standard product CTA */}
+          {product.type === "standard" && product.href && (
+            <motion.a
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+              {c.order}
+            </motion.a>
+          )}
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -127,91 +350,8 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       {/* Products Grid */}
       <section className="pb-20 md:pb-28 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {products.map((product, i) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 hover:border-accent/30 hover:shadow-gold flex flex-col ${
-                  product.featured ? "md:col-span-2 lg:col-span-1 border-accent/20" : "border-border/20"
-                }`}
-              >
-                {/* Placeholder */}
-                <div className="relative aspect-square bg-background/50 flex items-center justify-center p-6 overflow-hidden">
-                  {product.featured && (
-                    <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
-                      {c.featured}
-                    </span>
-                  )}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <img src={combinedLogo} alt="True Legacy" className="w-32 opacity-30" />
-                  </div>
-                </div>
-
-                {/* Details */}
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-display font-black text-xl text-foreground mb-2">
-                    {lang === "en" ? product.nameEn : product.nameEs}
-                  </h3>
-                  <p className="font-body text-sm text-foreground/60 font-bold leading-relaxed mb-6 flex-1">
-                    {lang === "en" ? product.descEn : product.descEs}
-                  </p>
-                  <motion.a
-                    href={product.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold transition-colors"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-                    </svg>
-                    {c.cta}
-                  </motion.a>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Kangen Air Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="glass-card rounded-2xl overflow-hidden border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:shadow-deep flex flex-col"
-            >
-              <div className="relative aspect-square bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center p-6">
-                <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-primary text-primary-foreground px-3 py-1 rounded-full font-bold">
-                  {lang === "en" ? "NEW" : "NUEVO"}
-                </span>
-                <div className="text-center">
-                  <svg className="w-16 h-16 text-primary/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-                  </svg>
-                  <p className="font-display font-black text-2xl text-foreground">{c.kangenAirTitle}</p>
-                </div>
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-display font-black text-xl text-foreground mb-2">{c.kangenAirTitle}</h3>
-                <p className="font-body text-sm text-foreground/60 font-bold leading-relaxed mb-3 flex-1">
-                  {c.kangenAirDesc}
-                </p>
-                <p className="font-mono text-xs text-accent mb-6">{c.kangenAirAvail}</p>
-                <a
-                  href="mailto:kangenair@enagicsg.com"
-                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  {c.kangenAirCta}
-                </a>
-              </div>
-            </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-7xl mx-auto">
+            {products.map((product, i) => renderProductCard(product, i))}
           </div>
 
           {/* Book a call CTA */}
