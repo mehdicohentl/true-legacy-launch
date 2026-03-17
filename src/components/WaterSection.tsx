@@ -115,7 +115,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               <img
                 src={kangenMachine}
                 alt="Mehdi Cohen True Legacy CEO Kangen K8 water machine alkaline ionized water wellness mehdicohen.com"
-                className="relative w-full max-w-md mx-auto img-no-bg-white" />
+                className="relative w-full max-w-md mx-auto drop-shadow-lg" />
               <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
               <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
             </div>

@@ -192,13 +192,13 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       >
         {/* Image */}
         {product.image ? (
-        <div className={`relative aspect-square flex items-center justify-center overflow-hidden rounded-t-2xl ${product.id === "wagyu" ? "bg-black" : "bg-white"}`} style={{ isolation: "isolate" }}>
+        <div className="relative aspect-square flex items-center justify-center overflow-hidden rounded-t-2xl bg-transparent">
             {product.featured && (
               <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
                 {c.featured}
               </span>
             )}
-            <img src={product.image} alt={name} className={`w-full h-full object-contain p-4 ${product.id === "wagyu" ? "img-no-bg-black" : "img-no-bg-white"}`} />
+            <img src={product.image} alt={name} className="w-full h-full object-contain p-4 drop-shadow-lg" />
           </div>
         ) : (
           <div className="relative aspect-square bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center p-6">
