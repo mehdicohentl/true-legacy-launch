@@ -160,26 +160,16 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
 
   return (
     <div className="min-h-screen bg-[hsl(210,30%,12%)] text-foreground">
-      {/* Banner - responsive aspect ratio for mobile */}
-      <div className="relative w-full">
-        <div className="w-full aspect-[3/4] sm:aspect-[16/9] md:aspect-[2/1] relative overflow-hidden">
-          <img
-            src={linktreeBanner}
-            alt="True Legacy Banner"
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[hsl(210,30%,12%)]" />
-        </div>
-      </div>
-
-      {/* Logo + tagline + socials */}
-      <div className="relative z-10 -mt-10 sm:-mt-16 flex flex-col items-center px-4">
+      {/* Logo Header */}
+      <div className="relative w-full pt-24 pb-10 sm:pt-28 sm:pb-14 flex flex-col items-center px-4"
+        style={{ background: "radial-gradient(ellipse at 50% 0%, hsl(205 55% 14%) 0%, hsl(210 30% 12%) 70%)" }}
+      >
         <img
           src={combinedLogo}
           alt="True Legacy | Mehdi Cohen"
-          className="h-16 sm:h-24 md:h-32 w-auto mb-2"
+          className="h-20 sm:h-28 md:h-36 w-auto mb-4"
         />
-        <p className="font-display font-black text-sm sm:text-base md:text-lg text-white/90 text-center mb-4">
+        <p className="font-display font-black text-sm sm:text-base md:text-lg text-white/90 text-center mb-5">
           {lang === "en" ? "Creating True Health Around the World." : "Creando Salud Verdadera Alrededor del Mundo."}
         </p>
 
