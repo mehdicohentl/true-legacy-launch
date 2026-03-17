@@ -26,6 +26,7 @@ const LandingPage = ({ lang }: LandingPageProps) => {
       }, 300);
     }
   }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang={lang} />
@@ -45,9 +46,9 @@ const LandingPage = ({ lang }: LandingPageProps) => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
           >
             <div className="flex items-center gap-3">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-destructive" />
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />
               </span>
               <p className="font-display font-black text-base md:text-lg text-foreground">
                 {lang === "en" ? "Live Zoom Event — Improve Your Health and Income" : "Evento en Vivo — Mejora tu Salud e Ingresos"}

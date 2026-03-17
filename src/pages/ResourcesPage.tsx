@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import combinedLogo from "@/assets/combined-logo.png";
-import mehdiHero from "@/assets/mehdi-hero.png";
+import linktreeBanner from "@/assets/linktree-banner.png";
 import imgConsultation from "@/assets/linktree-consultation.jpg";
 import imgEwg from "@/assets/linktree-ewg.png";
 import imgEmguarde from "@/assets/linktree-emguarde.png";
@@ -22,25 +22,25 @@ interface ResourcesPageProps {
 
 const socials = [
   { label: "YouTube", href: "https://www.youtube.com/@TrueLegacyWorld", icon: (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.9 31.9 0 000 12a31.9 31.9 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.9 31.9 0 0024 12a31.9 31.9 0 00-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.9 31.9 0 000 12a31.9 31.9 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.9 31.9 0 0024 12a31.9 31.9 0 00-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
   )},
   { label: "Instagram", href: "https://www.instagram.com/truelegacyworld/", icon: (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .2 2.5.4a4.3 4.3 0 011.6 1 4.3 4.3 0 011 1.6c.2.5.3 1.3.4 2.5.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 2-.4 2.5a4.3 4.3 0 01-1 1.6 4.3 4.3 0 01-1.6 1c-.5.2-1.3.3-2.5.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.2-2.5-.4a4.3 4.3 0 01-1.6-1 4.3 4.3 0 01-1-1.6c-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-2 .4-2.5a4.3 4.3 0 011-1.6 4.3 4.3 0 011.6-1c.5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.2 0-3.5 0-4.7.1-1.1 0-1.7.2-2.1.3a3.5 3.5 0 00-1.3.8 3.5 3.5 0 00-.8 1.3c-.1.4-.3 1-.3 2.1C2.7 8.5 2.7 8.8 2.7 12s0 3.5.1 4.7c0 1.1.2 1.7.3 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.1 1 .3 2.1.3 1.2.1 1.5.1 4.7.1s3.5 0 4.7-.1c1.1 0 1.7-.2 2.1-.3.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.1-.4.3-1 .3-2.1.1-1.2.1-1.5.1-4.7s0-3.5-.1-4.7c0-1.1-.2-1.7-.3-2.1a3.5 3.5 0 00-.8-1.3 3.5 3.5 0 00-1.3-.8c-.4-.1-1-.3-2.1-.3C15.5 4 15.2 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-2.3a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg>
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .2 2.5.4a4.3 4.3 0 011.6 1 4.3 4.3 0 011 1.6c.2.5.3 1.3.4 2.5.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 2-.4 2.5a4.3 4.3 0 01-1 1.6 4.3 4.3 0 01-1.6 1c-.5.2-1.3.3-2.5.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.2-2.5-.4a4.3 4.3 0 01-1.6-1 4.3 4.3 0 01-1-1.6c-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-2 .4-2.5a4.3 4.3 0 011-1.6 4.3 4.3 0 011.6-1c.5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.2 0-3.5 0-4.7.1-1.1 0-1.7.2-2.1.3a3.5 3.5 0 00-1.3.8 3.5 3.5 0 00-.8 1.3c-.1.4-.3 1-.3 2.1C2.7 8.5 2.7 8.8 2.7 12s0 3.5.1 4.7c0 1.1.2 1.7.3 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.1 1 .3 2.1.3 1.2.1 1.5.1 4.7.1s3.5 0 4.7-.1c1.1 0 1.7-.2 2.1-.3.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.1-.4.3-1 .3-2.1.1-1.2.1-1.5.1-4.7s0-3.5-.1-4.7c0-1.1-.2-1.7-.3-2.1a3.5 3.5 0 00-.8-1.3 3.5 3.5 0 00-1.3-.8c-.4-.1-1-.3-2.1-.3C15.5 4 15.2 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-2.3a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg>
   )},
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100063711834790", icon: (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1c0 6 4.4 11 10.1 11.9v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.3l-.5 3.5h-2.8v8.4C19.6 23.1 24 18.1 24 12.1z"/></svg>
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1c0 6 4.4 11 10.1 11.9v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.3l-.5 3.5h-2.8v8.4C19.6 23.1 24 18.1 24 12.1z"/></svg>
   )},
   { label: "TikTok", href: "https://www.tiktok.com/@truelegacyworld", icon: (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 2.8h3a4.5 4.5 0 004 3.8v3.3a7.5 7.5 0 01-4-1.2v5.8a6 6 0 11-5.2-5.9v3.4a2.7 2.7 0 102 2.6V2.8z"/></svg>
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 2.8h3a4.5 4.5 0 004 3.8v3.3a7.5 7.5 0 01-4-1.2v5.8a6 6 0 11-5.2-5.9v3.4a2.7 2.7 0 102 2.6V2.8z"/></svg>
   )},
   { label: "Email", href: "mailto:aquacharged@gmail.com", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
   )},
   { label: "WhatsApp", href: "https://wa.me/18649072149", icon: (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4zM12 21.8a9.9 9.9 0 01-5-1.4l-.4-.2-3.7 1 1-3.7-.3-.4A9.8 9.8 0 1121.8 12 9.8 9.8 0 0112 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0024 12C24 5.4 18.6 0 12 0z"/></svg>
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4zM12 21.8a9.9 9.9 0 01-5-1.4l-.4-.2-3.7 1 1-3.7-.3-.4A9.8 9.8 0 1121.8 12 9.8 9.8 0 0112 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0024 12C24 5.4 18.6 0 12 0z"/></svg>
   )},
   { label: "Website", href: "https://mehdicohen.com", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.7 0 3-4 3-9s-1.3-9-3-9m0 18c-1.7 0-3-4-3-9s1.3-9 3-9" /></svg>
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.7 0 3-4 3-9s-1.3-9-3-9m0 18c-1.7 0-3-4-3-9s1.3-9 3-9" /></svg>
   )},
 ];
 
@@ -59,7 +59,7 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
       title: "INFO",
       items: [
         {
-          label: lang === "en" ? "⚠️Check EWG's Tap Water ⚠️" : "⚠️Revisa Tu Agua del Grifo (EWG) ⚠️",
+          label: lang === "en" ? "⚠️ Check EWG's Tap Water ⚠️" : "⚠️ Revisa Tu Agua del Grifo (EWG) ⚠️",
           href: "https://www.ewg.org/tapwater/",
           image: imgEwg,
         },
@@ -89,12 +89,12 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
           image: imgKangen8,
         },
         {
-          label: "Pre Filters (Multipure)",
+          label: lang === "en" ? "Pre Filters (Multipure)" : "Pre Filtros (Multipure)",
           href: "https://www.multipure.com/mcardona",
           image: imgMultipure,
         },
         {
-          label: "Pre Filters (Ionfaucet)",
+          label: lang === "en" ? "Pre Filters (Ionfaucet)" : "Pre Filtros (Ionfaucet)",
           href: "https://ionfaucet.com/pre-filtration-systems",
           image: imgIonfaucetFilters,
         },
@@ -132,103 +132,108 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
   const categories = [links.info, links.tech, links.upgrades];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar lang={lang} />
-
-      {/* Hero banner */}
-      <section className="pt-24 relative overflow-hidden">
-        <div className="relative w-full h-[340px] md:h-[420px] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-background/60 to-background z-10" />
+    <div className="min-h-screen bg-[hsl(210,30%,12%)] text-foreground">
+      {/* Linktree-style banner hero */}
+      <div className="relative w-full">
+        <div className="w-full h-[280px] sm:h-[340px] md:h-[400px] relative overflow-hidden">
           <img
-            src={mehdiHero}
-            alt="Mehdi Cohen"
-            className="w-full h-full object-cover object-top"
+            src={linktreeBanner}
+            alt="True Legacy Banner"
+            className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[hsl(210,30%,12%)]" />
         </div>
-      </section>
+      </div>
 
-      {/* Logo + Tagline + Socials */}
-      <section className="relative z-20 -mt-20 pb-8">
-        <div className="flex flex-col items-center">
-          <img src={combinedLogo} alt="True Legacy | Mehdi Cohen" className="h-20 md:h-28 w-auto mb-4" />
-          <p className="font-display font-black text-base md:text-lg text-foreground/90 text-center">
-            {lang === "en" ? "Creating True Health Around the World." : "Creando Salud Verdadera Alrededor del Mundo."}
-          </p>
-          <div className="flex items-center gap-3 mt-5">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.label === "WhatsApp" && lang === "es" ? "https://wa.me/573001844049" : s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-                title={s.label}
-              >
-                {s.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Logo + tagline + socials */}
+      <div className="relative z-10 -mt-16 flex flex-col items-center px-4">
+        <img
+          src={combinedLogo}
+          alt="True Legacy | Mehdi Cohen"
+          className="h-24 md:h-32 w-auto mb-3"
+        />
+        <p className="font-display font-black text-base md:text-lg text-white/90 text-center mb-5">
+          {lang === "en" ? "Creating True Health Around the World." : "Creando Salud Verdadera Alrededor del Mundo."}
+        </p>
 
-      {/* Links */}
-      <section className="pb-20 md:pb-28">
-        <div className="container mx-auto px-4 max-w-lg">
-          {/* Top CTA */}
-          <motion.a
-            href={links.consultation.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-4 w-full px-5 py-4 rounded-2xl bg-accent text-accent-foreground border border-accent/30 hover:shadow-gold transition-all duration-300 group mb-10"
-          >
-            <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-              <img src={links.consultation.image} alt="" className="w-full h-full object-cover" />
-            </div>
-            <span className="font-body font-black text-sm flex-1 text-center">
-              {links.consultation.label}
-            </span>
-          </motion.a>
-
-          {/* Categories */}
-          {categories.map((cat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="mb-8"
+        {/* Social icons row */}
+        <div className="flex items-center gap-2">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.label === "WhatsApp" && lang === "es" ? "https://wa.me/573001844049" : s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
+              title={s.label}
             >
-              <h3 className="font-display font-black text-xs uppercase tracking-[0.3em] text-foreground/60 text-center mb-4">
-                {cat.title}
-              </h3>
-              <div className="space-y-3">
-                {cat.items.map((item, j) => (
-                  <a
-                    key={j}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 w-full px-5 py-4 rounded-2xl bg-gradient-to-r from-accent/15 to-primary/15 border border-accent/10 hover:border-accent/40 hover:shadow-gold transition-all duration-300 group"
-                  >
-                    <div className="w-10 h-10 rounded-full overflow-hidden bg-background/30 flex-shrink-0 flex items-center justify-center">
-                      <img src={item.image} alt="" className="w-full h-full object-cover" loading="lazy" />
-                    </div>
-                    <span className="font-body font-black text-sm text-foreground group-hover:text-accent transition-colors text-center flex-1">
-                      {item.label}
-                    </span>
-                    <div className="w-10 flex-shrink-0" />
-                  </a>
-                ))}
-              </div>
-            </motion.div>
+              {s.icon}
+            </a>
           ))}
         </div>
-      </section>
+      </div>
 
-      <Footer lang={lang} />
+      {/* Links section */}
+      <div className="max-w-[680px] mx-auto px-4 pt-8 pb-16">
+        {/* Top CTA - Consultation */}
+        <motion.a
+          href={links.consultation.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex items-center w-full rounded-full bg-accent hover:brightness-110 transition-all duration-200 mb-8 overflow-hidden"
+        >
+          <div className="w-14 h-14 flex-shrink-0 overflow-hidden rounded-full m-1">
+            <img src={links.consultation.image} alt="" className="w-full h-full object-cover" />
+          </div>
+          <span className="font-body font-black text-sm text-accent-foreground flex-1 text-center pr-6 py-4 leading-tight">
+            {links.consultation.label}
+          </span>
+        </motion.a>
+
+        {/* Category sections */}
+        {categories.map((cat, i) => (
+          <div key={i} className="mb-6">
+            <p className="font-display font-black text-xs uppercase tracking-[0.3em] text-white/50 text-center mb-3">
+              {cat.title}
+            </p>
+            <div className="space-y-3">
+              {cat.items.map((item, j) => (
+                <motion.a
+                  key={j}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: j * 0.04 }}
+                  className="flex items-center w-full rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-200 overflow-hidden"
+                >
+                  <div className="w-12 h-12 flex-shrink-0 overflow-hidden rounded-full m-1 bg-white/5">
+                    <img src={item.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <span className="font-body font-bold text-sm text-white/90 flex-1 text-center pr-6 py-3.5 leading-tight">
+                    {item.label}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Back to site link */}
+        <div className="text-center mt-10">
+          <a
+            href={lang === "en" ? "/global" : "/latam"}
+            className="inline-flex items-center gap-2 text-sm font-body font-bold text-white/40 hover:text-white/70 transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+            {lang === "en" ? "Back to site" : "Volver al sitio"}
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

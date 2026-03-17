@@ -9,6 +9,7 @@ import imgJriv from "@/assets/product-jriv-real.png";
 import imgAnespa from "@/assets/product-anespa-real.png";
 import imgWagyu from "@/assets/product-wagyu-real.png";
 import imgKangenAir from "@/assets/kangen-air.png";
+import imgUkon from "@/assets/product-ukon-real.png";
 
 interface ProductsPageProps {
   lang: "en" | "es";
@@ -76,7 +77,7 @@ const products: Product[] = [
     descEn: "Compact and affordable entry-level Kangen Water machine. 4 platinum-coated titanium plates — perfect for individuals and small households.",
     descEs: "Máquina de Agua Kangen compacta y accesible. 4 placas de titanio recubiertas de platino — perfecta para individuos y hogares pequeños.",
     image: imgJriv,
-    href: `${enagicBase}&product_id=1006`,
+    href: `${enagicBase}&product_id=1062`,
     type: "standard",
   },
   {
@@ -86,7 +87,17 @@ const products: Product[] = [
     descEn: "Transform your shower and bath with mineral ion water. Removes chlorine and adds natural hot spring minerals for softer skin and healthier hair.",
     descEs: "Transforma tu ducha y baño con agua de iones minerales. Elimina el cloro y agrega minerales de aguas termales naturales para una piel más suave.",
     image: imgAnespa,
-    href: `${enagicBase}&product_id=1062`,
+    href: `${enagicBase}&product_id=1041`,
+    type: "standard",
+  },
+  {
+    id: "ukon",
+    nameEn: "Kangen Ukon Sigma",
+    nameEs: "Kangen Ukon Sigma",
+    descEn: "Premium organic turmeric supplement sourced from Okinawa, Japan. Supports overall wellness, anti-inflammation, and healthy digestion.",
+    descEs: "Suplemento premium de cúrcuma orgánica de Okinawa, Japón. Apoya el bienestar general, antiinflamación y digestión saludable.",
+    image: imgUkon,
+    href: `${enagicBase}&product_id=2011`,
     type: "standard",
   },
   {
@@ -118,7 +129,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     en: {
       micro: "Official Enagic Products",
       headline: "Explore the Full Product Line",
-      subhead: "Premium Japanese technology for water, wellness, and vitality — trusted by millions worldwide for over 50 years.",
+      subhead: "Premium Japanese technology for water, wellness, and vitality — trusted by millions worldwide for over 51+ years.",
       order: "Order Now",
       howToBuy: "How to Buy",
       contactWhatsApp: "Contact via WhatsApp",
@@ -146,7 +157,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     es: {
       micro: "Productos Oficiales Enagic",
       headline: "Explora la Línea Completa",
-      subhead: "Tecnología japonesa premium para agua, bienestar y vitalidad — confiada por millones en todo el mundo durante más de 50 años.",
+      subhead: "Tecnología japonesa premium para agua, bienestar y vitalidad — confiada por millones en todo el mundo durante más de 51+ años.",
       order: "Ordenar Ahora",
       howToBuy: "Cómo Comprar",
       contactWhatsApp: "Contactar por WhatsApp",
@@ -190,36 +201,19 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
           product.featured ? "border-accent/20" : "border-border/20"
         }`}
       >
-        {/* Image */}
-        {product.image ? (
         <div className="relative aspect-square flex items-center justify-center overflow-hidden rounded-t-2xl bg-transparent">
-            {product.featured && (
-              <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
-                {c.featured}
-              </span>
-            )}
-            <img src={product.image} alt={name} className="w-full h-full object-contain p-4 drop-shadow-lg" />
-          </div>
-        ) : (
-          <div className="relative aspect-square bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center p-6">
-            <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-primary text-primary-foreground px-3 py-1 rounded-full font-bold">
-              {c.newLabel}
+          {product.featured && (
+            <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
+              {c.featured}
             </span>
-            <div className="text-center">
-              <svg className="w-16 h-16 text-primary/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-              </svg>
-              <p className="font-display font-black text-2xl text-foreground">{name}</p>
-            </div>
-          </div>
-        )}
+          )}
+          <img src={product.image} alt={name} className="w-full h-full object-contain p-4 drop-shadow-lg" />
+        </div>
 
-        {/* Details */}
         <div className="p-5 md:p-6 flex flex-col flex-1">
           <h3 className="font-display font-black text-lg md:text-xl text-foreground mb-2">{name}</h3>
           <p className="font-body text-sm text-foreground/60 font-bold leading-relaxed mb-4 flex-1">{desc}</p>
 
-          {/* EmGuarde CTA */}
           {product.type === "emguarde" && (
             <>
               {isLatam ? (
@@ -257,7 +251,6 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
             </>
           )}
 
-          {/* Kangen Air CTA */}
           {product.type === "kangenair" && (
             <>
               {isLatam ? (
@@ -301,7 +294,6 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
             </>
           )}
 
-          {/* Standard product CTA */}
           {product.type === "standard" && product.href && (
             <motion.a
               href={product.href}
@@ -326,7 +318,6 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar lang={lang} />
 
-      {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden noise-overlay">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[200px]" />
@@ -357,14 +348,12 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
         </div>
       </section>
 
-      {/* Products Grid */}
       <section className="pb-20 md:pb-28 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-7xl mx-auto">
             {products.map((product, i) => renderProductCard(product, i))}
           </div>
 
-          {/* Book a call CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
