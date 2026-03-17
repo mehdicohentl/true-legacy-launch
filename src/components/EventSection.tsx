@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import eventGlobal from "@/assets/event-global-flyer.jpg";
-import eventLatam from "@/assets/event-latam.jpg";
+import eventLatam from "@/assets/event-latam-flyer.png";
 
 interface EventSectionProps {
   lang: "en" | "es";
