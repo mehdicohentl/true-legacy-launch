@@ -65,7 +65,7 @@ const transparentThumbs = [
 const isTransparent = (src: string) =>
   transparentThumbs.some((t) => src.includes(t));
 
-const ResourcesPage = ({ lang }: ResourcesPageProps) => {
+  // main component body continues
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
   const whatsappEmguarde = lang === "es" ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
 
