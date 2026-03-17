@@ -1,33 +1,23 @@
 
 
-## Plan: Make ZoomGateway the Hero Action + Clean Up Event Section
+## Add "Book a 30-Minute Clarity Call" Button Below the Video
 
-### Problem
-The "Secure Your Spot" gateway is buried below the flyer content. The bottom quote and secondary CTAs add clutter between the gateway and the resource links. Users need to immediately see how to join the Zoom.
+### Change
 
-### Changes
+Add a CTA button underneath the YouTube video in `src/components/ThankYouSection.tsx`, with bilingual support (English/Spanish).
 
-#### 1. `src/components/ZoomGateway.tsx` — Make it prominent and unmissable
+### Details
 
-- Add a glowing accent border card wrapper around the entire gateway with `border-accent/40 bg-accent/5` and a subtle pulsing glow effect
-- Add a custom SVG video-camera icon above the heading to visually signal "this is how you join"
-- Make heading larger: `text-3xl md:text-5xl`
-- Add a short instructional line below the subtitle: "Select below to join the live Zoom call" / "Selecciona abajo para unirte a la llamada Zoom en vivo"
-- Make the Yes/No buttons larger with bigger touch targets (`py-5 text-base`) and add SVG icons (checkmark for Yes, hand-wave for No)
-- Remove the thin divider line between subtitle and question (declutter)
-- Fix ES subtitle from "Martes" to "Jueves" (it says Tuesday but the event is Thursday)
+- **English text**: "Book a 30-Minute Clarity Call"
+- **Spanish text**: "Reserva una Llamada de Claridad de 30 Minutos"
+- Button will be placed after the video `motion.div` (after line 48), centered, with a fade-in animation
+- Styled consistently with existing CTA buttons (accent background, rounded, bold text)
+- Links to an external booking URL (will use a placeholder like Calendly unless a specific link is provided)
 
-#### 2. `src/components/EventSection.tsx` — Remove clutter below gateway
+### Technical
 
-- Remove the bottom quote text (lines 164-172: "Your legacy doesn't wait...")
-- Remove the secondary CTAs section (lines 174-208: Kangen, EmGuarde, Join Team buttons) — these are redundant since `EventResourceLinks` already has all the resource links and CTAs at the bottom of the page
-- This makes the flow: Flyer + details → ZoomGateway → EventResourceLinks (on EventsPage)
-
-#### 3. Mobile optimization
-- ZoomGateway buttons stack vertically on mobile (already `flex-col sm:flex-row`) — increase padding and font size for easy thumb tapping
-- Gateway card gets `mx-2` on mobile for edge breathing room
-
-### Files to modify
-1. `src/components/ZoomGateway.tsx`
-2. `src/components/EventSection.tsx`
+In `src/components/ThankYouSection.tsx`:
+- Add a new `motion.div` after the video block containing an `<a>` styled as a button
+- Use the same animation pattern (`initial/whileInView`) as the other elements
+- Apply styling matching the site's existing CTA buttons (e.g., `bg-accent text-background font-bold rounded-full px-8 py-4`)
 
