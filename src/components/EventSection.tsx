@@ -5,10 +5,9 @@ import ZoomGateway from "@/components/ZoomGateway";
 
 interface EventSectionProps {
   lang: "en" | "es";
-  onOpenLeadForm: () => void;
 }
 
-const EventSection = ({ lang, onOpenLeadForm }: EventSectionProps) => {
+const EventSection = ({ lang }: EventSectionProps) => {
   const t = {
     en: {
       micro: "Upcoming Live Event",
@@ -159,31 +158,8 @@ const EventSection = ({ lang, onOpenLeadForm }: EventSectionProps) => {
           </motion.div>
         </div>
 
-        {/* CTA + Inline Zoom Gateway — Secure Your Spot */}
-        <div className="max-w-3xl mx-auto space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center space-y-3"
-          >
-            <p className="font-body text-sm md:text-base text-foreground/80 font-bold max-w-2xl mx-auto">
-              {c.bottomCta}
-            </p>
-            <motion.button
-              type="button"
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={onOpenLeadForm}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m-7-7h14" />
-              </svg>
-              {lang === "en" ? "Reserve Your Seat" : "Reserva Tu Lugar"}
-            </motion.button>
-          </motion.div>
-
+        {/* Inline Zoom Gateway — Secure Your Spot */}
+        <div className="max-w-3xl mx-auto mt-8">
           <ZoomGateway lang={lang} />
         </div>
 

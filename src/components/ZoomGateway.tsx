@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "@/hooks/use-toast";
 
 const ZOOM_URLS = {
   en: "https://us02web.zoom.us/j/87614486219?pwd=YcmJqE7nyYnShh2jdFVz4kRdFygQpv.1",
   es: "https://us02web.zoom.us/j/83000043957?pwd=Truelegacy",
 };
+
+const encode = (data: Record<string, string>) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 
 const t = {
   en: {
@@ -14,17 +17,24 @@ const t = {
     subtitle: "Thursday Live — True Legacy World",
     instruction: "Select below to join the live Zoom call",
     question: "Have you attended before?",
-    yes: "Yes — Join Zoom Now",
-    no: "No — Register First",
+    yes: "YES — JOIN NOW",
+    no: "NO — REGISTER",
     formHeading: "Register for Access",
     formSubtitle: "First-Time Attendee Registration",
-    firstName: "First Name",
-    lastName: "Last Name",
+    fullName: "Full Name",
     email: "Email Address",
     phone: "Phone Number",
-    referral: "Who Referred You?",
+    countryCode: "Country Code",
+    eventLabel: "Which event are you interested in?",
+    heardFrom: "How did you hear about us?",
+    optionGlobal: "Global Event",
+    optionLatam: "LATAM Event",
+    optionInstagram: "Instagram",
+    optionFacebook: "Facebook",
+    optionReferral: "Referral",
+    optionOther: "Other",
     back: "Back",
-    submit: "Register and Join the Call",
+    submit: "Register & Join Call",
     submitting: "Registering...",
     successHeading: "Welcome to True Legacy World",
     successText: "You are registered. Your Zoom link has opened in a new tab. Check your email for your access link.",
@@ -41,17 +51,24 @@ const t = {
     subtitle: "Jueves en Vivo — True Legacy World",
     instruction: "Selecciona abajo para unirte a la llamada Zoom en vivo",
     question: "¿Has asistido antes?",
-    yes: "Sí — Unirme al Zoom",
-    no: "No — Registrarme Primero",
+    yes: "SÍ — UNIRME AHORA",
+    no: "NO — REGISTRARME",
     formHeading: "Regístrate para Acceder",
     formSubtitle: "Registro de Primera Vez",
-    firstName: "Nombre",
-    lastName: "Apellido",
+    fullName: "Nombre Completo",
     email: "Correo Electrónico",
-    phone: "Número de Teléfono",
-    referral: "¿Quién te refirió?",
+    phone: "Teléfono",
+    countryCode: "Código de País",
+    eventLabel: "¿En qué evento estás interesado?",
+    heardFrom: "¿Cómo nos conociste?",
+    optionGlobal: "Evento Global",
+    optionLatam: "Evento LATAM",
+    optionInstagram: "Instagram",
+    optionFacebook: "Facebook",
+    optionReferral: "Referencia",
+    optionOther: "Otro",
     back: "Volver",
-    submit: "Registrarse y Unirse a la Llamada",
+    submit: "Registrarse y Unirse",
     submitting: "Registrando...",
     successHeading: "Bienvenido a True Legacy World",
     successText: "Estás registrado. Tu enlace de Zoom se ha abierto en una nueva pestaña. Revisa tu correo para tu enlace de acceso.",
@@ -106,8 +123,15 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
   const zoomUrl = ZOOM_URLS[lang];
   const [state, setState] = useState<GatewayState>("question");
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", referral: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+1");
+  const [heardFrom, setHeardFrom] = useState("");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const isLatam = lang === "es";
 
   const handleYes = () => {
     window.open(zoomUrl, "_blank", "noopener,noreferrer");
@@ -115,41 +139,35 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
 
   const handleNo = () => setState("form");
 
-  const validate = () => {
-    const e: Record<string, string> = {};
-    if (!form.firstName.trim()) e.firstName = c.errFirst;
-    if (!form.lastName.trim()) e.lastName = c.errLast;
-    if (!form.email.trim()) e.email = c.errEmail;
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) e.email = c.errEmailInvalid;
-    if (!form.phone.trim()) e.phone = c.errPhone;
-    if (!form.referral.trim()) e.referral = c.errReferral;
-    return e;
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const v = validate();
-    setErrors(v);
-    if (Object.keys(v).length > 0) return;
-
+    setErrorMsg(null);
     setSubmitting(true);
-    const { error } = await supabase.from("zoom_registrations").insert({
-      first_name: form.firstName.trim(),
-      last_name: form.lastName.trim(),
-      email: form.email.trim(),
-      phone: form.phone.trim(),
-      referral: form.referral.trim() || null,
-    });
 
-    if (error) {
-      toast({ title: lang === "en" ? "Something went wrong" : "Algo salió mal", description: lang === "en" ? "Please try again." : "Por favor intenta de nuevo.", variant: "destructive" });
+    const payload = {
+      "form-name": "event-leads",
+      fullName,
+      email,
+      phone: `${countryCode} ${phone}`.trim(),
+      eventInterest: isLatam ? "LATAM Event" : "GLOBAL Event",
+      heardFrom,
+      "bot-field": "",
+    };
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload),
+      });
+      window.open(zoomUrl, "_blank", "noopener,noreferrer");
+      setState("success");
+    } catch (err) {
+      console.error(err);
+      setErrorMsg(lang === "en" ? "Something went wrong. Please try again." : "Algo salió mal. Por favor intenta de nuevo.");
+    } finally {
       setSubmitting(false);
-      return;
     }
-
-    window.open(zoomUrl, "_blank", "noopener,noreferrer");
-    setState("success");
-    setSubmitting(false);
   };
 
   const inputClass =
@@ -163,14 +181,12 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
         viewport={{ once: true }}
         className="max-w-2xl mx-auto rounded-2xl border-2 border-accent/40 bg-accent/5 p-6 md:p-10 shadow-gold relative overflow-hidden"
       >
-        {/* Subtle pulsing glow */}
         <div className="absolute inset-0 rounded-2xl bg-accent/5 animate-pulse pointer-events-none" />
 
         <div className="relative z-10">
           <AnimatePresence mode="wait">
             {state === "question" && (
               <motion.div key="question" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="text-center">
-                {/* Video icon */}
                 <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/15 border border-accent/30 text-accent mb-5">
                   <IconVideo />
                 </div>
@@ -181,12 +197,12 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
 
                 <p className="font-body text-base md:text-lg text-foreground/90 font-bold mb-6">{c.question}</p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch w-full max-w-lg mx-auto">
                   <motion.button
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={handleYes}
-                    className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.08em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+                    className="w-full sm:w-1/2 flex items-center justify-center gap-2 px-4 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.08em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
                   >
                     <IconCheck />
                     {c.yes}
@@ -195,7 +211,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={handleNo}
-                    className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.08em] bg-accent text-accent-foreground shadow-gold"
+                    className="w-full sm:w-1/2 flex items-center justify-center gap-2 px-4 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.08em] bg-accent text-accent-foreground shadow-gold"
                   >
                     <IconUser />
                     {c.no}
@@ -208,34 +224,65 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
               <motion.div key="form" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
                 <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-2 text-center">{c.formHeading}</h2>
                 <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-8 text-center">{c.formSubtitle}</p>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <input type="text" placeholder={c.firstName} value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className={inputClass} />
-                      {errors.firstName && <p className="text-destructive text-xs mt-1 font-body">{errors.firstName}</p>}
+                <form name="event-leads" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
+                  <input type="hidden" name="form-name" value="event-leads" />
+                  <input name="bot-field" type="hidden" />
+                  <input type="hidden" name="eventInterest" value={isLatam ? "LATAM Event" : "GLOBAL Event"} />
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="sm:col-span-2">
+                      <input required type="text" placeholder={c.fullName} name="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} className={inputClass} />
                     </div>
                     <div>
-                      <input type="text" placeholder={c.lastName} value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} className={inputClass} />
-                      {errors.lastName && <p className="text-destructive text-xs mt-1 font-body">{errors.lastName}</p>}
+                      <select required name="countryCode" value={countryCode} onChange={(e) => setCountryCode(e.target.value)} className={inputClass}>
+                        <option value="+1">+1 USA</option>
+                        <option value="+57">+57 Colombia</option>
+                        <option value="+52">+52 México</option>
+                        <option value="+34">+34 España</option>
+                        <option value="+44">+44 UK</option>
+                        <option value="+61">+61 Australia</option>
+                        <option value="+971">+971 UAE</option>
+                        <option value="+55">+55 Brazil</option>
+                        <option value="+51">+51 Perú</option>
+                        <option value="+56">+56 Chile</option>
+                        <option value="+593">+593 Ecuador</option>
+                        <option value="+54">+54 Argentina</option>
+                        <option value="+39">+39 Italy</option>
+                        <option value="+33">+33 France</option>
+                        <option value="+49">+49 Germany</option>
+                      </select>
                     </div>
                   </div>
                   <div>
-                    <input type="email" placeholder={c.email} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClass} />
-                    {errors.email && <p className="text-destructive text-xs mt-1 font-body">{errors.email}</p>}
+                    <input required type="email" placeholder={c.email} name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
                   </div>
                   <div>
-                    <input type="tel" placeholder={c.phone} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputClass} />
-                    {errors.phone && <p className="text-destructive text-xs mt-1 font-body">{errors.phone}</p>}
+                    <input required type="tel" placeholder={c.phone} name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
                   </div>
                   <div>
-                    <input type="text" placeholder={c.referral} value={form.referral} onChange={(e) => setForm({ ...form, referral: e.target.value })} className={inputClass} />
-                    {errors.referral && <p className="text-destructive text-xs mt-1 font-body">{errors.referral}</p>}
+                    <select required name="heardFrom" value={heardFrom} onChange={(e) => setHeardFrom(e.target.value)} className={inputClass}>
+                      <option value="">{c.heardFrom}</option>
+                      <option value="Instagram">{c.optionInstagram}</option>
+                      <option value="Facebook">{c.optionFacebook}</option>
+                      <option value="Referral">{c.optionReferral}</option>
+                      <option value="Other">{c.optionOther}</option>
+                    </select>
                   </div>
-                  <motion.button type="submit" disabled={submitting} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full inline-flex items-center justify-center gap-3 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-60">
-                    <IconSend />
+                  
+                  {errorMsg && <p className="text-destructive text-xs font-body text-center">{errorMsg}</p>}
+
+                  <motion.button type="submit" disabled={submitting} whileHover={{ scale: submitting ? 1 : 1.02 }} whileTap={{ scale: submitting ? 1 : 0.98 }} className="w-full inline-flex items-center justify-center gap-3 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-60">
+                    {submitting ? (
+                      <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3.5-3.5L12 0v4a8 8 0 00-8 8h4z" />
+                      </svg>
+                    ) : (
+                      <IconSend />
+                    )}
                     {submitting ? c.submitting : c.submit}
                   </motion.button>
-                  <button type="button" onClick={() => { setState("question"); setErrors({}); }} className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl font-body font-bold text-sm text-foreground/60 hover:text-foreground transition-colors">
+                  <button type="button" onClick={() => { setState("question"); }} className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl font-body font-bold text-sm text-foreground/60 hover:text-foreground transition-colors">
                     <IconArrowLeft />
                     {c.back}
                   </button>
@@ -250,7 +297,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
                 </div>
                 <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-3">{c.successHeading}</h2>
                 <p className="font-body text-base text-foreground/80 mb-8">{c.successText}</p>
-                <motion.a href={zoomUrl} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="inline-flex w-full items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold">
+                <motion.a href={zoomUrl} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="inline-flex w-full max-w-sm items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold">
                   <IconVideo />
                   {c.joinBtn}
                 </motion.a>

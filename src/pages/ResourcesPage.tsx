@@ -195,6 +195,17 @@ const socials = [
             </a>
           ))}
         </div>
+
+        {/* Back to site link (Top) */}
+        <div className="mt-8 text-center">
+          <Link
+            to={lang === "en" ? "/global" : "/latam"}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider text-white/70 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white transition-all duration-200"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+            {lang === "en" ? "Back to site" : "Volver al sitio"}
+          </Link>
+        </div>
       </div>
 
       {/* Sticky category navigation bar */}
@@ -277,16 +288,6 @@ const socials = [
           </div>
         ))}
 
-        {/* Back to site link */}
-        <div className="text-center mt-10">
-          <Link
-            to={lang === "en" ? "/global" : "/latam"}
-            className="inline-flex items-center gap-2 text-sm font-body font-bold text-white/40 hover:text-white/70 transition-colors"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-            {lang === "en" ? "Back to site" : "Volver al sitio"}
-          </Link>
-        </div>
       </div>
     </div>
   );
