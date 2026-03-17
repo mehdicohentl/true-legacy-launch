@@ -97,6 +97,52 @@ const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
           ))}
         </div>
 
+        {/* Join True Legacy CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-2xl border border-accent/30 bg-accent/5 p-8 md:p-10 text-center mb-12"
+        >
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-3">
+            {lang === "en" ? "Opportunity" : "Oportunidad"}
+          </p>
+          <h3 className="text-xl md:text-2xl font-display font-black text-foreground mb-3">
+            {lang === "en"
+              ? "Get Paid to Sell World-Changing Products"
+              : "Gana Dinero Vendiendo Productos Que Cambian el Mundo"}
+          </h3>
+          <p className="font-body text-sm md:text-base text-foreground/80 font-bold mb-6 max-w-lg mx-auto leading-relaxed">
+            {lang === "en"
+              ? "Join the True Legacy team and build a global wellness business with purpose. Earn income while helping people transform their health with cutting-edge biohacking technology."
+              : "Únete al equipo True Legacy y construye un negocio global de bienestar con propósito. Genera ingresos mientras ayudas a las personas a transformar su salud con tecnología de biohacking."}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <motion.a
+              href="https://truelegacyworld.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.7 0 3-4 3-9s-1.3-9-3-9m0 18c-1.7 0-3-4-3-9s1.3-9 3-9" /></svg>
+              {lang === "en" ? "Visit TrueLegacyWorld.com" : "Visita TrueLegacyWorld.com"}
+            </motion.a>
+            <motion.a
+              href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-accent/30 text-accent hover:bg-accent/10 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              {lang === "en" ? "Join the Team" : "Únete al Equipo"}
+            </motion.a>
+          </div>
+        </motion.div>
+
         {/* Social row */}
         <motion.div
           initial={{ opacity: 0 }}
