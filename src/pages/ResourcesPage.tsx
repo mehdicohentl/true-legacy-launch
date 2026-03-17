@@ -139,7 +139,7 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
           label: lang === "en"
             ? "How to professionally deep clean Enagic LeveLuk (K8)"
             : "Cómo limpiar profesionalmente tu Enagic LeveLuk (K8)",
-          href: "https://www.youtube.com/@TrueLegacyWorld",
+          href: "https://www.youtube.com/@Mehdicohen",
           image: imgDeepclean,
         },
         {

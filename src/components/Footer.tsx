@@ -1,15 +1,20 @@
 import combinedLogo from "@/assets/combined-logo.png";
-import { Youtube, Instagram, Facebook, Mail, MessageCircle } from "lucide-react";
+import { Youtube, Instagram, Facebook, Mail, MessageCircle, Linkedin } from "lucide-react";
 
 interface FooterProps {
   lang: "en" | "es";
 }
 
 const Footer = ({ lang }: FooterProps) => {
+  const linkedinUrl = lang === "en"
+    ? "https://www.linkedin.com/in/mehdicohen-tl/"
+    : "https://co.linkedin.com/in/mehdi-cohen";
+
   const socialLinks = [
-    { icon: Youtube, href: "https://www.youtube.com/@TrueLegacyWorld", label: "YouTube" },
+    { icon: Youtube, href: "https://www.youtube.com/@Mehdicohen", label: "YouTube" },
     { icon: Instagram, href: "https://instagram.com/mehdicohen_", label: "Instagram" },
     { icon: Facebook, href: "https://www.facebook.com/share/19E6C1seVM/?mibextid=wwXIfr", label: "Facebook" },
+    { icon: Linkedin, href: linkedinUrl, label: "LinkedIn" },
     { icon: () => (
       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
         <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52V6.82a4.84 4.84 0 01-1-.13z"/>
@@ -57,7 +62,7 @@ const Footer = ({ lang }: FooterProps) => {
             <a href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"} target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
               {lang === "en" ? "Join Team" : "Únete"}
             </a>
-            <a href="https://www.youtube.com/@TrueLegacyWorld" target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
+            <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
               YouTube
             </a>
             <a href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016" target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
