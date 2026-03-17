@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import eventGlobal from "@/assets/event-global-flyer.jpg";
-import eventLatam from "@/assets/event-latam.jpg";
+import eventLatam from "@/assets/event-latam-flyer.png";
 
 interface EventSectionProps {
   lang: "en" | "es";
@@ -46,7 +46,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
         "Una visión global para expandir y crecer más allá de las fronteras",
       ],
       dateLabel: "Fecha del Zoom",
-      date: "Cada Martes",
+      date: "Martes",
       time: "7:00 PM (Hora de Colombia) — 8:00 PM EST / 5:00 PM PST",
       ctaMain: "Acceder al Evento Zoom",
       zoomLink: "#zoom-gateway",

@@ -32,6 +32,7 @@ const Navbar = ({ lang }: NavbarProps) => {
       ];
 
   const eventLink = lang === "en" ? "/global/events" : "/latam/events";
+  const productsLink = lang === "en" ? "/global/products" : "/latam/products";
 
   const scrollTo = (id: string) => {
     if (isOnLandingPage) {
@@ -65,6 +66,13 @@ const Navbar = ({ lang }: NavbarProps) => {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
             </button>
           ))}
+          <a
+            href={productsLink}
+            className="text-xs font-mono font-bold text-foreground/70 hover:text-foreground transition-colors uppercase tracking-[0.15em] relative group"
+          >
+            {lang === "en" ? "Products" : "Productos"}
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
+          </a>
           <a
             href={eventLink}
             className="text-xs font-mono font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.15em] relative group"
@@ -117,6 +125,12 @@ const Navbar = ({ lang }: NavbarProps) => {
               {link.label}
             </button>
           ))}
+          <a
+            href={productsLink}
+            className="block w-full text-left text-base font-body font-bold text-foreground/80 hover:text-foreground transition-colors uppercase tracking-[0.1em] py-3"
+          >
+            {lang === "en" ? "Products" : "Productos"}
+          </a>
           <a
             href={eventLink}
             className="block w-full text-left text-base font-body font-bold text-accent hover:text-accent/80 transition-colors uppercase tracking-[0.1em] py-3"

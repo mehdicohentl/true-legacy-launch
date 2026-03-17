@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { Filter, Wrench, Droplets, ShoppingBag } from "lucide-react";
+import imgMultipure from "@/assets/product-multipure.png";
+import imgProPump from "@/assets/product-pro-pump.png";
+import imgFaucet from "@/assets/product-ionizer-faucet.png";
+import imgFilters from "@/assets/product-ionfaucet-filters.png";
 
 interface ResourcesSectionProps {
   lang: "en" | "es";
@@ -14,6 +18,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Pre-Filtration",
           icon: Filter,
+          image: imgMultipure,
           links: [
             { label: "Multipure Pre-Filters", href: "https://www.multipure.com/mcardona" },
             { label: "Ionfaucet Pre-Filtration", href: "https://ionfaucet.com/pre-filtration-systems" },
@@ -22,6 +27,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Upgrades & Maintenance",
           icon: Wrench,
+          image: imgProPump,
           links: [
             { label: "PRO Pump (Ion Clean)", href: "https://ionfaucet.com/ion-clean-machine-pro/" },
             { label: "Ionizer Faucets", href: "https://ionfaucet.com/products/faucets/ionizer-faucets" },
@@ -31,6 +37,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Water Quality",
           icon: Droplets,
+          image: imgFilters,
           links: [
             { label: "Check Your Tap Water (EWG)", href: "https://www.ewg.org/tapwater/" },
           ],
@@ -38,6 +45,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Order Your Machine",
           icon: ShoppingBag,
+          image: imgFaucet,
           links: [
             { label: "Official Enagic Store", href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016" },
             { label: "Book a Wellness Call", href: "https://calendly.com/aquacharged/true-legacy-one-on-one" },
@@ -52,6 +60,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Pre-Filtración",
           icon: Filter,
+          image: imgMultipure,
           links: [
             { label: "Pre-Filtros Multipure", href: "https://www.multipure.com/mcardona" },
             { label: "Pre-Filtración Ionfaucet", href: "https://ionfaucet.com/pre-filtration-systems" },
@@ -60,6 +69,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Mejoras y Mantenimiento",
           icon: Wrench,
+          image: imgProPump,
           links: [
             { label: "PRO Pump (Ion Clean)", href: "https://ionfaucet.com/ion-clean-machine-pro/" },
             { label: "Grifos Ionizadores", href: "https://ionfaucet.com/products/faucets/ionizer-faucets" },
@@ -69,6 +79,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Calidad del Agua",
           icon: Droplets,
+          image: imgFilters,
           links: [
             { label: "Revisa Tu Agua del Grifo (EWG)", href: "https://www.ewg.org/tapwater/" },
           ],
@@ -76,6 +87,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "Ordena Tu Máquina",
           icon: ShoppingBag,
+          image: imgFaucet,
           links: [
             { label: "Tienda Oficial Enagic", href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016" },
             { label: "Agenda una Llamada", href: "https://calendly.com/aquacharged/true-legacy-one-on-one" },
@@ -122,6 +134,11 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
                 transition={{ delay: i * 0.08 }}
                 className="glass-card rounded-xl p-6 hover:border-accent/30 transition-all duration-300"
               >
+                {cat.image && (
+                  <div className="w-full h-28 rounded-lg overflow-hidden mb-4 bg-background/30">
+                    <img src={cat.image} alt={cat.title} className="w-full h-full object-contain" loading="lazy" />
+                  </div>
+                )}
                 <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center mb-4">
                   <Icon size={20} className="text-accent" />
                 </div>

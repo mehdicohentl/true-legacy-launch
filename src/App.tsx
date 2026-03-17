@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import EmGuardePurchase from "./pages/EmGuardePurchase";
 import EventsPage from "./pages/EventsPage";
 import ZoomPage from "./pages/ZoomPage";
+import ProductsPage from "./pages/ProductsPage";
 import NotFound from "./pages/NotFound";
 import WhoIsMehdiCohen from "./pages/seo/WhoIsMehdiCohen";
 import WhatIsTrueLegacy from "./pages/seo/WhatIsTrueLegacy";
@@ -33,6 +34,8 @@ const App = () => (
           <Route path="/latam/emguarde" element={<EmGuardePurchase lang="es" />} />
           <Route path="/global/events" element={<EventsPage lang="en" />} />
           <Route path="/latam/events" element={<EventsPage lang="es" />} />
+          <Route path="/global/products" element={<ProductsPage lang="en" />} />
+          <Route path="/latam/products" element={<ProductsPage lang="es" />} />
           <Route path="/global/zoom" element={<ZoomPage lang="en" />} />
           <Route path="/latam/zoom" element={<ZoomPage lang="es" />} />
           {/* SEO Landing Pages */}
