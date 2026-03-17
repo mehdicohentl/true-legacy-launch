@@ -1,23 +1,20 @@
 
 
-## Add "Book a 30-Minute Clarity Call" Button Below the Video
+## Fix Product Image Backgrounds — They Look Dimmed
 
-### Change
+**Root cause**: `mix-blend-mode: multiply` on the `<img>` blends with the **dark card background**, which darkens/dims the entire image. Multiply works by multiplying pixel values — dark × anything = dark. The white background of the image disappears but so does the image's brightness.
 
-Add a CTA button underneath the YouTube video in `src/components/ThankYouSection.tsx`, with bilingual support (English/Spanish).
+**Solution**: Give the image container a **white background** with `isolation: isolate` so the multiply blend only happens within that white container (removing the image's white bg), but the container itself doesn't blend further into the dark card. This is the standard e-commerce pattern for product images on dark sites.
 
-### Details
+### Changes
 
-- **English text**: "Book a 30-Minute Clarity Call"
-- **Spanish text**: "Reserva una Llamada de Claridad de 30 Minutos"
-- Button will be placed after the video `motion.div` (after line 48), centered, with a fade-in animation
-- Styled consistently with existing CTA buttons (accent background, rounded, bold text)
-- Links to an external booking URL (will use a placeholder like Calendly unless a specific link is provided)
+**`src/pages/ProductsPage.tsx` (line 195)**:
+- Change the image container from `bg-transparent` to `bg-white rounded-t-xl` with `isolation: isolate`
+- Keep `img-no-bg-white` / `img-no-bg-black` on the `<img>` tags
+- For Wagyu (black bg, uses `screen`), use `bg-black` container instead
 
-### Technical
+**`src/index.css`**:
+- No changes needed to the utility classes — they work correctly when the parent container has the right background color
 
-In `src/components/ThankYouSection.tsx`:
-- Add a new `motion.div` after the video block containing an `<a>` styled as a button
-- Use the same animation pattern (`initial/whileInView`) as the other elements
-- Apply styling matching the site's existing CTA buttons (e.g., `bg-accent text-background font-bold rounded-full px-8 py-4`)
+This gives each product image a clean white (or black for Wagyu) isolated zone where the blend mode correctly removes the image's own background, while the product itself renders at full brightness and color.
 
