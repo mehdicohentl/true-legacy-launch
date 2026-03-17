@@ -40,7 +40,7 @@ const socials = [
   { label: "TikTok", href: "https://www.tiktok.com/@mehdi_cohen", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 2.8h3a4.5 4.5 0 004 3.8v3.3a7.5 7.5 0 01-4-1.2v5.8a6 6 0 11-5.2-5.9v3.4a2.7 2.7 0 102 2.6V2.8z"/></svg>
   )},
-  { label: "Email", href: "mailto:aquacharged@gmail.com", icon: (
+  { label: "Email", href: "mailto:truelegacyworld@gmail.com", icon: (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
   )},
   { label: "WhatsApp", href: "https://wa.me/18649072149", icon: (
