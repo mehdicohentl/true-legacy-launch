@@ -100,7 +100,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               <img
                 src={emguardeDevice}
                 alt="Mehdi Cohen True Legacy CEO EmGuarde EMF protection device Enagic wellness mehdicohen.com"
-                className="relative w-full max-w-[280px] mx-auto drop-shadow-2xl" />
+                className="relative w-full max-w-[280px] mx-auto img-no-bg-white" />
               <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-emguarde/60 rounded-tl-lg" />
               <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-emguarde/60 rounded-br-lg" />
             </div>

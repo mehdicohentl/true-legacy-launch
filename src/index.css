@@ -259,4 +259,29 @@
       animation: none !important;
     }
   }
+
+  /* Product image background removal utilities */
+  .img-no-bg-white {
+    mix-blend-mode: multiply;
+    background: transparent !important;
+    filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.35));
+  }
+
+  .img-no-bg-black {
+    mix-blend-mode: screen;
+    background: transparent !important;
+    filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.35));
+  }
+
+  .img-no-bg-auto {
+    mix-blend-mode: lighten;
+    background: transparent !important;
+    filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.35));
+  }
+}
+
+/* Global: prevent product images from showing their own backgrounds */
+img {
+  background: transparent !important;
+  background-color: transparent !important;
 }
