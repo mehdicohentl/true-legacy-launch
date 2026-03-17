@@ -8,6 +8,7 @@ import imgSd501super from "@/assets/product-sd501super-real.png";
 import imgJriv from "@/assets/product-jriv-real.png";
 import imgAnespa from "@/assets/product-anespa-real.png";
 import imgWagyu from "@/assets/product-wagyu-real.png";
+import imgKangenAir from "@/assets/kangen-air.png";
 
 interface ProductsPageProps {
   lang: "en" | "es";
