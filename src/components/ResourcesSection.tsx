@@ -80,7 +80,7 @@ const ResourcesSection = ({ lang }: ResourcesSectionProps) => {
         {
           title: "MEJORAS Y MANTENIMIENTO",
           links: [
-            { label: "Cómo limpiar profesionalmente tu Enagic...", href: "https://www.youtube.com/watch?v=example2", image: undefined },
+            { label: "Cómo limpiar profesionalmente tu Enagic LeveLuk (K8)", href: "https://www.youtube.com/@TrueLegacyWorld", image: undefined },
             { label: "Comprar PRO Pump", href: "https://ionfaucet.com/ion-clean-machine-pro/", image: imgProPump },
             { label: "Grifos Ionizadores (Ionfaucet)", href: "https://ionfaucet.com/products/faucets/ionizer-faucets", image: imgFaucet },
             { label: "Herramientas y Accesorios Ionfaucet", href: "https://lddy.no/1mols", image: imgIonfaucetLogo },

@@ -37,6 +37,8 @@ const App = () => (
           <Route path="/latam/events" element={<EventsPage lang="es" />} />
           <Route path="/global/products" element={<ProductsPage lang="en" />} />
           <Route path="/latam/products" element={<ProductsPage lang="es" />} />
+          <Route path="/global/resources" element={<ResourcesPage lang="en" />} />
+          <Route path="/latam/resources" element={<ResourcesPage lang="es" />} />
           <Route path="/global/zoom" element={<ZoomPage lang="en" />} />
           <Route path="/latam/zoom" element={<ZoomPage lang="es" />} />
           {/* SEO Landing Pages */}
