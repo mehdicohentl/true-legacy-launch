@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import combinedLogo from "@/assets/combined-logo.png";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import emguardeDevice from "@/assets/emguarde-device.png";
 
 interface EmGuardePurchaseProps {
