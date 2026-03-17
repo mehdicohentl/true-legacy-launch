@@ -173,19 +173,8 @@ const EmGuardePurchase = ({ lang }: EmGuardePurchaseProps) => {
   const c = t[lang];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Top bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-2xl border-b border-border/50">
-        <div className="container mx-auto flex items-center justify-between py-3.5 px-4">
-          <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-14 md:h-18 w-auto" />
-          <button
-            onClick={() => navigate(lang === "en" ? "/global" : "/latam")}
-            className="font-mono text-xs font-bold text-foreground/70 hover:text-foreground uppercase tracking-[0.15em]"
-          >
-            {c.back}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar lang={lang} />
 
       <div className="pt-28 pb-20 container mx-auto px-4 relative">
         <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-emguarde/5 rounded-full blur-[150px]" />
