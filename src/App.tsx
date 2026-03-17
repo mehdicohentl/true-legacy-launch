@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import EmGuardePurchase from "./pages/EmGuardePurchase";
 import EventsPage from "./pages/EventsPage";
 import ZoomPage from "./pages/ZoomPage";
+import ProductsPage from "./pages/ProductsPage";
 import NotFound from "./pages/NotFound";
 import WhoIsMehdiCohen from "./pages/seo/WhoIsMehdiCohen";
 import WhatIsTrueLegacy from "./pages/seo/WhatIsTrueLegacy";
