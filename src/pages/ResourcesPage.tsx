@@ -20,6 +20,8 @@ interface ResourcesPageProps {
   lang: "en" | "es";
 }
 
+type CategoryKey = "all" | "info" | "tech" | "upgrades";
+
 const ResourcesPage = ({ lang }: ResourcesPageProps) => {
   const linkedinUrl = lang === "en"
     ? "https://www.linkedin.com/in/mehdicohen-tl/"
