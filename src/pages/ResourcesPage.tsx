@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import combinedLogo from "@/assets/combined-logo.png";
 import linktreeBanner from "@/assets/linktree-banner.png";
@@ -44,8 +44,29 @@ const socials = [
   )},
 ];
 
+type CategoryKey = "all" | "info" | "tech" | "upgrades";
+
+// Transparent PNG thumbnails need a subtle background to be visible on dark bg
+const transparentThumbs = [
+  "linktree-ewg", "linktree-emguarde", "linktree-emguarde-contact",
+  "linktree-k8", "linktree-kangen8", "linktree-multipure",
+  "linktree-ionfaucet-filters", "linktree-propump", "linktree-faucets",
+  "linktree-ionfaucet-tools",
+];
+
+const isTransparent = (src: string) =>
+  transparentThumbs.some((t) => src.includes(t));
+
 const ResourcesPage = ({ lang }: ResourcesPageProps) => {
+  const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
   const whatsappEmguarde = lang === "es" ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
+
+  const categories: { key: CategoryKey; label: string }[] = [
+    { key: "all", label: lang === "en" ? "All" : "Todo" },
+    { key: "info", label: "Info" },
+    { key: "tech", label: "Tech" },
+    { key: "upgrades", label: lang === "en" ? "Upgrades" : "Mejoras" },
+  ];
 
   const links = {
     consultation: {
@@ -56,6 +77,7 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
       image: imgConsultation,
     },
     info: {
+      key: "info" as CategoryKey,
       title: "INFO",
       items: [
         {
@@ -76,6 +98,7 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
       ],
     },
     tech: {
+      key: "tech" as CategoryKey,
       title: "TECH",
       items: [
         {
@@ -101,6 +124,7 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
       ],
     },
     upgrades: {
+      key: "upgrades" as CategoryKey,
       title: lang === "en" ? "UPGRADES & MAINTENANCE" : "MEJORAS Y MANTENIMIENTO",
       items: [
         {
@@ -129,42 +153,45 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
     },
   };
 
-  const categories = [links.info, links.tech, links.upgrades];
+  const allCategories = [links.info, links.tech, links.upgrades];
+  const visibleCategories = activeCategory === "all"
+    ? allCategories
+    : allCategories.filter((cat) => cat.key === activeCategory);
 
   return (
     <div className="min-h-screen bg-[hsl(210,30%,12%)] text-foreground">
-      {/* Linktree-style banner hero */}
+      {/* Banner - responsive aspect ratio for mobile */}
       <div className="relative w-full">
-        <div className="w-full h-[280px] sm:h-[340px] md:h-[400px] relative overflow-hidden">
+        <div className="w-full aspect-[3/4] sm:aspect-[16/9] md:aspect-[2/1] relative overflow-hidden">
           <img
             src={linktreeBanner}
             alt="True Legacy Banner"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[hsl(210,30%,12%)]" />
         </div>
       </div>
 
       {/* Logo + tagline + socials */}
-      <div className="relative z-10 -mt-16 flex flex-col items-center px-4">
+      <div className="relative z-10 -mt-10 sm:-mt-16 flex flex-col items-center px-4">
         <img
           src={combinedLogo}
           alt="True Legacy | Mehdi Cohen"
-          className="h-24 md:h-32 w-auto mb-3"
+          className="h-16 sm:h-24 md:h-32 w-auto mb-2"
         />
-        <p className="font-display font-black text-base md:text-lg text-white/90 text-center mb-5">
+        <p className="font-display font-black text-sm sm:text-base md:text-lg text-white/90 text-center mb-4">
           {lang === "en" ? "Creating True Health Around the World." : "Creando Salud Verdadera Alrededor del Mundo."}
         </p>
 
         {/* Social icons row */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           {socials.map((s) => (
             <a
               key={s.label}
               href={s.label === "WhatsApp" && lang === "es" ? "https://wa.me/573001844049" : s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
               title={s.label}
             >
               {s.icon}
@@ -173,9 +200,28 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
         </div>
       </div>
 
+      {/* Sticky category navigation bar */}
+      <div className="sticky top-[60px] z-30 bg-[hsl(210,30%,12%)]/95 backdrop-blur-sm border-b border-white/10 mt-6">
+        <div className="max-w-[680px] mx-auto flex items-center justify-center gap-2 px-4 py-3 overflow-x-auto">
+          {categories.map((cat) => (
+            <button
+              key={cat.key}
+              onClick={() => setActiveCategory(cat.key)}
+              className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap ${
+                activeCategory === cat.key
+                  ? "bg-accent text-accent-foreground"
+                  : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white/80 border border-white/10"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Links section */}
-      <div className="max-w-[680px] mx-auto px-4 pt-8 pb-16">
-        {/* Top CTA - Consultation */}
+      <div className="max-w-[680px] mx-auto px-4 pt-6 pb-16">
+        {/* Top CTA - Consultation (always visible) */}
         <motion.a
           href={links.consultation.href}
           target="_blank"
@@ -184,17 +230,17 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center w-full rounded-full bg-accent hover:brightness-110 transition-all duration-200 mb-8 overflow-hidden"
         >
-          <div className="w-14 h-14 flex-shrink-0 overflow-hidden rounded-full m-1">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 overflow-hidden rounded-full m-1">
             <img src={links.consultation.image} alt="" className="w-full h-full object-cover" />
           </div>
-          <span className="font-body font-black text-sm text-accent-foreground flex-1 text-center pr-6 py-4 leading-tight">
+          <span className="font-body font-black text-xs sm:text-sm text-accent-foreground flex-1 text-center pr-4 sm:pr-6 py-3 sm:py-4 leading-tight">
             {links.consultation.label}
           </span>
         </motion.a>
 
         {/* Category sections */}
-        {categories.map((cat, i) => (
-          <div key={i} className="mb-6">
+        {visibleCategories.map((cat, i) => (
+          <div key={cat.key} className="mb-6" id={`cat-${cat.key}`}>
             <p className="font-display font-black text-xs uppercase tracking-[0.3em] text-white/50 text-center mb-3">
               {cat.title}
             </p>
@@ -211,10 +257,21 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
                   transition={{ delay: j * 0.04 }}
                   className="flex items-center w-full rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-200 overflow-hidden"
                 >
-                  <div className="w-12 h-12 flex-shrink-0 overflow-hidden rounded-full m-1 bg-white/5">
-                    <img src={item.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+                  <div
+                    className={`w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 overflow-hidden rounded-full m-1 ${
+                      isTransparent(item.image) ? "bg-white/15 p-1" : "bg-white/5"
+                    }`}
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      className={`w-full h-full ${
+                        isTransparent(item.image) ? "object-contain" : "object-cover"
+                      }`}
+                      loading="lazy"
+                    />
                   </div>
-                  <span className="font-body font-bold text-sm text-white/90 flex-1 text-center pr-6 py-3.5 leading-tight">
+                  <span className="font-body font-bold text-xs sm:text-sm text-white/90 flex-1 text-center pr-4 sm:pr-6 py-3 sm:py-3.5 leading-tight">
                     {item.label}
                   </span>
                 </motion.a>
