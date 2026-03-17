@@ -52,20 +52,16 @@ const socials = [
   )},
 ];
 
-type CategoryKey = "all" | "info" | "tech" | "upgrades";
+  const transparentThumbs = [
+    "linktree-ewg", "linktree-emguarde", "linktree-emguarde-contact",
+    "linktree-k8", "linktree-kangen8", "linktree-multipure",
+    "linktree-ionfaucet-filters", "linktree-propump", "linktree-faucets",
+    "linktree-ionfaucet-tools",
+  ];
 
-// Transparent PNG thumbnails need a subtle background to be visible on dark bg
-const transparentThumbs = [
-  "linktree-ewg", "linktree-emguarde", "linktree-emguarde-contact",
-  "linktree-k8", "linktree-kangen8", "linktree-multipure",
-  "linktree-ionfaucet-filters", "linktree-propump", "linktree-faucets",
-  "linktree-ionfaucet-tools",
-];
+  const isTransparent = (src: string) =>
+    transparentThumbs.some((t) => src.includes(t));
 
-const isTransparent = (src: string) =>
-  transparentThumbs.some((t) => src.includes(t));
-
-  // main component body continues
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
   const whatsappEmguarde = lang === "es" ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
 
