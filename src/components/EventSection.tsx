@@ -20,7 +20,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
         "A global vision to expand and build beyond borders",
       ],
       dateLabel: "Zoom Date",
-      date: "Every Thursday",
+      date: "Thursday",
       time: "8:00 PM EST / 5:00 PM PST",
       ctaMain: "Access the Zoom Event",
       zoomLink: "#zoom-gateway",
