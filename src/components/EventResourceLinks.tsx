@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 interface EventResourceLinksProps {
   lang: "en" | "es";
+  onOpenLeadForm: () => void;
 }
 
 /* ── SVG icon components ── */
@@ -66,7 +67,7 @@ const IconExternalLink = () => (
   </svg>
 );
 
-const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
+const EventResourceLinks = ({ lang, onOpenLeadForm }: EventResourceLinksProps) => {
   const whatsappUrl = lang === "es" ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
   const linkedinUrl = lang === "en"
     ? "https://www.linkedin.com/in/mehdicohen-tl/"
@@ -132,9 +133,14 @@ const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent/80 mb-2">
             {lang === "en" ? "Resources & Links" : "Recursos y Enlaces"}
           </p>
-          <h3 className="text-2xl md:text-3xl font-display font-black text-foreground">
+          <h3 className="text-2xl md:text-3xl font-display font-black text-foreground mb-2">
             {lang === "en" ? "Everything You Need" : "Todo Lo Que Necesitas"}
           </h3>
+          <p className="font-body text-xs md:text-sm text-foreground/70 font-bold max-w-xl mx-auto">
+            {lang === "en"
+              ? "Reserve your spot first, then dive into the most important resources below."
+              : "Primero reserva tu lugar y luego explora los recursos más importantes abajo."}
+          </p>
         </motion.div>
 
         <div className="space-y-3 mb-12">
@@ -180,28 +186,26 @@ const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
               : "Únete al equipo True Legacy y construye un negocio global de bienestar con propósito. Genera ingresos mientras ayudas a las personas a transformar su salud con tecnología de biohacking."}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <motion.a
-              href="https://truelegacyworld.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              type="button"
+              onClick={onOpenLeadForm}
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all w-full sm:w-auto justify-center"
             >
               <IconExternalLink />
-              {lang === "en" ? "Visit TrueLegacyWorld.com" : "Visita TrueLegacyWorld.com"}
-            </motion.a>
-            <motion.a
-              href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
-              target="_blank"
-              rel="noopener noreferrer"
+              {lang === "en" ? "Reserve Your Seat" : "Reserva Tu Lugar"}
+            </motion.button>
+            <motion.button
+              type="button"
+              onClick={onOpenLeadForm}
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-accent/30 text-accent hover:bg-accent/10 transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-accent/30 text-accent hover:bg-accent/10 transition-colors w-full sm:w-auto justify-center"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
-              {lang === "en" ? "Join the Team" : "Únete al Equipo"}
-            </motion.a>
+              {lang === "en" ? "I'm Ready To Build" : "Estoy Listo Para Construir"}
+            </motion.button>
           </div>
         </motion.div>
 
