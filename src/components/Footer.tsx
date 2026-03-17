@@ -13,7 +13,7 @@ const Footer = ({ lang }: FooterProps) => {
   const socialLinks = [
     { icon: Youtube, href: "https://www.youtube.com/@Mehdicohen", label: "YouTube" },
     { icon: Instagram, href: "https://instagram.com/mehdicohen_", label: "Instagram" },
-    { icon: Facebook, href: "https://www.facebook.com/share/19E6C1seVM/?mibextid=wwXIfr", label: "Facebook" },
+    { icon: Facebook, href: "https://www.facebook.com/Mehdicohen88/", label: "Facebook" },
     { icon: Linkedin, href: linkedinUrl, label: "LinkedIn" },
     { icon: () => (
       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
