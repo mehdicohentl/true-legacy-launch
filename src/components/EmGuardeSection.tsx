@@ -163,7 +163,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
 
           <motion.a
-            href="https://mehdicohen1.systeme.io/mehdicohen-00d27fa4"
+            href={lang === "en" ? "https://mehdicohen1.systeme.io/englishemguarde" : "https://mehdicohen1.systeme.io/mehdicohen-00d27fa4"}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
