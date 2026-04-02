@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import combinedLogo from "@/assets/combined-logo.png";
+import { WarningIcon, DropletIcon } from "@/components/Icons";
 
 import imgConsultation from "@/assets/linktree-consultation.jpg";
 import imgEwg from "@/assets/linktree-ewg.png";
@@ -88,9 +89,10 @@ const socials = [
       title: "INFO",
       items: [
         {
-          label: lang === "en" ? "⚠️ Check EWG's Tap Water ⚠️" : "⚠️ Revisa Tu Agua del Grifo (EWG) ⚠️",
+          label: lang === "en" ? "Check EWG's Tap Water" : "Revisa Tu Agua del Grifo (EWG)",
           href: "https://www.ewg.org/tapwater/",
           image: imgEwg,
+          iconKey: "warning" as const,
         },
         {
           label: "EmGuarde DEMO",
@@ -114,9 +116,10 @@ const socials = [
           image: imgEmguardeContact,
         },
         {
-          label: "Kangen 8 💦",
+          label: "Kangen 8",
           href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016",
           image: imgKangen8,
+          iconKey: "droplet" as const,
         },
         {
           label: lang === "en" ? "Pre Filters (Multipure)" : "Pre Filtros (Multipure)",
@@ -279,8 +282,11 @@ const socials = [
                       loading="lazy"
                     />
                   </div>
-                  <span className="font-body font-bold text-xs sm:text-sm text-white/90 flex-1 text-center pr-4 sm:pr-6 py-3 sm:py-3.5 leading-tight">
+                  <span className="font-body font-bold text-xs sm:text-sm text-white/90 flex-1 text-center pr-4 sm:pr-6 py-3 sm:py-3.5 leading-tight inline-flex items-center justify-center gap-1">
+                    {'iconKey' in item && item.iconKey === 'warning' && <WarningIcon className="w-3.5 h-3.5 flex-shrink-0" />}
+                    {'iconKey' in item && item.iconKey === 'droplet' && <DropletIcon className="w-3.5 h-3.5 flex-shrink-0" />}
                     {item.label}
+                    {'iconKey' in item && item.iconKey === 'warning' && <WarningIcon className="w-3.5 h-3.5 flex-shrink-0" />}
                   </span>
                 </motion.a>
               ))}

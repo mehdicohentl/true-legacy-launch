@@ -19,6 +19,7 @@ import JoinTrueLegacy from "./pages/seo/JoinTrueLegacy";
 import CeoDailyProtocol from "./pages/seo/CeoDailyProtocol";
 import WealthHealthLegacy from "./pages/seo/WealthHealthLegacy";
 import BookACall from "./pages/seo/BookACall";
+import DuoPackagePage from "./pages/DuoPackagePage";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,8 @@ const App = () => (
           <Route path="/latam/resources" element={<ResourcesPage lang="es" />} />
           <Route path="/global/zoom" element={<ZoomPage lang="en" />} />
           <Route path="/latam/zoom" element={<ZoomPage lang="es" />} />
+          <Route path="/global/duopackage" element={<DuoPackagePage lang="en" />} />
+          <Route path="/latam/latam-duo-package" element={<DuoPackagePage lang="es" />} />
           {/* SEO Landing Pages */}
           <Route path="/who-is-mehdi-cohen" element={<WhoIsMehdiCohen />} />
           <Route path="/what-is-true-legacy" element={<WhatIsTrueLegacy />} />

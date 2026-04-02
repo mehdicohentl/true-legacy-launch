@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import imgK8 from "@/assets/product-k8-real.png";
 import imgEmguarde from "@/assets/product-emguarde-real.png";
+import emguardeDevice from "@/assets/emguarde-device.png";
 import imgSd501dx from "@/assets/product-sd501dx-real.png";
 import imgSd501super from "@/assets/product-sd501super-real.png";
 import imgJriv from "@/assets/product-jriv-real.png";
@@ -24,12 +25,24 @@ interface Product {
   descEn: string;
   descEs: string;
   image: string;
+  image2?: string;
   href?: string;
   featured?: boolean;
-  type?: "emguarde" | "kangenair" | "standard";
+  type?: "emguarde" | "kangenair" | "standard" | "duo";
 }
 
 const products: Product[] = [
+  {
+    id: "duo-package",
+    nameEn: "K8 + EmGuarde — Duo Package",
+    nameEs: "K8 + EmGuarde — Paquete Duo",
+    descEn: "The ultimate power combo. Leveluk K8 Kangen Water machine + EmGuarde EMF protection device. Two commission points. Two life-changing products.",
+    descEs: "La combinación definitiva de poder. Máquina de Agua Kangen Leveluk K8 + dispositivo de protección EMF EmGuarde. Dos puntos de comisión. Dos productos que cambian vidas.",
+    image: imgK8,
+    image2: emguardeDevice,
+    featured: true,
+    type: "duo",
+  },
   {
     id: "k8",
     nameEn: "Leveluk K8",
@@ -197,22 +210,71 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: i * 0.05 }}
-        className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 hover:border-accent/30 hover:shadow-gold flex flex-col ${
+        className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 hover:border-accent/30 hover:shadow-gold flex flex-col h-full ${
           product.featured ? "border-accent/20" : "border-border/20"
         }`}
       >
-        <div className="relative aspect-square flex items-center justify-center overflow-hidden rounded-t-2xl bg-transparent">
+        <div className="relative h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-t-2xl bg-transparent">
           {product.featured && (
             <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
-              {c.featured}
+              {product.type === "duo" ? (lang === "en" ? "DUO" : "DUO") : c.featured}
             </span>
           )}
-          <img src={product.image} alt={name} className="w-full h-full object-contain p-4 drop-shadow-lg" />
+          {product.type === "duo" && product.image2 ? (
+            <div className="flex items-end justify-center gap-2 w-full h-full p-4">
+              <img src={product.image} alt={name} className="w-1/2 h-full object-contain drop-shadow-lg" />
+              <img src={product.image2} alt="EmGuarde" className="w-2/5 h-4/5 object-contain drop-shadow-lg" />
+            </div>
+          ) : (
+            <img src={product.image} alt={name} className="w-full h-full object-contain p-4 drop-shadow-lg" />
+          )}
         </div>
 
-        <div className="p-5 md:p-6 flex flex-col flex-1">
-          <h3 className="font-display font-black text-lg md:text-xl text-foreground mb-2">{name}</h3>
-          <p className="font-body text-sm text-foreground/60 font-bold leading-relaxed mb-4 flex-1">{desc}</p>
+        <div className="p-3 md:p-5 flex flex-col flex-1">
+          <h3 className="font-display font-black text-base md:text-xl text-foreground mb-1.5">{name}</h3>
+          <p className="font-body text-xs md:text-sm text-foreground/60 font-bold leading-relaxed mb-3">{desc}</p>
+
+          {product.type === "duo" && (
+            <div className="space-y-3">
+              <motion.a
+                href={`${enagicBase}&product_id=1016`}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold transition-colors"
+              >
+                {lang === "en" ? "Order Kangen K8" : "Ordenar Kangen K8"}
+              </motion.a>
+              <motion.a
+                href={lang === "en" ? "/global/emguarde" : "/latam/emguarde"}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-emguarde/40 text-emguarde hover:bg-emguarde/10 transition-colors"
+              >
+                {lang === "en" ? "EmGuarde Instructions" : "Instrucciones de EmGuarde"}
+              </motion.a>
+              <motion.a
+                href={isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149"}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
+                WhatsApp
+              </motion.a>
+              <motion.a
+                href={isLatam ? "/latam/latam-duo-package" : "/global/duopackage"}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-xl font-body font-black text-xs uppercase tracking-[0.12em] border border-accent/30 text-accent/70 hover:text-accent hover:border-accent/50 transition-colors"
+              >
+                {lang === "en" ? "Full Duo Package Page →" : "Página Completa del Paquete Duo →"}
+              </motion.a>
+            </div>
+          )}
 
           {product.type === "emguarde" && (
             <>
@@ -267,7 +329,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
                 </motion.a>
               ) : (
                 <>
-                  <div className="mb-4 p-4 rounded-xl bg-primary/5 border border-primary/10 space-y-2">
+                  <div className="mb-3 p-3 rounded-xl bg-primary/5 border border-primary/10 space-y-1.5">
                     <p className="font-display font-black text-sm text-primary mb-1">{c.kangenAirTitle}</p>
                     <p className="font-body text-xs text-foreground/70 font-bold">{c.kangenAirPrice}</p>
                     <p className="font-body text-xs text-foreground/60 font-bold">{c.kangenAirShipUS}</p>
@@ -280,15 +342,17 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
                     </div>
                     <p className="font-mono text-[10px] text-foreground/40 italic mt-2">{c.kangenAirNote}</p>
                   </div>
-                  <a
-                    href="mailto:kangenair@enagicsg.com"
-                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+                  <motion.a
+                    href={isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors"
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
                     {lang === "en" ? "Contact for Kangen Air" : "Contactar por Kangen Air"}
-                  </a>
+                  </motion.a>
                 </>
               )}
             </>
@@ -318,7 +382,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar lang={lang} />
 
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden noise-overlay">
+      <section className="pt-24 pb-8 md:pt-40 md:pb-16 relative overflow-hidden noise-overlay">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent" />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[200px]" />
 
@@ -348,9 +412,9 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
         </div>
       </section>
 
-      <section className="pb-20 md:pb-28 relative">
+      <section className="pb-12 md:pb-24 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5 max-w-7xl mx-auto">
             {products.map((product, i) => renderProductCard(product, i))}
           </div>
 

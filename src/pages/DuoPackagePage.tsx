@@ -1,0 +1,526 @@
+import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import { duoIconMap } from "@/components/Icons";
+import Footer from "@/components/Footer";
+import imgK8 from "@/assets/product-k8-real.png";
+import emguardeDevice from "@/assets/emguarde-device.png";
+
+interface DuoPackagePageProps {
+  lang: "en" | "es";
+}
+
+const enagicBase =
+  "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0";
+
+const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
+  const isLatam = lang === "es";
+  const whatsapp = isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
+  const emguardeRoute = isLatam ? "/latam/emguarde" : "/global/emguarde";
+
+  const t = {
+    en: {
+      micro: "The Ultimate Biohacking Bundle",
+      headline: "K8 + EmGuarde",
+      headline2: "The Power Duo Package",
+      subhead:
+        "Transform your health and income with the most powerful pairing in the Enagic ecosystem — the Leveluk K8 Kangen Water machine and the EmGuarde EMF protection device.",
+      whyTitle: "Why the Duo Package?",
+      whyItems: [
+        {
+          icon: "droplet",
+          title: "Kangen Water K8",
+          desc: "The flagship 8-plate ionizer — medical-grade hydrogen-rich alkaline water proven by 51+ years of Japanese science. Used in hospitals, by athletes, and high-performers worldwide.",
+        },
+        {
+          icon: "shield",
+          title: "EmGuarde EMF Protection",
+          desc: "Enagic's cutting-edge wearable device reducing the harmful effects of electromagnetic frequencies from phones, laptops, and Wi-Fi — your invisible shield.",
+        },
+        {
+          icon: "coins",
+          title: "Build Income Together",
+          desc: "Each product generates commissions independently within the Enagic 8-point system. Combining both earns 2 commission points per sale — amplify your income potential.",
+        },
+        {
+          icon: "globe",
+          title: "Global Business",
+          desc: "Market both products to a worldwide audience — K8 ships to 190+ countries. EmGuarde is available in USA, Canada, and Mexico via private import from Malaysia.",
+        },
+      ],
+      k8Title: "Step 1 — Order Your Kangen K8",
+      k8Desc:
+        "The Leveluk K8 is the most advanced Kangen Water machine in the core line. 8 platinum-coated titanium plates. 5 types of ionized water. Built to last a lifetime.",
+      k8Price: "From ~$4,980 USD",
+      k8Financing: "Financing available through Enagic's direct debit program",
+      k8DistId: "Distributor ID: 37000004828",
+      k8Cta: "Order Kangen K8 Now",
+      k8Benefits: [
+        "8 platinum-coated titanium plates",
+        "Medical-grade ionization",
+        "Ships to 190+ countries",
+        "51+ years of Japanese engineering",
+        "Lifetime machine support",
+        "Full commission in Enagic system",
+      ],
+      emguardeTitle: "Step 2 — Order Your EmGuarde",
+      emguardeDesc:
+        "EmGuarde is Enagic's newest innovation — a wearable EMF protection device. Available in the U.S., Canada, and Mexico as a private import from Malaysia.",
+      emguardePrice: "$1,520 USD",
+      emguardePriceLocal: "(+ ~$160 USD shipping)",
+      emguardeDistId: "Distributor ID: 37000004828",
+      emguardeBenefits: [
+        "Private import from Malaysia via Enagic",
+        "Available: USA, Canada, Mexico",
+        "10–14 day delivery",
+        "1 year warranty",
+        "5-unit purchase limit",
+        "$80 commission per point",
+      ],
+      emguardeCta: "Full EmGuarde Purchase Instructions",
+      emguardeWa: "Ask About EmGuarde on WhatsApp",
+      ctaTitle: "Ready to Start Your Duo Journey?",
+      ctaDesc:
+        "Book a free strategy call with Mehdi's team. We'll walk you through both orders step by step.",
+      ctaBook: "Book a Free Info Call",
+      ctaEvent: "Join the Live Zoom Event",
+    },
+    es: {
+      micro: "El Paquete Definitivo de Biohacking",
+      headline: "K8 + EmGuarde",
+      headline2: "El Paquete Duo de Poder",
+      subhead:
+        "Transforma tu salud y tus ingresos con la combinación más poderosa del ecosistema Enagic — la máquina de Agua Kangen Leveluk K8 y el dispositivo de protección EMF EmGuarde.",
+      whyTitle: "¿Por Qué el Paquete Duo?",
+      whyItems: [
+        {
+          icon: "droplet",
+          title: "Agua Kangen K8",
+          desc: "El ionizador insignia con 8 placas — agua alcalina ionizada rica en hidrógeno de grado médico, respaldada por más de 51 años de ciencia japonesa. Usada en hospitales, por atletas y personas de alto rendimiento en todo el mundo.",
+        },
+        {
+          icon: "shield",
+          title: "Protección EMF EmGuarde",
+          desc: "El dispositivo wearable de vanguardia de Enagic que reduce los efectos dañinos de las frecuencias electromagnéticas de teléfonos, laptops y Wi-Fi — tu escudo invisible.",
+        },
+        {
+          icon: "coins",
+          title: "Construye Ingresos Juntos",
+          desc: "Cada producto genera comisiones independientemente dentro del sistema de 8 puntos de Enagic. Al combinar ambos, obtienes 2 puntos de comisión por venta — amplifica tu potencial de ingresos.",
+        },
+        {
+          icon: "globe",
+          title: "Negocio Global",
+          desc: "Comercializa ambos productos a una audiencia mundial — el K8 se envía a más de 190 países. EmGuarde está disponible en EE.UU., Canadá y México mediante importación privada desde Malasia.",
+        },
+      ],
+      k8Title: "Paso 1 — Ordena Tu Kangen K8",
+      k8Desc:
+        "El Leveluk K8 es la máquina de Agua Kangen más avanzada de la línea principal. 8 placas de titanio recubiertas de platino. 5 tipos de agua ionizada. Construida para durar toda la vida.",
+      k8Price: "Desde ~$4,980 USD",
+      k8Financing: "Financiamiento disponible a través del programa de débito directo de Enagic",
+      k8DistId: "ID de Distribuidor: 37000004828",
+      k8Cta: "Ordenar Kangen K8 Ahora",
+      k8Benefits: [
+        "8 placas de titanio recubiertas de platino",
+        "Ionización de grado médico",
+        "Envío a más de 190 países",
+        "Más de 51 años de ingeniería japonesa",
+        "Soporte vitalicio de la máquina",
+        "Comisión completa en el sistema Enagic",
+      ],
+      emguardeTitle: "Paso 2 — Ordena Tu EmGuarde",
+      emguardeDesc:
+        "EmGuarde es la innovación más reciente de Enagic — un dispositivo de protección EMF wearable. Disponible en EE.UU., Canadá y México como importación privada desde Malasia.",
+      emguardePrice: "$1,520 USD",
+      emguardePriceLocal: "(+ ~$160 USD envío)",
+      emguardeDistId: "ID de Distribuidor: 37000004828",
+      emguardeBenefits: [
+        "Importación privada desde Malasia vía Enagic",
+        "Disponible: EE.UU., Canadá, México",
+        "Entrega en 10–14 días",
+        "Garantía de 1 año",
+        "Límite de 5 unidades",
+        "$80 USD de comisión por punto",
+      ],
+      emguardeCta: "Instrucciones Completas para Comprar EmGuarde",
+      emguardeWa: "Pregunta por EmGuarde en WhatsApp",
+      ctaTitle: "¿Listo para Comenzar Tu Camino Duo?",
+      ctaDesc:
+        "Agenda una llamada gratuita de estrategia con el equipo de Mehdi. Te guiaremos a través de ambos pedidos paso a paso.",
+      ctaBook: "Agenda una Llamada Gratuita",
+      ctaEvent: "Únete al Evento Zoom en Vivo",
+    },
+  };
+
+  const c = t[lang];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar lang={lang} />
+
+      {/* Hero */}
+      <section className="pt-32 pb-20 md:pt-44 md:pb-28 relative overflow-hidden noise-overlay">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/8 via-transparent to-background" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent/6 rounded-full blur-[200px]" />
+
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="font-mono text-xs uppercase tracking-[0.4em] text-accent font-bold mb-6"
+          >
+            {c.micro}
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl lg:text-8xl font-display font-black leading-[0.95] mb-4"
+          >
+            <span className="text-gradient-gold">{c.headline}</span>
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-xl md:text-3xl font-display font-black text-foreground mb-6"
+          >
+            {c.headline2}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="font-body text-base md:text-lg text-foreground/70 font-bold max-w-2xl mx-auto mb-12"
+          >
+            {c.subhead}
+          </motion.p>
+
+          {/* Product Images side-by-side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+            className="flex items-end justify-center gap-6 md:gap-16 mb-12"
+          >
+            <div className="relative flex flex-col items-center">
+              <div className="absolute -inset-4 bg-accent/8 rounded-2xl blur-3xl" />
+              <img
+                src={imgK8}
+                alt="Kangen K8 machine duo package mehdicohen.com"
+                className="relative w-32 md:w-48 lg:w-60 drop-shadow-2xl"
+              />
+              <span className="mt-3 font-mono text-xs uppercase tracking-[0.2em] text-accent font-bold">
+                Leveluk K8
+              </span>
+            </div>
+            <div className="relative flex flex-col items-center self-center">
+              <span className="text-4xl md:text-6xl font-display font-black text-accent/40">+</span>
+            </div>
+            <div className="relative flex flex-col items-center">
+              <div className="absolute -inset-4 bg-emguarde/8 rounded-2xl blur-3xl" />
+              <img
+                src={emguardeDevice}
+                alt="EmGuarde device duo package mehdicohen.com"
+                className="relative w-28 md:w-40 lg:w-52 drop-shadow-2xl"
+              />
+              <span className="mt-3 font-mono text-xs uppercase tracking-[0.2em] text-emguarde font-bold">
+                EmGuarde
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Hero CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap"
+          >
+            <motion.a
+              href={`${enagicBase}&product_id=1016`}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+              {c.k8Cta}
+            </motion.a>
+            <motion.a
+              href={emguardeRoute}
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-emguarde text-emguarde hover:bg-emguarde/10 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              {c.emguardeCta}
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Duo section */}
+      <section className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-4xl font-display font-black text-center text-foreground mb-14"
+          >
+            {c.whyTitle}
+          </motion.h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {c.whyItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass-card rounded-2xl p-6 border border-border/20 hover:border-accent/30 transition-all"
+              >
+                <div className="mb-4 text-accent">{duoIconMap[item.icon]}</div>
+                <h3 className="font-display font-black text-base text-foreground mb-2">{item.title}</h3>
+                <p className="font-body text-sm text-foreground/60 font-bold leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* K8 Section */}
+      <section className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/4 rounded-full blur-[180px]" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative flex items-center justify-center"
+            >
+              <div className="absolute -inset-6 bg-accent/6 rounded-3xl blur-3xl" />
+              <img
+                src={imgK8}
+                alt="Kangen K8 Leveluk machine order duo package mehdicohen.com"
+                className="relative w-full max-w-sm drop-shadow-2xl"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-4">
+                {lang === "en" ? "Step 1 of 2" : "Paso 1 de 2"}
+              </p>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-black text-foreground mb-4">
+                {c.k8Title}
+              </h2>
+              <p className="font-body text-base md:text-lg text-foreground/70 font-bold leading-relaxed mb-6">
+                {c.k8Desc}
+              </p>
+
+              <div className="glass-card rounded-xl p-5 border border-accent/20 mb-6">
+                <div className="flex items-center gap-4 mb-3">
+                  <span className="text-2xl md:text-3xl font-display font-black text-accent">{c.k8Price}</span>
+                </div>
+                <p className="font-body text-xs text-foreground/50 font-bold mb-1">{c.k8Financing}</p>
+                <p className="font-mono text-xs text-accent/70 font-bold">{c.k8DistId}</p>
+              </div>
+
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
+                {c.k8Benefits.map((b, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="font-body text-sm font-bold text-foreground/70">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <motion.a
+                href={`${enagicBase}&product_id=1016`}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.04, y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                </svg>
+                {c.k8Cta}
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* EmGuarde Section */}
+      <section className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emguarde/4 rounded-full blur-[180px]" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-emguarde font-bold mb-4">
+                {lang === "en" ? "Step 2 of 2" : "Paso 2 de 2"}
+              </p>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-black text-foreground mb-4">
+                {c.emguardeTitle}
+              </h2>
+              <p className="font-body text-base md:text-lg text-foreground/70 font-bold leading-relaxed mb-6">
+                {c.emguardeDesc}
+              </p>
+
+              <div className="glass-card rounded-xl p-5 border border-emguarde/20 mb-6">
+                <div className="flex items-center gap-4 mb-2">
+                  <span className="text-2xl md:text-3xl font-display font-black text-emguarde">{c.emguardePrice}</span>
+                  <span className="font-body text-sm text-foreground/50 font-bold">{c.emguardePriceLocal}</span>
+                </div>
+                <p className="font-mono text-xs text-emguarde/70 font-bold">{c.emguardeDistId}</p>
+              </div>
+
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
+                {c.emguardeBenefits.map((b, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-emguarde flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="font-body text-sm font-bold text-foreground/70">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.a
+                  href={emguardeRoute}
+                  whileHover={{ scale: 1.04, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
+                  style={{ boxShadow: "var(--shadow-emguarde)" }}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  {c.emguardeCta}
+                </motion.a>
+                <motion.a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors"
+                >
+                  <MessageCircle size={18} />
+                  {c.emguardeWa}
+                </motion.a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2 relative flex items-center justify-center"
+            >
+              <div className="absolute -inset-6 bg-emguarde/6 rounded-3xl blur-3xl" />
+              <img
+                src={emguardeDevice}
+                alt="EmGuarde EMF protection device duo package mehdicohen.com"
+                className="relative w-full max-w-xs drop-shadow-2xl"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/3 to-transparent" />
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-4xl font-display font-black text-foreground mb-4"
+          >
+            {c.ctaTitle}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="font-body text-base md:text-lg text-foreground/60 font-bold max-w-xl mx-auto mb-10"
+          >
+            {c.ctaDesc}
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap"
+          >
+            <motion.a
+              href="https://calendly.com/aquacharged/true-legacy-one-on-one"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              {c.ctaBook}
+            </motion.a>
+            <motion.a
+              href={isLatam ? "/latam/events" : "/global/events"}
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              {c.ctaEvent}
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* WhatsApp float for LATAM */}
+      {isLatam && (
+        <a
+          href="https://wa.me/+573001844049"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar por WhatsApp"
+          className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform duration-200"
+        >
+          <svg viewBox="0 0 32 32" className="w-7 h-7 fill-current">
+            <path d="M16.004 2.002c-7.72 0-13.996 6.276-13.996 13.996 0 2.468.655 4.878 1.9 6.99L2 30l7.212-1.89A13.94 13.94 0 0016.004 30c7.72 0 13.996-6.276 13.996-13.998S23.724 2.002 16.004 2.002zm0 25.594a11.58 11.58 0 01-5.908-1.62l-.424-.252-4.39 1.15 1.172-4.276-.276-.44a11.567 11.567 0 01-1.776-6.16c0-6.396 5.204-11.6 11.602-11.6 6.398 0 11.6 5.204 11.6 11.6 0 6.398-5.202 11.598-11.6 11.598zm6.36-8.686c-.348-.174-2.062-1.018-2.382-1.134-.32-.116-.552-.174-.784.174-.232.348-.9 1.134-1.102 1.366-.204.232-.406.262-.754.088-.348-.174-1.47-.542-2.8-1.726-1.034-.922-1.732-2.062-1.936-2.41-.204-.348-.022-.536.153-.71.158-.156.348-.406.522-.61.174-.204.232-.348.348-.58.116-.232.058-.436-.03-.61-.088-.174-.784-1.89-.1074-2.586-.282-.68-.57-.588-.784-.598l-.668-.012c-.232 0-.61.088-.928.436-.32.348-1.218 1.19-1.218 2.9s1.248 3.364 1.422 3.596c.174.232 2.456 3.75 5.95 5.26.832.358 1.482.572 1.988.732.836.266 1.596.228 2.198.138.67-.1 2.062-.844 2.352-1.66.29-.814.29-1.514.204-1.66-.088-.144-.32-.232-.668-.406z" />
+          </svg>
+        </a>
+      )}
+
+      <Footer lang={lang} />
+    </div>
+  );
+};
+
+export default DuoPackagePage;

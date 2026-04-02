@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WaterSection from "@/components/WaterSection";
 import EmGuardeSection from "@/components/EmGuardeSection";
+import DuoPackageSection from "@/components/DuoPackageSection";
 import JoinTeamSection from "@/components/JoinTeamSection";
 import ThankYouSection from "@/components/ThankYouSection";
 import ResourcesSection from "@/components/ResourcesSection";
@@ -33,6 +34,7 @@ const LandingPage = ({ lang }: LandingPageProps) => {
       <HeroSection lang={lang} />
       <AboutSection lang={lang} />
       <WaterSection lang={lang} />
+      <DuoPackageSection lang={lang} />
       <EmGuardeSection lang={lang} />
 
       {/* Event CTA strip */}

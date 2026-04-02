@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import eventGlobal from "@/assets/event-global-flyer.jpg";
-import eventLatam from "@/assets/event-latam-flyer.png";
 import ZoomGateway from "@/components/ZoomGateway";
+
+const eventGlobal = "/IMG_6414.PNG";
+const eventLatam = "/IMG_8984.PNG";
 
 interface EventSectionProps {
   lang: "en" | "es";
@@ -13,7 +14,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       micro: "Upcoming Live Event",
       headline: "Unlock Your True Legacy",
       headline2: "Live Zoom Presentation",
-      desc: "Mehdi Cohen & Zah Naderi — True Legacy Team Leaders — are hosting a live Duo Presentation on the Kangen K8 & EmGuarde. Discover how biohacking technology and a global wellness team can help you earn $5K+ monthly with purpose.",
+      desc: "Mehdi Cohen, Zah Naderi & Simon Loh — True Legacy Team Leaders — are hosting a live Duo Presentation on the Kangen K8 & EmGuarde. Discover how biohacking technology and a global wellness team can help you earn $5K–$10K monthly with purpose.",
       topics: [
         "Biohacking technology the marketplace is craving",
         "How to build $5K to $10K per month with purpose",
@@ -25,19 +26,21 @@ const EventSection = ({ lang }: EventSectionProps) => {
       time: "8:00 PM EST / 5:00 PM PST",
       meetingId: "876 1448 6219",
       passcode: "Truelegacy",
-      hosts: "Hosted by Mehdi Cohen & Zah Naderi",
+      hosts: "Hosted by Mehdi Cohen, Simon Loh & Zah Naderi",
       bottomCta: "Your legacy doesn't wait. Join us and take charge. Reserve your seat now.",
       image: eventGlobal,
-      imageAlt: "Mehdi Cohen and Zah Naderi True Legacy team leaders Kangen water wealth health legacy mehdicohen.com",
-      ctaKangen: "Get Your Kangen Machine",
+      imageAlt: "Mehdi Cohen Simon Loh Zah Naderi True Legacy team leaders Kangen K8 EmGuarde duo package mehdicohen.com",
+      ctaKangen: "Order Kangen K8",
       ctaEmguarde: "Get EmGuarde Protection",
       ctaJoin: "Join True Legacy Team",
+      ctaDuo: "View Duo Package",
+      duoLink: "/global/duopackage",
     },
     es: {
       micro: "Evento en Vivo",
       headline: "Desbloquea Tu Legado Verdadero",
       headline2: "Presentación en Vivo por Zoom",
-      desc: "Mehdi Cohen te invita a un evento exclusivo: Transforma tu Futuro en LATAM. Sumérgete en una revolución con propósito — donde tus ingresos, salud y libertad se alinean.",
+      desc: "Mehdi Cohen & Magaly Cardona te invitan a un evento exclusivo: La Revolución del Biohacking llega a LATAM. Aprende cómo el K8 y EmGuarde están transformando ingresos a nivel global.",
       topics: [
         "Tecnología de biohacking que el mercado desea",
         "Cómo generar $5K a $10K USD al mes con propósito",
@@ -45,17 +48,19 @@ const EventSection = ({ lang }: EventSectionProps) => {
         "Una visión global para expandir y crecer más allá de las fronteras",
       ],
       dateLabel: "Fecha del Zoom",
-      date: "Jueves",
+      date: "Martes",
       time: "7:00 PM (Hora de Colombia) — 8:00 PM EST / 5:00 PM PST",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
-      hosts: "Presentado por Mehdi Cohen",
+      hosts: "Presentado por Mehdi Cohen & Magaly Cardona",
       bottomCta: "Tu legado no espera. Únete y toma el control. Reserva tu lugar ahora.",
       image: eventLatam,
-      imageAlt: "Mehdi Cohen True Legacy CEO LATAM Kangen water biohacking evento en vivo mehdicohen.com",
+      imageAlt: "Mehdi Cohen Magaly Cardona True Legacy CEO LATAM Kangen K8 EmGuarde paquete duo mehdicohen.com",
       ctaKangen: "Obtener Máquina Kangen (EE. UU., Australia, Dubai, etc.)",
       ctaEmguarde: "Obtener EmGuarde",
       ctaJoin: "Únete al Equipo True Legacy",
+      ctaDuo: "Ver Paquete Duo",
+      duoLink: "/latam/latam-duo-package",
     },
   };
 
@@ -162,6 +167,34 @@ const EventSection = ({ lang }: EventSectionProps) => {
         <div className="max-w-3xl mx-auto mt-8">
           <ZoomGateway lang={lang} />
         </div>
+
+        {/* Duo Package CTA strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap"
+        >
+          <motion.a
+            href={c.duoLink}
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="cta-shimmer inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            {c.ctaDuo}
+          </motion.a>
+          <motion.a
+            href={lang === "en" ? "/global/emguarde" : "/latam/emguarde"}
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-emguarde text-emguarde hover:bg-emguarde/10 transition-colors"
+          >
+            {c.ctaEmguarde}
+          </motion.a>
+        </motion.div>
 
       </div>
     </section>

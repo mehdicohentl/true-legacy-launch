@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import emguardeDevice from "@/assets/emguarde-device.png";
+import { WarningIcon, DocumentIcon } from "@/components/Icons";
 
 interface EmGuardePurchaseProps {
   lang: "en" | "es";
@@ -290,15 +291,15 @@ const EmGuardePurchase = ({ lang }: EmGuardePurchaseProps) => {
               </div>
 
               <div className="mt-8 p-4 rounded-xl bg-destructive/10 border border-destructive/20">
-                <p className="font-body text-sm text-foreground font-bold">⚠️ {c.importNotice}</p>
+                <p className="font-body text-sm text-foreground font-bold"><WarningIcon className="w-4 h-4 inline-block mr-1 align-middle" /> {c.importNotice}</p>
               </div>
 
               <div className="mt-6 flex flex-wrap gap-4">
                 <a href="https://information.enagic.com/pdf/HOW_TO_MAKE_PAYMENT_FOR_OVERSEAS_EMGUARDE.pdf" target="_blank" rel="noopener noreferrer" className="font-body font-bold text-sm text-emguarde hover:text-emguarde/80 underline">
-                  📄 {c.paymentGuide}
+                  <DocumentIcon className="w-4 h-4 inline-block mr-1 align-middle" /> {c.paymentGuide}
                 </a>
                 <a href="https://information.enagic.com/pdf/Cooling-Off-Period.pdf" target="_blank" rel="noopener noreferrer" className="font-body font-bold text-sm text-emguarde hover:text-emguarde/80 underline">
-                  📄 {c.coolingOffLink}
+                  <DocumentIcon className="w-4 h-4 inline-block mr-1 align-middle" /> {c.coolingOffLink}
                 </a>
               </div>
             </div>
@@ -344,7 +345,7 @@ const EmGuardePurchase = ({ lang }: EmGuardePurchaseProps) => {
 
           {/* Private import notice */}
           <div className="text-center space-y-2 mb-8">
-            <p className="text-base font-body font-bold text-emguarde">⚠️ {c.privateImport}</p>
+            <p className="text-base font-body font-bold text-emguarde flex items-center gap-1 justify-center"><WarningIcon className="w-4 h-4 flex-shrink-0" /> {c.privateImport}</p>
             <p className="text-sm text-foreground font-body font-bold">{c.contact}</p>
           </div>
 
