@@ -45,8 +45,8 @@ const LandingPage = ({ lang }: LandingPageProps) => {
       <Navbar lang={lang} />
       <HeroSection lang={lang} />
       <AboutSection lang={lang} />
-      <WaterSection lang={lang} />
       <DuoPackageSection lang={lang} />
+      <WaterSection lang={lang} />
       <EmGuardeSection lang={lang} />
 
       {/* Event CTA strip */}

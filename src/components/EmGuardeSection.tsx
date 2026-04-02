@@ -13,24 +13,20 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
       micro: "Now Available in the U.S., Canada, and Mexico",
       headline: "EmGuarde:",
       headline2: "EMF Protection by Enagic.",
-      intro: "EmGuarde is Enagic's newest innovation, designed to reduce the harmful effects of EMFs from everyday electronic devices—helping you create a cleaner, healthier environment.",
-      history: "After a successful launch in Malaysia, EmGuarde is now available in the U.S., Canada, and Mexico.",
-      applicationProcess: "EmGuarde is only available through an application process—it is a private import from Malaysia. Click below to get a free info PDF or book a call with our team to walk you through the purchase.",
+      applicationProcess: "EmGuarde is only available through an application process — a private import from Malaysia. Get the free info PDF below or book a call with our team to walk you through the purchase.",
       badge: "Now Available in the U.S., Canada, and Mexico",
       ctaPdf: "Get a Free EmGuarde PDF",
-      whatsappCta: "Ask About EmGuarde on WhatsApp",
+      whatsappCta: "Contact Us",
       demoTitle: "EmGuarde Demo",
     },
     es: {
       micro: "Ahora Disponible en EE.UU., Canadá y México",
       headline: "EmGuarde:",
       headline2: "Protección EMF por Enagic.",
-      intro: "EmGuarde es la innovación más reciente de Enagic, diseñada para reducir los efectos dañinos de los EMF de los dispositivos electrónicos cotidianos—ayudándote a crear un ambiente más limpio y saludable.",
-      history: "Después de un lanzamiento exitoso en Malasia, EmGuarde ahora está disponible en EE.UU., Canadá y México.",
-      applicationProcess: "EmGuarde solo está disponible a través de un proceso de solicitud—es una importación privada de Malasia. Haz clic abajo para obtener un PDF informativo gratuito o agenda una llamada con nuestro equipo para guiarte en la compra.",
+      applicationProcess: "EmGuarde solo está disponible a través de un proceso de solicitud — importación privada de Malasia. Obtén el PDF informativo gratuito o agenda una llamada con nuestro equipo.",
       badge: "Ahora Disponible en EE.UU., Canadá y México",
       ctaPdf: "Obtén un PDF Gratis del EmGuarde",
-      whatsappCta: "Pregunta por EmGuarde en WhatsApp",
+      whatsappCta: "Contáctanos",
       demoTitle: "Demo del EmGuarde",
     }
   };
@@ -38,9 +34,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
   const c = t[lang];
 
   return (
-    <section id="emguarde" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
-      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-emguarde/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-0 right-10 w-[300px] h-[300px] bg-emguarde/4 rounded-full blur-[120px]" />
+    <section id="emguarde" className="py-20 md:py-28 relative overflow-hidden">
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -71,26 +65,22 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
           className="flex justify-center mb-12">
         </motion.div>
 
-        {/* Intro + EmGuarde Image & Video grid */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}>
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
-              {c.intro}
-            </p>
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold">
-              {c.history}
-            </p>
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] font-bold">
-              {c.applicationProcess}
-            </p>
-          </motion.div>
+        {/* Intro text */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto text-center mb-10">
+          <p className="text-base md:text-lg text-foreground font-body leading-[1.9] font-bold">
+            {c.applicationProcess}
+          </p>
+        </motion.div>
 
+        {/* EmGuarde Image & Videos centered */}
+        <div className="max-w-3xl mx-auto mb-16">
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="space-y-6">
 
@@ -154,8 +144,6 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             </div>
           </motion.div>
         </div>
-
-        {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -116,7 +116,7 @@ const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
     { label: "Instagram", href: "https://instagram.com/mehdicohen_", icon: <IconCamera /> },
     { label: "TikTok", href: "https://www.tiktok.com/@mehdi_cohen", icon: <IconMusic /> },
     { label: "LinkedIn", href: linkedinUrl, icon: <IconBriefcase /> },
-    { label: "WhatsApp", href: whatsappUrl, icon: <IconMessageCircle /> },
+    { label: "Contact Us", href: whatsappUrl, icon: <IconMessageCircle /> },
   ];
 
   return (

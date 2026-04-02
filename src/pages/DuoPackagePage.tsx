@@ -91,7 +91,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         "$80 commission per point",
       ],
       emguardeCta: "Full EmGuarde Purchase Instructions",
-      emguardeWa: "Ask About EmGuarde on WhatsApp",
+      emguardeWa: "Contact Us",
       ctaTitle: "Ready to Start Your Duo Journey?",
       ctaDesc:
         "Book a free strategy call with Mehdi's team. We'll walk you through both orders step by step.",
@@ -157,7 +157,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         "$80 USD de comisión por punto",
       ],
       emguardeCta: "Instrucciones Completas para Comprar EmGuarde",
-      emguardeWa: "Pregunta por EmGuarde en WhatsApp",
+      emguardeWa: "Contáctanos",
       ctaTitle: "¿Listo para Comenzar Tu Camino Duo?",
       ctaDesc:
         "Agenda una llamada gratuita de estrategia con el equipo de Mehdi. Te guiaremos a través de ambos pedidos paso a paso.",

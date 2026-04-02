@@ -21,7 +21,7 @@ const Footer = ({ lang }: FooterProps) => {
       </svg>
     ), href: "https://www.tiktok.com/@mehdi_cohen", label: "TikTok" },
     { icon: Mail, href: "mailto:truelegacyworld@gmail.com", label: "Email" },
-    { icon: MessageCircle, href: lang === "es" ? "https://wa.me/+573001844049" : "https://wa.me/18649072149", label: "WhatsApp" },
+    { icon: MessageCircle, href: lang === "es" ? "https://wa.me/+573001844049" : "https://wa.me/18649072149", label: "Contact Us" },
   ];
 
   const resourceLinks = [

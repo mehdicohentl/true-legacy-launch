@@ -56,9 +56,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
   };
 
   return (
-    <section id="water" className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
-      <div className="absolute inset-0 bg-gradient-to-b from-card via-card/95 to-card" />
-
+    <section id="water" className="py-16 md:py-20 relative">
       <div className="container mx-auto px-4 relative z-10">
         <motion.p
           initial={{ opacity: 0 }}
@@ -72,7 +70,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20">
+          className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05] mb-4">
             <span className="text-foreground">{lang === "en" ? "Kangen Water — The Wellness Foundation" : "Agua Kangen — La Base del Bienestar"}</span>
           </h2>
@@ -81,13 +79,13 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16">
+        <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto mb-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}>
             {/* Benefits as cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {t[lang].benefits.map((b, i) =>
               <motion.div
                 key={i}

@@ -19,7 +19,21 @@ const Navbar = ({ lang }: NavbarProps) => {
     ? "https://form.jotform.com/260564894519066"
     : "https://form.jotform.com/260246489849069";
 
-  const navLinks = lang === "en"
+  const whatsappEn = "https://wa.me/18649072149";
+  const whatsappLatam = "https://wa.me/573001844049";
+  const contactLink = lang === "en" ? whatsappEn : whatsappLatam;
+
+  type NavLink = {
+    to?: string;
+    href?: string;
+    label: string;
+    highlight?: boolean;
+    cta?: boolean;
+    accent?: boolean;
+    whatsapp?: boolean;
+  };
+
+  const navLinks: NavLink[] = lang === "en"
     ? [
         { to: homeLink, label: "Home" },
         { to: duoLink, label: "Duo Package", highlight: true },
@@ -27,6 +41,7 @@ const Navbar = ({ lang }: NavbarProps) => {
         { to: resourcesLink, label: "Resources" },
         { href: joinTeamUrl, label: "Join the Team", cta: true },
         { to: eventLink, label: "Live Event", accent: true },
+        { href: contactLink, label: "Contact", whatsapp: true },
       ]
     : [
         { to: homeLink, label: "Inicio" },
@@ -35,6 +50,7 @@ const Navbar = ({ lang }: NavbarProps) => {
         { to: resourcesLink, label: "Recursos" },
         { href: joinTeamUrl, label: "Únete al Equipo", cta: true },
         { to: eventLink, label: "Evento", accent: true },
+        { href: contactLink, label: "Contacto", whatsapp: true },
       ];
 
   return (
@@ -49,32 +65,52 @@ const Navbar = ({ lang }: NavbarProps) => {
           <Link to="/"><img src={combinedLogo} alt="Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com" className="h-12 md:h-14 w-auto" /></Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-3">
           {navLinks.map((link) =>
             link.href ? (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-mono font-bold transition-colors uppercase tracking-[0.15em] relative group text-accent border border-accent/50 px-3 py-1 rounded hover:bg-accent/10"
-              >
-                {link.label}
-              </a>
+              link.whatsapp ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-lg border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366]/10 transition-colors"
+                >
+                  <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={
+                    link.cta
+                      ? "text-xs font-mono font-bold transition-colors uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground px-3 py-1"
+                      : "text-xs font-mono font-bold transition-colors uppercase tracking-[0.15em] relative group text-accent border border-accent/50 px-3 py-1 rounded-none hover:bg-accent/10"
+                  }
+                >
+                  {link.label}
+                </a>
+              )
             ) : (
               <Link
                 key={link.to}
                 to={link.to!}
-                className={`text-xs font-mono font-bold transition-colors uppercase tracking-[0.15em] relative group ${
+                className={`text-xs font-mono font-bold transition-colors uppercase tracking-[0.15em] ${
                   link.accent
-                    ? "text-accent hover:text-accent/80"
+                    ? "text-accent border border-accent/50 px-3 py-1 rounded-none hover:bg-accent/10"
                     : link.highlight
                     ? "text-accent/90 hover:text-accent"
                     : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
+                {!link.accent && (
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
+                )}
               </Link>
             )
           )}
@@ -114,16 +150,36 @@ const Navbar = ({ lang }: NavbarProps) => {
         >
           {navLinks.map((link) =>
             link.href ? (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full text-left text-sm font-body font-bold transition-colors uppercase tracking-[0.1em] py-2.5 border-b border-border/20 last:border-0 text-accent hover:text-accent/80"
-              >
-                {link.label}
-              </a>
+              link.whatsapp ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-2 w-full text-left text-sm font-body font-bold transition-colors uppercase tracking-[0.1em] py-2.5 border-b border-border/20 last:border-0 text-[#25D366] hover:text-[#20BD5A]"
+                >
+                  <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className={
+                    link.cta
+                      ? "block w-full text-left text-sm font-body font-bold transition-colors uppercase tracking-[0.1em] py-2.5 text-foreground/80 hover:text-foreground"
+                      : link.accent
+                      ? "block w-full text-left text-sm font-body font-bold transition-colors uppercase tracking-[0.1em] py-2.5 text-accent border border-accent/50 rounded-none"
+                      : "block w-full text-left text-sm font-body font-bold transition-colors uppercase tracking-[0.1em] py-2.5 text-accent hover:text-accent/80"
+                  }
+                >
+                  {link.label}
+                </a>
+              )
             ) : (
               <Link
                 key={link.to}

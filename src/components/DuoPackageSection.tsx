@@ -14,7 +14,6 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
   const isLatam = lang === "es";
   const whatsapp = isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
   const emguardeRoute = isLatam ? "/latam/emguarde" : "/global/emguarde";
-  const duoRoute = isLatam ? "/latam/latam-duo-package" : "/global/duopackage";
 
   const t = {
     en: {
@@ -22,50 +21,50 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
       badge: "NEW DUO PACKAGE",
       headline: "K8 + EmGuarde.",
       headline2: "The Power Combo.",
-      desc: "The two most powerful Enagic products — the Leveluk K8 Kangen Water machine and the EmGuarde EMF protection device — combined for your health and income revolution.",
-      highlights: [
-        { label: "Kangen K8", detail: "8-plate ionizer. Medical-grade water. Ships worldwide." },
-        { label: "EmGuarde", detail: "Wearable EMF protection. Available USA, Canada, Mexico." },
-        { label: "2 Commission Points", detail: "Earn independently on both products in the 8-point system." },
-      ],
-      ctaDuo: "View Full Duo Package",
+      desc: "The two most powerful Enagic products — combined for your health and income revolution.",
+      step1label: "Step 1 • Flagship Machine",
+      step1name: "Leveluk K8",
+      step1desc: "8-plate platinum titanium ionizer. Medical-grade hydrogen-rich water. Trusted in hospitals for 51+ years. Ships to 190+ countries.",
+      step2label: "Step 2 • EMF Protection",
+      step2name: "EmGuarde",
+      step2desc: "Wearable EMF protection. Available USA, Canada & Mexico. $1,520 USD + ~$160 shipping. 10–14 day delivery from Malaysia.",
       ctaK8: "Order Kangen K8",
       ctaEmguarde: "Get EmGuarde Info",
       ctaWa: "WhatsApp Us",
+      commissionNote: "2 commission points — earn independently on both products in the 8-point system.",
     },
     es: {
       micro: "Disponibilidad Limitada — Actúa Ahora",
       badge: "NUEVO PAQUETE DUO",
       headline: "K8 + EmGuarde.",
       headline2: "La Combinación Poderosa.",
-      desc: "Los dos productos más poderosos de Enagic — la máquina de Agua Kangen Leveluk K8 y el dispositivo de protección EMF EmGuarde — combinados para tu revolución de salud e ingresos.",
-      highlights: [
-        { label: "Kangen K8", detail: "Ionizador de 8 placas. Agua de grado médico. Envío mundial." },
-        { label: "EmGuarde", detail: "Protección EMF wearable. Disponible EE.UU., Canadá, México." },
-        { label: "2 Puntos de Comisión", detail: "Gana independientemente por ambos productos en el sistema de 8 puntos." },
-      ],
-      ctaDuo: "Ver Paquete Duo Completo",
+      desc: "Los dos productos más poderosos de Enagic — combinados para tu revolución de salud e ingresos.",
+      step1label: "Paso 1 • Máquina Insignia",
+      step1name: "Leveluk K8",
+      step1desc: "Ionizador de titanio platinado de 8 placas. Agua rica en hidrógeno de grado médico. Confiado en hospitales durante más de 51 años. Envío a más de 190 países.",
+      step2label: "Paso 2 • Protección EMF",
+      step2name: "EmGuarde",
+      step2desc: "Protección EMF wearable. Disponible EE.UU., Canadá y México. $1,520 USD + ~$160 envío. Entrega en 10–14 días desde Malasia.",
       ctaK8: "Ordenar Kangen K8",
       ctaEmguarde: "Información de EmGuarde",
       ctaWa: "WhatsApp",
+      commissionNote: "2 puntos de comisión — gana independientemente por ambos productos en el sistema de 8 puntos.",
     },
   };
 
   const c = t[lang];
 
   return (
-    <section id="duo-package" className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
-      {/* Ambient glows */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-accent/6 rounded-full blur-[160px]" />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-emguarde/5 rounded-full blur-[160px]" />
+    <section id="duo-package" className="py-20 md:py-28 relative overflow-hidden">
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Badge */}
+
+        {/* Badge + headline */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-6"
+          className="flex justify-center mb-5"
         >
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-accent/15 border border-accent/30 font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold">
             <span className="relative flex h-2 w-2">
@@ -82,10 +81,10 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
           viewport={{ once: true }}
           className="text-center mb-4"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-foreground/40 font-bold mb-4">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-foreground/40 font-bold mb-3">
             {c.micro}
           </p>
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.02]">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[1.02]">
             <span className="text-gradient-gold">{c.headline}</span>
             <br />
             <span className="text-foreground">{c.headline2}</span>
@@ -96,36 +95,45 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-body text-base md:text-lg text-foreground/60 font-bold max-w-2xl mx-auto text-center mb-14"
+          className="font-body text-base md:text-lg text-foreground/60 font-bold max-w-xl mx-auto text-center mb-4"
         >
           {c.desc}
         </motion.p>
 
-        {/* Products side-by-side promo */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-14">
+        {/* Commission note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="font-mono text-xs uppercase tracking-[0.2em] text-accent/80 font-bold max-w-xl mx-auto text-center mb-12"
+        >
+          {c.commissionNote}
+        </motion.p>
+
+        {/* Main grid: products + video */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
+
           {/* K8 card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl overflow-hidden border border-accent/20 hover:border-accent/40 transition-all group"
+            className="glass-card rounded-2xl overflow-hidden border border-accent/20 hover:border-accent/40 transition-all group flex flex-col"
           >
-            <div className="bg-gradient-to-br from-accent/10 to-transparent p-8 flex items-center justify-center min-h-[220px]">
+            <div className="bg-gradient-to-br from-accent/10 to-transparent p-8 flex items-center justify-center h-52">
               <img
                 src={imgK8}
                 alt="Kangen K8 machine duo package mehdicohen.com"
-                className="w-40 md:w-52 drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
+                className="h-full w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent font-bold mb-2 block">
-                {lang === "en" ? "Step 1 • Flagship Machine" : "Paso 1 • Máquina Insignia"}
+                {c.step1label}
               </span>
-              <h3 className="font-display font-black text-xl text-foreground mb-2">Leveluk K8</h3>
-              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed mb-5">
-                {lang === "en"
-                  ? "8-plate platinum titanium ionizer. Medical-grade hydrogen-rich water. Trusted in hospitals for 51+ years. Ships to 190+ countries."
-                  : "Ionizador de titanio platinado de 8 placas. Agua rica en hidrógeno de grado médico. Confiado en hospitales durante más de 51 años. Envío a más de 190 países."}
+              <h3 className="font-display font-black text-xl text-foreground mb-2">{c.step1name}</h3>
+              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed mb-5 flex-1">
+                {c.step1desc}
               </p>
               <motion.a
                 href={`${enagicBase}&product_id=1016`}
@@ -149,24 +157,22 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="glass-card rounded-2xl overflow-hidden border border-emguarde/20 hover:border-emguarde/40 transition-all group"
+            className="glass-card rounded-2xl overflow-hidden border border-emguarde/20 hover:border-emguarde/40 transition-all group flex flex-col"
           >
-            <div className="bg-gradient-to-br from-emguarde/10 to-transparent p-8 flex items-center justify-center min-h-[220px]">
+            <div className="bg-gradient-to-br from-emguarde/10 to-transparent p-8 flex items-center justify-center h-52">
               <img
                 src={emguardeDevice}
                 alt="EmGuarde EMF device duo package mehdicohen.com"
-                className="w-32 md:w-44 drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
+                className="h-full w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-emguarde font-bold mb-2 block">
-                {lang === "en" ? "Step 2 • EMF Protection" : "Paso 2 • Protección EMF"}
+                {c.step2label}
               </span>
-              <h3 className="font-display font-black text-xl text-foreground mb-2">EmGuarde</h3>
-              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed mb-5">
-                {lang === "en"
-                  ? "Wearable EMF protection. Available USA, Canada & Mexico. $1,520 USD + ~$160 shipping. 10–14 day delivery from Malaysia."
-                  : "Protección EMF wearable. Disponible EE.UU., Canadá y México. $1,520 USD + ~$160 envío. Entrega en 10–14 días desde Malasia."}
+              <h3 className="font-display font-black text-xl text-foreground mb-2">{c.step2name}</h3>
+              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed mb-5 flex-1">
+                {c.step2desc}
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <motion.a
@@ -194,40 +200,7 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
           </motion.div>
         </div>
 
-        {/* Highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-4xl mx-auto mb-12"
-        >
-          {c.highlights.map((h, i) => (
-            <div key={i} className="flex-1 glass-card rounded-xl p-5 border border-border/20 text-center">
-              <p className="font-display font-black text-sm text-accent mb-1">{h.label}</p>
-              <p className="font-body text-xs font-bold text-foreground/60 leading-relaxed">{h.detail}</p>
-            </div>
-          ))}
-        </motion.div>
 
-        {/* View full duo page CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex justify-center"
-        >
-          <motion.a
-            href={duoRoute}
-            whileHover={{ scale: 1.05, y: -3 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-            {c.ctaDuo}
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );

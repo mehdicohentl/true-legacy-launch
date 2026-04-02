@@ -57,7 +57,7 @@ const socials = [
   { label: "Email", href: "mailto:truelegacyworld@gmail.com", icon: (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
   )},
-  { label: "WhatsApp", href: "https://wa.me/18649072149", icon: (
+  { label: "Contact Us", href: "https://wa.me/18649072149", icon: (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4zM12 21.8a9.9 9.9 0 01-5-1.4l-.4-.2-3.7 1 1-3.7-.3-.4A9.8 9.8 0 1121.8 12 9.8 9.8 0 0112 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0024 12C24 5.4 18.6 0 12 0z"/></svg>
   )},
   { label: "LinkedIn", href: linkedinUrl, icon: (
@@ -200,7 +200,7 @@ const socials = [
           {socials.map((s) => (
             <a
               key={s.label}
-              href={s.label === "WhatsApp" && lang === "es" ? "https://wa.me/573001844049" : s.href}
+              href={s.label === "Contact Us" && lang === "es" ? "https://wa.me/573001844049" : s.href}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
