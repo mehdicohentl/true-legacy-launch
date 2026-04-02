@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { setPageMeta } from "@/lib/seo";
 import imgK8 from "@/assets/product-k8-real.png";
 import imgEmguarde from "@/assets/product-emguarde-real.png";
 import emguardeDevice from "@/assets/emguarde-device.png";
@@ -138,11 +140,22 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
   const isLatam = lang === "es";
   const whatsapp = "https://wa.me/573001844049";
 
+  useEffect(() => {
+    setPageMeta(
+      lang === "en"
+        ? "Kangen Water Products & EMF Protection | Leveluk K8, SD501, EmGuarde | Mehdi Cohen True Legacy"
+        : "Productos Agua Kangen y Protección EMF | Leveluk K8, SD501, EmGuarde | Mehdi Cohen True Legacy",
+      lang === "en"
+        ? "Buy official Enagic Kangen Water machines — Leveluk K8, SD501 DX, JR IV, Anespa DX — and EmGuarde EMF protection. Trusted by Mehdi Cohen's global True Legacy team operating in 51+ countries worldwide."
+        : "Compra Máquinas de Agua Kangen Enagic oficiales — Leveluk K8, SD501 DX, JR IV, Anespa DX — y protección EMF EmGuarde. Confiado por el equipo global True Legacy de Mehdi Cohen en más de 51 países."
+    );
+  }, [lang]);
+
   const t = {
     en: {
-      micro: "Official Enagic Products",
-      headline: "Explore the Full Product Line",
-      subhead: "Premium Japanese technology for water, wellness, and vitality — trusted by millions worldwide for over 51+ years.",
+      micro: "Official Enagic® Products — Mehdi Cohen True Legacy",
+      headline: "Kangen Water Machines & Wellness Products",
+      subhead: "Shop the official Enagic product line — Leveluk K8, SD501 DX, EmGuarde EMF protection, and more. Trusted by millions worldwide for 51+ years. Distributed by Mehdi Cohen's True Legacy global team.",
       order: "Order Now",
       howToBuy: "How to Buy",
       contactWhatsApp: "Contact via WhatsApp",
@@ -168,9 +181,9 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       newLabel: "NEW",
     },
     es: {
-      micro: "Productos Oficiales Enagic",
-      headline: "Explora la Línea Completa",
-      subhead: "Tecnología japonesa premium para agua, bienestar y vitalidad — confiada por millones en todo el mundo durante más de 51+ años.",
+      micro: "Productos Oficiales Enagic® — Mehdi Cohen True Legacy",
+      headline: "Máquinas Agua Kangen y Productos de Bienestar",
+      subhead: "Compra la línea oficial de productos Enagic — Leveluk K8, SD501 DX, EmGuarde protección EMF y más. Confiada por millones en todo el mundo durante 51+ años. Distribuida por el equipo global True Legacy de Mehdi Cohen.",
       order: "Ordenar Ahora",
       howToBuy: "Cómo Comprar",
       contactWhatsApp: "Contactar por WhatsApp",
@@ -210,11 +223,11 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: i * 0.05 }}
-        className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 hover:border-accent/30 hover:shadow-gold flex flex-col h-full ${
+        className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 hover:border-accent/30 hover:shadow-gold flex flex-col ${
           product.featured ? "border-accent/20" : "border-border/20"
-        }`}
+        }${product.type === "duo" ? " col-span-2 lg:col-span-1" : ""}`}
       >
-        <div className="relative h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-t-2xl bg-transparent">
+        <div className="relative h-40 md:h-48 flex items-center justify-center overflow-hidden rounded-t-2xl bg-transparent">
           {product.featured && (
             <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] bg-accent text-accent-foreground px-3 py-1 rounded-full font-bold z-10">
               {product.type === "duo" ? (lang === "en" ? "DUO" : "DUO") : c.featured}
@@ -414,7 +427,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
 
       <section className="pb-12 md:pb-24 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5 max-w-7xl mx-auto items-start">
             {products.map((product, i) => renderProductCard(product, i))}
           </div>
 

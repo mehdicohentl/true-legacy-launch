@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { setPageMeta } from "@/lib/seo";
 
 const WhatIsTrueLegacy = () => {
+  useEffect(() => {
+    setPageMeta(
+      "What Is True Legacy? Wealth, Health & Legacy Movement | Mehdi Cohen | Global 51+ Countries",
+      "True Legacy is Mehdi Cohen's global movement for building wealth, health, and generational legacy. Distributes Kangen Water and EmGuarde in 51+ countries. Faith, discipline, and purpose-driven entrepreneurship."
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang="en" />

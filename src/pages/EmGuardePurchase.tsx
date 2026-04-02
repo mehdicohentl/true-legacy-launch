@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import emguardeDevice from "@/assets/emguarde-device.png";
 import { WarningIcon, DocumentIcon } from "@/components/Icons";
+import { setPageMeta } from "@/lib/seo";
 
 interface EmGuardePurchaseProps {
   lang: "en" | "es";
@@ -11,6 +13,17 @@ interface EmGuardePurchaseProps {
 
 const EmGuardePurchase = ({ lang }: EmGuardePurchaseProps) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setPageMeta(
+      lang === "en"
+        ? "EmGuarde EMF Protection Device — How to Buy | Mehdi Cohen True Legacy | USA & Canada"
+        : "Dispositivo EmGuarde Protección EMF — Cómo Comprar | Mehdi Cohen True Legacy | Colombia & LATAM",
+      lang === "en"
+        ? "Buy EmGuarde — Enagic's cutting-edge EMF protection device. Price: $1,520 USD. Available in USA, Canada, and Mexico. Step-by-step purchase guide by Mehdi Cohen, True Legacy CEO."
+        : "Compra EmGuarde — el dispositivo de protección EMF de vanguardia de Enagic. Precio: $1,520 USD. Disponible en EE.UU., Canadá y México. Guía paso a paso por Mehdi Cohen, CEO de True Legacy."
+    );
+  }, [lang]);
 
   const t = {
     en: {

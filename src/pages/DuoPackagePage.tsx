@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -5,6 +6,7 @@ import { duoIconMap } from "@/components/Icons";
 import Footer from "@/components/Footer";
 import imgK8 from "@/assets/product-k8-real.png";
 import emguardeDevice from "@/assets/emguarde-device.png";
+import { setPageMeta } from "@/lib/seo";
 
 interface DuoPackagePageProps {
   lang: "en" | "es";
@@ -17,6 +19,17 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
   const isLatam = lang === "es";
   const whatsapp = isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
   const emguardeRoute = isLatam ? "/latam/emguarde" : "/global/emguarde";
+
+  useEffect(() => {
+    setPageMeta(
+      lang === "en"
+        ? "Kangen K8 + EmGuarde Duo Package | Double Commission | Mehdi Cohen True Legacy"
+        : "Paquete Duo Kangen K8 + EmGuarde | Doble Comisión | Mehdi Cohen True Legacy",
+      lang === "en"
+        ? "The ultimate wellness combo: Leveluk K8 Kangen Water machine + EmGuarde EMF protection. Two products, two commission points. Join Mehdi Cohen's True Legacy team worldwide."
+        : "El combo de bienestar definitivo: Máquina de Agua Kangen Leveluk K8 + protección EMF EmGuarde. Dos productos, dos puntos de comisión. Únete al equipo global True Legacy de Mehdi Cohen."
+    );
+  }, [lang]);
 
   const t = {
     en: {
@@ -51,7 +64,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
       k8Title: "Step 1 — Order Your Kangen K8",
       k8Desc:
         "The Leveluk K8 is the most advanced Kangen Water machine in the core line. 8 platinum-coated titanium plates. 5 types of ionized water. Built to last a lifetime.",
-      k8Price: "From ~$4,980 USD",
+      k8Price: "From ~$5,890 USD",
       k8Financing: "Financing available through Enagic's direct debit program",
       k8DistId: "Distributor ID: 37000004828",
       k8Cta: "Order Kangen K8 Now",
@@ -117,7 +130,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
       k8Title: "Paso 1 — Ordena Tu Kangen K8",
       k8Desc:
         "El Leveluk K8 es la máquina de Agua Kangen más avanzada de la línea principal. 8 placas de titanio recubiertas de platino. 5 tipos de agua ionizada. Construida para durar toda la vida.",
-      k8Price: "Desde ~$4,980 USD",
+      k8Price: "Desde ~$5,890 USD",
       k8Financing: "Financiamiento disponible a través del programa de débito directo de Enagic",
       k8DistId: "ID de Distribuidor: 37000004828",
       k8Cta: "Ordenar Kangen K8 Ahora",

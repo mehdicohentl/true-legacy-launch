@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import mehdiLifestyle from "@/assets/mehdi-lifestyle.jpg";
+import { setPageMeta } from "@/lib/seo";
 
 const CeoDailyProtocol = () => {
+  useEffect(() => {
+    setPageMeta(
+      "CEO Daily Protocol | Mehdi Cohen's Wellness & Peak Performance Routine | True Legacy",
+      "Discover Mehdi Cohen's CEO daily protocol: Kangen Water morning routine, molecular hydrogen, anti-aging wellness, peak performance habits, and the elite mindset behind True Legacy."
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang="en" />

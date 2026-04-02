@@ -94,10 +94,10 @@ const Footer = ({ lang }: FooterProps) => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
            <p className="font-body text-sm text-foreground font-bold">
-             Mehdi Cohen | CEO &amp; Founder of True Legacy | Kangen Water Distributor | Global Wellness Team Leader | Wealth · Health · Legacy | mehdicohen.com
+             Mehdi Cohen | CEO &amp; Founder — True Legacy | Kangen Water &amp; EmGuarde Distributor | USA · Canada · Colombia · Latin America · Europe | Wealth · Health · Legacy | mehdicohen.com
            </p>
            <p className="font-body text-xs text-foreground/60 font-bold mt-1">
-             Enagic® Independent Distributor · ID# 37000004829
+             Enagic® Independent Distributor · ID# 37000004829 · Serving clients globally across 51+ countries
            </p>
           </div>
          <p className="font-mono text-xs uppercase tracking-[0.15em] text-foreground/70 font-bold">

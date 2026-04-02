@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { setPageMeta } from "@/lib/seo";
 
 const WealthHealthLegacy = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Wealth, Health & Legacy | Build Generational Wealth with Kangen Water | Mehdi Cohen True Legacy",
+      "Learn how to build wealth, optimize health with Kangen Water and molecular hydrogen, and create a lasting legacy. Mehdi Cohen's True Legacy framework — operating in 51+ countries worldwide."
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang="en" />

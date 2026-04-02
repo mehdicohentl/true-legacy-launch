@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import { setPageMeta } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WaterSection from "@/components/WaterSection";
@@ -18,6 +19,17 @@ interface LandingPageProps {
 
 const LandingPage = ({ lang }: LandingPageProps) => {
   const location = useLocation();
+
+  useEffect(() => {
+    setPageMeta(
+      lang === "en"
+        ? "Mehdi Cohen | CEO — Kangen Water, EmGuarde & True Legacy | Wealth, Health & Legacy Worldwide"
+        : "Mehdi Cohen | CEO — Agua Kangen, EmGuarde & True Legacy | Riqueza, Salud y Legado Mundial",
+      lang === "en"
+        ? "Welcome to Mehdi Cohen's official home — CEO and founder of True Legacy. Discover Kangen Water, EmGuarde EMF protection, and how to build wealth, health, and legacy with a global team in 51+ countries."
+        : "Bienvenido al sitio oficial de Mehdi Cohen — CEO y fundador de True Legacy. Descubre Agua Kangen, protección EMF EmGuarde y cómo construir riqueza, salud y legado con un equipo global en más de 51 países."
+    );
+  }, [lang]);
 
   useEffect(() => {
     if (location.hash) {

@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { setPageMeta } from "@/lib/seo";
 
 const JoinTrueLegacy = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Join True Legacy | Build Wealth, Health & Legacy with Mehdi Cohen | 51+ Countries",
+      "Join True Legacy — Mehdi Cohen's global wellness and wealth movement operating in 51+ countries. Earn income distributing Kangen Water and EmGuarde EMF protection. CEO mentorship, done-for-you system."
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang="en" />

@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import mehdiHeadshot from "@/assets/mehdi-headshot.png";
+import { setPageMeta } from "@/lib/seo";
 
 const BookACall = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Book a Wellness Call with Mehdi Cohen | Kangen Water & True Legacy Consultation",
+      "Schedule a free one-on-one wellness call with Mehdi Cohen — CEO of True Legacy. Learn about Kangen Water, EmGuarde EMF protection, and how to build income with a global team in 51+ countries."
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang="en" />

@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import combinedLogo from "@/assets/combined-logo.png";
 import { WarningIcon, DropletIcon } from "@/components/Icons";
+import { setPageMeta } from "@/lib/seo";
 
 import imgConsultation from "@/assets/linktree-consultation.jpg";
 import imgEwg from "@/assets/linktree-ewg.png";
@@ -28,6 +29,17 @@ const ResourcesPage = ({ lang }: ResourcesPageProps) => {
   const linkedinUrl = lang === "en"
     ? "https://www.linkedin.com/in/mehdicohen-tl/"
     : "https://co.linkedin.com/in/mehdi-cohen";
+
+  useEffect(() => {
+    setPageMeta(
+      lang === "en"
+        ? "Resources & Links | Kangen Water Tools, EmGuarde & More | Mehdi Cohen True Legacy"
+        : "Recursos y Enlaces | Agua Kangen, EmGuarde y Más | Mehdi Cohen True Legacy",
+      lang === "en"
+        ? "All Kangen Water resources in one place: EWG tap water check, pre-filters, accessories, EmGuarde info, and more. Curated by Mehdi Cohen, True Legacy CEO."
+        : "Todos los recursos de Agua Kangen en un solo lugar: chequeo de agua EWG, pre-filtros, accesorios, info EmGuarde y más. Curado por Mehdi Cohen, CEO de True Legacy."
+    );
+  }, [lang]);
 
 const socials = [
   { label: "YouTube", href: "https://www.youtube.com/@Mehdicohen", icon: (

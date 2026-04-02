@@ -1,10 +1,18 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import mehdiPortrait from "@/assets/mehdi-portrait.jpg";
 import mehdiAwards from "@/assets/mehdi-awards.jpg";
+import { setPageMeta } from "@/lib/seo";
 
 const WhoIsMehdiCohen = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Who Is Mehdi Cohen? CEO of True Legacy | Kangen Water Distributor | USA & Global",
+      "Mehdi Cohen is the CEO and founder of True Legacy — a global wealth, health, and legacy movement in 51+ countries. Top Enagic Kangen Water distributor. From zero to global CEO. mehdicohen.com"
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang="en" />

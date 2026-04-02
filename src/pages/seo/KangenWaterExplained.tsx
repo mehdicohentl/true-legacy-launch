@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import kangenMachine from "@/assets/kangen-water-machine.png";
+import { setPageMeta } from "@/lib/seo";
 
 const KangenWaterExplained = () => {
+  useEffect(() => {
+    setPageMeta(
+      "What Is Kangen Water? Benefits of Alkaline Ionized Water | Mehdi Cohen True Legacy",
+      "Kangen Water is alkaline ionized water produced by Enagic’s Leveluk K8 and SD501 machines. Learn the science: molecular hydrogen, anti-aging, cellular hydration, pH levels. Explained by Mehdi Cohen."
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar lang="en" />
