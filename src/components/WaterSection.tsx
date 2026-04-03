@@ -126,7 +126,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               </p>
               <div className="relative aspect-video rounded-xl overflow-hidden border border-accent/20 shadow-deep">
                 <iframe
-                  src="https://www.youtube.com/embed/fJdfllJpdAg"
+                  src={lang === "es" ? "https://www.youtube.com/embed/Gi0ufLMcH6E" : "https://www.youtube.com/embed/fJdfllJpdAg"}
                   title="Kangen Water Demo"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -180,7 +180,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                   {t[lang].cta}
                 </motion.a>
                 <motion.a
-                  href="https://mehdicohen1.systeme.io/mehdicohen"
+                  href={lang === "es" ? "https://mehdicohen1.systeme.io/mehdicohen-1d62f4ad" : "https://mehdicohen1.systeme.io/mehdicohen"}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, y: -3 }}

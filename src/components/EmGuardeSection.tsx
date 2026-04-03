@@ -133,7 +133,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               </p>
               <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                 <iframe
-                  src="https://www.youtube.com/embed/vPlD1fZEdvE"
+                  src={lang === "es" ? "https://www.youtube.com/embed/VFjtegRuzfQ" : "https://www.youtube.com/embed/vPlD1fZEdvE"}
                   title="EmGuarde Demo"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
