@@ -278,6 +278,28 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <div className="aspect-video rounded-2xl overflow-hidden border border-accent/20 shadow-2xl">
+              <iframe
+                src={`https://www.youtube.com/embed/${isLatam ? "tctiae20KRs" : "R-BxQqjmjIo"}?rel=0`}
+                title={isLatam ? "Duo Package LATAM" : "Duo Package Global"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Why Duo section */}
       <section className="py-20 md:py-28 bg-card relative overflow-hidden noise-overlay">
         <div className="container mx-auto px-4">
