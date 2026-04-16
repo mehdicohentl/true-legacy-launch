@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import ZoomGateway from "@/components/ZoomGateway";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const eventGlobal = "/photo_2026-04-15_19-48-56.jpg";
 const eventLatam = "/photo_2026-04-14_00-03-20.jpg";
@@ -166,6 +167,11 @@ const EventSection = ({ lang }: EventSectionProps) => {
         {/* Inline Zoom Gateway — Secure Your Spot */}
         <div className="max-w-3xl mx-auto mt-8">
           <ZoomGateway lang={lang} />
+        </div>
+
+        {/* Calendly inline booking widget (embedded) */}
+        <div className="max-w-3xl mx-auto mt-8">
+          <CalendlyEmbed lang={lang} />
         </div>
 
         {/* Duo Package CTA strip */}
