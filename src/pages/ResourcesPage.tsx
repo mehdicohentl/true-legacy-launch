@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 import combinedLogo from "@/assets/combined-logo.png";
 import { WarningIcon, DropletIcon } from "@/components/Icons";
 import { setPageMeta } from "@/lib/seo";
@@ -261,22 +262,8 @@ const socials = [
           </span>
         </motion.a>
 
-        {/* Calendly inline widget for Book a Free Call */}
-        {lang === "en" ? (
-          <div className="my-8">
-            {/* Calendly inline widget begin */}
-            <div className="calendly-inline-widget" data-url="https://calendly.com/aquacharged/true-legacy-one-on-one?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: '320px', height: '700px' }}></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            {/* Calendly inline widget end */}
-          </div>
-        ) : (
-          <div className="my-8">
-            {/* Calendly inline widget begin */}
-            <div className="calendly-inline-widget" data-url="https://calendly.com/truelegacylatamenagic/45min?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: '320px', height: '700px' }}></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            {/* Calendly inline widget end */}
-          </div>
-        )}
+        {/* Calendly embedded widget for Book a Free Call */}
+        <CalendlyEmbed lang={lang} />
 
         {/* Category sections */}
         {visibleCategories.map((cat, i) => (
