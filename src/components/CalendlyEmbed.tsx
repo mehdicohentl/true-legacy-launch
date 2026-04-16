@@ -62,14 +62,22 @@ export default function CalendlyEmbed({ lang }: CalendlyEmbedProps) {
     };
   }, [scriptLoaded]);
 
-  // When switching lang or after script loads, update data-url attribute
+  // When switching lang or after script loads, update data-url and reinitialize widget
   useEffect(() => {
-    if (containerRef.current) {
+    if (containerRef.current && scriptLoaded) {
       const url =
         lang === "en"
           ? "https://calendly.com/aquacharged/true-legacy-one-on-one?hide_event_type_details=1&hide_gdpr_banner=1"
           : "https://calendly.com/truelegacylatamenagic/45min?hide_event_type_details=1&hide_gdpr_banner=1";
       containerRef.current.setAttribute("data-url", url);
+      
+      // Reinitialize Calendly widget with new URL
+      if (window.Calendly && window.Calendly.initInlineWidget) {
+        window.Calendly.initInlineWidget({
+          url: url,
+          parentElement: containerRef.current,
+        });
+      }
     }
   }, [lang, scriptLoaded]);
 
@@ -89,4 +97,15 @@ export default function CalendlyEmbed({ lang }: CalendlyEmbedProps) {
       ></div>
     </div>
   );
+}
+
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (options: {
+        url: string;
+        parentElement: HTMLElement;
+      }) => void;
+    };
+  }
 }

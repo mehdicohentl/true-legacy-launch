@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 interface ThankYouSectionProps {
   lang: "en" | "es";
@@ -63,26 +64,8 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
             {lang === "en" ? "Book a 30-Minute Clarity Call" : "Reserva una Llamada de Claridad de 30 Minutos"}
           </a>
 
-          <div className="my-8">
-            {lang === "en" ? (
-              <>
-                <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/aquacharged/true-legacy-one-on-one?hide_event_type_details=1&hide_gdpr_banner=1"
-                  style={{ minWidth: '320px', height: '700px' }}
-                ></div>
-              </>
-            ) : (
-              <>
-                <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/truelegacylatamenagic/45min?hide_event_type_details=1&hide_gdpr_banner=1"
-                  style={{ minWidth: '320px', height: '700px' }}
-                ></div>
-              </>
-            )}
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          </div>
+          {/* Calendly embedded widget */}
+          <CalendlyEmbed lang={lang} />
         </motion.div>
       </div>
     </section>
