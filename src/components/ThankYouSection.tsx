@@ -55,13 +55,34 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
           className="text-center mt-10"
         >
           <a
-            href="https://calendly.com/aquacharged/true-legacy-one-on-one"
+            href={lang === "en" ? "https://calendly.com/aquacharged/true-legacy-one-on-one" : "https://calendly.com/truelegacylatamenagic/45min"}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-accent text-accent-foreground font-bold rounded-full px-8 py-4 text-base md:text-lg shadow-gold hover:scale-105 transition-transform duration-200 cta-shimmer"
           >
             {lang === "en" ? "Book a 30-Minute Clarity Call" : "Reserva una Llamada de Claridad de 30 Minutos"}
           </a>
+
+          <div className="my-8">
+            {lang === "en" ? (
+              <>
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/aquacharged/true-legacy-one-on-one?hide_event_type_details=1&hide_gdpr_banner=1"
+                  style={{ minWidth: '320px', height: '700px' }}
+                ></div>
+              </>
+            ) : (
+              <>
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/truelegacylatamenagic/45min?hide_event_type_details=1&hide_gdpr_banner=1"
+                  style={{ minWidth: '320px', height: '700px' }}
+                ></div>
+              </>
+            )}
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          </div>
         </motion.div>
       </div>
     </section>

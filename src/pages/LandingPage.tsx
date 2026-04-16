@@ -83,41 +83,7 @@ const LandingPage = ({ lang }: LandingPageProps) => {
 
 
 
-      {/* Book a Call Section (Global/Español & LATAM) */}
-      <section id="book-call" className="py-16 bg-background border-t border-accent/10">
-        <div className="container mx-auto px-4 text-center">
-          {lang === "en" ? (
-            <>
-              <h2 className="text-2xl md:text-4xl font-display font-black mb-4">Book a Call with Mehdi Cohen</h2>
-              <p className="font-body text-lg text-foreground/70 mb-8">
-                Get your questions answered and discover how to start your True Legacy journey.
-              </p>
-              <div className="my-8">
-                <div className="calendly-inline-widget" data-url="https://calendly.com/aquacharged/true-legacy-one-on-one?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: '320px', height: '700px' }}></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-              </div>
-            </>
-          ) : (
-            <>
-              <h2 className="text-2xl md:text-4xl font-display font-black mb-4">Agenda una Llamada con Mehdi Cohen</h2>
-              <p className="font-body text-lg text-foreground/70 mb-8">
-                Resuelve tus dudas y descubre cómo iniciar tu camino con True Legacy.
-              </p>
-              <button
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body font-black text-sm uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold transition-all mb-6"
-                style={{ cursor: 'default' }}
-                disabled
-              >
-                Book a 30 minute clarity call
-              </button>
-              <div className="my-8">
-                <div className="calendly-inline-widget" data-url="https://calendly.com/truelegacylatamenagic/45min?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: '320px', height: '700px' }}></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-              </div>
-            </>
-          )}
-        </div>
-      </section>
+      {/* Booking widget moved to ThankYouSection to avoid duplicate empty space */}
 
       <JoinTeamSection lang={lang} />
       <ThankYouSection lang={lang} />
