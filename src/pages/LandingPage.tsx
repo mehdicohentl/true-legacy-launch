@@ -81,6 +81,33 @@ const LandingPage = ({ lang }: LandingPageProps) => {
         </div>
       </section>
 
+
+      {/* Book a 30 Minute Call Section */}
+      <section id="book-call" className="py-16 bg-background border-t border-accent/10">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-4xl font-display font-black mb-4">
+            {lang === "en" ? "Book a 30 Minute Free Call" : "Agenda una Llamada Gratuita de 30 Minutos"}
+          </h2>
+          <p className="font-body text-lg text-foreground/70 mb-8">
+            {lang === "en"
+              ? "Get your questions answered and discover how to start your True Legacy journey."
+              : "Resuelve tus dudas y descubre cómo iniciar tu camino con True Legacy."}
+          </p>
+          {/* Calendly inline widget */}
+          {lang === "en" ? (
+            <div className="my-8">
+              <div className="calendly-inline-widget" data-url="https://calendly.com/aquacharged/true-legacy-one-on-one?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: '320px', height: '700px' }}></div>
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+          ) : (
+            <div className="my-8">
+              <div className="calendly-inline-widget" data-url="https://calendly.com/truelegacylatamenagic/45min?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: '320px', height: '700px' }}></div>
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+          )}
+        </div>
+      </section>
+
       <JoinTeamSection lang={lang} />
       <ThankYouSection lang={lang} />
       <ResourcesSection lang={lang} />
