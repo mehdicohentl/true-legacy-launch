@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 interface ThankYouSectionProps {
   lang: "en" | "es";
@@ -63,9 +62,6 @@ const ThankYouSection = ({ lang }: ThankYouSectionProps) => {
           >
             {lang === "en" ? "Book a 30-Minute Clarity Call" : "Reserva una Llamada de Claridad de 30 Minutos"}
           </a>
-
-          {/* Calendly embedded widget */}
-          <CalendlyEmbed lang={lang} />
         </motion.div>
       </div>
     </section>
