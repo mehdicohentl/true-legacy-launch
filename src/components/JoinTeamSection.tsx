@@ -9,10 +9,10 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
   const t = {
     en: {
       micro: "This Is Your Invitation",
-      headline: "Stop Watching.",
-      headline2: "Start Building.",
-      desc: "Every person on this team started exactly where you are right now — scrolling, wondering, hoping. The difference? They clicked the button. They said yes. They chose themselves.",
-      quote: "\"The best time to start was yesterday. The second best time is right now.\"",
+      headline: "Lead the Expansion",
+      headline2: "U.S. Market.",
+      desc: "We’re expanding now. If you’re a driven entrepreneur ready to lead our U.S. market expansion and plug into our proven system click the button now. We want action-takers, not spectators.",
+      quote: "\"The future belongs to those who act today.\"",
       cta: "Start Building With True Legacy",
       cta2: "See How The Team Operates",
       stats: [
@@ -24,10 +24,10 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
     },
     es: {
       micro: "Esta Es Tu Invitación",
-      headline: "Deja de Mirar.",
-      headline2: "Empieza a Construir.",
-      desc: "Cada persona en este equipo empezó exactamente donde tú estás ahora — navegando, preguntándose, esperando. ¿La diferencia? Hicieron clic en el botón. Dijeron que sí. Se eligieron a sí mismos.",
-      quote: "\"El mejor momento para empezar fue ayer. El segundo mejor momento es ahora mismo.\"",
+      headline: "Lidera la Expansión",
+      headline2: "Mercado de EE.UU.",
+      desc: "Nos estamos expandiendo ahora. Si eres un emprendedor decidido, listo para liderar nuestra expansión en el mercado de EE.UU. y conectarte a nuestro sistema probado, haz clic en el botón ahora. Queremos personas de acción, no espectadores.",
+      quote: "\"El futuro pertenece a quienes actúan hoy.\"",
       cta: "Empieza a Construir Con True Legacy",
       cta2: "Mira Como Opera El Equipo",
       stats: [
@@ -61,8 +61,8 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
           className="text-center mb-8"
         >
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05]">
-            <span className="text-foreground">{lang === "en" ? "Join the Global True Legacy Team" : "Únete al Equipo Global True Legacy"}</span><br />
-            <span className="text-gradient-gold italic">{lang === "en" ? "Build Income in 51+ Countries" : "Genera Ingresos en 51+ Países"}</span>
+            <span className="text-foreground">{t[lang].headline}</span><br />
+            <span className="text-gradient-gold italic">{t[lang].headline2}</span>
           </h2>
         </motion.div>
 
