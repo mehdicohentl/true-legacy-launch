@@ -2,12 +2,10 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
 import combinedLogo from "@/assets/combined-logo.png";
 import { WarningIcon, DropletIcon } from "@/components/Icons";
 import { setPageMeta } from "@/lib/seo";
 
-import imgConsultation from "@/assets/linktree-consultation.jpg";
 import imgEwg from "@/assets/linktree-ewg.png";
 import imgEmguarde from "@/assets/linktree-emguarde.png";
 import imgK8 from "@/assets/linktree-k8.png";
@@ -90,13 +88,6 @@ const socials = [
   ];
 
   const links = {
-    consultation: {
-      label: lang === "en"
-        ? "Schedule Your Free Wellness Consultation - Mehdi Cohen"
-        : "Agenda Tu Consulta de Bienestar Gratuita - Mehdi Cohen",
-      href: "https://calendly.com/aquacharged/true-legacy-one-on-one",
-      image: imgConsultation,
-    },
     info: {
       key: "info" as CategoryKey,
       title: "INFO",
@@ -245,26 +236,6 @@ const socials = [
 
       {/* Links section */}
       <div className="max-w-[680px] mx-auto px-4 pt-6 pb-16">
-        {/* Top CTA - Consultation (always visible) */}
-        <motion.a
-          href={links.consultation.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-center w-full rounded-full bg-accent hover:brightness-110 transition-all duration-200 mb-8 overflow-hidden"
-        >
-          <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 overflow-hidden rounded-full m-1">
-            <img src={links.consultation.image} alt="" className="w-full h-full object-cover" />
-          </div>
-          <span className="font-body font-black text-xs sm:text-sm text-accent-foreground flex-1 text-center pr-4 sm:pr-6 py-3 sm:py-4 leading-tight">
-            {links.consultation.label}
-          </span>
-        </motion.a>
-
-        {/* Calendly embedded widget for Book a Free Call */}
-        <CalendlyEmbed lang={lang} />
-
         {/* Category sections */}
         {visibleCategories.map((cat, i) => (
           <div key={cat.key} className="mb-6" id={`cat-${cat.key}`}>
