@@ -24,10 +24,10 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
     },
     es: {
       micro: "Esta Es Tu Invitación",
-      headline: "Lidera la Expansión",
-      headline2: "Mercado de EE.UU.",
-      desc: "Nos estamos expandiendo ahora. Si eres un emprendedor decidido, listo para liderar nuestra expansión en el mercado de EE.UU. y conectarte a nuestro sistema probado, haz clic en el botón ahora. Queremos personas de acción, no espectadores.",
-      quote: "\"El futuro pertenece a quienes actúan hoy.\"",
+      headline: "Sé Parte del",
+      headline2: "Crecimiento—LATAM.",
+      desc: "Estamos buscando emprendedores y pioneros ahora mismo. Si tienes la visión para liderar la expansión en LATAM y quieres unirte a un sistema global probado, este es tu momento. No esperes. Haz clic ahora y construyamos tu legado.",
+      quote: "“El éxito es para los que actúan sin dudar.”",
       cta: "Empieza a Construir Con True Legacy",
       cta2: "Mira Como Opera El Equipo",
       stats: [
