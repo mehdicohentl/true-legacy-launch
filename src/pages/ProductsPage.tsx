@@ -13,6 +13,7 @@ import imgAnespa from "@/assets/product-anespa-real.png";
 import imgWagyu from "@/assets/product-wagyu-real.png";
 import imgKangenAir from "@/assets/kangen-air.png";
 import imgUkon from "@/assets/product-ukon-real.png";
+import imgEmgo from "@/assets/product-emgo.png";
 
 interface ProductsPageProps {
   lang: "en" | "es";
@@ -30,7 +31,8 @@ interface Product {
   image2?: string;
   href?: string;
   featured?: boolean;
-  type?: "emguarde" | "kangenair" | "standard" | "duo";
+  type?: "emguarde" | "kangenair" | "standard" | "duo" | "emgo";
+  enOnly?: boolean;
 }
 
 const products: Product[] = [
@@ -133,6 +135,16 @@ const products: Product[] = [
     image: imgWagyu,
     href: `${enagicBase}&product_id=2115`,
     type: "standard",
+  },
+  {
+    id: "emgo",
+    nameEn: "emGo",
+    nameEs: "",
+    descEn: "emGuarde 2.0 (Coming soon to the U.S. market)",
+    descEs: "",
+    image: imgEmgo,
+    type: "emgo",
+    enOnly: true,
   },
 ];
 
@@ -412,6 +424,22 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
               </motion.a>
             </div>
           )}
+
+          {product.type === "emgo" && (
+            <div className="flex flex-col gap-2 mt-auto pt-4">
+              <motion.a
+                href={contactLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
+                {c.contactWhatsApp}
+              </motion.a>
+            </div>
+          )}
         </div>
       </motion.div>
     );
@@ -453,7 +481,9 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       <section className="pb-12 md:pb-24 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-4 max-w-6xl mx-auto items-start">
-            {products.map((product, i) => renderProductCard(product, i))}
+            {products
+              .filter((p) => !(isLatam && p.enOnly))
+              .map((product, i) => renderProductCard(product, i))}
           </div>
 
           <motion.div
