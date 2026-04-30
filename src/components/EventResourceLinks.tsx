@@ -74,11 +74,6 @@ const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
 
   const resources: { label: string; href: string; icon: React.ReactNode; internal?: boolean }[] = [
     {
-      label: lang === "en" ? "Schedule a Free Wellness Consultation" : "Agenda Tu Consulta de Bienestar Gratuita",
-      href: "https://calendly.com/aquacharged/true-legacy-one-on-one",
-      icon: <IconCalendar />,
-    },
-    {
       label: lang === "en" ? "Check Your Tap Water (EWG)" : "Revisa Tu Agua del Grifo (EWG)",
       href: "https://www.ewg.org/tapwater/",
       icon: <IconAlertTriangle />,

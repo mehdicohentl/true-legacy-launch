@@ -14,10 +14,10 @@ const EventsPage = ({ lang }: EventsPageProps) => {
     setPageMeta(
       lang === "en"
         ? "Live Wellness Events & Zoom Calls | Biohacking & True Legacy"
-        : "Eventos de Bienestar en Vivo & Zoom | Agua Kangen & True Legacy | Mehdi Cohen",
+        : "Eventos de Bienestar en Vivo & Zoom | Agua Kangen & True Legacy",
       lang === "en"
         ? "Join our live Zoom events. Learn about Kangen Water, EmGuarde EMF protection, and how real people are earning $5K\u2013$10K monthly with True Legacy. Global community events in 51+ countries."
-        : "Únete a los eventos en vivo de Mehdi Cohen. Aprende sobre Agua Kangen, protección EMF EmGuarde, y cómo generar ingresos con True Legacy. Eventos de comunidad global en más de 51 países."
+        : "Únete a los eventos en vivo de True Legacy. Aprende sobre Agua Kangen, protección EMF EmGuarde, y cómo generar ingresos con True Legacy. Eventos de comunidad global en más de 51 países."
     );
   }, [lang]);
   return (

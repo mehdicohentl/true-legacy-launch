@@ -170,16 +170,6 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             {lang === "en" ? "How to Buy EmGuarde" : "Cómo Comprar EmGuarde"}
           </motion.a>
           <motion.a
-            href="https://calendly.com/aquacharged/true-legacy-one-on-one"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.04, y: -3 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground hover:bg-accent/90 transition-colors">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-            {lang === "en" ? "Book an EmGuarde Info Call" : "Agenda una Llamada Informativa"}
-          </motion.a>
-          <motion.a
             href="https://wa.me/18649072149"
             target="_blank"
             rel="noopener noreferrer"

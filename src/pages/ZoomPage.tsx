@@ -66,7 +66,7 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
         {/* Logo */}
         <img
           src={combinedLogo}
-          alt="Mehdi Cohen True Legacy"
+          alt="True Legacy"
           className="h-16 md:h-20 mx-auto opacity-90" />
 
 

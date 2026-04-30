@@ -62,7 +62,7 @@ const Navbar = ({ lang }: NavbarProps) => {
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <div className="flex items-center gap-4">
-          <Link to="/"><img src={combinedLogo} alt="Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com" className="h-12 md:h-14 w-auto" /></Link>
+          <Link to="/"><img src={combinedLogo} alt="True Legacy - Wealth, Health & Legacy" className="h-12 md:h-14 w-auto" /></Link>
         </div>
 
         <div className="hidden md:flex items-center gap-3">

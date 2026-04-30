@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import ZoomGateway from "@/components/ZoomGateway";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
 
-const eventGlobal = "/event-flyer-global.png";
-const eventLatam = "/photo_2026-04-14_00-03-20.jpg";
+const eventGlobal = "/event-flyer-2026.png";
+const eventLatam = "/event-flyer-2026.png";
 
 interface EventSectionProps {
   lang: "en" | "es";
@@ -15,7 +14,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       micro: "Upcoming Live Event",
       headline: "Unlock Your True Legacy",
       headline2: "Live Zoom Presentation",
-      desc: "Real people across 51+ countries are generating $5K–$10K monthly — all tied to the global wellness movement. This live Zoom presentation reveals the biohacking products and team-based model behind those results. No experience needed. No pressure. Just a real look at what's possible.",
+      desc: "Unlock $5K–$10K monthly potential across 29 countries with 44 locations — all tied to the global opportunity. This live Zoom presentation reveals the biohacking products and team-based model behind those results. No experience needed. No pressure. Just a real look at what's possible.",
       topics: [
         "Biohacking technology the marketplace is craving",
         "How real people are earning $5K–$10K per month",
@@ -41,7 +40,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       micro: "Evento en Vivo",
       headline: "Desbloquea Tu Legado Verdadero",
       headline2: "Presentación en Vivo por Zoom",
-      desc: "Mehdi Cohen & Magaly Cardona te invitan a un evento exclusivo: La Revolución del Biohacking llega a LATAM. Aprende cómo el K8 y EmGuarde están transformando ingresos a nivel global.",
+      desc: "Desbloquea un potencial de $5K–$10K mensuales en 29 países con 44 ubicaciones — todo vinculado a la oportunidad global. Esta presentación en vivo por Zoom revela los productos de biohacking y el modelo basado en equipo detrás de esos resultados. No se necesita experiencia. Sin presión. Solo un vistazo real a lo que es posible.",
       topics: [
         "Tecnología de biohacking que el mercado desea",
         "Cómo generar $5K a $10K USD al mes con propósito",
@@ -53,10 +52,10 @@ const EventSection = ({ lang }: EventSectionProps) => {
       time: "7:00 PM (Hora de Colombia) — 8:00 PM EST / 5:00 PM PST",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
-      hosts: "Presentado por Mehdi Cohen & Magaly Cardona",
+      hosts: "Presentado por Líderes del Equipo True Legacy",
       bottomCta: "Tu legado no espera. Únete y toma el control. Reserva tu lugar ahora.",
       image: eventLatam,
-      imageAlt: "Mehdi Cohen Magaly Cardona True Legacy CEO LATAM Kangen K8 EmGuarde paquete duo mehdicohen.com",
+      imageAlt: "True Legacy Team Leaders Kangen K8 EmGuarde global wellness movement biohacking truelegacyworld.com",
       ctaKangen: "Obtener Máquina Kangen (EE. UU., Australia, Dubai, etc.)",
       ctaEmguarde: "Obtener EmGuarde",
       ctaJoin: "Únete al Equipo True Legacy",
@@ -169,10 +168,6 @@ const EventSection = ({ lang }: EventSectionProps) => {
           <ZoomGateway lang={lang} />
         </div>
 
-        {/* Calendly inline booking widget (embedded) */}
-        <div className="max-w-3xl mx-auto mt-8">
-          <CalendlyEmbed lang={lang} />
-        </div>
 
         {/* Duo Package CTA strip */}
         <motion.div
