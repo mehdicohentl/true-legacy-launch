@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import ZoomGateway from "@/components/ZoomGateway";
 
-const eventGlobal = "/event-flyer-global.png";
-const eventLatam = "/event-flyer-global.png";
+const eventGlobal = "/event-flyer-global-v2.png";
+const eventLatam = "/event-flyer-global-v2.png";
 
 interface EventSectionProps {
   lang: "en" | "es";
