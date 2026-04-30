@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import ZoomGateway from "@/components/ZoomGateway";
 
 const eventGlobal = "/event-flyer-global-v2.png";
-const eventLatam = "/event-flyer-global-v2.png";
+const eventLatam = "/event-flyer-latam-v2.png";
 
 interface EventSectionProps {
   lang: "en" | "es";
@@ -38,24 +38,24 @@ const EventSection = ({ lang }: EventSectionProps) => {
     },
     es: {
       micro: "Evento en Vivo",
-      headline: "Desbloquea Tu Legado Verdadero",
+      headline: "La Revolución del Biohacking Llega a LATAM",
       headline2: "Presentación en Vivo por Zoom",
-      desc: "Desbloquea un potencial de $5K–$10K mensuales en 29 países con 44 ubicaciones — todo vinculado a la oportunidad global. Esta presentación en vivo por Zoom revela los productos de biohacking y el modelo basado en equipo detrás de esos resultados. No se necesita experiencia. Sin presión. Solo un vistazo real a lo que es posible.",
+      desc: "Descubre cómo los biohackers en LATAM están transformando su ingreso a nivel global. Presente en 29 países con 44 oficinas a nivel global — todo vinculado a la oportunidad global con tecnología de punta como Kangen K8 y EmGuarde. No se necesita experiencia. Sin presión. Solo un vistazo real a lo que es posible.",
       topics: [
-        "Tecnología de biohacking que el mercado desea",
-        "Cómo generar $5K a $10K USD al mes con propósito",
-        "Escapa de la rutina del 9 a 5",
-        "Una visión global para expandir y crecer más allá de las fronteras",
+        "La tecnología de biohacking que está llegando a LATAM",
+        "Cómo personas comunes generan ingresos de $5K–$10K USD al mes",
+        "La salida real del 9 a 5",
+        "Cómo expandir un negocio global desde casa",
       ],
       dateLabel: "Fecha del Zoom",
       date: "Martes",
-      time: "7:00 PM (Hora de Colombia) — 8:00 PM EST / 5:00 PM PST",
+      time: "7:00 PM (Hora Colombia) — 8:00 PM EST / 5:00 PM PST",
       meetingId: "830 0004 3957",
       passcode: "Truelegacy",
       hosts: "Presentado por Líderes del Equipo True Legacy",
       bottomCta: "Tu legado no espera. Únete y toma el control. Reserva tu lugar ahora.",
       image: eventLatam,
-      imageAlt: "True Legacy Team Leaders Kangen K8 EmGuarde global wellness movement biohacking truelegacyworld.com",
+      imageAlt: "La Revolución del Biohacking LATAM Kangen K8 EmGuarde Mehdi Cohen Magaly Cardona",
       ctaKangen: "Obtener Máquina Kangen (EE. UU., Australia, Dubai, etc.)",
       ctaEmguarde: "Obtener EmGuarde",
       ctaJoin: "Únete al Equipo True Legacy",
