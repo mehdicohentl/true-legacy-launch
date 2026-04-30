@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import ZoomGateway from "@/components/ZoomGateway";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
-const eventGlobal = "/photo_2026-04-15_19-48-56.jpg";
+const eventGlobal = "/event-flyer-global.png";
 const eventLatam = "/photo_2026-04-14_00-03-20.jpg";
 
 interface EventSectionProps {
