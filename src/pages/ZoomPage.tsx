@@ -18,8 +18,8 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       time: "8:00 PM EST / 5:00 PM PST"
     },
     es: {
-      link: "https://us02web.zoom.us/j/83000043957?pwd=QtD967lagWROXR8ajaMkmNhhuxM09y.1",
-      meetingId: "830 0004 3957",
+      link: "https://us06web.zoom.us/j/84852244046?pwd=Ci7k3oLkcaBa5odDvrw6O9fokzXbK8.1",
+      meetingId: "848 5224 4046",
       passcode: "Truelegacy",
       date: "Cada Martes",
       time: "8:00 PM (Hora de Bogotá) — 8 PM EST / 5 PM PST"

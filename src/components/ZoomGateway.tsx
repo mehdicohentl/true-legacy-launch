@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ZOOM_URLS = {
   en: "https://us02web.zoom.us/j/87614486219?pwd=YcmJqE7nyYnShh2jdFVz4kRdFygQpv.1",
-  es: "https://us02web.zoom.us/j/83000043957?pwd=Truelegacy",
+  es: "https://us06web.zoom.us/j/84852244046?pwd=Ci7k3oLkcaBa5odDvrw6O9fokzXbK8.1",
 };
 
 const encode = (data: Record<string, string>) =>
