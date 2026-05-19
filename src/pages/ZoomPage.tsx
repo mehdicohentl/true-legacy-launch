@@ -22,7 +22,7 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       meetingId: "848 5224 4046",
       passcode: "Truelegacy",
       date: "Cada Martes",
-      time: "8:00 PM (Hora de Bogotá) — 8 PM EST / 5 PM PST"
+      time: "8:00 PM (Hora Colombia) — 8:00 PM EST / 5:00 PM PST"
     }
   };
 

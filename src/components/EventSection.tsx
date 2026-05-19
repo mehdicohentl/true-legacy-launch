@@ -49,7 +49,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       ],
       dateLabel: "Fecha del Zoom",
       date: "Martes",
-      time: "7:00 PM (Hora Colombia) — 8:00 PM EST / 5:00 PM PST",
+      time: "8:00 PM (Hora Colombia) — 8:00 PM EST / 5:00 PM PST",
       meetingId: "848 5224 4046",
       passcode: "Truelegacy",
       hosts: "Presentado por Líderes del Equipo True Legacy",
