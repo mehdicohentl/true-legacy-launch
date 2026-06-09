@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import ZoomGateway from "@/components/ZoomGateway";
 
@@ -9,6 +10,8 @@ interface EventSectionProps {
 }
 
 const EventSection = ({ lang }: EventSectionProps) => {
+  const [activeEvent, setActiveEvent] = useState<"weekly" | "monthly">("weekly");
+
   const t = {
     en: {
       micro: "Upcoming Live Event",
@@ -66,6 +69,38 @@ const EventSection = ({ lang }: EventSectionProps) => {
 
   const c = t[lang];
 
+  const esWeeklyDesc = "Descubre cómo los biohackers en LATAM están transformando su ingreso a nivel global. Una introducción rápida al modelo de negocio de True Legacy, la oportunidad global con tecnología de punta como Kangen K8 y EmGuarde. Sin presión, solo un vistazo real a lo que es posible.";
+  const esMonthlyDesc = "Un análisis profundo de la estrategia global para emprendedores serios. Conoce a detalle la visión de expansión de True Legacy en LATAM, el plan de compensación, la estructura de liderazgo y cómo construir un legado financiero sólido.";
+
+  const esWeeklyTopics = [
+    "La tecnología de biohacking que está revolucionando el mercado",
+    "Introducción rápida al modelo de negocio y comisiones",
+    "Cómo personas sin experiencia previa están teniendo éxito",
+    "Primeros pasos para iniciar tu negocio global desde casa"
+  ];
+  const esMonthlyTopics = [
+    "Análisis detallado de la estrategia de expansión en LATAM",
+    "Plan de compensación y estructura de regalías a largo plazo",
+    "Liderazgo, mentalidad empresarial y desarrollo de equipos",
+    "Cómo construir un negocio rentable y heredable"
+  ];
+
+  const currentDesc = lang === "es" 
+    ? (activeEvent === "weekly" ? esWeeklyDesc : esMonthlyDesc)
+    : c.desc;
+
+  const currentTopics = lang === "es"
+    ? (activeEvent === "weekly" ? esWeeklyTopics : esMonthlyTopics)
+    : c.topics;
+
+  const currentImage = lang === "es"
+    ? (activeEvent === "weekly" ? "/event-flyer-latam-weekly.jpg" : "/event-flyer-latam-monthly.png")
+    : c.image;
+
+  const currentImageAlt = lang === "es"
+    ? (activeEvent === "weekly" ? "Presentación Semanal LATAM - Transforma tu Ingreso Global" : "Masterclass Mensual LATAM - La Revolución del Biohacking")
+    : c.imageAlt;
+
   return (
     <section id="event" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
       {/* Ambient effects */}
@@ -116,8 +151,8 @@ const EventSection = ({ lang }: EventSectionProps) => {
             className="flex justify-center"
           >
             <img
-              src={c.image}
-              alt={c.imageAlt}
+              src={currentImage}
+              alt={currentImageAlt}
               className="w-full max-w-md rounded-2xl shadow-deep border border-border/20"
             />
           </motion.div>
@@ -130,7 +165,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
             className="space-y-6"
           >
             <p className="font-body text-base md:text-lg text-foreground font-bold leading-[1.9]">
-              {c.desc}
+              {currentDesc}
             </p>
 
             {/* Topics */}
@@ -138,7 +173,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
               <p className="font-display font-black text-accent text-sm uppercase tracking-[0.15em]">
                 {lang === "en" ? "Topics Covered" : "Temas a Tratar"}
               </p>
-              {c.topics.map((topic, i) => (
+              {currentTopics.map((topic, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mt-0.5">
                     <svg className="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,16 +185,98 @@ const EventSection = ({ lang }: EventSectionProps) => {
               ))}
             </div>
 
-            {/* Date & time */}
-            <div className="glass-card rounded-xl p-5 border border-accent/20">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-2">{c.dateLabel}</p>
-              <p className="font-display font-black text-2xl md:text-3xl text-foreground">{c.date}</p>
-              <p className="font-body text-sm text-foreground/80 font-bold mt-1">{c.time}</p>
-              <div className="flex gap-6 mt-3 font-mono text-xs text-foreground/60">
-                <span>ID: {c.meetingId}</span>
-                <span>Pass: {c.passcode}</span>
+            {/* Date & time cards */}
+            {lang === "es" ? (
+              <div className="space-y-4">
+                <p className="font-display font-black text-accent text-sm uppercase tracking-[0.15em] mb-2">
+                  Próximos Eventos
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Card 1: Presentación Semanal */}
+                  <div 
+                    onClick={() => setActiveEvent("weekly")}
+                    className={`glass-card rounded-xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${
+                      activeEvent === "weekly" 
+                        ? "border-accent bg-accent/10 shadow-gold scale-[1.02]" 
+                        : "border-accent/20 hover:border-accent/40"
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase ${
+                          activeEvent === "weekly" ? "bg-accent text-accent-foreground" : "bg-accent/20 text-accent"
+                        }`}>
+                          Semanal
+                        </span>
+                        {activeEvent === "weekly" && (
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                        )}
+                      </div>
+                      <h4 className="font-display font-black text-lg text-foreground">
+                        Presentación Semanal
+                      </h4>
+                      <p className="font-mono text-xs text-accent mt-1">
+                        Cada Martes, 7 PM Colombia
+                      </p>
+                      <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
+                        Una introducción rápida al modelo de negocio.
+                      </p>
+                    </div>
+                    <div className="border-t border-accent/10 mt-4 pt-3 font-mono text-[11px] text-foreground/60 space-y-1">
+                      <div>ID: {c.meetingId}</div>
+                      <div>Contraseña: {c.passcode}</div>
+                    </div>
+                  </div>
+
+                  {/* Card 2: Masterclass Mensual */}
+                  <div 
+                    onClick={() => setActiveEvent("monthly")}
+                    className={`glass-card rounded-xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${
+                      activeEvent === "monthly" 
+                        ? "border-accent bg-accent/10 shadow-gold scale-[1.02]" 
+                        : "border-accent/20 hover:border-accent/40"
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase ${
+                          activeEvent === "monthly" ? "bg-accent text-accent-foreground" : "bg-accent/20 text-accent"
+                        }`}>
+                          Mensual
+                        </span>
+                        {activeEvent === "monthly" && (
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                        )}
+                      </div>
+                      <h4 className="font-display font-black text-lg text-foreground">
+                        Masterclass Mensual
+                      </h4>
+                      <p className="font-mono text-xs text-accent mt-1">
+                        Último Martes del Mes, 7 PM Colombia
+                      </p>
+                      <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
+                        Un análisis profundo de la estrategia global para emprendedores serios.
+                      </p>
+                    </div>
+                    <div className="border-t border-accent/10 mt-4 pt-3 font-mono text-[11px] text-foreground/60 space-y-1">
+                      <div>ID: {c.meetingId}</div>
+                      <div>Contraseña: {c.passcode}</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              /* Date & time */
+              <div className="glass-card rounded-xl p-5 border border-accent/20">
+                <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-2">{c.dateLabel}</p>
+                <p className="font-display font-black text-2xl md:text-3xl text-foreground">{c.date}</p>
+                <p className="font-body text-sm text-foreground/80 font-bold mt-1">{c.time}</p>
+                <div className="flex gap-6 mt-3 font-mono text-xs text-foreground/60">
+                  <span>ID: {c.meetingId}</span>
+                  <span>Pass: {c.passcode}</span>
+                </div>
+              </div>
+            )}
           </motion.div>
         </div>
 
