@@ -2,8 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ZoomGateway from "@/components/ZoomGateway";
 
-const eventGlobal = "/event-flyer-global-v2.png";
-const eventLatam = "/event-flyer-latam-v2.png";
 
 interface EventSectionProps {
   lang: "en" | "es";
@@ -27,11 +25,11 @@ const EventSection = ({ lang }: EventSectionProps) => {
       dateLabel: "Zoom Date",
       date: "Thursday",
       time: "8:00 PM EST / 5:00 PM PST",
-      meetingId: "876 1448 6219",
+      meetingId: "885 7773 4807",
       passcode: "Truelegacy",
       hosts: "Hosted by True Legacy Team Leaders",
       bottomCta: "Your legacy doesn't wait. Join us and take charge. Reserve your seat now.",
-      image: eventGlobal,
+      image: "/event-flyer-global-weekly.jpg",
       imageAlt: "True Legacy Team Leaders Kangen K8 EmGuarde global wellness movement biohacking truelegacyworld.com",
       ctaKangen: "Order Kangen K8",
       ctaEmguarde: "Get EmGuarde Protection",
@@ -57,7 +55,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
       passcode: "Truelegacy",
       hosts: "Presentado por Líderes del Equipo True Legacy",
       bottomCta: "Tu legado no espera. Únete y toma el control. Reserva tu lugar ahora.",
-      image: eventLatam,
+      image: "/event-flyer-latam-weekly.jpg",
       imageAlt: "La Revolución del Biohacking LATAM Kangen K8 EmGuarde Mehdi Cohen Magaly Cardona",
       ctaKangen: "Obtener Máquina Kangen (EE. UU., Australia, Dubai, etc.)",
       ctaEmguarde: "Obtener EmGuarde",
@@ -85,21 +83,37 @@ const EventSection = ({ lang }: EventSectionProps) => {
     "Cómo construir un negocio rentable y heredable"
   ];
 
+  const enWeeklyDesc = "Unlock $5K–$10K monthly potential across 29 countries with 44 locations — all tied to the global opportunity. A quick intro to the smarter business model revealing the biohacking products and team-based model. No experience needed. No pressure.";
+  const enMonthlyDesc = "A deep-dive session for serious entrepreneurs building global income. Learn the advanced scaling strategies, long-term compensation structure, and leadership blueprint to build, automate, and multiply your income globally.";
+
+  const enWeeklyTopics = [
+    "Biohacking technology the marketplace is craving",
+    "How real people are earning $5K–$10K per month",
+    "Escape the 9 to 5 rat race",
+    "A global vision to expand and build beyond borders"
+  ];
+  const enMonthlyTopics = [
+    "Advanced strategies to build, automate, and multiply income",
+    "Deep-dive into the global compensation plan",
+    "Leadership mastery and team building",
+    "Unlocking real, global income across borders"
+  ];
+
   const currentDesc = lang === "es" 
     ? (activeEvent === "weekly" ? esWeeklyDesc : esMonthlyDesc)
-    : c.desc;
+    : (activeEvent === "weekly" ? enWeeklyDesc : enMonthlyDesc);
 
   const currentTopics = lang === "es"
     ? (activeEvent === "weekly" ? esWeeklyTopics : esMonthlyTopics)
-    : c.topics;
+    : (activeEvent === "weekly" ? enWeeklyTopics : enMonthlyTopics);
 
   const currentImage = lang === "es"
     ? (activeEvent === "weekly" ? "/event-flyer-latam-weekly.jpg" : "/event-flyer-latam-monthly.png")
-    : c.image;
+    : (activeEvent === "weekly" ? "/event-flyer-global-weekly.jpg" : "/event-flyer-global-monthly.jpg");
 
   const currentImageAlt = lang === "es"
     ? (activeEvent === "weekly" ? "Presentación Semanal LATAM - Transforma tu Ingreso Global" : "Masterclass Mensual LATAM - La Revolución del Biohacking")
-    : c.imageAlt;
+    : (activeEvent === "weekly" ? "Weekly Presentation - The Model Most Network Marketers Haven't Seen Yet" : "Monthly Masterclass - Unlock The Global Blueprint");
 
   return (
     <section id="event" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
@@ -186,97 +200,88 @@ const EventSection = ({ lang }: EventSectionProps) => {
             </div>
 
             {/* Date & time cards */}
-            {lang === "es" ? (
-              <div className="space-y-4">
-                <p className="font-display font-black text-accent text-sm uppercase tracking-[0.15em] mb-2">
-                  Próximos Eventos
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Card 1: Presentación Semanal */}
-                  <div 
-                    onClick={() => setActiveEvent("weekly")}
-                    className={`glass-card rounded-xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${
-                      activeEvent === "weekly" 
-                        ? "border-accent bg-accent/10 shadow-gold scale-[1.02]" 
-                        : "border-accent/20 hover:border-accent/40"
-                    }`}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase ${
-                          activeEvent === "weekly" ? "bg-accent text-accent-foreground" : "bg-accent/20 text-accent"
-                        }`}>
-                          Semanal
-                        </span>
-                        {activeEvent === "weekly" && (
-                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                        )}
-                      </div>
-                      <h4 className="font-display font-black text-lg text-foreground">
-                        Presentación Semanal
-                      </h4>
-                      <p className="font-mono text-xs text-accent mt-1">
-                        Cada Martes, 7 PM Colombia
-                      </p>
-                      <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
-                        Una introducción rápida al modelo de negocio.
-                      </p>
+            <div className="space-y-4">
+              <p className="font-display font-black text-accent text-sm uppercase tracking-[0.15em] mb-2">
+                {lang === "en" ? "Upcoming Events" : "Próximos Eventos"}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Card 1: Weekly Presentation */}
+                <div 
+                  onClick={() => setActiveEvent("weekly")}
+                  className={`glass-card rounded-xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${
+                    activeEvent === "weekly" 
+                      ? "border-accent bg-accent/10 shadow-gold scale-[1.02]" 
+                      : "border-accent/20 hover:border-accent/40"
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase ${
+                        activeEvent === "weekly" ? "bg-accent text-accent-foreground" : "bg-accent/20 text-accent"
+                      }`}>
+                        {lang === "en" ? "Weekly" : "Semanal"}
+                      </span>
+                      {activeEvent === "weekly" && (
+                        <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                      )}
                     </div>
-                    <div className="border-t border-accent/10 mt-4 pt-3 font-mono text-[11px] text-foreground/60 space-y-1">
-                      <div>ID: {c.meetingId}</div>
-                      <div>Contraseña: {c.passcode}</div>
-                    </div>
+                    <h4 className="font-display font-black text-lg text-foreground">
+                      {lang === "en" ? "Weekly Presentation" : "Presentación Semanal"}
+                    </h4>
+                    <p className="font-mono text-xs text-accent mt-1">
+                      {lang === "en" ? "Every Thursday, 8 PM Eastern (5 PM PST)" : "Cada Martes, 7 PM Colombia"}
+                    </p>
+                    <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
+                      {lang === "en" 
+                        ? "A quick intro to the smarter business model." 
+                        : "Una introducción rápida al modelo de negocio."}
+                    </p>
                   </div>
+                  <div className="border-t border-accent/10 mt-4 pt-3 font-mono text-[11px] text-foreground/60 space-y-1">
+                    <div>ID: {c.meetingId}</div>
+                    <div>{lang === "en" ? "Passcode" : "Contraseña"}: {c.passcode}</div>
+                  </div>
+                </div>
 
-                  {/* Card 2: Masterclass Mensual */}
-                  <div 
-                    onClick={() => setActiveEvent("monthly")}
-                    className={`glass-card rounded-xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${
-                      activeEvent === "monthly" 
-                        ? "border-accent bg-accent/10 shadow-gold scale-[1.02]" 
-                        : "border-accent/20 hover:border-accent/40"
-                    }`}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase ${
-                          activeEvent === "monthly" ? "bg-accent text-accent-foreground" : "bg-accent/20 text-accent"
-                        }`}>
-                          Mensual
-                        </span>
-                        {activeEvent === "monthly" && (
-                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                        )}
-                      </div>
-                      <h4 className="font-display font-black text-lg text-foreground">
-                        Masterclass Mensual
-                      </h4>
-                      <p className="font-mono text-xs text-accent mt-1">
-                        Último Martes del Mes, 7 PM Colombia
-                      </p>
-                      <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
-                        Un análisis profundo de la estrategia global para emprendedores serios.
-                      </p>
+                {/* Card 2: Monthly Masterclass */}
+                <div 
+                  onClick={() => setActiveEvent("monthly")}
+                  className={`glass-card rounded-xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${
+                    activeEvent === "monthly" 
+                      ? "border-accent bg-accent/10 shadow-gold scale-[1.02]" 
+                      : "border-accent/20 hover:border-accent/40"
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase ${
+                        activeEvent === "monthly" ? "bg-accent text-accent-foreground" : "bg-accent/20 text-accent"
+                      }`}>
+                        {lang === "en" ? "Monthly" : "Mensual"}
+                      </span>
+                      {activeEvent === "monthly" && (
+                        <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                      )}
                     </div>
-                    <div className="border-t border-accent/10 mt-4 pt-3 font-mono text-[11px] text-foreground/60 space-y-1">
-                      <div>ID: {c.meetingId}</div>
-                      <div>Contraseña: {c.passcode}</div>
-                    </div>
+                    <h4 className="font-display font-black text-lg text-foreground">
+                      {lang === "en" ? "Monthly Masterclass" : "Masterclass Mensual"}
+                    </h4>
+                    <p className="font-mono text-xs text-accent mt-1">
+                      {lang === "en" ? "Last Thursday, 8 PM Eastern (5 PM PST)" : "Último Martes del Mes, 7 PM Colombia"}
+                    </p>
+                    <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
+                      {lang === "en"
+                        ? "A deep-dive session for serious entrepreneurs building global income."
+                        : "Un análisis profundo de la estrategia global para emprendedores serios."}
+                    </p>
+                  </div>
+                  <div className="border-t border-accent/10 mt-4 pt-3 font-mono text-[11px] text-foreground/60 space-y-1">
+                    <div>ID: {c.meetingId}</div>
+                    <div>{lang === "en" ? "Passcode" : "Contraseña"}: {c.passcode}</div>
                   </div>
                 </div>
               </div>
-            ) : (
-              /* Date & time */
-              <div className="glass-card rounded-xl p-5 border border-accent/20">
-                <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-2">{c.dateLabel}</p>
-                <p className="font-display font-black text-2xl md:text-3xl text-foreground">{c.date}</p>
-                <p className="font-body text-sm text-foreground/80 font-bold mt-1">{c.time}</p>
-                <div className="flex gap-6 mt-3 font-mono text-xs text-foreground/60">
-                  <span>ID: {c.meetingId}</span>
-                  <span>Pass: {c.passcode}</span>
-                </div>
-              </div>
-            )}
+            </div>
           </motion.div>
         </div>
 

@@ -11,8 +11,8 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
   /* ── Easy-to-update zoom details ── */
   const zoom = {
     en: {
-      link: "https://us02web.zoom.us/j/87614486219?pwd=YcmJqE7nyYnShh2jdFVz4kRdFygQpv.1",
-      meetingId: "876 1448 6219",
+      link: "https://us06web.zoom.us/j/88577734807?pwd=C02Pr5lK6HEYyXsXiBo1wqAS7ZcVLV.1",
+      meetingId: "885 7773 4807",
       passcode: "Truelegacy",
       date: "Every Thursday",
       time: "8:00 PM EST / 5:00 PM PST"
