@@ -14,6 +14,7 @@ import imgWagyu from "@/assets/product-wagyu-real.png";
 import imgKangenAir from "@/assets/kangen-air.png";
 import imgUkon from "@/assets/product-ukon-real.png";
 import imgEmgo from "@/assets/product-emgo.png";
+import imgKangenBeaute from "@/assets/product-kangen-beaute.png";
 
 interface ProductsPageProps {
   lang: "en" | "es";
@@ -31,7 +32,7 @@ interface Product {
   image2?: string;
   href?: string;
   featured?: boolean;
-  type?: "emguarde" | "kangenair" | "standard" | "duo" | "emgo";
+  type?: "emguarde" | "kangenair" | "standard" | "duo" | "emgo" | "kangenbeaute";
   enOnly?: boolean;
 }
 
@@ -146,6 +147,16 @@ const products: Product[] = [
     type: "emgo",
     enOnly: true,
   },
+  {
+    id: "kangen-beaute",
+    nameEn: "Kangen Beauté®",
+    nameEs: "Kangen Beauté®",
+    descEn: "Luxury 3-step skincare ritual combining Kangen Water and organic botanical extracts to hydrate, smooth, and restore your skin's natural balance.",
+    descEs: "Ritual de cuidado facial de lujo en 3 pasos que combina Agua Kangen y extractos botánicos orgánicos para hidratar, suavizar y restaurar el equilibrio natural de tu piel.",
+    image: imgKangenBeaute,
+    href: "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=2054",
+    type: "kangenbeaute",
+  },
 ];
 
 const ProductsPage = ({ lang }: ProductsPageProps) => {
@@ -193,6 +204,9 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       ],
       kangenAirNote: "Private import from Singapore. Custom duties/taxes covered by customer.",
       newLabel: "NEW",
+      beauteBuyNow: "Buy Now",
+      beauteLearnMore: "Learn More",
+      beauteNote: "Currently available in the USA only.",
     },
     es: {
       micro: "Productos Oficiales Enagic® — Mehdi Cohen True Legacy",
@@ -221,6 +235,9 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       ],
       kangenAirNote: "Importación privada desde Singapur. Impuestos/aranceles a cargo del cliente.",
       newLabel: "NUEVO",
+      beauteBuyNow: "Comprar Ahora",
+      beauteLearnMore: "Saber Más",
+      beauteNote: "Actualmente disponible únicamente en Estados Unidos.",
     },
   };
 
@@ -438,6 +455,48 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
                 {c.contactWhatsApp}
               </motion.a>
+            </div>
+          )}
+
+          {product.type === "kangenbeaute" && product.href && (
+            <div className="flex flex-col gap-2 mt-auto pt-4">
+              <motion.a
+                href={product.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                </svg>
+                {c.beauteBuyNow}
+              </motion.a>
+              <motion.a
+                href="https://www.enagic.com/en_US/product-kangen-beaute"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+              >
+                {c.beauteLearnMore}
+              </motion.a>
+              <motion.a
+                href={contactLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl font-body font-black text-xs uppercase tracking-[0.12em] border border-[#25D366]/30 text-[#25D366]/70 hover:text-[#25D366] hover:border-[#25D366]/50 transition-colors"
+              >
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
+                {c.contactWhatsApp}
+              </motion.a>
+              <p className="text-center text-[11px] font-bold font-body text-foreground/40 mt-1">
+                {c.beauteNote}
+              </p>
             </div>
           )}
         </div>
