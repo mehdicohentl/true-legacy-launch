@@ -140,12 +140,11 @@ const products: Product[] = [
   {
     id: "emgo",
     nameEn: "emGo",
-    nameEs: "",
+    nameEs: "emGo",
     descEn: "emGuarde 2.0 (Coming soon to the U.S. market)",
-    descEs: "",
+    descEs: "emGuarde 2.0 (Próximamente en el mercado de EE. UU.)",
     image: imgEmgo,
     type: "emgo",
-    enOnly: true,
   },
   {
     id: "kangen-beaute",
@@ -275,8 +274,34 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
         </div>
 
         <div className="p-4 md:p-5 flex flex-col flex-1">
+          {product.id === "emgo" && (
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider bg-accent/10 border border-accent/30 text-accent mb-2.5 w-fit">
+              {lang === "en" ? "🔥 New Product Launch — July 1, 2026" : "🚀 Lanzamiento 1 de Julio de 2026"}
+            </div>
+          )}
+          {product.id === "emguarde" && (
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider bg-emguarde/10 border border-emguarde/30 text-emguarde mb-2.5 w-fit">
+              {lang === "en" ? "🔥 Limited Stock — Order While Supplies Last" : "🔥 Stock Limitado Disponible"}
+            </div>
+          )}
           <h3 className="font-display font-black text-sm md:text-lg text-foreground mb-1.5 leading-snug">{name}</h3>
-          <p className="font-body text-xs md:text-sm text-foreground/60 font-bold leading-relaxed mb-4">{desc}</p>
+          <p className="font-body text-xs md:text-sm text-foreground/60 font-bold leading-relaxed mb-4">
+            {desc}
+            {product.id === "emgo" && (
+              <span className="block font-body text-[11px] md:text-xs text-foreground/45 font-bold italic mt-2.5">
+                {lang === "en" 
+                  ? "Be among the first to experience emGo. Available starting July 1, 2026." 
+                  : "Sé de los primeros en conocer emGo. Disponible a partir del 1 de julio de 2026."}
+              </span>
+            )}
+            {product.id === "emguarde" && (
+              <span className="block font-body text-[11px] md:text-xs text-foreground/45 font-bold italic mt-2.5">
+                {lang === "en" 
+                  ? "Demand continues to grow. Limited inventory currently available." 
+                  : "La demanda continúa creciendo. Inventario limitado disponible actualmente."}
+              </span>
+            )}
+          </p>
 
           {product.type === "duo" && (
             <div className="flex flex-col gap-2 mt-auto pt-4">
