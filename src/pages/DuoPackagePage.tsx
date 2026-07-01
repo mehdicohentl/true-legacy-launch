@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import { duoIconMap } from "@/components/Icons";
 import Footer from "@/components/Footer";
 import imgK8 from "@/assets/product-k8-real.png";
-import emguardeDevice from "@/assets/emguarde-device.png";
+import imgEmgo from "@/assets/product-emgo.png";
 import { setPageMeta } from "@/lib/seo";
 
 interface DuoPackagePageProps {
@@ -23,21 +23,21 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
   useEffect(() => {
     setPageMeta(
       lang === "en"
-        ? "Kangen K8 + EmGuarde Duo Package | Double Commission | Mehdi Cohen True Legacy"
-        : "Paquete Duo Kangen K8 + EmGuarde | Doble Comisión | Mehdi Cohen True Legacy",
+        ? "Leveluk K8 + emGo DUO Package | Double Commission | Mehdi Cohen True Legacy"
+        : "Paquete DUO Leveluk K8 + emGo | Doble Comisión | Mehdi Cohen True Legacy",
       lang === "en"
-        ? "The ultimate wellness combo: Leveluk K8 Kangen Water machine + EmGuarde EMF protection. Two products, two commission points. Join Mehdi Cohen's True Legacy team worldwide."
-        : "El combo de bienestar definitivo: Máquina de Agua Kangen Leveluk K8 + protección EMF EmGuarde. Dos productos, dos puntos de comisión. Únete al equipo global True Legacy de Mehdi Cohen."
+        ? "The ultimate wellness combo: Leveluk K8 Kangen Water machine + emGo EMF protection. Two products, two commission points. Join Mehdi Cohen's True Legacy team worldwide."
+        : "El combo de bienestar definitivo: Máquina de Agua Kangen Leveluk K8 + protección EMF emGo. Dos productos, dos puntos de comisión. Únete al equipo global True Legacy de Mehdi Cohen."
     );
   }, [lang]);
 
   const t = {
     en: {
       micro: "The Ultimate Biohacking Bundle",
-      headline: "K8 + EmGuarde",
-      headline2: "The Power Duo Package",
+      headline: "Leveluk K8 + emGo",
+      headline2: "DUO Package",
       subhead:
-        "Transform your health and income with the most powerful pairing in the Enagic ecosystem — the Leveluk K8 Kangen Water machine and the EmGuarde EMF protection device.",
+        "Transform your health and income with the most powerful pairing in the Enagic ecosystem — the Leveluk K8 Kangen Water machine and the brand new emGo EMF protection device.",
       whyTitle: "Why the Duo Package?",
       whyItems: [
         {
@@ -47,7 +47,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         },
         {
           icon: "shield",
-          title: "EmGuarde EMF Protection",
+          title: "emGo EMF Protection",
           desc: "Enagic's cutting-edge wearable device reducing the harmful effects of electromagnetic frequencies from phones, laptops, and Wi-Fi — your invisible shield.",
         },
         {
@@ -58,7 +58,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         {
           icon: "globe",
           title: "Global Business",
-          desc: "Market both products to a worldwide audience — K8 ships to 190+ countries. EmGuarde is available in USA, Canada, and Mexico via private import from Malaysia.",
+          desc: "Market both products to a worldwide audience — K8 ships to 190+ countries. emGo information and pre-orders are available globally.",
         },
       ],
       k8Title: "Step 1 — Order Your Kangen K8",
@@ -76,21 +76,21 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         "Lifetime machine support",
         "Full commission in Enagic system",
       ],
-      emguardeTitle: "Step 2 — Order Your EmGuarde",
+      emguardeTitle: "Step 2 — Order Your emGuarde GO (set of 2)",
       emguardeDesc:
-        "EmGuarde is Enagic's newest innovation — a wearable EMF protection device. Available in the U.S., Canada, and Mexico as a private import from Malaysia.",
-      emguardePrice: "$1,520 USD",
-      emguardePriceLocal: "(+ ~$160 USD shipping)",
+        "The emGuarde GO comes as a set of two compact devices for portable EMF support. Each covers about 10 feet in diameter, helping create a more balanced environment. Rechargeable 5,000 mAh battery with convenient USB-C charging. Please note that there is no financing option through Enagic.",
+      emguardePrice: "$2,880.00 USD",
+      emguardePriceLocal: "(plus shipping)",
       emguardeDistId: "Distributor ID: 37000004828",
       emguardeBenefits: [
-        "Private import from Malaysia via Enagic",
-        "Available: USA, Canada, Mexico",
-        "10–14 day delivery",
-        "1 year warranty",
-        "5-unit purchase limit",
-        "$80 commission per point",
+        "Set of 2 portable devices",
+        "10-foot protection diameter per device",
+        "Rechargeable 5,000 mAh battery",
+        "USB-C charging support",
+        "Full commission points in the Enagic system",
+        "No financing option through Enagic",
       ],
-      emguardeCta: "Full EmGuarde Purchase Instructions",
+      emguardeCta: "Order emGuarde GO Now",
       emguardeWa: "Contact Us",
       ctaTitle: "Ready to Start Your Duo Journey?",
       ctaDesc:
@@ -100,10 +100,10 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
     },
     es: {
       micro: "El Paquete Definitivo de Biohacking",
-      headline: "K8 + EmGuarde",
-      headline2: "El Paquete Duo de Poder",
+      headline: "Leveluk K8 + emGo",
+      headline2: "Paquete DUO",
       subhead:
-        "Transforma tu salud y tus ingresos con la combinación más poderosa del ecosistema Enagic — la máquina de Agua Kangen Leveluk K8 y el dispositivo de protección EMF EmGuarde.",
+        "Transforma tu salud y tus ingresos con la combinación más poderosa del ecosistema Enagic — la máquina de Agua Kangen Leveluk K8 y el dispositivo de protección EMF emGo.",
       whyTitle: "¿Por Qué el Paquete Duo?",
       whyItems: [
         {
@@ -113,7 +113,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         },
         {
           icon: "shield",
-          title: "Protección EMF EmGuarde",
+          title: "Protección EMF emGo",
           desc: "El dispositivo wearable de vanguardia de Enagic que reduce los efectos dañinos de las frecuencias electromagnéticas de teléfonos, laptops y Wi-Fi — tu escudo invisible.",
         },
         {
@@ -124,7 +124,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         {
           icon: "globe",
           title: "Negocio Global",
-          desc: "Comercializa ambos productos a una audiencia mundial — el K8 se envía a más de 190 países. EmGuarde está disponible en EE.UU., Canadá y México mediante importación privada desde Malasia.",
+          desc: "Comercializa ambos productos a una audiencia mundial — el K8 se envía a más de 190 países. La información y pre-órdenes de emGo están disponibles a nivel global.",
         },
       ],
       k8Title: "Paso 1 — Ordena Tu Kangen K8",
@@ -142,21 +142,21 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         "Soporte vitalicio de la máquina",
         "Comisión completa en el sistema Enagic",
       ],
-      emguardeTitle: "Paso 2 — Ordena Tu EmGuarde",
+      emguardeTitle: "Paso 2 — Ordena Tu emGuarde GO (set de 2)",
       emguardeDesc:
-        "EmGuarde es la innovación más reciente de Enagic — un dispositivo de protección EMF wearable. Disponible en EE.UU., Canadá y México como importación privada desde Malasia.",
-      emguardePrice: "$1,520 USD",
-      emguardePriceLocal: "(+ ~$160 USD envío)",
+        "El emGuarde GO viene en un juego de dos dispositivos compactos para protección EMF portátil. Cada uno cubre aproximadamente 10 pies de diámetro, ayudando a crear un ambiente más equilibrado. Batería recargable de 5,000 mAh con práctica carga USB-C. Tenga en cuenta que no hay opción de financiamiento a través de Enagic.",
+      emguardePrice: "$2,880.00 USD",
+      emguardePriceLocal: "(más envío)",
       emguardeDistId: "ID de Distribuidor: 37000004828",
       emguardeBenefits: [
-        "Importación privada desde Malasia vía Enagic",
-        "Disponible: EE.UU., Canadá, México",
-        "Entrega en 10–14 días",
-        "Garantía de 1 año",
-        "Límite de 5 unidades",
-        "$80 USD de comisión por punto",
+        "Juego de 2 dispositivos portátiles",
+        "Diámetro de protección de 10 pies por dispositivo",
+        "Batería recargable de 5,000 mAh",
+        "Carga rápida por USB-C",
+        "Puntos de comisión completos en el sistema Enagic",
+        "Sin opción de financiamiento a través de Enagic",
       ],
-      emguardeCta: "Instrucciones Completas para Comprar EmGuarde",
+      emguardeCta: "Ordenar emGuarde GO Ahora",
       emguardeWa: "Contáctanos",
       ctaTitle: "¿Listo para Comenzar Tu Camino Duo?",
       ctaDesc:
@@ -233,12 +233,12 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
             <div className="relative flex flex-col items-center">
               <div className="absolute -inset-4 bg-emguarde/8 rounded-2xl blur-3xl" />
               <img
-                src={emguardeDevice}
-                alt="EmGuarde device duo package mehdicohen.com"
-                className="relative w-28 md:w-40 lg:w-52 drop-shadow-2xl"
+                src={imgEmgo}
+                alt="emGo device duo package mehdicohen.com"
+                className="relative w-36 md:w-52 lg:w-64 drop-shadow-2xl"
               />
-              <span className="mt-3 font-mono text-xs uppercase tracking-[0.2em] text-emguarde font-bold">
-                EmGuarde
+              <span className="mt-3 font-mono text-xs uppercase tracking-[0.2em] text-accent font-bold">
+                EmGuarde GO
               </span>
             </div>
           </motion.div>
@@ -264,7 +264,9 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
               {c.k8Cta}
             </motion.a>
             <motion.a
-              href={emguardeRoute}
+              href={`${enagicBase}&product_id=9026`}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] border-2 border-emguarde text-emguarde hover:bg-emguarde/10 transition-colors"
@@ -442,14 +444,16 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.a
-                  href={emguardeRoute}
+                  href={`${enagicBase}&product_id=9026`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, y: -3 }}
                   whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
                   style={{ boxShadow: "var(--shadow-emguarde)" }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
                   </svg>
                   {c.emguardeCta}
                 </motion.a>
@@ -475,9 +479,9 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
             >
               <div className="absolute -inset-6 bg-emguarde/6 rounded-3xl blur-3xl" />
               <img
-                src={emguardeDevice}
-                alt="EmGuarde EMF protection device duo package mehdicohen.com"
-                className="relative w-full max-w-xs drop-shadow-2xl"
+                src={imgEmgo}
+                alt="emGo EMF protection device duo package mehdicohen.com"
+                className="relative w-full max-w-sm drop-shadow-2xl"
               />
             </motion.div>
           </div>
