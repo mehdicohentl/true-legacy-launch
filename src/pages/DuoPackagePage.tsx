@@ -417,7 +417,20 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
                 {lang === "en" ? "Step 2 of 2" : "Paso 2 de 2"}
               </p>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-black text-foreground mb-4">
-                {c.emguardeTitle}
+                {(() => {
+                  const match = c.emguardeTitle.match(/(.*)(\((?:set of|set de) \d+\))/i);
+                  if (match) {
+                    return (
+                      <>
+                        {match[1]}
+                        <span className="text-lg md:text-2xl lg:text-3xl font-bold text-foreground/50 block sm:inline sm:ml-2">
+                          {match[2]}
+                        </span>
+                      </>
+                    );
+                  }
+                  return c.emguardeTitle;
+                })()}
               </h2>
               <p className="font-body text-base md:text-lg text-foreground/70 font-bold leading-relaxed mb-6">
                 {c.emguardeDesc}
