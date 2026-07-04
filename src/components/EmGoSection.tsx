@@ -152,9 +152,9 @@ const EmGoSection = ({ lang }: EmGoSectionProps) => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -3 }}
                 whileTap={{ scale: 0.97 }}
-                className="cta-shimmer inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground w-full sm:flex-1 text-center"
+                className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground w-full sm:flex-1 text-center"
                 style={{ boxShadow: "var(--shadow-emguarde)" }}>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
                 </svg>
                 {c.ctaBuy}
@@ -166,8 +166,8 @@ const EmGoSection = ({ lang }: EmGoSectionProps) => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -3 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors w-full sm:w-auto">
-                <MessageCircle size={18} />
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-xl font-body font-black text-xs md:text-sm uppercase tracking-[0.1em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors w-full sm:w-auto">
+                <MessageCircle size={20} />
                 {c.ctaWa}
               </motion.a>
             </div>
