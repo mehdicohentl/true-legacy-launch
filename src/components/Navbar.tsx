@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import combinedLogo from "@/assets/combined-logo.png";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavbarProps {
   lang: "en" | "es";
@@ -9,6 +9,15 @@ interface NavbarProps {
 
 const Navbar = ({ lang }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (to?: string) => {
+    if (!to) return false;
+    if (to === "/global" || to === "/latam") {
+      return location.pathname === to || location.pathname === `${to}/`;
+    }
+    return location.pathname.startsWith(to);
+  };
 
   const homeLink = lang === "en" ? "/global" : "/latam";
   const eventLink = lang === "en" ? "/global/events" : "/latam/events";
@@ -99,17 +108,19 @@ const Navbar = ({ lang }: NavbarProps) => {
               <Link
                 key={link.to}
                 to={link.to!}
-                className={`text-xs font-mono font-bold transition-colors uppercase tracking-[0.15em] ${
-                  link.accent
+                className={`text-xs font-mono font-bold transition-colors uppercase tracking-[0.15em] relative group ${
+                  isActive(link.to)
+                    ? "text-accent"
+                    : link.accent
                     ? "text-accent border border-accent/50 px-3 py-1 rounded-none hover:bg-accent/10"
-                    : link.highlight
-                    ? "text-accent/90 hover:text-accent"
                     : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {link.label}
                 {!link.accent && (
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
+                  <span className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
+                    isActive(link.to) ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
                 )}
               </Link>
             )
@@ -186,10 +197,10 @@ const Navbar = ({ lang }: NavbarProps) => {
                 to={link.to!}
                 onClick={() => setMenuOpen(false)}
                 className={`block w-full text-left text-sm font-body font-bold transition-colors uppercase tracking-[0.1em] py-2.5 border-b border-border/20 last:border-0 ${
-                  link.accent
+                  isActive(link.to)
+                    ? "text-accent font-extrabold"
+                    : link.accent
                     ? "text-accent hover:text-accent/80"
-                    : link.highlight
-                    ? "text-accent/90 hover:text-accent"
                     : "text-foreground/80 hover:text-foreground"
                 }`}
               >

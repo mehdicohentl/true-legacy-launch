@@ -291,7 +291,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
           >
             <div className="aspect-video rounded-2xl overflow-hidden border border-accent/20 shadow-2xl">
               <iframe
-                src={`https://www.youtube.com/embed/${isLatam ? "tctiae20KRs" : "R-BxQqjmjIo"}?rel=0`}
+                src={`https://www.youtube.com/embed/${isLatam ? "tctiae20KRs" : "9eKelJoT4vE"}?rel=0`}
                 title={isLatam ? "Duo Package LATAM" : "Duo Package Global"}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
