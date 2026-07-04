@@ -18,8 +18,8 @@ const EmGoSection = ({ lang }: EmGoSectionProps) => {
       micro: "Portable EMF Protection",
       headline: "emGuarde GO:",
       headline2: "Your On-The-Go Shield.",
-      badge: "Content coming soon",
-      desc: "Introducing Enagic's latest breakthrough: emGuarde GO (set of 2). Powerful, portable, and designed for your active life. Keep yourself and your family shielded from electromagnetic frequencies (EMF) from mobile phones, laptops, and 5G signals wherever you go.",
+      badge: "Content coming soon — USA Only",
+      desc: "Introducing Enagic's latest breakthrough: emGuarde GO (set of 2). Powerful, portable, and designed for your active life. Keep yourself and your family shielded from electromagnetic frequencies (EMF) from mobile phones, laptops, and 5G signals wherever you go. Available in USA only.",
       features: [
         { title: "Set of 2 Devices", desc: "Keep one on you and share the other, or double up on protection" },
         { title: "10-Foot Diameter", desc: "Creates a spherical personal protection shield around you" },
@@ -34,8 +34,8 @@ const EmGoSection = ({ lang }: EmGoSectionProps) => {
       micro: "Protección EMF Portátil",
       headline: "emGuarde GO:",
       headline2: "Tu Escudo en Movimiento.",
-      badge: "Contenido próximamente",
-      desc: "Presentamos el último avance de Enagic: emGuarde GO (set de 2). Potente, portátil y diseñado para tu vida activa. Mantén a ti y a tu familia protegidos de las frecuencias electromagnéticas (EMF) de teléfonos móviles, laptops y señales 5G donde quiera que vayas.",
+      badge: "Contenido próximamente — Solo EE.UU.",
+      desc: "Presentamos el último avance de Enagic: emGuarde GO (set de 2). Potente, portátil y diseñado para tu vida activa. Mantén a ti y a tu familia protegidos de las frecuencias electromagnéticas (EMF) de teléfonos móviles, laptops y señales 5G donde quiera que vayas. Disponible solo en EE.UU.",
       features: [
         { title: "Juego de 2 Dispositivos", desc: "Lleva uno contigo y comparte el otro, o duplica tu protección" },
         { title: "Diámetro de 10 Pies", desc: "Crea un escudo de protección personal esférico a tu alrededor" },
