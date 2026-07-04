@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import imgK8 from "@/assets/product-k8-real.png";
-import emguardeDevice from "@/assets/emguarde-device.png";
+import imgEmgo from "@/assets/product-emgo.png";
 
 interface DuoPackageSectionProps {
   lang: "en" | "es";
@@ -13,40 +13,39 @@ const enagicBase =
 const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
   const isLatam = lang === "es";
   const whatsapp = isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
-  const emguardeRoute = isLatam ? "/latam/emguarde" : "/global/emguarde";
 
   const t = {
     en: {
       micro: "Limited Availability — Act Now",
       badge: "NEW DUO PACKAGE",
-      headline: "K8 + EmGuarde.",
+      headline: "K8 + emGuarde GO.",
       headline2: "The Power Combo.",
       desc: "The two most powerful Enagic products — combined for your health and income revolution.",
       step1label: "Step 1 • Flagship Machine",
       step1name: "Leveluk K8",
       step1desc: "8-plate platinum titanium ionizer. Medical-grade hydrogen-rich water. Trusted in hospitals for 51+ years. Ships to 190+ countries.",
       step2label: "Step 2 • EMF Protection",
-      step2name: "EmGuarde",
-      step2desc: "Wearable EMF protection. Available USA, Canada & Mexico. $1,520 USD + ~$160 shipping. 10–14 day delivery from Malaysia.",
+      step2name: "emGuarde GO (set of 2)",
+      step2desc: "Set of 2 portable devices for personal EMF support. Covers 10-foot diameter per device. Rechargeable battery with USB-C charging.",
       ctaK8: "Order Kangen K8",
-      ctaEmguarde: "Get EmGuarde Info",
+      ctaEmguarde: "Order emGuarde GO",
       ctaWa: "WhatsApp Us",
       commissionNote: "2 commission points — earn independently on both products in the 8-point system.",
     },
     es: {
       micro: "Disponibilidad Limitada — Actúa Ahora",
       badge: "NUEVO PAQUETE DUO",
-      headline: "K8 + EmGuarde.",
+      headline: "K8 + emGuarde GO.",
       headline2: "La Combinación Poderosa.",
       desc: "Los dos productos más poderosos de Enagic — combinados para tu revolución de salud e ingresos.",
       step1label: "Paso 1 • Máquina Insignia",
       step1name: "Leveluk K8",
       step1desc: "Ionizador de titanio platinado de 8 placas. Agua rica en hidrógeno de grado médico. Confiado en hospitales durante más de 51 años. Envío a más de 190 países.",
       step2label: "Paso 2 • Protección EMF",
-      step2name: "EmGuarde",
-      step2desc: "Protección EMF wearable. Disponible EE.UU., Canadá y México. $1,520 USD + ~$160 envío. Entrega en 10–14 días desde Malasia.",
+      step2name: "emGuarde GO (set de 2)",
+      step2desc: "Juego de 2 dispositivos portátiles para protección EMF personal. Cobertura de 10 pies de diámetro por dispositivo. Batería recargable con carga USB-C.",
       ctaK8: "Ordenar Kangen K8",
-      ctaEmguarde: "Información de EmGuarde",
+      ctaEmguarde: "Ordenar emGuarde GO",
       ctaWa: "WhatsApp",
       commissionNote: "2 puntos de comisión — gana independientemente por ambos productos en el sistema de 8 puntos.",
     },
@@ -151,7 +150,7 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
             </div>
           </motion.div>
 
-          {/* EmGuarde card */}
+          {/* emGuarde GO card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -161,8 +160,8 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
           >
             <div className="bg-gradient-to-br from-emguarde/10 to-transparent p-8 flex items-center justify-center h-52">
               <img
-                src={emguardeDevice}
-                alt="EmGuarde EMF device duo package mehdicohen.com"
+                src={imgEmgo}
+                alt="emGuarde GO EMF device duo package mehdicohen.com"
                 className="h-full w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -176,12 +175,17 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <motion.a
-                  href={emguardeRoute}
+                  href={`${enagicBase}&product_id=9026`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center justify-center gap-2 flex-1 px-5 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
                   style={{ boxShadow: "var(--shadow-emguarde)" }}
                 >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                  </svg>
                   {c.ctaEmguarde}
                 </motion.a>
                 <motion.a
