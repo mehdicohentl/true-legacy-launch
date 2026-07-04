@@ -173,33 +173,20 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
               <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed mb-5 flex-1">
                 {c.step2desc}
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <motion.a
-                  href={`${enagicBase}&product_id=9026`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center gap-2 flex-1 px-5 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground"
-                  style={{ boxShadow: "var(--shadow-emguarde)" }}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-                  </svg>
-                  {c.ctaEmguarde}
-                </motion.a>
-                <motion.a
-                  href={whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.1em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors"
-                >
-                  <MessageCircle size={16} />
-                  {c.ctaWa}
-                </motion.a>
-              </div>
+              <motion.a
+                href={`${enagicBase}&product_id=9026`}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer inline-flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-emguarde text-emguarde-foreground"
+                style={{ boxShadow: "var(--shadow-emguarde)" }}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                </svg>
+                {c.ctaEmguarde}
+              </motion.a>
             </div>
           </motion.div>
         </div>
