@@ -20,6 +20,7 @@ import CeoDailyProtocol from "./pages/seo/CeoDailyProtocol";
 import WealthHealthLegacy from "./pages/seo/WealthHealthLegacy";
 import BookACall from "./pages/seo/BookACall";
 import DuoPackagePage from "./pages/DuoPackagePage";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/book-a-call" element={<BookACall />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
