@@ -3,6 +3,11 @@ import { useLocation } from "react-router-dom";
 const WhatsAppWidget = () => {
   const location = useLocation();
 
+  // Hide the WhatsApp widget on the homepage (language gateway)
+  if (location.pathname === "/") {
+    return null;
+  }
+
   // If the path starts with /latam, it's Spanish, otherwise it's English/Global
   const isLatam = location.pathname.startsWith("/latam");
   const whatsappUrl = isLatam ? "https://wa.me/+573001844049" : "https://wa.me/18649072149";

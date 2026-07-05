@@ -37,17 +37,16 @@ const LanguageSelector = () => {
           <img src={combinedLogo} alt="Mehdi Cohen · True Legacy" className="h-16 md:h-28 w-auto" />
         </div>
 
-        <h1 className="text-3xl md:text-5xl font-display font-black mb-2 leading-[1.05]">
-          Build Your Legacy.<br />
-          <span className="text-gradient-gold">Own Your Freedom.</span>
+        <h1 className="text-3xl md:text-5xl font-display font-black mb-4 leading-[1.05]">
+          Your story <span className="text-gradient-gold">isn't over.</span>
         </h1>
 
-        <p className="text-accent font-mono font-bold text-xs uppercase tracking-[0.3em] mb-5">
-          This Is Where Your Future Begins
+        <p className="font-body text-base md:text-lg mb-6 leading-relaxed max-w-md mx-auto text-white/90">
+          Your next chapter starts here with people who still believe in more.
         </p>
 
-        <p className="font-body font-bold text-sm md:text-base mb-8 leading-relaxed max-w-md mx-auto bg-[#080808]/0 text-white">
-          I built my legacy from immigrant beginnings. Now, I'm handing you the blueprint. This isn't just water or another gadget—this is the map to your freedom. If you're done waiting and ready to build your legacy, step in now.
+        <p className="text-accent font-mono font-bold text-xs uppercase tracking-[0.3em] mb-8">
+          Choose your language to begin
         </p>
 
         {/* Language buttons - visually inside the globe */}
