@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import combinedLogo from "@/assets/combined-logo.png";
 import mehdiHeadshot from "@/assets/mehdi-headshot.png";
 
@@ -11,14 +12,14 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
 
   const t = {
     en: {
-      micro: "Mehdi Cohen · True Legacy World",
-      headline1: "Mehdi Cohen — CEO Building",
-      headline2: "Wealth, Health",
-      headline3: "& Legacies Through True Legacy.",
-      sub: "I rose from zero to lead a global movement, changing lives through health and financial freedom—now it's your turn to rise.",
-      cta1: "Get Your Kangen Water Machine",
-      cta2: "Make Income With True Legacy",
-      proof: "Join 51+ years of Enagic excellence",
+      micro: "Leading a global community of purpose-driven entrepreneurs",
+      headline1: "Build a life",
+      headline2: "you don't want",
+      headline3: "to escape from",
+      sub: "For people who refuse to choose between wealth, health, and lasting impact. Join a global community that's building leaders, creating freedom, and leaving a legacy that reaches far beyond business",
+      cta1: "Build with True Legacy",
+      cta2: "Start your health journey",
+      proof: "Join 52+ years of Enagic excellence",
     },
     es: {
       micro: "Mehdi Cohen · True Legacy World",
@@ -28,7 +29,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
       sub: "Pasé de cero a liderar un movimiento global, cambiando vidas a través de la salud y la libertad financiera—ahora es tu turno de surgir.",
       cta1: "OBTEN TU MÁQUINA DE AGUA KANGEN (EE. UU., Australia, Dubai, etc.)",
       cta2: "Genera Ingresos Con True Legacy",
-      proof: "Unete a 51+ anos de excelencia Enagic",
+      proof: "Unete a 52+ anos de excelencia Enagic",
     },
   };
 
@@ -51,7 +52,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold"
+              className="font-mono text-xs uppercase tracking-[0.25em] text-accent font-bold"
             >
               {t[lang].micro}
             </motion.p>
@@ -67,6 +68,18 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             {t[lang].sub}
           </p>
         </motion.div>
+
+        {/* Small line above the video */}
+        {lang === "en" && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="font-mono text-xs uppercase tracking-[0.2em] text-accent/80 font-bold mb-4 text-center"
+          >
+            See the community behind the mission
+          </motion.p>
+        )}
 
         {/* VSL Video */}
         <motion.div
@@ -97,29 +110,70 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 w-full max-w-3xl mb-6"
         >
-          <motion.a
-            href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="cta-shimmer flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow transition-all"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-            {t[lang].cta1}
-          </motion.a>
+          {lang === "en" ? (
+            <>
+              {/* Primary button (Business) */}
+              <motion.a
+                href="https://form.jotform.com/260564894519066"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer flex-1 inline-flex flex-col items-center justify-center text-center gap-1.5 px-6 py-4 md:py-5 rounded-xl transition-all bg-accent text-accent-foreground shadow-gold animate-pulse-glow"
+              >
+                <span className="font-body font-black text-base md:text-lg uppercase tracking-[0.1em] flex items-center gap-2">
+                  <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  {t.en.cta1}
+                </span>
+                <span className="font-body text-xs text-accent-foreground/80 font-normal">
+                  Learn how we're developing leaders around the world
+                </span>
+              </motion.a>
 
-          <motion.a
-            href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="cta-shimmer flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow transition-all"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            {t[lang].cta2}
-          </motion.a>
+              {/* Secondary button (Product) */}
+              <Link to="/global/products" className="flex-1 block">
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="w-full h-full flex flex-col items-center justify-center text-center gap-1.5 px-6 py-4 md:py-5 rounded-xl transition-all border border-border/60 bg-card/40 hover:bg-card/75 text-foreground shadow-deep cursor-pointer"
+                >
+                  <span className="font-body font-black text-base md:text-lg uppercase tracking-[0.1em] flex items-center gap-2">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    {t.en.cta2}
+                  </span>
+                  <span className="font-body text-xs text-foreground/60 font-normal">
+                    Find the product that best supports your health goals
+                  </span>
+                </motion.div>
+              </Link>
+            </>
+          ) : (
+            <>
+              <motion.a
+                href="https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0&product_id=1016"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-primary text-primary-foreground shadow-glow transition-all"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                {t[lang].cta1}
+              </motion.a>
+
+              <motion.a
+                href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="cta-shimmer flex-1 inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.1em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow transition-all"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                {t[lang].cta2}
+              </motion.a>
+            </>
+          )}
         </motion.div>
 
         {lang === "es" && (

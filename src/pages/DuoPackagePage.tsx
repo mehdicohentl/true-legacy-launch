@@ -43,7 +43,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         {
           icon: "droplet",
           title: "Kangen Water K8",
-          desc: "The flagship 8-plate ionizer — medical-grade hydrogen-rich alkaline water proven by 51+ years of Japanese science. Used in hospitals, by athletes, and high-performers worldwide.",
+          desc: "The flagship 8-plate ionizer — medical-grade hydrogen-rich alkaline water proven by 52+ years of Japanese science. Used in hospitals, by athletes, and high-performers worldwide.",
         },
         {
           icon: "shield",
@@ -72,7 +72,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         "8 platinum-coated titanium plates",
         "Medical-grade ionization",
         "Ships to 190+ countries",
-        "51+ years of Japanese engineering",
+        "52+ years of Japanese engineering",
         "Lifetime machine support",
         "Full commission in Enagic system",
       ],
@@ -109,7 +109,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         {
           icon: "droplet",
           title: "Agua Kangen K8",
-          desc: "El ionizador insignia con 8 placas — agua alcalina ionizada rica en hidrógeno de grado médico, respaldada por más de 51 años de ciencia japonesa. Usada en hospitales, por atletas y personas de alto rendimiento en todo el mundo.",
+          desc: "El ionizador insignia con 8 placas — agua alcalina ionizada rica en hidrógeno de grado médico, respaldada por más de 52 años de ciencia japonesa. Usada en hospitales, por atletas y personas de alto rendimiento en todo el mundo.",
         },
         {
           icon: "shield",
@@ -138,7 +138,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         "8 placas de titanio recubiertas de platino",
         "Ionización de grado médico",
         "Envío a más de 190 países",
-        "Más de 51 años de ingeniería japonesa",
+        "Más de 52 años de ingeniería japonesa",
         "Soporte vitalicio de la máquina",
         "Comisión completa en el sistema Enagic",
       ],

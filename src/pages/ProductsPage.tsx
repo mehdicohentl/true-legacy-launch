@@ -193,7 +193,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     en: {
       micro: "Official Enagic® Products — Mehdi Cohen True Legacy",
       headline: "Kangen Water Machines & Wellness Products",
-      subhead: "Shop the official Enagic product line — Leveluk K8, SD501 DX, EmGuarde EMF protection, and more. Trusted by millions worldwide for 51+ years. Distributed by Mehdi Cohen's True Legacy global team.",
+      subhead: "Shop the official Enagic product line — Leveluk K8, SD501 DX, EmGuarde EMF protection, and more. Trusted by millions worldwide for 52+ years. Distributed by Mehdi Cohen's True Legacy global team.",
       order: "Order Now",
       howToBuy: "How to Buy",
       contactWhatsApp: "Contact Us",
@@ -236,7 +236,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     es: {
       micro: "Productos Oficiales Enagic® — Mehdi Cohen True Legacy",
       headline: "Máquinas Agua Kangen y Productos de Bienestar",
-      subhead: "Compra la línea oficial de productos Enagic — Leveluk K8, SD501 DX, EmGuarde protección EMF y más. Confiada por millones en todo el mundo durante 51+ años. Distribuida por el equipo global True Legacy de Mehdi Cohen.",
+      subhead: "Compra la línea oficial de productos Enagic — Leveluk K8, SD501 DX, EmGuarde protección EMF y más. Confiada por millones en todo el mundo durante 52+ años. Distribuida por el equipo global True Legacy de Mehdi Cohen.",
       order: "Ordenar Ahora",
       howToBuy: "Cómo Comprar",
       contactWhatsApp: "Contáctanos",
