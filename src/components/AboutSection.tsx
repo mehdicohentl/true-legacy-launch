@@ -18,26 +18,44 @@ const fadeIn = {
 const AboutSection = ({ lang }: AboutSectionProps) => {
   const t = {
     en: {
-      micro: "The Man Behind The Mission",
-      headline: "I Didn't Have a Plan B.",
-      headline2: "I Made Plan A Work.",
-      quote: "\"When I was 11, my mother brought us to the U.S., chasing a better future. Without legal status, I couldn't work or even go to school, so I was forced to hustle just to survive. Every day, I pushed myself, selling what I could and learning the hard way. Then, in 2016, I discovered this technology, and I saw its power. That's when I made the decision to treat this as a business investing in my skills, building a professional foundation. Now I travel, I grow, and I help others build their own success so they can break through too.\"",
-      p1: "Watching my mother struggle shaped my resolve—every 'no' became fuel, every closed door a wall I broke through.\n\nMehdi Cohen isn't a motivational speaker he's proof. From undocumented immigrant roots to leading one of the fastest-growing teams in Enagic, his journey defies luck it's about the decision never to settle. Today, he leads the True Legacy team a movement of ordinary people doing extraordinary things health, wealth, purpose all three, or none at all.",
+      micro: "Why this mission exists.",
+      headline: "Real leadership begins with a reason",
+      headline2: "bigger than yourself",
+      quote: "\"When I was 11, my mother brought our family to the United States, searching for a future we couldn't yet see. Watching her sacrifice taught me that real freedom isn't given, it's built.\"",
+      p1: "That journey became the foundation of this mission, helping people build healthier lives, stronger leadership, and lasting freedom. Today, we’re building that future together, one leader at a time.",
       p2: "",
-      video: "Watch the Full Story →",
-      imgLabels: ["The Journey", "The Recognition", "The Mission", "The Lifestyle"],
+      video: "See the mission behind the movement",
+      imgLabels: ["The Mission", "The Journey", "Recognition", "Lifestyle"],
+      galleryHeading: "What this mission looks like in real life",
+      gallerySubhead: "A look at our daily impact, values, and community in action.",
     },
     es: {
       micro: "El Hombre Detrás de la Misión",
-      headline: "No Tenía Plan B.",
-      headline2: "Hice Que el Plan A Funcionara.",
-      quote: "\"Cuando tenía 11 años, mi madre nos trajo a EE.UU., persiguiendo un futuro mejor. Sin estatus legal, no podía trabajar ni ir a la escuela, así que tuve que luchar solo para sobrevivir. Cada día me esforzaba, vendiendo lo que podía y aprendiendo a la fuerza. Entonces, en 2016, descubrí esta tecnología y vi su poder. Fue cuando tomé la decisión de tratarlo como un negocio, invirtiendo en mis habilidades, construyendo una base profesional. Ahora viajo, crezco y ayudo a otros a construir su propio éxito para que ellos también puedan salir adelante.\"",
+      headline: "¿Quién Es Mehdi Cohen?",
+      headline2: "La Historia de True Legacy",
+      quote: "\"Cuando tenía 11 años, mi madre nos trajo a EE.UU., persiguiendo un futuro mejor. Sin estatus legal, no podía trabajar ni ir a la escuela, así que tuve que luchar solo para sobrevivir. Cada día me esforzaba, vendiendo lo que podía y aprendiendo a la fuerza. Entonces, en 2016, descubrí esta tecnología y vi su poder. Fue cuando tomé la decisión de tratarlo como un negocio, invirtiendo en mi habilidades, construyendo una base profesional. Ahora viajo, crezco y ayudo a otros a construir su propio éxito para que ellos también puedan salir adelante.\"",
       p1: "Ver a mi madre luchar forjó mi determinación—cada 'no' se convirtió en combustible, cada puerta cerrada en un muro que derribé.\n\nMehdi Cohen no es un orador motivacional, es la prueba viviente. De raíces como inmigrante indocumentado a liderar uno de los equipos de más rápido crecimiento en Enagic, su camino desafía la suerte, se trata de la decisión de nunca conformarse. Hoy lidera el equipo True Legacy, un movimiento de personas comunes haciendo cosas extraordinarias: salud, riqueza, propósito, los tres o ninguno.",
       p2: "",
-      video: "Ver la Historia Completa →",
-      imgLabels: ["El Camino", "El Reconocimiento", "La Misión", "El Estilo de Vida"],
+      video: "Mira la misión detrás del movimiento",
+      imgLabels: ["La Misión", "El Camino", "El Reconocimiento", "El Estilo de Vida"],
+      galleryHeading: "Cómo se ve esta misión en la vida real",
+      gallerySubhead: "Un vistazo a nuestro impacto diario, valores y comunidad en acción.",
     },
   };
+
+  const galleryItems = lang === "en"
+    ? [
+        { img: mehdiEnagic, label: "The Mission" },
+        { img: mehdiPortrait, label: "The Journey" },
+        { img: mehdiAwards, label: "Recognition" },
+        { img: mehdiLifestyle, label: "Lifestyle" },
+      ]
+    : [
+        { img: mehdiEnagic, label: "La Misión" },
+        { img: mehdiPortrait, label: "El Camino" },
+        { img: mehdiAwards, label: "El Reconocimiento" },
+        { img: mehdiLifestyle, label: "El Estilo de Vida" },
+      ];
 
   return (
     <section id="story" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
@@ -53,8 +71,13 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
         {/* Headline */}
         <motion.div {...fadeIn} className="text-center mb-6">
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-black leading-[1.05]">
-            <span className="text-foreground">{lang === "en" ? "Who Is Mehdi Cohen?" : "¿Quién Es Mehdi Cohen?"}</span><br />
-            <span className="text-gradient-gold italic">{lang === "en" ? "The True Legacy Story" : "La Historia de True Legacy"}</span>
+            <span className="text-foreground">
+              {t[lang].headline}
+            </span>
+            <br />
+            <span className="text-gradient-gold italic">
+              {t[lang].headline2}
+            </span>
           </h2>
         </motion.div>
 
@@ -72,42 +95,33 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
           </div>
         </motion.blockquote>
 
-        {/* Two column: text left, video right */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16">
-          {/* Text side */}
-          <motion.div {...fadeIn}>
-            <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-6 font-bold whitespace-pre-line">
-              {t[lang].p1}
+        {/* Story copy (centered stack) */}
+        <motion.div {...fadeIn} className="max-w-3xl mx-auto text-center mb-16">
+          <p className="text-base md:text-lg text-foreground/90 font-body leading-[1.8] whitespace-pre-line font-medium">
+            {t[lang].p1}
+          </p>
+          {t[lang].p2 && (
+            <p className="text-base md:text-lg text-foreground/90 font-body leading-[1.8] mt-6 font-medium">
+              {t[lang].p2}
             </p>
-            {t[lang].p2 && (
-              <p className="text-base md:text-lg text-foreground font-body leading-[1.9] mb-10 font-bold">
-                {t[lang].p2}
-              </p>
-            )}
+          )}
+        </motion.div>
 
-            <motion.a
-              href={lang === "es" ? "https://youtu.be/ANey4YDlVrw?si=lKzAIE6AqBxQ4vQ6" : "https://www.youtube.com/watch?v=86KYc3Gl3vw"}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ x: 8 }}
-              className="inline-flex items-center gap-4 group"
-            >
-              <span className="w-14 h-14 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300">
-                <svg className="w-5 h-5 text-accent ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" /></svg>
-              </span>
-              <span className="font-body font-bold text-base text-foreground uppercase tracking-[0.1em]">
-                {t[lang].video}
-              </span>
-            </motion.a>
-          </motion.div>
-
-          {/* Video side */}
+        {/* Eyebrow & Video block (centered stack) */}
+        <div className="flex flex-col items-center mb-28">
+          <motion.p 
+            {...fadeIn} 
+            className="font-mono text-xs uppercase tracking-[0.2em] text-accent/80 font-bold mb-6 text-center"
+          >
+            {t[lang].video}
+          </motion.p>
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="relative"
+            className="relative w-full max-w-4xl"
           >
             <div className="absolute -inset-3 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-xl" />
             <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 shadow-deep">
@@ -126,28 +140,41 @@ const AboutSection = ({ lang }: AboutSectionProps) => {
           </motion.div>
         </div>
 
-        {/* Photo gallery — separate row, full width */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {[mehdiPortrait, mehdiAwards, mehdiEnagic, mehdiLifestyle].map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
-              className="group relative"
-            >
-              <img
-                src={img}
-                alt={`Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com — ${t[lang].imgLabels[i]}`}
-                className="rounded-xl w-full h-64 sm:h-72 md:h-80 object-cover object-top border border-border/50 group-hover:border-accent/30 transition-all duration-500 group-hover:scale-[1.02]"
-              />
-              <span className="absolute bottom-3 left-3 font-mono text-xs uppercase tracking-[0.2em] text-foreground/80 bg-background/70 backdrop-blur-sm px-3 py-1.5 rounded font-bold">
-                {t[lang].imgLabels[i]}
-              </span>
-            </motion.div>
-          ))}
+        {/* Gallery Section with Generous Spacing */}
+        <div className="pt-8">
+          <motion.div {...fadeIn} className="text-center mb-12">
+            <h3 className="text-2xl md:text-4xl font-display font-black text-foreground mb-4">
+              {t[lang].galleryHeading}
+            </h3>
+            <p className="text-sm md:text-base text-muted-foreground font-body max-w-xl mx-auto">
+              {t[lang].gallerySubhead}
+            </p>
+          </motion.div>
+
+          {/* Photo gallery grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {galleryItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 }}
+                className="group relative"
+              >
+                <img
+                  src={item.img}
+                  alt={`Mehdi Cohen True Legacy CEO Kangen water wealth health legacy mehdicohen.com — ${item.label}`}
+                  className="rounded-xl w-full h-64 sm:h-72 md:h-80 object-cover object-top border border-border/50 group-hover:border-accent/30 transition-all duration-500 group-hover:scale-[1.02]"
+                />
+                <span className="absolute bottom-3 left-3 font-mono text-xs uppercase tracking-[0.2em] text-foreground/80 bg-background/70 backdrop-blur-sm px-3 py-1.5 rounded font-bold">
+                  {item.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );
