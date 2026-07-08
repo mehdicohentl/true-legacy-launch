@@ -1,33 +1,40 @@
 import { motion } from "framer-motion";
-import emguardeDevice from "@/assets/emguarde-device.png";
+import imgEmgo from "@/assets/product-emgo.png";
 import { MessageCircle } from "lucide-react";
 
 interface EmGuardeSectionProps {
   lang: "en" | "es";
 }
 
+const enagicBase =
+  "https://information.enagic.com/en/introduction?company_id=2&h=65c8bc2eba9f21e83eb4b6aae8ae3fd4&enroller_id=37000004828&sponsor_id=37000004829&representative_id=37000004828&line_rank=0";
+
 const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
+  const isLatam = lang === "es";
+  const whatsapp = isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
 
   const t = {
     en: {
-      micro: "Now Available in the U.S., Canada, and Mexico",
-      headline: "EmGuarde:",
-      headline2: "EMF Protection by Enagic.",
-      applicationProcess: "EmGuarde is only available through an application process — a private import from Malaysia. Get the free info PDF below or book a call with our team to walk you through the purchase.",
-      badge: "Now Available in the U.S., Canada, and Mexico",
-      ctaPdf: "Get a Free EmGuarde PDF",
+      micro: "Portable EMF Protection",
+      headline: "emGuarde GO:",
+      headline2: "Your On-The-Go Shield.",
+      applicationProcess: "Introducing Enagic's latest breakthrough: emGuarde GO (set of 2). Powerful, portable, and designed for your active life. Keep yourself and your family shielded from electromagnetic frequencies (EMF) from mobile phones, laptops, and 5G signals wherever you go. Available in USA, Canada, and Mexico.",
+      badge: "Now Available in USA, Canada, and Mexico",
+      ctaPdf: "Get a Free EmGuarde GO PDF",
+      ctaBuy: "Buy emGuarde GO Now",
       whatsappCta: "Contact Us",
-      demoTitle: "EmGuarde Demo",
+      demoTitle: "Watch the emGuarde GO Demo",
     },
     es: {
-      micro: "Ahora Disponible en EE.UU., Canadá y México",
-      headline: "EmGuarde:",
-      headline2: "Protección EMF por Enagic.",
-      applicationProcess: "EmGuarde solo está disponible a través de un proceso de solicitud — importación privada de Malasia. Obtén el PDF informativo gratuito o agenda una llamada con nuestro equipo.",
+      micro: "Protección EMF Portátil",
+      headline: "emGuarde GO:",
+      headline2: "Tu Escudo en Movimiento.",
+      applicationProcess: "Presentamos el último avance de Enagic: emGuarde GO (set de 2). Potente, portátil y diseñado para tu vida activa. Mantén a ti y a tu familia protegidos de las frecuencias electromagnéticas (EMF) de teléfonos móviles, laptops y señales 5G donde quiera que vayas. Disponible en EE.UU., Canadá y México.",
       badge: "Ahora Disponible en EE.UU., Canadá y México",
-      ctaPdf: "Obtén un PDF Gratis del EmGuarde",
+      ctaPdf: "Obtén un PDF Gratis del emGuarde GO",
+      ctaBuy: "Comprar emGuarde GO Ahora",
       whatsappCta: "Contáctanos",
-      demoTitle: "Demo del EmGuarde",
+      demoTitle: "Mira la Demostración de emGuarde GO",
     }
   };
 
@@ -84,16 +91,13 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             viewport={{ once: true }}
             className="space-y-6">
 
-            {/* EmGuarde Device Image */}
+            {/* emGuarde GO Device Image */}
             <div className="relative flex items-center justify-center py-8">
               <div className="absolute -inset-3 bg-emguarde/8 rounded-2xl blur-2xl" />
               <img
-                src={emguardeDevice}
-                alt="Mehdi Cohen True Legacy CEO EmGuarde EMF protection device Enagic wellness mehdicohen.com"
-                className="relative w-full max-w-[280px] mx-auto drop-shadow-lg" />
-              <div className="absolute top-4 right-4 md:right-12 bg-red-600/90 text-white font-mono text-[10px] uppercase tracking-[0.2em] font-bold px-3 py-1.5 rounded-full border border-red-500 shadow-lg animate-pulse z-10">
-                {lang === "en" ? "⚠️ Limited Stock" : "⚠️ Stock Limitado"}
-              </div>
+                src={imgEmgo}
+                alt="Mehdi Cohen True Legacy CEO emGuarde GO EMF protection device Enagic wellness mehdicohen.com"
+                className="relative w-full max-w-[340px] mx-auto drop-shadow-lg hover:scale-105 transition-transform duration-300" />
               <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-emguarde/60 rounded-tl-lg" />
               <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-emguarde/60 rounded-br-lg" />
             </div>
@@ -104,8 +108,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
                 <div className="absolute -inset-2 bg-emguarde/8 rounded-2xl blur-2xl" />
                 <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                   <iframe
-                    src="https://www.youtube.com/embed/rNLBZ1NEtDI"
-                    title="EmGuarde Review"
+                    src="https://www.youtube.com/embed/vPlD1fZEdvE"
+                    title="emGuarde GO Unboxing"
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -128,7 +132,7 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               </div>
             </div>
 
-            {/* EmGuarde Demo Video from Linktree */}
+            {/* emGuarde GO Demo Video */}
             <div className="relative">
               <div className="absolute -inset-2 bg-emguarde/8 rounded-2xl blur-2xl" />
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-emguarde font-bold mb-3 text-center">
@@ -136,8 +140,8 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
               </p>
               <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                 <iframe
-                  src={lang === "es" ? "https://www.youtube.com/embed/VFjtegRuzfQ" : "https://www.youtube.com/embed/vPlD1fZEdvE"}
-                  title="EmGuarde Demo"
+                  src="https://www.youtube.com/embed/mfA6RE7FGQg"
+                  title="emGuarde GO Demo"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -165,15 +169,17 @@ const EmGuardeSection = ({ lang }: EmGuardeSectionProps) => {
             {c.ctaPdf}
           </motion.a>
           <motion.a
-            href={lang === "en" ? "/global/emguarde" : "/latam/emguarde"}
+            href={`${enagicBase}&product_id=9026`}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-emguarde text-emguarde hover:bg-emguarde/10 transition-colors">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg>
-            {lang === "en" ? "How to Buy EmGuarde" : "Cómo Comprar EmGuarde"}
+            {c.ctaBuy}
           </motion.a>
           <motion.a
-            href="https://wa.me/18649072149"
+            href={whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
