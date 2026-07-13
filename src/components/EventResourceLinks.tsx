@@ -80,7 +80,7 @@ const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
     },
     {
       label: lang === "en" ? "Watch the Kangen Water Demo" : "Ver Demo de Agua Kangen",
-      href: "https://youtu.be/fJdfllJpdAg?si=c87_3pu1CuJkdJKQ",
+      href: "https://youtu.be/lwwOgBQQzZk?si=oGM_bM4B3TMnl50w",
       icon: <IconDroplet />,
     },
     {

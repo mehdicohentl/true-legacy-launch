@@ -105,7 +105,7 @@ const socials = [
         },
         {
           label: "Kangen Water DEMO",
-          href: "https://youtu.be/fJdfllJpdAg?si=c87_3pu1CuJkdJKQ",
+          href: "https://youtu.be/lwwOgBQQzZk?si=oGM_bM4B3TMnl50w",
           image: imgK8,
         },
       ],
