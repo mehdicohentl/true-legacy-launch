@@ -7,8 +7,8 @@ import { setPageMeta } from "@/lib/seo";
 const JoinTrueLegacy = () => {
   useEffect(() => {
     setPageMeta(
-      "Join True Legacy | Build Wealth, Health & Legacy with Mehdi Cohen | 51+ Countries",
-      "Join True Legacy — Mehdi Cohen's global wellness and wealth movement operating in 51+ countries. Earn income distributing Kangen Water and EmGuarde EMF protection. CEO mentorship, done-for-you system."
+      "Join True Legacy | Build Wealth, Health & Legacy with Mehdi Cohen | 170+ Countries",
+      "Join True Legacy — Mehdi Cohen's global wellness and wealth movement operating in 170+ countries. Earn income distributing Kangen Water and EmGuarde EMF protection. CEO mentorship, done-for-you system."
     );
   }, []);
   return (
@@ -19,7 +19,7 @@ const JoinTrueLegacy = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold mb-4">Your Invitation</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black leading-[1.1] mb-6">
-              How to Join the True Legacy Team — <span className="text-gradient-gold">Build Income in 51+ Countries</span>
+              How to Join the True Legacy Team — <span className="text-gradient-gold">Build Income in 170+ Countries</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground font-body leading-[1.9] font-bold mb-8">
               Join Mehdi Cohen's True Legacy team and start building your wellness income opportunity today. Whether you're looking to earn income from home in 2026, build generational wealth, or simply improve your health — True Legacy gives you the system, the community, and the mentorship to make it happen.
@@ -31,7 +31,7 @@ const JoinTrueLegacy = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { title: "Done-For-You System", desc: "Access a proven, high-ticket wellness business model with multiple income streams and passive income potential." },
-                { title: "Global Community", desc: "Join a brotherhood and sisterhood of wellness entrepreneurs operating in 51+ countries with real accountability." },
+                { title: "Global Community", desc: "Join a brotherhood and sisterhood of wellness entrepreneurs operating in 170+ countries with real accountability." },
                 { title: "CEO Mentorship", desc: "Learn directly from Mehdi Cohen — thought leadership, personal brand building, and the elite mindset needed to scale." },
                 { title: "Wellness Products", desc: "Distribute Kangen Water machines and EmGuarde EMF protection devices — products backed by decades of science and trust." },
               ].map((item, i) => (

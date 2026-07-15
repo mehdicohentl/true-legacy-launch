@@ -7,8 +7,8 @@ import { setPageMeta } from "@/lib/seo";
 const WhatIsTrueLegacy = () => {
   useEffect(() => {
     setPageMeta(
-      "What Is True Legacy? Wealth, Health & Legacy Movement | Mehdi Cohen | Global 51+ Countries",
-      "True Legacy is Mehdi Cohen's global movement for building wealth, health, and generational legacy. Distributes Kangen Water and EmGuarde in 51+ countries. Faith, discipline, and purpose-driven entrepreneurship."
+      "What Is True Legacy? Wealth, Health & Legacy Movement | Mehdi Cohen | Global 170+ Countries",
+      "True Legacy is Mehdi Cohen's global movement for building wealth, health, and generational legacy. Distributes Kangen Water and EmGuarde in 170+ countries. Faith, discipline, and purpose-driven entrepreneurship."
     );
   }, []);
   return (
@@ -22,7 +22,7 @@ const WhatIsTrueLegacy = () => {
               What Is True Legacy — <span className="text-gradient-gold">The Global Wealth Health and Legacy Movement</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground font-body leading-[1.9] font-bold mb-8">
-              True Legacy is more than a team — it's a global wellness ecosystem founded by Mehdi Cohen, operating in 51+ countries. Built on the three pillars of wealth, health, and legacy, True Legacy empowers ordinary people to build extraordinary lives through Kangen Water distribution, personal development, and community accountability.
+              True Legacy is more than a team — it's a global wellness ecosystem founded by Mehdi Cohen, operating in 170+ countries. Built on the three pillars of wealth, health, and legacy, True Legacy empowers ordinary people to build extraordinary lives through Kangen Water distribution, personal development, and community accountability.
             </p>
           </motion.div>
 

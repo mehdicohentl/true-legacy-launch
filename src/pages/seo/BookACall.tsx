@@ -9,7 +9,7 @@ const BookACall = () => {
   useEffect(() => {
     setPageMeta(
       "Book a Wellness Call with Mehdi Cohen | Kangen Water & True Legacy Consultation",
-      "Schedule a free one-on-one wellness call with Mehdi Cohen — CEO of True Legacy. Learn about Kangen Water, EmGuarde EMF protection, and how to build income with a global team in 51+ countries."
+      "Schedule a free one-on-one wellness call with Mehdi Cohen — CEO of True Legacy. Learn about Kangen Water, EmGuarde EMF protection, and how to build income with a global team in 170+ countries."
     );
   }, []);
   return (
@@ -39,7 +39,7 @@ const BookACall = () => {
             <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               {[
                 "Your goals — health, income, or both",
-                "How True Legacy works in 51+ countries",
+                "How True Legacy works in 170+ countries",
                 "The Kangen Water business model explained",
                 "Your personalized next steps to get started",
               ].map((item, i) => (

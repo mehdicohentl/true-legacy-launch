@@ -20,6 +20,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
       cta1: "Build with True Legacy",
       cta2: "Start your health journey",
       proof: "Join 52+ years of Enagic excellence",
+      watchDuo: "Watch Duo Demo",
     },
     es: {
       micro: "Mehdi Cohen · True Legacy World",
@@ -30,6 +31,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
       cta1: "OBTEN TU MÁQUINA DE AGUA KANGEN (EE. UU., Australia, Dubai, etc.)",
       cta2: "Genera Ingresos Con True Legacy",
       proof: "Unete a 52+ anos de excelencia Enagic",
+      watchDuo: "Ver Demo de Duo",
     },
   };
 
@@ -86,7 +88,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="w-full max-w-4xl mb-10"
+          className="w-full max-w-4xl mb-6"
         >
           <div className="relative">
             <div className="absolute -inset-3 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-xl" />
@@ -101,6 +103,27 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
               />
             </div>
           </div>
+        </motion.div>
+
+        {/* Watch Duo Demo Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex justify-center mb-10"
+        >
+          <Link to={lang === "en" ? "/global/duopackage" : "/latam/latam-duo-package"}>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="cta-shimmer inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.1em] bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white shadow-emergency animate-pulse-emergency cursor-pointer"
+            >
+              <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              {t[lang].watchDuo}
+            </motion.div>
+          </Link>
         </motion.div>
 
         {/* CTAs */}

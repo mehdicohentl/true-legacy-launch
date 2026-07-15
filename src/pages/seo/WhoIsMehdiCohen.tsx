@@ -10,7 +10,7 @@ const WhoIsMehdiCohen = () => {
   useEffect(() => {
     setPageMeta(
       "Who Is Mehdi Cohen? CEO of True Legacy | Kangen Water Distributor | USA & Global",
-      "Mehdi Cohen is the CEO and founder of True Legacy — a global wealth, health, and legacy movement in 51+ countries. Top Enagic Kangen Water distributor. From zero to global CEO. mehdicohen.com"
+      "Mehdi Cohen is the CEO and founder of True Legacy — a global wealth, health, and legacy movement in 170+ countries. Top Enagic Kangen Water distributor. From zero to global CEO. mehdicohen.com"
     );
   }, []);
   return (
@@ -24,7 +24,7 @@ const WhoIsMehdiCohen = () => {
               Who Is Mehdi Cohen? <span className="text-gradient-gold">The CEO Behind True Legacy</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground font-body leading-[1.9] font-bold mb-8">
-              Mehdi Cohen is the CEO and founder of True Legacy — a global wealth, health, and legacy movement operating in 51+ countries. As a top Kangen Water distributor and wellness entrepreneur, Mehdi has built a community of thousands who are scaling their health and their income simultaneously.
+              Mehdi Cohen is the CEO and founder of True Legacy — a global wealth, health, and legacy movement operating in 170+ countries. As a top Kangen Water distributor and wellness entrepreneur, Mehdi has built a community of thousands who are scaling their health and their income simultaneously.
             </p>
           </motion.div>
 
@@ -39,7 +39,7 @@ const WhoIsMehdiCohen = () => {
               Mehdi Cohen's journey is one of discipline, faith, and relentless purpose. Arriving in the United States at age 11 with his mother, Mehdi grew up without legal status — unable to work, attend school, or access the opportunities most people take for granted. Instead of giving up, he developed an elite mindset, hustling every day to survive and eventually thrive.
             </p>
             <p className="text-base md:text-lg text-foreground font-body leading-[1.9] font-bold mb-4">
-              In 2016, Mehdi discovered Kangen Water technology and saw its transformative power — both for personal wellness and as a vehicle for financial freedom. He made the decision to treat it as a real business, investing in his personal brand, building a professional foundation, and leading with thought leadership. Today, Mehdi Cohen leads the True Legacy team, a brotherhood and sisterhood of wellness entrepreneurs building generational wealth across 51+ countries.
+              In 2016, Mehdi discovered Kangen Water technology and saw its transformative power — both for personal wellness and as a vehicle for financial freedom. He made the decision to treat it as a real business, investing in his personal brand, building a professional foundation, and leading with thought leadership. Today, Mehdi Cohen leads the True Legacy team, a brotherhood and sisterhood of wellness entrepreneurs building generational wealth across 170+ countries.
             </p>
           </section>
 
@@ -53,7 +53,7 @@ const WhoIsMehdiCohen = () => {
           <section className="mb-12">
             <h2 className="text-2xl md:text-3xl font-display font-black mb-4">Why Follow Mehdi Cohen?</h2>
             <ul className="space-y-3 text-base md:text-lg text-foreground font-body font-bold">
-              <li>✦ CEO & founder of True Legacy — operating in 51+ countries</li>
+              <li>✦ CEO & founder of True Legacy — operating in 170+ countries</li>
               <li>✦ Top Kangen Water distributor and wellness educator</li>
               <li>✦ Proven track record of helping people earn income from home in 2026</li>
               <li>✦ Advocate for longevity, anti-aging, cellular hydration, and holistic wellness</li>

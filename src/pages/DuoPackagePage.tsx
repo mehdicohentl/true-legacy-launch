@@ -204,16 +204,34 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="font-body text-base md:text-lg text-foreground/70 font-bold max-w-2xl mx-auto mb-12"
+            className="font-body text-base md:text-lg text-foreground/70 font-bold max-w-2xl mx-auto mb-10"
           >
             {c.subhead}
           </motion.p>
+
+          {/* Video Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="max-w-3xl mx-auto mb-16"
+          >
+            <div className="aspect-video rounded-2xl overflow-hidden border border-accent/20 shadow-2xl">
+              <iframe
+                src={`https://www.youtube.com/embed/${isLatam ? "tctiae20KRs" : "9eKelJoT4vE"}?rel=0`}
+                title={isLatam ? "Duo Package LATAM" : "Duo Package Global"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </motion.div>
 
           {/* Product Images side-by-side */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.4 }}
             className="flex items-end justify-center gap-6 md:gap-16 mb-12"
           >
             <div className="relative flex flex-col items-center">
@@ -247,7 +265,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap"
           >
             <motion.a
@@ -276,28 +294,6 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
               </svg>
               {c.emguardeCta}
             </motion.a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="aspect-video rounded-2xl overflow-hidden border border-accent/20 shadow-2xl">
-              <iframe
-                src={`https://www.youtube.com/embed/${isLatam ? "tctiae20KRs" : "9eKelJoT4vE"}?rel=0`}
-                title={isLatam ? "Duo Package LATAM" : "Duo Package Global"}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
           </motion.div>
         </div>
       </section>

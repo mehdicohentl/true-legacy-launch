@@ -8,7 +8,7 @@ const WealthHealthLegacy = () => {
   useEffect(() => {
     setPageMeta(
       "Wealth, Health & Legacy | Build Generational Wealth with Kangen Water | Mehdi Cohen True Legacy",
-      "Learn how to build wealth, optimize health with Kangen Water and molecular hydrogen, and create a lasting legacy. Mehdi Cohen's True Legacy framework — operating in 51+ countries worldwide."
+      "Learn how to build wealth, optimize health with Kangen Water and molecular hydrogen, and create a lasting legacy. Mehdi Cohen's True Legacy framework — operating in 170+ countries worldwide."
     );
   }, []);
   return (

@@ -184,8 +184,8 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
         ? "Kangen Water Products & EMF Protection | Leveluk K8, SD501, EmGuarde | Mehdi Cohen True Legacy"
         : "Productos Agua Kangen y Protección EMF | Leveluk K8, SD501, EmGuarde | Mehdi Cohen True Legacy",
       lang === "en"
-        ? "Buy official Enagic Kangen Water machines — Leveluk K8, SD501 DX, JR IV, Anespa DX — and EmGuarde EMF protection. Trusted by Mehdi Cohen's global True Legacy team operating in 51+ countries worldwide."
-        : "Compra Máquinas de Agua Kangen Enagic oficiales — Leveluk K8, SD501 DX, JR IV, Anespa DX — y protección EMF EmGuarde. Confiado por el equipo global True Legacy de Mehdi Cohen en más de 51 países."
+        ? "Buy official Enagic Kangen Water machines — Leveluk K8, SD501 DX, JR IV, Anespa DX — and EmGuarde EMF protection. Trusted by Mehdi Cohen's global True Legacy team operating in 170+ countries worldwide."
+        : "Compra Máquinas de Agua Kangen Enagic oficiales — Leveluk K8, SD501 DX, JR IV, Anespa DX — y protección EMF EmGuarde. Confiado por el equipo global True Legacy de Mehdi Cohen en más de 170 países."
     );
   }, [lang]);
 

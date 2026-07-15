@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import mehdiPortrait from "@/assets/mehdi-portrait.jpg";
 
 interface JoinTeamSectionProps {
@@ -14,7 +15,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       desc: "We’re expanding now. If you’re a driven entrepreneur ready to lead our U.S. market expansion and plug into our proven system click the button now. We want action-takers, not spectators.",
       quote: "\"The future belongs to those who act today.\"",
       cta: "Start Building With True Legacy",
-      cta2: "See How The Team Operates",
+      cta2: "Watch Duo Demo",
       stats: [
         { num: "52+", label: "Years Enagic" },
         { num: "170+", label: "Countries" },
@@ -29,7 +30,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
       desc: "Estamos buscando emprendedores y pioneros ahora mismo. Si tienes la visión para liderar la expansión en LATAM y quieres unirte a un sistema global probado, este es tu momento. No esperes. Haz clic ahora y construyamos tu legado.",
       quote: "“El éxito es para los que actúan sin dudar.”",
       cta: "Empieza a Construir Con True Legacy",
-      cta2: "Mira Como Opera El Equipo",
+      cta2: "Ver Demo de Duo",
       stats: [
         { num: "52+", label: "Años Enagic" },
         { num: "170+", label: "Países" },
@@ -113,16 +114,18 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
             {t[lang].cta}
           </motion.a>
 
-          <motion.a
-            href={lang === "es" ? "https://youtube.com/@turelegacyenagiclatam?si=JUx_u3k727pv3mLh" : "https://www.youtube.com/@mehdicohen-TL"}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            className="inline-flex items-center justify-center gap-3 px-8 py-6 rounded-xl font-body font-bold text-sm uppercase tracking-[0.12em] border border-foreground/15 text-foreground hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
-          >
-            <svg className="w-5 h-5 text-destructive" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            {t[lang].cta2}
-          </motion.a>
+          <Link to={lang === "en" ? "/global/duopackage" : "/latam/latam-duo-package"} className="inline-flex">
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-6 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.12em] bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white shadow-emergency animate-pulse-emergency cursor-pointer"
+            >
+              <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              {t[lang].cta2}
+            </motion.div>
+          </Link>
         </div>
 
         <p className="text-center font-body text-base text-foreground font-bold italic max-w-xl mx-auto">
