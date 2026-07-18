@@ -8,7 +8,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ lang }: HeroSectionProps) => {
-  const videoId = lang === "en" ? "4Xq6np66vaE" : "8i8o6FbbleA";
+  const videoId = lang === "en" ? "bbJU9EbWeAE" : "8i8o6FbbleA";
 
   const t = {
     en: {
@@ -94,7 +94,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             <div className="absolute -inset-3 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-xl" />
             <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 shadow-deep">
               <iframe
-                src={`https://www.youtube.com/embed/${videoId}?rel=0`}
+                src={`https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&mute=1&playsinline=1`}
                 title="VSL Video"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
