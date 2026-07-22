@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import combinedLogo from "@/assets/combined-logo.png";
@@ -10,6 +10,23 @@ interface HeroSectionProps {
 
 const HeroSection = ({ lang }: HeroSectionProps) => {
   const [isMuted, setIsMuted] = useState(true);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const handleUnmute = () => {
+    setIsMuted(false);
+    if (iframeRef.current) {
+      // Send message to YouTube Player API to unmute and play
+      iframeRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "unMute" }),
+        "*"
+      );
+      iframeRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "playVideo" }),
+        "*"
+      );
+    }
+  };
+
   const videoId = lang === "en" ? "bbJU9EbWeAE" : "5l48I_cyO0M";
 
   const t = {
@@ -100,7 +117,8 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             <div className="absolute -inset-3 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-xl" />
             <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 shadow-deep">
               <iframe
-                src={`https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&mute=${isMuted ? 1 : 0}&playsinline=1`}
+                ref={iframeRef}
+                src={`https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&mute=1&playsinline=1&enablejsapi=1`}
                 title="VSL Video"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -112,7 +130,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                   <motion.div
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0, transition: { duration: 0.4 } }}
-                    onClick={() => setIsMuted(false)}
+                    onClick={handleUnmute}
                     className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 backdrop-blur-[4px] cursor-pointer z-20"
                   >
                     {/* Pulsing rings for extreme visibility */}
