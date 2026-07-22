@@ -220,7 +220,7 @@ const KangenWaterSubpage = ({ lang }: KangenWaterSubpageProps) => {
             </p>
             <div className="relative aspect-video rounded-2xl overflow-hidden border border-accent/20 shadow-deep">
               <iframe
-                src={isLatam ? "https://www.youtube.com/embed/Gi0ufLMcH6E" : "https://www.youtube.com/embed/lwwOgBQQzZk"}
+                src={isLatam ? "https://www.youtube.com/embed/6A_UpRmoWWc" : "https://www.youtube.com/embed/lwwOgBQQzZk"}
                 title="Kangen Water Demonstration"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
