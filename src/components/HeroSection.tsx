@@ -131,7 +131,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0, transition: { duration: 0.4 } }}
                     onClick={handleUnmute}
-                    className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 backdrop-blur-[4px] cursor-pointer z-20"
+                    className="absolute inset-0 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[2px] cursor-pointer z-20"
                   >
                     {/* Pulsing rings for extreme visibility */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -152,7 +152,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                       initial={{ scale: 0.9, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ type: "spring", stiffness: 120, damping: 14 }}
-                      className="relative z-30 flex flex-col items-center gap-2.5 sm:gap-5 p-3 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-b from-card/90 to-background/95 border-2 border-accent/40 shadow-glow max-w-[90%] sm:max-w-md text-center"
+                      className="relative z-30 flex flex-col items-center gap-2.5 sm:gap-5 p-3 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-background/30 backdrop-blur-md border border-accent/25 shadow-glow max-w-[90%] sm:max-w-md text-center"
                     >
                       {/* Animated sound waves */}
                       <div className="flex items-end justify-center gap-1.5 h-6 sm:h-10 mb-0">
