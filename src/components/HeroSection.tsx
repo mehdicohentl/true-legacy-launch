@@ -120,12 +120,12 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                       <motion.div
                         animate={{ scale: [1, 1.6, 1], opacity: [0.1, 0.35, 0.1] }}
                         transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-                        className="w-56 h-56 md:w-96 md:h-96 rounded-full bg-accent/25 absolute"
+                        className="w-32 h-32 sm:w-56 sm:h-56 md:w-96 md:h-96 rounded-full bg-accent/25 absolute"
                       />
                       <motion.div
                         animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.45, 0.15] }}
                         transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut", delay: 0.3 }}
-                        className="w-40 h-40 md:w-72 md:h-72 rounded-full bg-primary/20 absolute"
+                        className="w-24 h-24 sm:w-40 sm:h-40 md:w-72 md:h-72 rounded-full bg-primary/20 absolute"
                       />
                     </div>
 
@@ -134,21 +134,21 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                       initial={{ scale: 0.9, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ type: "spring", stiffness: 120, damping: 14 }}
-                      className="relative z-30 flex flex-col items-center gap-5 p-6 md:p-8 rounded-2xl bg-gradient-to-b from-card/90 to-background/95 border-2 border-accent/40 shadow-glow max-w-[85%] sm:max-w-md text-center"
+                      className="relative z-30 flex flex-col items-center gap-2.5 sm:gap-5 p-3 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-b from-card/90 to-background/95 border-2 border-accent/40 shadow-glow max-w-[90%] sm:max-w-md text-center"
                     >
                       {/* Animated sound waves */}
-                      <div className="flex items-center justify-center gap-1.5 h-10 mb-1">
+                      <div className="flex items-end justify-center gap-1.5 h-6 sm:h-10 mb-0">
                         {[1, 2, 3, 4, 5].map((bar) => (
                           <motion.div
                             key={bar}
-                            animate={{ height: [10, 32, 10] }}
+                            animate={{ scaleY: [0.3, 1, 0.3] }}
                             transition={{
                               repeat: Infinity,
                               duration: 0.7,
                               delay: bar * 0.12,
                               ease: "easeInOut",
                             }}
-                            className="w-1.5 rounded-full bg-accent shadow-[0_0_8px_hsl(var(--accent))]"
+                            className="h-6 sm:h-10 w-1 sm:w-1.5 rounded-full bg-accent origin-center shadow-[0_0_8px_hsl(var(--accent))]"
                           />
                         ))}
                       </div>
@@ -157,15 +157,15 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-5 md:px-10 md:py-6 rounded-xl bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white font-body font-black text-xl md:text-2xl uppercase tracking-[0.1em] shadow-emergency hover:brightness-110 transition-all flex items-center justify-center gap-3 border border-white/20"
+                        className="px-4 py-2.5 sm:px-8 sm:py-5 md:px-10 md:py-6 rounded-xl bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white font-body font-black text-xs sm:text-xl md:text-2xl uppercase tracking-[0.1em] shadow-emergency hover:brightness-110 transition-all flex items-center justify-center gap-2 sm:gap-3 border border-white/20"
                       >
-                        <svg className="w-7 h-7 md:w-8 md:h-8 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 sm:w-7 sm:h-7 md:w-8 md:h-8 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M12 18.75V5.25L7.75 9.5H4.5v5h3.25L12 18.75z" />
                         </svg>
                         {lang === "en" ? "CLICK TO LISTEN" : "CLICK PARA ESCUCHAR"}
                       </motion.button>
 
-                      <p className="font-mono text-xs md:text-sm text-accent uppercase tracking-widest font-black animate-pulse">
+                      <p className="font-mono text-[9px] sm:text-xs md:text-sm text-accent uppercase tracking-widest font-black animate-pulse">
                         {lang === "en" ? "🔊 TURN ON SOUND" : "🔊 ACTIVA EL SONIDO"}
                       </p>
                     </motion.div>
