@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import combinedLogo from "@/assets/combined-logo.png";
 import mehdiHeadshot from "@/assets/mehdi-headshot.png";
@@ -8,6 +9,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ lang }: HeroSectionProps) => {
+  const [isMuted, setIsMuted] = useState(true);
   const videoId = lang === "en" ? "bbJU9EbWeAE" : "5l48I_cyO0M";
 
   const t = {
@@ -98,13 +100,78 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             <div className="absolute -inset-3 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-xl" />
             <div className="relative aspect-video rounded-xl overflow-hidden border border-border/50 shadow-deep">
               <iframe
-                src={`https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&mute=1&playsinline=1`}
+                src={`https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1&mute=${isMuted ? 1 : 0}&playsinline=1`}
                 title="VSL Video"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
               />
+              <AnimatePresence>
+                {isMuted && (
+                  <motion.div
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0, transition: { duration: 0.4 } }}
+                    onClick={() => setIsMuted(false)}
+                    className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 backdrop-blur-[4px] cursor-pointer z-20"
+                  >
+                    {/* Pulsing rings for extreme visibility */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                      <motion.div
+                        animate={{ scale: [1, 1.6, 1], opacity: [0.1, 0.35, 0.1] }}
+                        transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+                        className="w-56 h-56 md:w-96 md:h-96 rounded-full bg-accent/25 absolute"
+                      />
+                      <motion.div
+                        animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.45, 0.15] }}
+                        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut", delay: 0.3 }}
+                        className="w-40 h-40 md:w-72 md:h-72 rounded-full bg-primary/20 absolute"
+                      />
+                    </div>
+
+                    {/* Dominant centered pop-up */}
+                    <motion.div
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ type: "spring", stiffness: 120, damping: 14 }}
+                      className="relative z-30 flex flex-col items-center gap-5 p-6 md:p-8 rounded-2xl bg-gradient-to-b from-card/90 to-background/95 border-2 border-accent/40 shadow-glow max-w-[85%] sm:max-w-md text-center"
+                    >
+                      {/* Animated sound waves */}
+                      <div className="flex items-center justify-center gap-1.5 h-10 mb-1">
+                        {[1, 2, 3, 4, 5].map((bar) => (
+                          <motion.div
+                            key={bar}
+                            animate={{ height: [10, 32, 10] }}
+                            transition={{
+                              repeat: Infinity,
+                              duration: 0.7,
+                              delay: bar * 0.12,
+                              ease: "easeInOut",
+                            }}
+                            className="w-1.5 rounded-full bg-accent shadow-[0_0_8px_hsl(var(--accent))]"
+                          />
+                        ))}
+                      </div>
+
+                      {/* Giant Unmute Button */}
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-8 py-5 md:px-10 md:py-6 rounded-xl bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white font-body font-black text-xl md:text-2xl uppercase tracking-[0.1em] shadow-emergency hover:brightness-110 transition-all flex items-center justify-center gap-3 border border-white/20"
+                      >
+                        <svg className="w-7 h-7 md:w-8 md:h-8 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M12 18.75V5.25L7.75 9.5H4.5v5h3.25L12 18.75z" />
+                        </svg>
+                        {lang === "en" ? "CLICK TO LISTEN" : "CLICK PARA ESCUCHAR"}
+                      </motion.button>
+
+                      <p className="font-mono text-xs md:text-sm text-accent uppercase tracking-widest font-black animate-pulse">
+                        {lang === "en" ? "🔊 TURN ON SOUND" : "🔊 ACTIVA EL SONIDO"}
+                      </p>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>
