@@ -266,7 +266,7 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                 <iframe
-                  src={`https://www.youtube.com/embed/${lang === "es" ? "BS4QEM-zXf0" : "I8Fq7HVxszc"}`}
+                  src={`https://www.youtube.com/embed/${lang === "es" ? "0PFcVAO17f0" : "I8Fq7HVxszc"}`}
                   title={lang === "es" ? "Presentación médica de emGuarde GO" : "emGuarde GO Doctor Presentation"}
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -276,7 +276,7 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
               </div>
               <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                 <iframe
-                  src={`https://www.youtube.com/embed/${lang === "es" ? "0PFcVAO17f0" : "hqAtESRBBys"}`}
+                  src={`https://www.youtube.com/embed/${lang === "es" ? "ikg6mF1uPBk" : "hqAtESRBBys"}`}
                   title={lang === "es" ? "Demostración de emGuarde GO" : "emGuarde GO Demonstration"}
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -299,7 +299,7 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
             </p>
             <div className="relative aspect-video rounded-2xl overflow-hidden border border-emguarde/20 shadow-deep">
               <iframe
-                src={`https://www.youtube.com/embed/${lang === "es" ? "ikg6mF1uPBk" : "5wuY1dKjHds"}`}
+                src={`https://www.youtube.com/embed/${lang === "es" ? "BS4QEM-zXf0" : "5wuY1dKjHds"}`}
                 title={lang === "es" ? "Video de emGuarde GO" : "emGuarde GO 2-Minute Video"}
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
