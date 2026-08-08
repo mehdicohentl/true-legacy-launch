@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { setPageMeta } from "@/lib/seo";
 import imgEmgo from "@/assets/product-emgo.png";
-import { MessageCircle } from "lucide-react";
+import { GraduationCap, MessageCircle } from "lucide-react";
 
 interface EmGuardeGoSubpageProps {
   lang: "en" | "es";
@@ -49,6 +49,16 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
         { title: "Total Portability", desc: "Lightweight and sleek — fits easily in your pocket, computer bag, or backpack." }
       ],
 
+      researchEyebrow: "University-Led Research",
+      researchTitle: "Tested by Universiti Sains Malaysia",
+      researchIntro: "In 2024, researchers at Universiti Sains Malaysia (USM) evaluated emGuarde's effective range for suppressing targeted RF white noise in a controlled test environment.",
+      researchPoints: [
+        { value: "3–1,000 MHz", label: "Targeted frequency range evaluated" },
+        { value: "4 m", label: "Tested suppression radius" },
+        { value: "2024", label: "USM test report" }
+      ],
+      researchNote: "The report supports the device's RF noise-suppression performance. It does not establish that emGuarde prevents, treats, or cures any medical condition, and the device is not a substitute for medical advice or established exposure-safety measures.",
+
       videoReviews: "Reviews & Presentations",
       demoTitle: "Watch the emGuarde GO Demonstration",
       ctaBuy: "Buy emGuarde GO Now",
@@ -74,6 +84,16 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
         { title: "Recargable por USB-C", desc: "Equipado con batería recargable de larga duración para una protección constante sin interrupciones." },
         { title: "Portabilidad Total", desc: "Ligero y elegante — cabe fácilmente en tu bolsillo, maletín de laptop o mochila." }
       ],
+
+      researchEyebrow: "Investigación Universitaria",
+      researchTitle: "Evaluado por Universiti Sains Malaysia",
+      researchIntro: "En 2024, investigadores de Universiti Sains Malaysia (USM) evaluaron el alcance efectivo de emGuarde para suprimir ruido blanco de radiofrecuencia específico en un entorno de prueba controlado.",
+      researchPoints: [
+        { value: "3–1.000 MHz", label: "Rango de frecuencias evaluado" },
+        { value: "4 m", label: "Radio de supresión evaluado" },
+        { value: "2024", label: "Informe de pruebas de USM" }
+      ],
+      researchNote: "El informe respalda el desempeño del dispositivo en la supresión de ruido de RF. No establece que emGuarde prevenga, trate o cure ninguna afección médica, y el dispositivo no sustituye el consejo médico ni las medidas de seguridad reconocidas para limitar la exposición.",
 
       videoReviews: "Reseñas y Presentaciones",
       demoTitle: "Mira la Demostración de emGuarde GO",
@@ -191,6 +211,52 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
               </div>
             </div>
           </div>
+
+          {/* University-Led Research */}
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            className="relative max-w-5xl mx-auto mb-20 overflow-hidden rounded-2xl border border-emguarde/20 bg-gradient-to-br from-emguarde/10 via-card/60 to-card/30 p-8 md:p-12"
+            aria-labelledby="emguarde-research-title"
+          >
+            <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-emguarde/10 blur-[100px] pointer-events-none" />
+            <div className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+              <div>
+                <div className="mb-5 flex items-center gap-3 text-emguarde">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-emguarde/20 bg-emguarde/10">
+                    <GraduationCap className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.25em]">
+                    {c.researchEyebrow}
+                  </span>
+                </div>
+                <h2 id="emguarde-research-title" className="mb-5 text-2xl font-black text-foreground md:text-4xl font-display">
+                  {c.researchTitle}
+                </h2>
+                <p className="font-body text-sm font-bold leading-relaxed text-foreground/80 md:text-base">
+                  {c.researchIntro}
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                {c.researchPoints.map((point) => (
+                  <div key={point.label} className="rounded-xl border border-emguarde/15 bg-background/40 px-5 py-4 backdrop-blur-sm">
+                    <strong className="block font-display text-xl font-black text-emguarde md:text-2xl">
+                      {point.value}
+                    </strong>
+                    <span className="mt-1 block font-body text-xs font-bold leading-relaxed text-foreground/70">
+                      {point.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p className="relative mt-8 border-t border-emguarde/15 pt-5 font-body text-[11px] font-semibold leading-relaxed text-foreground/60 md:text-xs">
+              {c.researchNote}
+            </p>
+          </motion.section>
 
           {/* Videos Grid */}
           <div className="max-w-4xl mx-auto mb-20 space-y-8">
