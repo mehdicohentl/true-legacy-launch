@@ -14,8 +14,8 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       link: "https://us06web.zoom.us/j/88577734807?pwd=C02Pr5lK6HEYyXsXiBo1wqAS7ZcVLV.1",
       meetingId: "885 7773 4807",
       passcode: "Truelegacy",
-      date: "Every Thursday",
-      time: "8:00 PM EST / 5:00 PM PST"
+      date: "Every Wednesday",
+      time: "8:30 PM EST / 5:30 PM PST"
     },
     es: {
       link: "https://us06web.zoom.us/j/84852244046?pwd=Ci7k3oLkcaBa5odDvrw6O9fokzXbK8.1",

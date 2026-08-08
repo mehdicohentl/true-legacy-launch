@@ -23,14 +23,14 @@ const EventSection = ({ lang }: EventSectionProps) => {
         "A global vision to expand and build beyond borders",
       ],
       dateLabel: "Zoom Date",
-      date: "Thursday",
-      time: "8:00 PM EST / 5:00 PM PST",
+      date: "Wednesday",
+      time: "8:30 PM EST / 5:30 PM PST",
       meetingId: "885 7773 4807",
       passcode: "Truelegacy",
       hosts: "Hosted by True Legacy Team Leaders",
       bottomCta: "Your legacy doesn't wait. Join us and take charge. Reserve your seat now.",
-      image: "/event-flyer-global-weekly.jpg",
-      imageAlt: "True Legacy Team Leaders Kangen K8 EmGuarde global wellness movement biohacking truelegacyworld.com",
+      image: "/event-flyer-global-wednesday-weekly.png",
+      imageAlt: "True Legacy World weekly Wednesday presentation featuring Kangen K8 and EmGuarde Go",
       ctaKangen: "Order Kangen K8",
       ctaEmguarde: "Get EmGuarde Protection",
       ctaJoin: "Join True Legacy Team",
@@ -109,11 +109,11 @@ const EventSection = ({ lang }: EventSectionProps) => {
 
   const currentImage = lang === "es"
     ? (activeEvent === "weekly" ? "/event-flyer-latam-weekly.jpg" : "/event-flyer-latam-monthly.png")
-    : (activeEvent === "weekly" ? "/event-flyer-global-weekly.jpg" : "/event-flyer-global-monthly.jpg");
+    : (activeEvent === "weekly" ? "/event-flyer-global-wednesday-weekly.png" : "/event-flyer-global-monthly.jpg");
 
   const currentImageAlt = lang === "es"
     ? (activeEvent === "weekly" ? "Presentación Semanal LATAM - Transforma tu Ingreso Global" : "Masterclass Mensual LATAM - La Revolución del Biohacking")
-    : (activeEvent === "weekly" ? "Weekly Presentation - The Model Most Network Marketers Haven't Seen Yet" : "Monthly Masterclass - Unlock The Global Blueprint");
+    : (activeEvent === "weekly" ? "Weekly Wednesday Presentation - Kangen K8 and EmGuarde Go" : "Monthly Masterclass - Unlock The Global Blueprint");
 
   return (
     <section id="event" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
@@ -229,7 +229,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
                       {lang === "en" ? "Weekly Presentation" : "Presentación Semanal"}
                     </h4>
                     <p className="font-mono text-xs text-accent mt-1">
-                      {lang === "en" ? "Every Thursday, 8 PM Eastern (5 PM PST)" : "Cada Martes, 7 PM Colombia"}
+                      {lang === "en" ? "Every Wednesday, 8:30 PM Eastern (5:30 PM Pacific)" : "Cada Martes, 7 PM Colombia"}
                     </p>
                     <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
                       {lang === "en" 

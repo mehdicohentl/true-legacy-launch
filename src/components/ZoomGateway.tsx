@@ -14,7 +14,7 @@ const encode = (data: Record<string, string>) =>
 const t = {
   en: {
     heading: "Join the Live Zoom Call",
-    subtitle: "Thursday Live — True Legacy World",
+    subtitle: "Wednesday Live — True Legacy World",
     instruction: "Select below to join the live Zoom call",
     question: "Have you attended before?",
     yes: "YES — JOIN NOW",
