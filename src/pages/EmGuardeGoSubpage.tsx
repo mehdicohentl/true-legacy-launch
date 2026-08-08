@@ -200,8 +200,8 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                 <iframe
-                  src="https://www.youtube.com/embed/vPlD1fZEdvE"
-                  title="emGuarde GO Unboxing"
+                  src="https://www.youtube.com/embed/I8Fq7HVxszc"
+                  title="emGuarde GO Doctor Presentation"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -210,8 +210,8 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
               </div>
               <div className="relative aspect-video rounded-xl overflow-hidden border border-emguarde/20 shadow-deep">
                 <iframe
-                  src="https://www.youtube.com/embed/I8fFj7-FaPw"
-                  title="emGuarde GO Presentation"
+                  src="https://www.youtube.com/embed/hqAtESRBBys"
+                  title="emGuarde GO Demonstration"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -233,8 +233,8 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
             </p>
             <div className="relative aspect-video rounded-2xl overflow-hidden border border-emguarde/20 shadow-deep">
               <iframe
-                src="https://www.youtube.com/embed/mfA6RE7FGQg"
-                title="emGuarde GO Demonstration"
+                src="https://www.youtube.com/embed/5wuY1dKjHds"
+                title="emGuarde GO 2-Minute Video"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
