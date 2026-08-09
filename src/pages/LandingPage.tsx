@@ -5,7 +5,6 @@ import { setPageMeta } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WaterSection from "@/components/WaterSection";
-import EmGuardeSection from "@/components/EmGuardeSection";
 import DuoPackageSection from "@/components/DuoPackageSection";
 import JoinTeamSection from "@/components/JoinTeamSection";
 import ThankYouSection from "@/components/ThankYouSection";
@@ -47,7 +46,6 @@ const LandingPage = ({ lang }: LandingPageProps) => {
       <AboutSection lang={lang} />
       <DuoPackageSection lang={lang} />
       <WaterSection lang={lang} />
-      <EmGuardeSection lang={lang} />
 
       {/* Event CTA strip */}
       <section className="py-10 bg-card/50 border-y border-accent/10 relative overflow-hidden">
