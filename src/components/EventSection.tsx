@@ -109,11 +109,11 @@ const EventSection = ({ lang }: EventSectionProps) => {
 
   const currentImage = lang === "es"
     ? (activeEvent === "weekly" ? "/event-flyer-latam-thursday-weekly.png" : "/event-flyer-latam-monthly.png")
-    : (activeEvent === "weekly" ? "/event-flyer-global-wednesday-weekly.png" : "/event-flyer-global-monthly.jpg");
+    : (activeEvent === "weekly" ? "/event-flyer-global-wednesday-weekly.png" : "/event-flyer-global-monthly-wednesday.png");
 
   const currentImageAlt = lang === "es"
     ? (activeEvent === "weekly" ? "Presentación Semanal LATAM - Jueves 7 PM Colombia / 8 PM EST" : "Masterclass Mensual LATAM - La Revolución del Biohacking")
-    : (activeEvent === "weekly" ? "Weekly Wednesday Presentation - Kangen K8 and EmGuarde Go" : "Monthly Masterclass - Unlock The Global Blueprint");
+    : (activeEvent === "weekly" ? "Weekly Wednesday Presentation - Kangen K8 and EmGuarde Go" : "Monthly Masterclass - Unlock The Global Blueprint, last Wednesday at 8:30 PM Eastern");
 
   return (
     <section id="event" className="py-20 md:py-28 bg-background relative overflow-hidden noise-overlay">
@@ -267,7 +267,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
                       {lang === "en" ? "Monthly Masterclass" : "Masterclass Mensual"}
                     </h4>
                     <p className="font-mono text-xs text-accent mt-1">
-                      {lang === "en" ? "Last Thursday, 8 PM Eastern (5 PM PST)" : "Último Jueves del Mes, 7 PM Colombia / 8 PM EST"}
+                      {lang === "en" ? "Last Wednesday, 8:30 PM Eastern (5:30 PM Pacific)" : "Último Jueves del Mes, 7 PM Colombia / 8 PM EST"}
                     </p>
                     <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
                       {lang === "en"
