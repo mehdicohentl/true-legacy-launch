@@ -126,7 +126,9 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               </p>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-display font-black leading-[1.05] mb-4">
                 <span className="block">{c.water.headline[0]}</span>
-                <span className="block">{c.water.headline[1]}</span>
+                <span className="block mt-1 text-2xl md:text-3xl xl:text-4xl font-semibold">
+                  {c.water.headline[1]}
+                </span>
               </h2>
               <p className="text-base md:text-lg font-display italic text-gradient-gold max-w-xl mx-auto font-normal">
                 {c.water.subhead}
@@ -162,7 +164,9 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
               </p>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-display font-black leading-[1.05] mb-4">
                 <span className="block">{c.emguarde.headline[0]}</span>
-                <span className="block">{c.emguarde.headline[1]}</span>
+                <span className="block mt-1 text-2xl md:text-3xl xl:text-4xl font-semibold">
+                  {c.emguarde.headline[1]}
+                </span>
               </h2>
               <p className="text-base md:text-lg font-display italic text-gradient-emguarde max-w-xl mx-auto font-normal">
                 {c.emguarde.subhead}
