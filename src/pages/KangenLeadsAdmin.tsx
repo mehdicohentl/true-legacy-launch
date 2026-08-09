@@ -47,7 +47,7 @@ const KangenLeadsAdmin = () => {
     const query = search.trim().toLowerCase();
     if (!query) return leads;
     return leads.filter((lead) =>
-      [lead.first_name, lead.last_name, lead.email, lead.phone, lead.country, lead.language]
+      [lead.first_name, lead.last_name, lead.email, lead.phone, lead.country, lead.social_handle || "", lead.language]
         .join(" ")
         .toLowerCase()
         .includes(query),
@@ -71,8 +71,8 @@ const KangenLeadsAdmin = () => {
 
   const exportCsv = () => {
     const clean = (value: string) => `"${value.replace(/"/g, '""')}"`;
-    const header = ["Registered", "First name", "Last name", "Email", "Phone", "Country", "Language"];
-    const rows = filtered.map((lead) => [lead.registered_at, lead.first_name, lead.last_name, lead.email, lead.phone, lead.country, lead.language.toUpperCase()]);
+    const header = ["Registered", "First name", "Last name", "Email", "Phone", "Country", "Social handle", "Language"];
+    const rows = filtered.map((lead) => [lead.registered_at, lead.first_name, lead.last_name, lead.email, lead.phone, lead.country, lead.social_handle || "", lead.language.toUpperCase()]);
     const csv = [header, ...rows].map((row) => row.map((value) => clean(String(value))).join(",")).join("\n");
     const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
     const anchor = document.createElement("a");
@@ -141,7 +141,7 @@ const KangenLeadsAdmin = () => {
           <div className="flex flex-col gap-3 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between">
             <label className="flex h-11 flex-1 items-center gap-3 rounded-xl border border-border bg-background px-4 sm:max-w-md">
               <Search className="h-4 w-4 text-muted-foreground" />
-              <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search name, email, phone, or country" className="w-full bg-transparent text-sm outline-none" />
+              <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search name, email, phone, country, or social handle" className="w-full bg-transparent text-sm outline-none" />
             </label>
             <button onClick={exportCsv} disabled={!filtered.length} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-accent/30 px-4 text-sm font-bold text-accent hover:bg-accent/10 disabled:opacity-40">
               <Download className="h-4 w-4" /> Export CSV
@@ -149,9 +149,9 @@ const KangenLeadsAdmin = () => {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[900px] text-left text-sm">
+            <table className="w-full min-w-[1050px] text-left text-sm">
               <thead className="bg-background/60 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                <tr>{["Registered", "Name", "Email", "Phone", "Country", "Guide"].map((label) => <th key={label} className="px-5 py-4 font-medium">{label}</th>)}</tr>
+                <tr>{["Registered", "Name", "Email", "Phone", "Country", "IG / Facebook", "Guide"].map((label) => <th key={label} className="px-5 py-4 font-medium">{label}</th>)}</tr>
               </thead>
               <tbody className="divide-y divide-border/70">
                 {filtered.map((lead) => (
@@ -161,6 +161,7 @@ const KangenLeadsAdmin = () => {
                     <td className="px-5 py-4"><a href={`mailto:${lead.email}`} className="text-accent hover:underline">{lead.email}</a></td>
                     <td className="px-5 py-4"><a href={`tel:${lead.phone}`} className="hover:text-accent">{lead.phone}</a></td>
                     <td className="px-5 py-4">{lead.country}</td>
+                    <td className="px-5 py-4 text-foreground/70">{lead.social_handle || "—"}</td>
                     <td className="px-5 py-4"><span className="rounded-full bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">{lead.language.toUpperCase()}</span></td>
                   </tr>
                 ))}

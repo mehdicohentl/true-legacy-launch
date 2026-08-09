@@ -27,6 +27,9 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
         intro: "Una introducción clara al K8, los diferentes tipos de agua que produce y cómo comenzar con Enagic.",
         bullets: ["Cómo funciona la ionización", "Los niveles de agua y sus usos", "Qué esperar al comenzar", "Guía paso a paso para adquirir tu equipo"],
         preview: "Lo que aprenderás",
+        videoEyebrow: "Mira la presentación",
+        videoTitle: "Conoce la historia completa del Agua Kangen",
+        videoText: "Descubre visualmente cómo funciona el sistema y por qué tantas familias están cambiando la manera en que utilizan el agua.",
         sections: [
           ["01", "El sistema K8", "Conoce el ionizador insignia de 8 placas de Enagic y el proceso de electrólisis que separa el agua en diferentes niveles de pH."],
           ["02", "Más que agua potable", "Aprende cómo se utilizan los distintos niveles de Agua Kangen, desde la hidratación diaria hasta usos comunes en el hogar."],
@@ -39,6 +42,7 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
         email: "Correo electrónico",
         phone: "Teléfono / WhatsApp",
         country: "País",
+        social: "Usuario de Instagram o Facebook",
         consent: "Acepto recibir la guía y comunicaciones de seguimiento de True Legacy. Puedo cancelar en cualquier momento.",
         submit: "Desbloquear mi guía gratuita",
         submitting: "Preparando tu guía...",
@@ -57,6 +61,9 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
         intro: "A clear introduction to the K8, the different water types it produces, and how to get started with Enagic.",
         bullets: ["How water ionization works", "Water levels and everyday uses", "What to expect when getting started", "A step-by-step path to your machine"],
         preview: "What you will learn",
+        videoEyebrow: "Watch the presentation",
+        videoTitle: "See the complete Kangen Water story",
+        videoText: "Take a closer look at how the system works and why families are changing the way they use water every day.",
         sections: [
           ["01", "The K8 system", "Meet Enagic's flagship 8-plate ionizer and understand the electrolysis process that separates water into different pH levels."],
           ["02", "Beyond drinking water", "See how the different Kangen Water levels are used, from daily hydration to practical applications throughout the home."],
@@ -69,6 +76,7 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
         email: "Email address",
         phone: "Phone / WhatsApp",
         country: "Country",
+        social: "Instagram or Facebook handle",
         consent: "I agree to receive the guide and follow-up communications from True Legacy. I can unsubscribe at any time.",
         submit: "Unlock my free guide",
         submitting: "Preparing your guide...",
@@ -105,6 +113,7 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
       email: String(data.get("email") || "").trim().toLowerCase(),
       phone: String(data.get("phone") || "").trim(),
       country: String(data.get("country") || "").trim(),
+      social_handle: String(data.get("socialHandle") || "").trim(),
       language: lang,
       consent: data.get("consent") === "on",
     });
@@ -155,6 +164,23 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
 
         <section className="border-y border-border/60 bg-card/25 py-20">
           <div className="container mx-auto px-4">
+            <div className="mx-auto mb-20 max-w-5xl text-center">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.3em] text-accent">{t.videoEyebrow}</p>
+              <h2 className="mt-4 text-3xl font-black md:text-5xl">{t.videoTitle}</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-foreground/60">{t.videoText}</p>
+              <div className="mt-9 overflow-hidden rounded-2xl border border-accent/20 bg-black shadow-deep">
+                <div className="aspect-video">
+                  <iframe
+                    className="h-full w-full"
+                    src={`https://www.youtube-nocookie.com/embed/${isSpanish ? "Gi0ufLMcH6E" : "fJdfllJpdAg"}?rel=0`}
+                    title={t.videoTitle}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
             <p className="text-center font-mono text-xs font-bold uppercase tracking-[0.3em] text-accent">{t.preview}</p>
             <div className="mx-auto mt-10 grid max-w-6xl gap-5 md:grid-cols-3">
               {t.sections.map(([number, title, text], index) => {
@@ -201,6 +227,10 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
                     <label className="grid gap-2 text-sm font-semibold text-foreground/80 sm:col-span-2">
                       {t.country}
                       <input required name="country" autoComplete="country-name" className="h-12 rounded-xl border border-border bg-background/80 px-4 font-normal outline-none transition focus:border-accent/60 focus:ring-2 focus:ring-accent/15" />
+                    </label>
+                    <label className="grid gap-2 text-sm font-semibold text-foreground/80 sm:col-span-2">
+                      {t.social}
+                      <input required name="socialHandle" autoComplete="off" placeholder="@yourhandle" className="h-12 rounded-xl border border-border bg-background/80 px-4 font-normal outline-none transition focus:border-accent/60 focus:ring-2 focus:ring-accent/15" />
                     </label>
                     <label className="flex items-start gap-3 text-xs leading-relaxed text-foreground/60 sm:col-span-2">
                       <input required name="consent" type="checkbox" className="mt-1 h-4 w-4 accent-cyan-400" />

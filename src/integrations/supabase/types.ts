@@ -25,6 +25,7 @@ export type Database = {
           last_name: string
           phone: string
           registered_at: string
+          social_handle: string | null
         }
         Insert: {
           consent: boolean
@@ -36,6 +37,7 @@ export type Database = {
           last_name: string
           phone: string
           registered_at?: string
+          social_handle?: string | null
         }
         Update: {
           consent?: boolean
@@ -47,6 +49,7 @@ export type Database = {
           last_name?: string
           phone?: string
           registered_at?: string
+          social_handle?: string | null
         }
         Relationships: []
       }
