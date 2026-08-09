@@ -49,14 +49,14 @@ const EventSection = ({ lang }: EventSectionProps) => {
         "Cómo expandir un negocio global desde casa",
       ],
       dateLabel: "Fecha del Zoom",
-      date: "Martes",
-      time: "7:00 PM (Hora Colombia) — 8:00 PM EST / 5:00 PM PST",
+      date: "Jueves",
+      time: "7:00 PM Colombia / 8:00 PM EST",
       meetingId: "848 5224 4046",
       passcode: "Truelegacy",
       hosts: "Presentado por Líderes del Equipo True Legacy",
       bottomCta: "Tu legado no espera. Únete y toma el control. Reserva tu lugar ahora.",
-      image: "/event-flyer-latam-weekly.jpg",
-      imageAlt: "La Revolución del Biohacking LATAM Kangen K8 EmGuarde Mehdi Cohen Magaly Cardona",
+      image: "/event-flyer-latam-thursday-weekly.png",
+      imageAlt: "Presentación semanal de True Legacy LATAM los jueves a las 7 PM Colombia y 8 PM EST",
       ctaKangen: "Obtener Máquina Kangen (EE. UU., Australia, Dubai, etc.)",
       ctaEmguarde: "Obtener EmGuarde",
       ctaJoin: "Únete al Equipo True Legacy",
@@ -108,11 +108,11 @@ const EventSection = ({ lang }: EventSectionProps) => {
     : (activeEvent === "weekly" ? enWeeklyTopics : enMonthlyTopics);
 
   const currentImage = lang === "es"
-    ? (activeEvent === "weekly" ? "/event-flyer-latam-weekly.jpg" : "/event-flyer-latam-monthly.png")
+    ? (activeEvent === "weekly" ? "/event-flyer-latam-thursday-weekly.png" : "/event-flyer-latam-monthly.png")
     : (activeEvent === "weekly" ? "/event-flyer-global-wednesday-weekly.png" : "/event-flyer-global-monthly.jpg");
 
   const currentImageAlt = lang === "es"
-    ? (activeEvent === "weekly" ? "Presentación Semanal LATAM - Transforma tu Ingreso Global" : "Masterclass Mensual LATAM - La Revolución del Biohacking")
+    ? (activeEvent === "weekly" ? "Presentación Semanal LATAM - Jueves 7 PM Colombia / 8 PM EST" : "Masterclass Mensual LATAM - La Revolución del Biohacking")
     : (activeEvent === "weekly" ? "Weekly Wednesday Presentation - Kangen K8 and EmGuarde Go" : "Monthly Masterclass - Unlock The Global Blueprint");
 
   return (
@@ -229,7 +229,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
                       {lang === "en" ? "Weekly Presentation" : "Presentación Semanal"}
                     </h4>
                     <p className="font-mono text-xs text-accent mt-1">
-                      {lang === "en" ? "Every Wednesday, 8:30 PM Eastern (5:30 PM Pacific)" : "Cada Martes, 7 PM Colombia"}
+                      {lang === "en" ? "Every Wednesday, 8:30 PM Eastern (5:30 PM Pacific)" : "Cada Jueves, 7 PM Colombia / 8 PM EST"}
                     </p>
                     <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
                       {lang === "en" 
@@ -267,7 +267,7 @@ const EventSection = ({ lang }: EventSectionProps) => {
                       {lang === "en" ? "Monthly Masterclass" : "Masterclass Mensual"}
                     </h4>
                     <p className="font-mono text-xs text-accent mt-1">
-                      {lang === "en" ? "Last Thursday, 8 PM Eastern (5 PM PST)" : "Último Martes del Mes, 7 PM Colombia"}
+                      {lang === "en" ? "Last Thursday, 8 PM Eastern (5 PM PST)" : "Último Jueves del Mes, 7 PM Colombia / 8 PM EST"}
                     </p>
                     <p className="font-body text-xs md:text-sm text-foreground/80 font-bold mt-3 leading-relaxed">
                       {lang === "en"

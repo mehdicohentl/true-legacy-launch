@@ -21,8 +21,8 @@ const ZoomPage = ({ lang }: ZoomPageProps) => {
       link: "https://us06web.zoom.us/j/84852244046?pwd=Ci7k3oLkcaBa5odDvrw6O9fokzXbK8.1",
       meetingId: "848 5224 4046",
       passcode: "Truelegacy",
-      date: "Cada Martes",
-      time: "7:00 PM (Hora Colombia) — 8:00 PM EST / 5:00 PM PST"
+      date: "Cada Jueves",
+      time: "7:00 PM Colombia / 8:00 PM EST"
     }
   };
 

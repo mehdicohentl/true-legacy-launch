@@ -48,7 +48,7 @@ const t = {
   },
   es: {
     heading: "Únete a la Llamada Zoom en Vivo",
-    subtitle: "Martes en Vivo — True Legacy LATAM",
+    subtitle: "Jueves en Vivo — True Legacy LATAM",
     instruction: "Selecciona abajo para unirte a la llamada Zoom en vivo",
     question: "¿Has asistido antes?",
     yes: "SÍ — UNIRME AHORA",
