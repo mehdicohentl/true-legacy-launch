@@ -173,7 +173,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 alt="Enagic emGuarde GO device set of 2 mehdicohen.com"
                 cta={c.emguarde.cta}
                 accentClass="emguarde"
-                imageClass="w-full max-w-[360px] md:max-w-[400px] scale-[2.15] md:scale-[2.35] group-hover:scale-[2.25] md:group-hover:scale-[2.45]"
+                imageClass="w-full max-w-[360px] md:max-w-[400px] scale-[1.85] md:scale-[2.05] group-hover:scale-[1.95] md:group-hover:scale-[2.15]"
               />
             </div>
           </motion.article>
