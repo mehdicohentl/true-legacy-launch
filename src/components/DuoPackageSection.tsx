@@ -109,87 +109,101 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
           {c.commissionNote}
         </motion.p>
 
-        {/* Main grid: products + video */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
+        {/* One unified Duo Package */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-card relative max-w-5xl mx-auto mb-8 rounded-3xl overflow-hidden border border-accent/20 shadow-deep"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.07] via-transparent to-emguarde/[0.08] pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-border/60 to-transparent hidden md:block pointer-events-none" />
 
-          {/* K8 card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card rounded-2xl overflow-hidden border border-accent/20 hover:border-accent/40 transition-all group flex flex-col"
-          >
-            <div className="bg-gradient-to-br from-accent/10 to-transparent p-8 flex items-center justify-center h-52">
+          {/* Combined product stage */}
+          <div className="relative min-h-[300px] md:min-h-[360px] flex items-end justify-center gap-4 sm:gap-10 md:gap-16 px-5 md:px-12 pt-10 pb-8 border-b border-border/40">
+            <div className="absolute left-[10%] top-[12%] w-48 h-48 rounded-full bg-accent/10 blur-[80px] pointer-events-none" />
+            <div className="absolute right-[10%] top-[12%] w-48 h-48 rounded-full bg-emguarde/10 blur-[80px] pointer-events-none" />
+
+            <motion.div
+              whileHover={{ y: -6, scale: 1.03 }}
+              className="relative z-10 flex-1 max-w-[360px] flex flex-col items-center"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent font-bold mb-4">
+                {c.step1label}
+              </span>
               <img
                 src={imgK8}
                 alt="Kangen K8 machine duo package mehdicohen.com"
-                className="h-full w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
+                className="h-44 sm:h-52 md:h-60 w-auto max-w-full object-contain drop-shadow-2xl"
               />
-            </div>
-            <div className="p-6 flex flex-col flex-1">
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent font-bold mb-2 block">
-                {c.step1label}
-              </span>
-              <h3 className="font-display font-black text-xl text-foreground mb-2">{c.step1name}</h3>
-              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed mb-5 flex-1">
-                {c.step1desc}
-              </p>
-              <motion.a
-                href={`${enagicBase}&product_id=1016`}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="cta-shimmer inline-flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-                </svg>
-                {c.ctaK8}
-              </motion.a>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* emGuarde GO card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.08 }}
-            className="glass-card rounded-2xl overflow-hidden border border-emguarde/20 hover:border-emguarde/40 transition-all group flex flex-col"
-          >
-            <div className="bg-gradient-to-br from-emguarde/10 to-transparent p-8 flex items-center justify-center h-52">
+            <div className="relative z-20 self-center flex-shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-full border border-accent/30 bg-background/90 backdrop-blur flex items-center justify-center font-display font-black text-xl md:text-2xl text-accent shadow-glow">
+              +
+            </div>
+
+            <motion.div
+              whileHover={{ y: -6, scale: 1.03 }}
+              className="relative z-10 flex-1 max-w-[360px] flex flex-col items-center"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-emguarde font-bold mb-4 text-center">
+                {c.step2label}
+              </span>
               <img
                 src={imgEmgo}
                 alt="emGuarde GO EMF device duo package mehdicohen.com"
-                className="h-full w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
+                className="h-36 sm:h-44 md:h-52 w-auto max-w-full object-contain drop-shadow-2xl"
               />
+            </motion.div>
+          </div>
+
+          {/* Product details remain distinct inside the same package */}
+          <div className="relative grid md:grid-cols-2">
+            <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-border/40">
+              <h3 className="font-display font-black text-xl text-foreground mb-2">{c.step1name}</h3>
+              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed">
+                {c.step1desc}
+              </p>
             </div>
-            <div className="p-6 flex flex-col flex-1">
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-emguarde font-bold mb-2 block">
-                {c.step2label}
-              </span>
+            <div className="p-6 md:p-8">
               <h3 className="font-display font-black text-xl text-foreground mb-2">{c.step2name}</h3>
-              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed mb-5 flex-1">
+              <p className="font-body text-sm font-bold text-foreground/60 leading-relaxed">
                 {c.step2desc}
               </p>
-              <motion.a
-                href={`${enagicBase}&product_id=9026`}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="cta-shimmer inline-flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-emguarde text-emguarde-foreground"
-                style={{ boxShadow: "var(--shadow-emguarde)" }}
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-                </svg>
-                {c.ctaEmguarde}
-              </motion.a>
             </div>
-          </motion.div>
-        </div>
+          </div>
+
+          {/* Clean two-button purchase row */}
+          <div className="relative grid sm:grid-cols-2 gap-3 p-4 md:p-6 pt-0 md:pt-0">
+            <motion.a
+              href={`${enagicBase}&product_id=1016`}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="cta-shimmer inline-flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+              {c.ctaK8}
+            </motion.a>
+            <motion.a
+              href={`${enagicBase}&product_id=9026`}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="cta-shimmer inline-flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-emguarde text-emguarde-foreground"
+              style={{ boxShadow: "var(--shadow-emguarde)" }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+              {c.ctaEmguarde}
+            </motion.a>
+          </div>
+        </motion.div>
 
 
       </div>
