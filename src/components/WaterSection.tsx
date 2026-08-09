@@ -128,7 +128,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 <span className="block">{c.water.headline[0]}</span>
                 <span className="block">{c.water.headline[1]}</span>
               </h2>
-              <p className="text-lg md:text-xl font-display italic text-gradient-gold max-w-xl mx-auto font-bold">
+              <p className="text-base md:text-lg font-display italic text-gradient-gold max-w-xl mx-auto font-normal">
                 {c.water.subhead}
               </p>
             </div>
@@ -164,7 +164,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 <span className="block">{c.emguarde.headline[0]}</span>
                 <span className="block">{c.emguarde.headline[1]}</span>
               </h2>
-              <p className="text-lg md:text-xl font-display italic text-gradient-emguarde max-w-xl mx-auto font-bold">
+              <p className="text-base md:text-lg font-display italic text-gradient-emguarde max-w-xl mx-auto font-normal">
                 {c.emguarde.subhead}
               </p>
             </div>
