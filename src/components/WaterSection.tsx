@@ -16,13 +16,13 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
     en: {
       water: {
         micro: "The Foundation of Everything",
-        headline: "Kangen Water — The Wellness Foundation",
+        headline: ["Kangen Water", "The Wellness Foundation"],
         subhead: "Scale Your Body and Your Income With Alkaline Ionized Water",
         cta: "Explore K8 Kangen Water",
       },
       emguarde: {
         micro: "Portable EMF Protection",
-        headline: "emGuarde GO: Your On-The-Go Shield",
+        headline: ["emGuarde GO", "Your On-The-Go Shield"],
         subhead: "Neutralize Wi-Fi, 5G, and Cell Phone Radiation Wherever You Go",
         cta: "Explore emGuarde GO",
       },
@@ -30,13 +30,13 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
     es: {
       water: {
         micro: "La Base de Todo",
-        headline: "Agua Kangen — La Base del Bienestar",
+        headline: ["Agua Kangen", "La Base del Bienestar"],
         subhead: "Escala Tu Cuerpo y Tus Ingresos Con Agua Alcalina Ionizada",
         cta: "Explorar Agua Kangen K8",
       },
       emguarde: {
         micro: "Protección EMF Portátil",
-        headline: "emGuarde GO: Tu Escudo en Movimiento",
+        headline: ["emGuarde GO", "Tu Escudo en Movimiento"],
         subhead: "Neutraliza la radiación de Wi-Fi, 5G y teléfonos móviles donde sea que vayas",
         cta: "Explorar emGuarde GO",
       },
@@ -125,7 +125,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 {c.water.micro}
               </p>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-display font-black leading-[1.05] mb-4">
-                {c.water.headline}
+                <span className="block">{c.water.headline[0]}</span>
+                <span className="block">{c.water.headline[1]}</span>
               </h2>
               <p className="text-lg md:text-xl font-display italic text-gradient-gold max-w-xl mx-auto font-bold">
                 {c.water.subhead}
@@ -160,7 +161,8 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 {c.emguarde.micro}
               </p>
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-display font-black leading-[1.05] mb-4">
-                {c.emguarde.headline}
+                <span className="block">{c.emguarde.headline[0]}</span>
+                <span className="block">{c.emguarde.headline[1]}</span>
               </h2>
               <p className="text-lg md:text-xl font-display italic text-gradient-emguarde max-w-xl mx-auto font-bold">
                 {c.emguarde.subhead}
