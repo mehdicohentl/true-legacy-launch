@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import imgK8 from "@/assets/product-k8-real.png";
 import imgEmgo from "@/assets/product-emgo.png";
 
@@ -13,6 +14,7 @@ const enagicBase =
 const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
   const isLatam = lang === "es";
   const whatsapp = isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
+  const duoLink = isLatam ? "/latam/latam-duo-package" : "/global/duopackage";
 
   const t = {
     en: {
@@ -29,6 +31,7 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
       step2desc: "Set of 2 portable devices for personal EMF support. Covers 10-foot diameter per device. USB-C charging. Available in USA only.",
       ctaK8: "Order Kangen K8",
       ctaEmguarde: "Order emGuarde GO",
+      ctaDuo: "Watch Duo Package",
       ctaWa: "WhatsApp Us",
       commissionNote: "2 commission points — earn independently on both products in the 8-point system.",
     },
@@ -46,6 +49,7 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
       step2desc: "Juego de 2 dispositivos portátiles para protección EMF personal. Cobertura de 10 pies de diámetro por dispositivo. Carga USB-C. Disponible solo en EE.UU.",
       ctaK8: "Ordenar Kangen K8",
       ctaEmguarde: "Ordenar emGuarde GO",
+      ctaDuo: "Ver Paquete Duo",
       ctaWa: "WhatsApp",
       commissionNote: "2 puntos de comisión — gana independientemente por ambos productos en el sistema de 8 puntos.",
     },
@@ -203,6 +207,23 @@ const DuoPackageSection = ({ lang }: DuoPackageSectionProps) => {
               {c.ctaEmguarde}
             </motion.a>
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-6"
+        >
+          <Link
+            to={duoLink}
+            className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border border-accent/35 bg-card/50 font-body font-black text-sm uppercase tracking-[0.12em] text-foreground hover:text-accent hover:border-accent/65 hover:bg-accent/[0.06] transition-all shadow-deep"
+          >
+            {c.ctaDuo}
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </motion.div>
 
 
