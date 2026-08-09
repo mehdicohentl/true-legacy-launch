@@ -51,58 +51,32 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
     alt,
     cta,
     accentClass,
-    maxWidth,
+    imageClass,
   }: {
     link: string;
     image: string;
     alt: string;
     cta: string;
     accentClass: "water" | "emguarde";
-    maxWidth: string;
+    imageClass: string;
   }) => {
     const isWater = accentClass === "water";
 
     return (
       <Link
         to={link}
-        className={`group block relative rounded-2xl overflow-hidden border bg-card/30 p-6 md:p-8 transition-all duration-500 shadow-deep hover:shadow-glow ${
-          isWater
-            ? "border-accent/15 hover:border-accent/40"
-            : "border-emguarde/15 hover:border-emguarde/40"
-        }`}
+        className="group block relative transition-all duration-500"
       >
-        <div
-          className={`absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 pointer-events-none ${
-            isWater
-              ? "bg-gradient-to-tr from-accent/10 to-primary/5"
-              : "bg-gradient-to-tr from-emguarde/10 to-transparent"
-          }`}
-        />
-        <div
-          className={`absolute -top-1 -left-1 w-6 h-6 border-t-2 border-l-2 rounded-tl-lg transition-colors ${
-            isWater
-              ? "border-accent/30 group-hover:border-accent/70"
-              : "border-emguarde/35 group-hover:border-emguarde/75"
-          }`}
-        />
-        <div
-          className={`absolute -bottom-1 -right-1 w-6 h-6 border-b-2 border-r-2 rounded-br-lg transition-colors ${
-            isWater
-              ? "border-accent/30 group-hover:border-accent/70"
-              : "border-emguarde/35 group-hover:border-emguarde/75"
-          }`}
-        />
-
-        <div className="relative aspect-square flex items-center justify-center mb-6">
+        <div className="relative h-[330px] md:h-[380px] flex items-center justify-center mb-5 overflow-visible">
           <img
             src={image}
             alt={alt}
-            className={`w-full ${maxWidth} object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500`}
+            className={`object-contain drop-shadow-2xl transition-transform duration-500 ${imageClass}`}
           />
         </div>
 
         <div
-          className={`relative py-4 px-5 rounded-xl bg-card border border-border/60 flex items-center justify-between transition-colors ${
+          className={`relative max-w-sm mx-auto py-4 px-5 rounded-xl bg-card/80 backdrop-blur-sm border border-border/60 flex items-center justify-between transition-colors ${
             isWater
               ? "group-hover:border-accent/40"
               : "group-hover:border-emguarde/40"
@@ -164,7 +138,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 alt="Enagic Leveluk K8 Kangen Water machine mehdicohen.com"
                 cta={c.water.cta}
                 accentClass="water"
-                maxWidth="max-w-[280px]"
+                imageClass="w-full max-w-[340px] md:max-w-[380px] group-hover:scale-105"
               />
             </div>
           </motion.article>
@@ -199,7 +173,7 @@ const WaterSection = ({ lang }: WaterSectionProps) => {
                 alt="Enagic emGuarde GO device set of 2 mehdicohen.com"
                 cta={c.emguarde.cta}
                 accentClass="emguarde"
-                maxWidth="max-w-[220px]"
+                imageClass="w-full max-w-[360px] md:max-w-[400px] scale-[2.15] md:scale-[2.35] group-hover:scale-[2.25] md:group-hover:scale-[2.45]"
               />
             </div>
           </motion.article>
