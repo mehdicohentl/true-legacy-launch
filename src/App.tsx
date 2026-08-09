@@ -13,6 +13,8 @@ import ProductsPage from "./pages/ProductsPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import NotFound from "./pages/NotFound";
 import KangenWaterSubpage from "./pages/KangenWaterSubpage";
+import KangenGuidePage from "./pages/KangenGuidePage";
+import KangenLeadsAdmin from "./pages/KangenLeadsAdmin";
 import EmGuardeGoSubpage from "./pages/EmGuardeGoSubpage";
 import WhoIsMehdiCohen from "./pages/seo/WhoIsMehdiCohen";
 import WhatIsTrueLegacy from "./pages/seo/WhatIsTrueLegacy";
@@ -41,6 +43,9 @@ const App = () => (
           <Route path="/latam/emguarde" element={<EmGuardePurchase lang="es" />} />
           <Route path="/global/kangen-water" element={<KangenWaterSubpage lang="en" />} />
           <Route path="/latam/kangen-water" element={<KangenWaterSubpage lang="es" />} />
+          <Route path="/global/kangen-guide" element={<KangenGuidePage lang="en" />} />
+          <Route path="/latam/guia-kangen" element={<KangenGuidePage lang="es" />} />
+          <Route path="/admin/kangen-leads" element={<KangenLeadsAdmin />} />
           <Route path="/global/emguarde-go" element={<EmGuardeGoSubpage lang="en" />} />
           <Route path="/latam/emguarde-go" element={<EmGuardeGoSubpage lang="es" />} />
           <Route path="/global/events" element={<EventsPage lang="en" />} />

@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      kangen_pdf_leads: {
+        Row: {
+          consent: boolean
+          country: string
+          email: string
+          first_name: string
+          id: string
+          language: string
+          last_name: string
+          phone: string
+          registered_at: string
+        }
+        Insert: {
+          consent: boolean
+          country: string
+          email: string
+          first_name: string
+          id?: string
+          language: string
+          last_name: string
+          phone: string
+          registered_at?: string
+        }
+        Update: {
+          consent?: boolean
+          country?: string
+          email?: string
+          first_name?: string
+          id?: string
+          language?: string
+          last_name?: string
+          phone?: string
+          registered_at?: string
+        }
+        Relationships: []
+      }
       zoom_registrations: {
         Row: {
           email: string

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { setPageMeta } from "@/lib/seo";
@@ -280,19 +281,20 @@ const KangenWaterSubpage = ({ lang }: KangenWaterSubpageProps) => {
                     {c.cta}
                   </motion.a>
 
-                  <motion.a
-                    href={isLatam ? "https://mehdicohen1.systeme.io/mehdicohen-1d62f4ad" : "https://mehdicohen1.systeme.io/mehdicohen"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.div
                     whileHover={{ scale: 1.04, y: -3 }}
                     whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    {c.pdfCta}
-                  </motion.a>
+                    <Link
+                      to={isLatam ? "/latam/guia-kangen" : "/global/kangen-guide"}
+                      className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] border-2 border-accent/40 text-accent hover:bg-accent/10 transition-colors"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      {c.pdfCta}
+                    </Link>
+                  </motion.div>
 
                   <motion.a
                     href="https://www.ewg.org/tapwater/"
