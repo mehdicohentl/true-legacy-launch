@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { kangenSupabase } from "@/integrations/supabase/kangenClient";
 
 const ZOOM_URLS = {
   en: "https://us06web.zoom.us/j/88577734807?pwd=C02Pr5lK6HEYyXsXiBo1wqAS7ZcVLV.1",
   es: "https://us06web.zoom.us/j/84852244046?pwd=Ci7k3oLkcaBa5odDvrw6O9fokzXbK8.1",
 };
-
-const encode = (data: Record<string, string>) =>
-  Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
 
 const t = {
   en: {
@@ -37,7 +33,7 @@ const t = {
     submit: "Register & Join Call",
     submitting: "Registering...",
     successHeading: "Welcome to True Legacy World",
-    successText: "You are registered. Your Zoom link has opened in a new tab. Check your email for your access link.",
+    successText: "Your registration is saved. Your Zoom link has opened in a new tab.",
     joinBtn: "Join the Zoom Call Now",
     errFirst: "First name is required",
     errLast: "Last name is required",
@@ -71,7 +67,7 @@ const t = {
     submit: "Registrarse y Unirse",
     submitting: "Registrando...",
     successHeading: "Bienvenido a True Legacy World",
-    successText: "Estás registrado. Tu enlace de Zoom se ha abierto en una nueva pestaña. Revisa tu correo para tu enlace de acceso.",
+    successText: "Tu registro está guardado. El enlace de Zoom se abrió en una nueva pestaña.",
     joinBtn: "Unirse a la Llamada Zoom Ahora",
     errFirst: "El nombre es obligatorio",
     errLast: "El apellido es obligatorio",
@@ -144,22 +140,16 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
     setErrorMsg(null);
     setSubmitting(true);
 
-    const payload = {
-      "form-name": "event-leads",
-      fullName,
-      email,
-      phone: `${countryCode} ${phone}`.trim(),
-      eventInterest: isLatam ? "LATAM Event" : "GLOBAL Event",
-      heardFrom,
-      "bot-field": "",
-    };
-
     try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(payload),
+      const { error } = await kangenSupabase.from("event_registrations").insert({
+        full_name: fullName.trim(),
+        email: email.trim().toLowerCase(),
+        phone: `${countryCode} ${phone}`.trim(),
+        event_interest: isLatam ? "latam" : "global",
+        language: lang,
+        heard_from: heardFrom,
       });
+      if (error) throw error;
       window.open(zoomUrl, "_blank", "noopener,noreferrer");
       setState("success");
     } catch (err) {
@@ -224,10 +214,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
               <motion.div key="form" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
                 <h2 className="text-2xl md:text-4xl font-display font-black text-foreground mb-2 text-center">{c.formHeading}</h2>
                 <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-8 text-center">{c.formSubtitle}</p>
-                <form name="event-leads" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
-                  <input type="hidden" name="form-name" value="event-leads" />
-                  <input name="bot-field" type="hidden" />
-                  <input type="hidden" name="eventInterest" value={isLatam ? "LATAM Event" : "GLOBAL Event"} />
+                <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="sm:col-span-2">

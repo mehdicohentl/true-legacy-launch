@@ -5,6 +5,7 @@ import { kangenSupabase } from "@/integrations/supabase/kangenClient";
 import type { Tables } from "@/integrations/supabase/types";
 import combinedLogo from "@/assets/combined-logo.png";
 import { setPageMeta } from "@/lib/seo";
+import CrmNavigation from "@/components/CrmNavigation";
 
 const ADMIN_EMAIL = "truelegacyworld@gmail.com";
 type Lead = Tables<"kangen_pdf_leads">;
@@ -118,6 +119,7 @@ const KangenLeadsAdmin = () => {
             <LogOut className="h-4 w-4" /> Sign out
           </button>
         </header>
+        <CrmNavigation />
 
         <section className="mt-8 grid gap-4 sm:grid-cols-3">
           <div className="rounded-2xl border border-border bg-card/60 p-5">

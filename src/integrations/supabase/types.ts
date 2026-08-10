@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      event_registrations: {
+        Row: {
+          email: string
+          event_interest: string
+          full_name: string
+          heard_from: string
+          id: string
+          language: string
+          phone: string
+          registered_at: string
+        }
+        Insert: {
+          email: string
+          event_interest: string
+          full_name: string
+          heard_from: string
+          id?: string
+          language: string
+          phone: string
+          registered_at?: string
+        }
+        Update: {
+          email?: string
+          event_interest?: string
+          full_name?: string
+          heard_from?: string
+          id?: string
+          language?: string
+          phone?: string
+          registered_at?: string
+        }
+        Relationships: []
+      }
       emguarde_pdf_leads: {
         Row: {
           consent: boolean
