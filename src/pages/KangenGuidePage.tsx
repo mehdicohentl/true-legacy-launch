@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Check, Download, Droplets, FileText, ShieldCheck, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PhoneNumberField from "@/components/PhoneNumberField";
 import { kangenSupabase } from "@/integrations/supabase/kangenClient";
 import { setPageMeta } from "@/lib/seo";
 import kangenMachine from "@/assets/kangen-water-machine.png";
@@ -111,7 +112,7 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
       first_name: String(data.get("firstName") || "").trim(),
       last_name: String(data.get("lastName") || "").trim(),
       email: String(data.get("email") || "").trim().toLowerCase(),
-      phone: String(data.get("phone") || "").trim(),
+      phone: `${String(data.get("phoneCountryCode") || "").trim()} ${String(data.get("phone") || "").trim()}`.trim(),
       country: String(data.get("country") || "").trim(),
       social_handle: String(data.get("socialHandle") || "").trim(),
       language: lang,
@@ -216,14 +217,17 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
                     {[
                       ["firstName", t.first, "text", "given-name"],
                       ["lastName", t.last, "text", "family-name"],
-                      ["email", t.email, "email", "email"],
-                      ["phone", t.phone, "tel", "tel"],
                     ].map(([name, label, type, autoComplete]) => (
                       <label key={name} className="grid gap-2 text-sm font-semibold text-foreground/80">
                         {label}
                         <input required name={name} type={type} autoComplete={autoComplete} className="h-12 rounded-xl border border-border bg-background/80 px-4 font-normal outline-none transition focus:border-accent/60 focus:ring-2 focus:ring-accent/15" />
                       </label>
                     ))}
+                    <label className="grid gap-2 text-sm font-semibold text-foreground/80 sm:col-span-2">
+                      {t.email}
+                      <input required name="email" type="email" autoComplete="email" className="h-12 rounded-xl border border-border bg-background/80 px-4 font-normal outline-none transition focus:border-accent/60 focus:ring-2 focus:ring-accent/15" />
+                    </label>
+                    <PhoneNumberField label={t.phone} lang={lang} />
                     <label className="grid gap-2 text-sm font-semibold text-foreground/80 sm:col-span-2">
                       {t.country}
                       <input required name="country" autoComplete="country-name" className="h-12 rounded-xl border border-border bg-background/80 px-4 font-normal outline-none transition focus:border-accent/60 focus:ring-2 focus:ring-accent/15" />
