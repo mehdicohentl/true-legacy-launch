@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PhoneNumberField from "@/components/PhoneNumberField";
 import { kangenSupabase } from "@/integrations/supabase/kangenClient";
 import { setPageMeta } from "@/lib/seo";
+import { deliverLeadEmail } from "@/lib/crmEmail";
 import kangenMachine from "@/assets/kangen-water-machine.png";
 
 interface KangenGuidePageProps {
@@ -108,10 +109,11 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
       return;
     }
 
+    const leadEmail = String(data.get("email") || "").trim().toLowerCase();
     const { error: insertError } = await kangenSupabase.from("kangen_pdf_leads").insert({
       first_name: String(data.get("firstName") || "").trim(),
       last_name: String(data.get("lastName") || "").trim(),
-      email: String(data.get("email") || "").trim().toLowerCase(),
+      email: leadEmail,
       phone: `${String(data.get("phoneCountryCode") || "").trim()} ${String(data.get("phone") || "").trim()}`.trim(),
       country: String(data.get("country") || "").trim(),
       social_handle: String(data.get("socialHandle") || "").trim(),
@@ -122,6 +124,7 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
     if (insertError) {
       setError(t.formError);
     } else {
+      await deliverLeadEmail("kangen", leadEmail);
       setComplete(true);
     }
     setSubmitting(false);

@@ -14,6 +14,87 @@ export type Database = {
   }
   public: {
     Tables: {
+      email_preferences: {
+        Row: {
+          created_at: string
+          email: string
+          unsubscribe_token: string
+          unsubscribed_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          unsubscribe_token?: string
+          unsubscribed_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          unsubscribe_token?: string
+          unsubscribed_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      email_queue: {
+        Row: {
+          attempts: number
+          created_at: string
+          id: string
+          language: string
+          last_error: string | null
+          lead_type: string
+          payload: Json
+          provider_message_id: string | null
+          recipient_email: string
+          recipient_name: string
+          scheduled_for: string
+          sent_at: string | null
+          source_lead_id: string
+          status: string
+          template_key: string
+          updated_at: string
+        }
+        Insert: {
+          attempts?: number
+          created_at?: string
+          id?: string
+          language: string
+          last_error?: string | null
+          lead_type: string
+          payload?: Json
+          provider_message_id?: string | null
+          recipient_email: string
+          recipient_name: string
+          scheduled_for?: string
+          sent_at?: string | null
+          source_lead_id: string
+          status?: string
+          template_key: string
+          updated_at?: string
+        }
+        Update: {
+          attempts?: number
+          created_at?: string
+          id?: string
+          language?: string
+          last_error?: string | null
+          lead_type?: string
+          payload?: Json
+          provider_message_id?: string | null
+          recipient_email?: string
+          recipient_name?: string
+          scheduled_for?: string
+          sent_at?: string | null
+          source_lead_id?: string
+          status?: string
+          template_key?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       team_applications: {
         Row: {
           additional_message: string | null
@@ -226,7 +307,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      unsubscribe_from_true_legacy: {
+        Args: { token: string }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never

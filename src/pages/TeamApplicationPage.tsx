@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { COUNTRY_CODES } from "@/components/PhoneNumberField";
 import { kangenSupabase } from "@/integrations/supabase/kangenClient";
 import { setPageMeta } from "@/lib/seo";
+import { deliverLeadEmail } from "@/lib/crmEmail";
 
 interface TeamApplicationPageProps {
   lang: "en" | "es";
@@ -209,7 +210,10 @@ const TeamApplicationPage = ({ lang }: TeamApplicationPageProps) => {
       language: lang,
     });
     if (insertError) setError(t.formError);
-    else setComplete(true);
+    else {
+      await deliverLeadEmail("team", answers.email);
+      setComplete(true);
+    }
     setSubmitting(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

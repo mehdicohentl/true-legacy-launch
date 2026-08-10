@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { kangenSupabase } from "@/integrations/supabase/kangenClient";
+import { deliverLeadEmail } from "@/lib/crmEmail";
 
 const ZOOM_URLS = {
   en: "https://us06web.zoom.us/j/88577734807?pwd=C02Pr5lK6HEYyXsXiBo1wqAS7ZcVLV.1",
@@ -150,6 +151,7 @@ const ZoomGateway = ({ lang }: ZoomGatewayProps) => {
         heard_from: heardFrom,
       });
       if (error) throw error;
+      await deliverLeadEmail("event", email);
       window.open(zoomUrl, "_blank", "noopener,noreferrer");
       setState("success");
     } catch (err) {

@@ -20,6 +20,8 @@ import EmguardeLeadsAdmin from "./pages/EmguardeLeadsAdmin";
 import EventRegistrationsAdmin from "./pages/EventRegistrationsAdmin";
 import TeamApplicationPage from "./pages/TeamApplicationPage";
 import TeamApplicationsAdmin from "./pages/TeamApplicationsAdmin";
+import EmailActivityAdmin from "./pages/EmailActivityAdmin";
+import UnsubscribePage from "./pages/UnsubscribePage";
 import EmGuardeGoSubpage from "./pages/EmGuardeGoSubpage";
 import WhoIsMehdiCohen from "./pages/seo/WhoIsMehdiCohen";
 import WhatIsTrueLegacy from "./pages/seo/WhatIsTrueLegacy";
@@ -56,6 +58,8 @@ const App = () => (
           <Route path="/admin/emguarde-leads" element={<EmguardeLeadsAdmin />} />
           <Route path="/admin/event-registrations" element={<EventRegistrationsAdmin />} />
           <Route path="/admin/team-applications" element={<TeamApplicationsAdmin />} />
+          <Route path="/admin/email-activity" element={<EmailActivityAdmin />} />
+          <Route path="/unsubscribe" element={<UnsubscribePage />} />
           <Route path="/global/join" element={<TeamApplicationPage lang="en" />} />
           <Route path="/latam/unete" element={<TeamApplicationPage lang="es" />} />
           <Route path="/global/emguarde-go" element={<EmGuardeGoSubpage lang="en" />} />
