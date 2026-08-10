@@ -332,9 +332,7 @@ const EmGuardeGoSubpage = ({ lang }: EmGuardeGoSubpageProps) => {
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
                   <motion.a
-                    href={lang === "en" ? "https://mehdicohen1.systeme.io/englishemguarde" : "https://mehdicohen1.systeme.io/mehdicohen-00d27fa4"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={lang === "en" ? "/global/emguarde-guide" : "/latam/guia-emguarde"}
                     whileHover={{ scale: 1.04, y: -3 }}
                     whileTap={{ scale: 0.97 }}
                     className="cta-shimmer inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-xl font-body font-black text-sm md:text-lg uppercase tracking-[0.1em] bg-emguarde text-emguarde-foreground shadow-glow"
