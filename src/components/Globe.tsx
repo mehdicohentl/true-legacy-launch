@@ -75,8 +75,8 @@ const RotatingGlobe = () => {
 
 const Globe = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none flex items-center justify-center" style={{ zIndex: 1 }}>
-      <div className="w-[340px] h-[340px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px]">
+    <div className="pointer-events-none absolute inset-0 flex items-end justify-center overflow-hidden" style={{ zIndex: 1 }}>
+      <div className="-mb-[245px] h-[620px] w-[620px] sm:-mb-[275px] sm:h-[700px] sm:w-[700px] lg:-mb-[305px] lg:h-[800px] lg:w-[800px]">
         <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
           <ambientLight intensity={0.2} />
           <pointLight position={[5, 5, 5]} intensity={0.4} color="#00d9ff" />
