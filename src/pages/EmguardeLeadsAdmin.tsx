@@ -6,6 +6,7 @@ import type { Tables } from "@/integrations/supabase/types";
 import combinedLogo from "@/assets/combined-logo.png";
 import { setPageMeta } from "@/lib/seo";
 import CrmNavigation from "@/components/CrmNavigation";
+import WhatsAppContactButton from "@/components/WhatsAppContactButton";
 
 const ADMIN_EMAIL = "truelegacyworld@gmail.com";
 type Lead = Tables<"emguarde_pdf_leads">;
@@ -132,7 +133,7 @@ const EmguardeLeadsAdmin = () => {
           </div>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[1050px] text-left text-sm">
-              <thead className="bg-background/60 font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><tr>{["Registered", "Name", "Email", "Phone", "Country", "IG / Facebook", "Guide"].map((label) => <th key={label} className="px-5 py-4 font-medium">{label}</th>)}</tr></thead>
+              <thead className="bg-background/60 font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><tr>{["Registered", "Name", "Email", "Phone", "Country", "IG / Facebook", "Guide", "Contact"].map((label) => <th key={label} className="px-5 py-4 font-medium">{label}</th>)}</tr></thead>
               <tbody className="divide-y divide-border/70">
                 {filtered.map((lead) => (
                   <tr key={lead.id} className="hover:bg-emguarde/[0.03]">
@@ -143,6 +144,7 @@ const EmguardeLeadsAdmin = () => {
                     <td className="px-5 py-4">{lead.country}</td>
                     <td className="px-5 py-4 text-foreground/70">{lead.social_handle}</td>
                     <td className="px-5 py-4"><span className="rounded-full bg-emguarde/10 px-2.5 py-1 font-mono text-xs text-emguarde">{lead.language.toUpperCase()}</span></td>
+                    <td className="px-5 py-4"><WhatsAppContactButton variant="emguarde" phone={lead.phone} message={lead.language === "es" ? `Hola ${lead.first_name}, soy Mehdi de True Legacy. Gracias por descargar nuestra guía de emGuarde GO. Quería saber si tienes alguna pregunta sobre el producto o los próximos pasos.` : `Hi ${lead.first_name}, this is Mehdi from True Legacy. Thank you for downloading our emGuarde GO guide. I wanted to see if you have any questions about the product or your next steps.`} /></td>
                   </tr>
                 ))}
               </tbody>

@@ -6,6 +6,7 @@ import type { Tables } from "@/integrations/supabase/types";
 import combinedLogo from "@/assets/combined-logo.png";
 import { setPageMeta } from "@/lib/seo";
 import CrmNavigation from "@/components/CrmNavigation";
+import WhatsAppContactButton from "@/components/WhatsAppContactButton";
 
 const ADMIN_EMAIL = "truelegacyworld@gmail.com";
 type Registration = Tables<"event_registrations">;
@@ -131,7 +132,7 @@ const EventRegistrationsAdmin = () => {
           </div>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[950px] text-left text-sm">
-              <thead className="bg-background/60 font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><tr>{["Registered", "Name", "Email", "Phone", "Event", "Language", "Heard from"].map((label) => <th key={label} className="px-5 py-4 font-medium">{label}</th>)}</tr></thead>
+              <thead className="bg-background/60 font-mono text-[10px] uppercase tracking-wider text-muted-foreground"><tr>{["Registered", "Name", "Email", "Phone", "Event", "Language", "Heard from", "Contact"].map((label) => <th key={label} className="px-5 py-4 font-medium">{label}</th>)}</tr></thead>
               <tbody className="divide-y divide-border/70">
                 {filtered.map((item) => (
                   <tr key={item.id} className="hover:bg-accent/[0.03]">
@@ -142,6 +143,7 @@ const EventRegistrationsAdmin = () => {
                     <td className="px-5 py-4"><span className="rounded-full bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent">{item.event_interest.toUpperCase()}</span></td>
                     <td className="px-5 py-4">{item.language.toUpperCase()}</td>
                     <td className="px-5 py-4 text-foreground/70">{item.heard_from}</td>
+                    <td className="px-5 py-4"><WhatsAppContactButton phone={item.phone} message={item.language === "es" ? `Hola ${item.full_name.split(" ")[0]}, soy Mehdi de True Legacy. Gracias por registrarte para nuestra llamada de True Legacy LATAM del jueves. ¿Tienes alguna pregunta antes del evento?` : `Hi ${item.full_name.split(" ")[0]}, this is Mehdi from True Legacy. Thank you for registering for our Wednesday True Legacy World call. Do you have any questions before the event?`} /></td>
                   </tr>
                 ))}
               </tbody>
