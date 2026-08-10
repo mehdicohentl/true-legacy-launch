@@ -151,6 +151,9 @@ const KangenGuidePage = ({ lang }: KangenGuidePageProps) => {
                   </div>
                 ))}
               </div>
+              <a href="#get-guide" className="cta-shimmer mt-9 inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-primary px-7 font-black uppercase tracking-[0.1em] text-primary-foreground shadow-glow transition hover:brightness-110">
+                <Download className="h-5 w-5" /> {t.submit}
+              </a>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} className="relative mx-auto w-full max-w-lg">
