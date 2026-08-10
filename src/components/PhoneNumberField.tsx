@@ -1,4 +1,4 @@
-const COUNTRY_CODES = [
+export const COUNTRY_CODES = [
   ["+1", "🇺🇸 USA / Canada (+1)"], ["+57", "🇨🇴 Colombia (+57)"],
   ["+52", "🇲🇽 México (+52)"], ["+34", "🇪🇸 España (+34)"],
   ["+44", "🇬🇧 United Kingdom (+44)"], ["+61", "🇦🇺 Australia (+61)"],

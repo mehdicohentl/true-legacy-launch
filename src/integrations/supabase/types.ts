@@ -14,6 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
+      team_applications: {
+        Row: {
+          additional_message: string | null
+          business_experience: string
+          commitment_level: string
+          country: string
+          email: string
+          entrepreneurial_fit: string
+          full_name: string
+          growth_investment: string
+          id: string
+          income_goal: string
+          investment_level: string
+          language: string
+          motivation: string
+          occupation: string
+          phone: string
+          social_handle: string
+          start_timeline: string
+          strategy_call_commitment: boolean
+          submitted_at: string
+        }
+        Insert: {
+          additional_message?: string | null
+          business_experience: string
+          commitment_level: string
+          country: string
+          email: string
+          entrepreneurial_fit: string
+          full_name: string
+          growth_investment: string
+          id?: string
+          income_goal: string
+          investment_level: string
+          language: string
+          motivation: string
+          occupation: string
+          phone: string
+          social_handle: string
+          start_timeline: string
+          strategy_call_commitment: boolean
+          submitted_at?: string
+        }
+        Update: {
+          additional_message?: string | null
+          business_experience?: string
+          commitment_level?: string
+          country?: string
+          email?: string
+          entrepreneurial_fit?: string
+          full_name?: string
+          growth_investment?: string
+          id?: string
+          income_goal?: string
+          investment_level?: string
+          language?: string
+          motivation?: string
+          occupation?: string
+          phone?: string
+          social_handle?: string
+          start_timeline?: string
+          strategy_call_commitment?: boolean
+          submitted_at?: string
+        }
+        Relationships: []
+      }
       event_registrations: {
         Row: {
           email: string

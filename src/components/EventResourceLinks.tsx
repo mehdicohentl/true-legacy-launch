@@ -181,9 +181,7 @@ const EventResourceLinks = ({ lang }: EventResourceLinksProps) => {
           </p>
           <div className="flex justify-center mt-2">
             <motion.a
-              href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={lang === "en" ? "/global/join" : "/latam/unete"}
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 px-10 py-5 rounded-xl font-body font-black text-sm md:text-base uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold hover:brightness-110 transition-all w-full sm:w-auto justify-center"

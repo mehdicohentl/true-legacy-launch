@@ -1,10 +1,11 @@
-import { BookOpen, CalendarDays, ShieldCheck } from "lucide-react";
+import { BookOpen, BriefcaseBusiness, CalendarDays, ShieldCheck } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const sections = [
   { to: "/admin/kangen-leads", label: "Kangen guides", icon: BookOpen },
   { to: "/admin/emguarde-leads", label: "emGuarde guides", icon: ShieldCheck },
   { to: "/admin/event-registrations", label: "Event registrations", icon: CalendarDays },
+  { to: "/admin/team-applications", label: "Team applications", icon: BriefcaseBusiness },
 ];
 
 const CrmNavigation = () => (

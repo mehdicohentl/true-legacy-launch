@@ -224,9 +224,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
         >
           {/* Primary button (Business) */}
           <motion.a
-            href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={lang === "en" ? "/global/join" : "/latam/unete"}
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
             className="cta-shimmer flex-1 inline-flex flex-col items-center justify-center text-center gap-1.5 px-6 py-4 md:py-5 rounded-xl transition-all bg-accent text-accent-foreground shadow-gold animate-pulse-glow"

@@ -59,7 +59,7 @@ const Footer = ({ lang }: FooterProps) => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-8">
-            <a href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"} target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
+            <a href={lang === "en" ? "/global/join" : "/latam/unete"} className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">
               {lang === "en" ? "Join Team" : "Únete"}
             </a>
             <a href="https://www.youtube.com/@Mehdicohen" target="_blank" rel="noopener noreferrer" className="font-body text-xs md:text-sm font-bold uppercase tracking-[0.1em] text-foreground hover:text-accent transition-colors">

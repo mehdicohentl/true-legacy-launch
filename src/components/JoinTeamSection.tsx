@@ -103,9 +103,7 @@ const JoinTeamSection = ({ lang }: JoinTeamSectionProps) => {
         {/* CTA row */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
           <motion.a
-            href={lang === "en" ? "https://form.jotform.com/260564894519066" : "https://form.jotform.com/260246489849069"}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={lang === "en" ? "/global/join" : "/latam/unete"}
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.97 }}
             className="cta-shimmer inline-flex items-center justify-center gap-3 px-12 py-6 rounded-xl font-body font-black text-base md:text-lg uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold animate-pulse-glow"

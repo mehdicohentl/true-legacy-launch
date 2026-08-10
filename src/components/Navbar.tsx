@@ -25,8 +25,8 @@ const Navbar = ({ lang }: NavbarProps) => {
   const resourcesLink = lang === "en" ? "/global/resources" : "/latam/resources";
   const duoLink = lang === "en" ? "/global/duopackage" : "/latam/latam-duo-package";
   const joinTeamUrl = lang === "en"
-    ? "https://form.jotform.com/260564894519066"
-    : "https://form.jotform.com/260246489849069";
+    ? "/global/join"
+    : "/latam/unete";
 
   const whatsappEn = "https://wa.me/18649072149";
   const whatsappLatam = "https://wa.me/573001844049";
@@ -48,7 +48,7 @@ const Navbar = ({ lang }: NavbarProps) => {
         { to: duoLink, label: "Duo Package", highlight: true },
         { to: productsLink, label: "Products" },
         { to: resourcesLink, label: "Resources" },
-        { href: joinTeamUrl, label: "Join the Team", cta: true },
+        { to: joinTeamUrl, label: "Join the Team", cta: true },
         { to: eventLink, label: "Live Event", accent: true },
         { href: contactLink, label: "Contact", whatsapp: true },
       ]
@@ -57,7 +57,7 @@ const Navbar = ({ lang }: NavbarProps) => {
         { to: duoLink, label: "Paquete Duo", highlight: true },
         { to: productsLink, label: "Productos" },
         { to: resourcesLink, label: "Recursos" },
-        { href: joinTeamUrl, label: "Únete al Equipo", cta: true },
+        { to: joinTeamUrl, label: "Únete al Equipo", cta: true },
         { to: eventLink, label: "Evento", accent: true },
         { href: contactLink, label: "Contacto", whatsapp: true },
       ];
