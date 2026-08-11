@@ -18,26 +18,26 @@ const enagicBase =
 const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
   const isLatam = lang === "es";
   const whatsapp = isLatam ? "https://wa.me/573001844049" : "https://wa.me/18649072149";
-  const emguardeRoute = isLatam ? "/latam/emguarde" : "/global/emguarde";
+  const emguardeRoute = isLatam ? "/latam/emguarde-go" : "/global/emguarde-go";
 
   useEffect(() => {
     setPageMeta(
       lang === "en"
-        ? "Leveluk K8 + emGo DUO Package | Double Commission | Mehdi Cohen True Legacy"
-        : "Paquete DUO Leveluk K8 + emGo | Doble Comisión | Mehdi Cohen True Legacy",
+        ? "Leveluk K8 + emGuarde GO DUO Package | Double Commission | Mehdi Cohen True Legacy"
+        : "Paquete DUO Leveluk K8 + emGuarde GO | Doble Comisión | Mehdi Cohen True Legacy",
       lang === "en"
-        ? "The ultimate wellness combo: Leveluk K8 Kangen Water machine + emGo EMF protection. Two products, two commission points. Join Mehdi Cohen's True Legacy team worldwide."
-        : "El combo de bienestar definitivo: Máquina de Agua Kangen Leveluk K8 + protección EMF emGo. Dos productos, dos puntos de comisión. Únete al equipo global True Legacy de Mehdi Cohen."
+        ? "The ultimate wellness combo: Leveluk K8 Kangen Water machine + the new emGuarde GO portable EMF support set. Two products, two commission points. Join Mehdi Cohen's True Legacy team worldwide."
+        : "El combo de bienestar definitivo: máquina de Agua Kangen Leveluk K8 + el nuevo set portátil emGuarde GO. Dos productos, dos puntos de comisión. Únete al equipo global True Legacy de Mehdi Cohen."
     );
   }, [lang]);
 
   const t = {
     en: {
       micro: "The Ultimate Biohacking Bundle",
-      headline: "Leveluk K8 + emGo",
+      headline: "Leveluk K8 + emGuarde GO",
       headline2: "DUO Package",
       subhead:
-        "Transform your health and income with the most powerful pairing in the Enagic ecosystem — the Leveluk K8 Kangen Water machine and the brand new emGo EMF protection device.",
+        "Transform your health and income with the most powerful pairing in the Enagic ecosystem — the Leveluk K8 Kangen Water machine and the new emGuarde GO portable EMF support set.",
       whyTitle: "Why the Duo Package?",
       whyItems: [
         {
@@ -47,8 +47,8 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         },
         {
           icon: "shield",
-          title: "emGo EMF Protection",
-          desc: "Enagic's cutting-edge wearable device reducing the harmful effects of electromagnetic frequencies from phones, laptops, and Wi-Fi — your invisible shield.",
+          title: "emGuarde GO Portable Support",
+          desc: "A set of two compact, rechargeable devices designed for portable EMF support around phones, laptops, Wi-Fi, and other everyday electronics.",
         },
         {
           icon: "coins",
@@ -58,7 +58,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         {
           icon: "globe",
           title: "Global Business",
-          desc: "Market both products to a worldwide audience — K8 ships to 190+ countries. emGo information and pre-orders are available globally.",
+          desc: "Market both products to a worldwide audience — K8 ships to 190+ countries, while emGuarde GO availability currently varies by market.",
         },
       ],
       k8Title: "Step 1 — Order Your Kangen K8",
@@ -100,10 +100,10 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
     },
     es: {
       micro: "El Paquete Definitivo de Biohacking",
-      headline: "Leveluk K8 + emGo",
+      headline: "Leveluk K8 + emGuarde GO",
       headline2: "Paquete DUO",
       subhead:
-        "Transforma tu salud y tus ingresos con la combinación más poderosa del ecosistema Enagic — la máquina de Agua Kangen Leveluk K8 y el dispositivo de protección EMF emGo.",
+        "Transforma tu salud y tus ingresos con la combinación más poderosa del ecosistema Enagic — la máquina de Agua Kangen Leveluk K8 y el nuevo set portátil emGuarde GO.",
       whyTitle: "¿Por Qué el Paquete Duo?",
       whyItems: [
         {
@@ -113,8 +113,8 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         },
         {
           icon: "shield",
-          title: "Protección EMF emGo",
-          desc: "El dispositivo wearable de vanguardia de Enagic que reduce los efectos dañinos de las frecuencias electromagnéticas de teléfonos, laptops y Wi-Fi — tu escudo invisible.",
+          title: "Soporte Portátil emGuarde GO",
+          desc: "Un juego de dos dispositivos compactos y recargables diseñado para soporte EMF portátil alrededor de teléfonos, laptops, Wi-Fi y otros electrónicos cotidianos.",
         },
         {
           icon: "coins",
@@ -124,7 +124,7 @@ const DuoPackagePage = ({ lang }: DuoPackagePageProps) => {
         {
           icon: "globe",
           title: "Negocio Global",
-          desc: "Comercializa ambos productos a una audiencia mundial — el K8 se envía a más de 190 países. La información y pre-órdenes de emGo están disponibles a nivel global.",
+          desc: "Comercializa ambos productos a una audiencia mundial — el K8 se envía a más de 190 países, mientras la disponibilidad de emGuarde GO varía según el mercado.",
         },
       ],
       k8Title: "Paso 1 — Ordena Tu Kangen K8",
