@@ -4,8 +4,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { setPageMeta } from "@/lib/seo";
 import imgK8 from "@/assets/product-k8-real.png";
-import imgEmguarde from "@/assets/product-emguarde-real.png";
-import emguardeDevice from "@/assets/emguarde-device.png";
 import imgSd501dx from "@/assets/product-sd501dx-real.png";
 import imgSd501super from "@/assets/product-sd501super-real.png";
 import imgJriv from "@/assets/product-jriv-real.png";
@@ -32,7 +30,7 @@ interface Product {
   image2?: string;
   href?: string;
   featured?: boolean;
-  type?: "emguarde" | "kangenair" | "standard" | "duo" | "emgo" | "kangenbeaute";
+  type?: "kangenair" | "standard" | "duo" | "emgo" | "kangenbeaute";
   enOnly?: boolean;
 }
 
@@ -47,15 +45,6 @@ const products: Product[] = [
     href: `${enagicBase}&product_id=1016`,
     featured: true,
     type: "standard",
-  },
-  {
-    id: "emguarde",
-    nameEn: "EmGuarde",
-    nameEs: "EmGuarde",
-    descEn: "Personal EMF protection device. Shields you from electromagnetic frequencies with cutting-edge Japanese technology.",
-    descEs: "Dispositivo personal de protección contra EMF. Te protege de las frecuencias electromagnéticas con tecnología japonesa de vanguardia.",
-    image: imgEmguarde,
-    type: "emguarde",
   },
   {
     id: "emgo",
@@ -78,10 +67,10 @@ const products: Product[] = [
   },
   {
     id: "duo-package",
-    nameEn: "Leveluk K8 + emGo Duo Package",
-    nameEs: "Paquete Duo Leveluk K8 + emGo",
-    descEn: "The ultimate power combo. Leveluk K8 Kangen Water machine + the brand new emGo EMF protection device. Two commission points. Two life-changing products.",
-    descEs: "La combinación definitiva de poder. Máquina de Agua Kangen Leveluk K8 + el nuevo dispositivo de protección EMF emGo. Dos puntos de comisión. Dos productos que cambian vidas.",
+    nameEn: "Leveluk K8 + emGuarde GO Duo Package",
+    nameEs: "Paquete Duo Leveluk K8 + emGuarde GO",
+    descEn: "The ultimate power combo. Leveluk K8 Kangen Water machine + the new emGuarde GO portable EMF support set. Two commission points. Two life-changing products.",
+    descEs: "La combinación definitiva de poder. Máquina de Agua Kangen Leveluk K8 + el nuevo set portátil emGuarde GO. Dos puntos de comisión. Dos productos que cambian vidas.",
     image: imgK8,
     image2: imgEmgo,
     featured: true,
@@ -166,7 +155,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
 
   const section2Ids = ["k8", "emgo", "ukon", "kangen-beaute"];
   const section3Ids = ["anespa-dx", "sd501dx", "sd501-super", "jr-iv"];
-  const section4Ids = ["wagyu", "emguarde", "kangen-air"];
+  const section4Ids = ["wagyu", "kangen-air"];
 
   const getSectionProducts = (ids: string[]) => {
     return ids
@@ -181,11 +170,11 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
   useEffect(() => {
     setPageMeta(
       lang === "en"
-        ? "Kangen Water Products & EMF Protection | Leveluk K8, SD501, EmGuarde | Mehdi Cohen True Legacy"
-        : "Productos Agua Kangen y Protección EMF | Leveluk K8, SD501, EmGuarde | Mehdi Cohen True Legacy",
+        ? "Kangen Water Products & EMF Protection | Leveluk K8, SD501, emGuarde GO | Mehdi Cohen True Legacy"
+        : "Productos Agua Kangen y Protección EMF | Leveluk K8, SD501, emGuarde GO | Mehdi Cohen True Legacy",
       lang === "en"
-        ? "Buy official Enagic Kangen Water machines — Leveluk K8, SD501 DX, JR IV, Anespa DX — and EmGuarde EMF protection. Trusted by Mehdi Cohen's global True Legacy team operating in 170+ countries worldwide."
-        : "Compra Máquinas de Agua Kangen Enagic oficiales — Leveluk K8, SD501 DX, JR IV, Anespa DX — y protección EMF EmGuarde. Confiado por el equipo global True Legacy de Mehdi Cohen en más de 170 países."
+        ? "Buy official Enagic Kangen Water machines — Leveluk K8, SD501 DX, JR IV, Anespa DX — and the new emGuarde GO portable EMF support set. Trusted by Mehdi Cohen's global True Legacy team operating in 170+ countries worldwide."
+        : "Compra máquinas de Agua Kangen Enagic oficiales — Leveluk K8, SD501 DX, JR IV, Anespa DX — y el nuevo set portátil emGuarde GO. Confiado por el equipo global True Legacy de Mehdi Cohen en más de 170 países."
     );
   }, [lang]);
 
@@ -193,18 +182,12 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     en: {
       micro: "Official Enagic® Products — Mehdi Cohen True Legacy",
       headline: "Kangen Water Machines & Wellness Products",
-      subhead: "Shop the official Enagic product line — Leveluk K8, SD501 DX, EmGuarde EMF protection, and more. Trusted by millions worldwide for 52+ years. Distributed by Mehdi Cohen's True Legacy global team.",
+      subhead: "Shop the official Enagic product line — Leveluk K8, SD501 DX, the new emGuarde GO portable EMF support set, and more. Trusted by millions worldwide for 52+ years. Distributed by Mehdi Cohen's True Legacy global team.",
       order: "Order Now",
       howToBuy: "How to Buy",
       contactWhatsApp: "Contact Us",
       featured: "FLAGSHIP",
       bookCall: "Book a Wellness Call",
-      emguardeTitle: "EmGuarde — How to Order",
-      emguardeSteps: [
-        "Price: $1,520 USD (plus shipping)",
-        "Distributor ID#: 37000004828",
-        "Contact us for step-by-step purchase instructions",
-      ],
       kangenAirTitle: "Kangen Air — How to Order",
       kangenAirPrice: "SGD 1,860 (4 units: White, Black, Pink, Blue)",
       kangenAirShipUS: "Shipping USA: SGD 250–350",
@@ -220,13 +203,13 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       beauteBuyNow: "Buy Now",
       beauteLearnMore: "Learn More",
       beauteNote: "Currently available in the USA only.",
-      duoHeroTitle: "Leveluk K8 + emGo",
+      duoHeroTitle: "Leveluk K8 + emGuarde GO",
       duoHeroTitle2: "DUO Package",
       duoHeroSubtitle: "The Ultimate Wellness & Protection Combo",
-      duoHeroDesc: "The ultimate power combo. Leveluk K8 Kangen Water machine + the brand new emGo EMF protection device. Two commission points. Two life-changing products.",
-      duoHeroIncludes: "Includes the new emGo (not the original EmGuarde model)",
+      duoHeroDesc: "The ultimate power combo. Leveluk K8 Kangen Water machine + the new emGuarde GO portable EMF support set. Two commission points. Two life-changing products.",
+      duoHeroIncludes: "Includes the new emGuarde GO set of two",
       orderK8: "Order K8",
-      orderEmgo: "Buy emGo",
+      orderEmgo: "Buy emGuarde GO",
       contactUs: "Contact Us",
       buyNow: "Buy now",
       section2Title: "Flagship Wellness Essentials",
@@ -236,18 +219,12 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
     es: {
       micro: "Productos Oficiales Enagic® — Mehdi Cohen True Legacy",
       headline: "Máquinas Agua Kangen y Productos de Bienestar",
-      subhead: "Compra la línea oficial de productos Enagic — Leveluk K8, SD501 DX, EmGuarde protección EMF y más. Confiada por millones en todo el mundo durante 52+ años. Distribuida por el equipo global True Legacy de Mehdi Cohen.",
+      subhead: "Compra la línea oficial de productos Enagic — Leveluk K8, SD501 DX, el nuevo set portátil emGuarde GO y más. Confiada por millones en todo el mundo durante 52+ años. Distribuida por el equipo global True Legacy de Mehdi Cohen.",
       order: "Ordenar Ahora",
       howToBuy: "Cómo Comprar",
       contactWhatsApp: "Contáctanos",
       featured: "INSIGNIA",
       bookCall: "Agenda una Llamada",
-      emguardeTitle: "EmGuarde — Cómo Ordenar",
-      emguardeSteps: [
-        "Precio: $1,520 USD (más envío)",
-        "ID de Distribuidor#: 37000004828",
-        "Contáctanos para instrucciones paso a paso",
-      ],
       kangenAirTitle: "Kangen Air — Cómo Ordenar",
       kangenAirPrice: "SGD 1,860 (4 unidades: Blanco, Negro, Rosa, Azul)",
       kangenAirShipUS: "Envío EE.UU.: SGD 250–350",
@@ -263,13 +240,13 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
       beauteBuyNow: "Comprar Ahora",
       beauteLearnMore: "Saber Más",
       beauteNote: "Actualmente disponible únicamente en Estados Unidos.",
-      duoHeroTitle: "Leveluk K8 + emGo",
+      duoHeroTitle: "Leveluk K8 + emGuarde GO",
       duoHeroTitle2: "Paquete DUO",
       duoHeroSubtitle: "El Combo Definitivo de Bienestar y Protección",
-      duoHeroDesc: "La combinación definitiva de poder. Máquina de Agua Kangen Leveluk K8 + el nuevo dispositivo de protección EMF emGo. Dos puntos de comisión. Dos productos que cambian vidas.",
-      duoHeroIncludes: "Incluye el nuevo emGo (no el modelo original de EmGuarde)",
+      duoHeroDesc: "La combinación definitiva de poder. Máquina de Agua Kangen Leveluk K8 + el nuevo set portátil emGuarde GO. Dos puntos de comisión. Dos productos que cambian vidas.",
+      duoHeroIncludes: "Incluye el nuevo set de dos emGuarde GO",
       orderK8: "Ordenar K8",
-      orderEmgo: "Comprar emGo",
+      orderEmgo: "Comprar emGuarde GO",
       contactUs: "Contáctanos",
       buyNow: "Comprar ahora",
       section2Title: "Esenciales de Bienestar Insignia",
@@ -304,7 +281,7 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
           {product.type === "duo" && product.image2 ? (
             <div className="flex items-end justify-center gap-2 w-full h-full p-4">
               <img src={product.image} alt={name} className="h-full w-auto max-w-[45%] object-contain drop-shadow-lg" />
-              <img src={product.image2} alt="EmGuarde" className="h-[95%] w-auto max-w-[42%] object-contain drop-shadow-lg" />
+              <img src={product.image2} alt="emGuarde GO set of two" className="h-[95%] w-auto max-w-[42%] object-contain drop-shadow-lg" />
             </div>
           ) : (
             <img
@@ -318,24 +295,12 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
         </div>
 
         <div className="p-4 md:p-5 flex flex-col flex-1">
-          {product.id === "emguarde" && (
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider bg-emguarde/10 border border-emguarde/30 text-emguarde mb-2.5 w-fit">
-              {lang === "en" ? "🔥 Limited Stock — Order While Supplies Last" : "🔥 Stock Limitado Disponible"}
-            </div>
-          )}
           <h3 className="font-display font-black text-sm md:text-lg text-foreground mb-1.5 leading-snug">{name}</h3>
           <p className="font-body text-xs md:text-sm text-foreground/60 font-bold leading-relaxed mb-4">
             {desc}
             {product.id === "emgo" && isLatam && (
               <span className="block font-body text-[11px] md:text-xs text-accent font-bold italic mt-2.5">
                 Actualmente disponible solo para el mercado de EE. UU. (Currently available for the U.S. market only)
-              </span>
-            )}
-            {product.id === "emguarde" && (
-              <span className="block font-body text-[11px] md:text-xs text-foreground/45 font-bold italic mt-2.5">
-                {lang === "en" 
-                  ? "Demand continues to grow. Limited inventory currently available." 
-                  : "La demanda continúa creciendo. Inventario limitado disponible actualmente."}
               </span>
             )}
           </p>
@@ -353,12 +318,12 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
                 {lang === "en" ? "Order Kangen K8" : "Ordenar Kangen K8"}
               </motion.a>
               <motion.a
-                href={lang === "en" ? "/global/emguarde" : "/latam/emguarde"}
+                href={lang === "en" ? "/global/emguarde-go" : "/latam/emguarde-go"}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] border border-emguarde/40 text-emguarde hover:bg-emguarde/10 transition-colors"
               >
-                {lang === "en" ? "EmGuarde Instructions" : "Instrucciones de EmGuarde"}
+                {lang === "en" ? "Explore emGuarde GO" : "Explorar emGuarde GO"}
               </motion.a>
               <motion.a
                 href={contactLink}
@@ -377,56 +342,6 @@ const ProductsPage = ({ lang }: ProductsPageProps) => {
               >
                 {lang === "en" ? "View Full Duo Package →" : "Ver Paquete Duo Completo →"}
               </a>
-            </div>
-          )}
-
-          {product.type === "emguarde" && (
-            <div className="flex flex-col gap-2 mt-auto pt-4">
-              {isLatam ? (
-                <div className="flex flex-col gap-2">
-                  <motion.a
-                    href={contactLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-[#25D366] text-white hover:bg-[#20BD5A] transition-colors"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
-                    {c.contactWhatsApp}
-                  </motion.a>
-                </div>
-              ) : (
-                <div className="flex flex-col gap-2">
-                  <div className="mb-4 p-4 rounded-xl bg-accent/5 border border-accent/10">
-                    <p className="font-display font-black text-sm text-accent mb-2">{c.emguardeTitle}</p>
-                    <ul className="space-y-1">
-                      {c.emguardeSteps.map((step, si) => (
-                        <li key={si} className="font-body text-xs text-foreground/60 font-bold">• {step}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <motion.a
-                    href={`/${lang === "en" ? "global" : "latam"}/emguarde`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-body font-black text-sm uppercase tracking-[0.12em] bg-accent text-accent-foreground shadow-gold transition-colors"
-                  >
-                    {c.howToBuy}
-                  </motion.a>
-                  <motion.a
-                    href={contactLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl font-body font-black text-xs uppercase tracking-[0.12em] border border-[#25D366]/30 text-[#25D366]/70 hover:text-[#25D366] hover:border-[#25D366]/50 transition-colors"
-                  >
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.3.3-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.3 0-.2-.2-.3-.4-.4z"/></svg>
-                    {c.contactWhatsApp}
-                  </motion.a>
-                </div>
-              )}
             </div>
           )}
 
