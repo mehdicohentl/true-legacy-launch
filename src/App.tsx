@@ -2,10 +2,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import LanguageSelector from "./pages/LanguageSelector";
 import LandingPage from "./pages/LandingPage";
+import EmGuardePurchase from "./pages/EmGuardePurchase";
 import EventsPage from "./pages/EventsPage";
 import ZoomPage from "./pages/ZoomPage";
 import ProductsPage from "./pages/ProductsPage";
@@ -45,8 +46,8 @@ const App = () => (
           <Route path="/" element={<LanguageSelector />} />
           <Route path="/global" element={<LandingPage lang="en" />} />
           <Route path="/latam" element={<LandingPage lang="es" />} />
-          <Route path="/global/emguarde" element={<Navigate to="/global/emguarde-go" replace />} />
-          <Route path="/latam/emguarde" element={<Navigate to="/latam/emguarde-go" replace />} />
+          <Route path="/global/emguarde" element={<EmGuardePurchase lang="en" />} />
+          <Route path="/latam/emguarde" element={<EmGuardePurchase lang="es" />} />
           <Route path="/global/kangen-water" element={<KangenWaterSubpage lang="en" />} />
           <Route path="/latam/kangen-water" element={<KangenWaterSubpage lang="es" />} />
           <Route path="/global/kangen-guide" element={<KangenGuidePage lang="en" />} />
