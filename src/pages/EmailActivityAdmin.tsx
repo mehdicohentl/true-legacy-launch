@@ -1,13 +1,14 @@
-import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
-import { CheckCircle2, Clock3, LockKeyhole, LogOut, Mail, RefreshCw, Search, Send, TriangleAlert } from "lucide-react";
+import { CheckCircle2, Clock3, LogOut, Mail, RefreshCw, Search, Send, TriangleAlert } from "lucide-react";
 import { kangenSupabase } from "@/integrations/supabase/kangenClient";
 import type { Tables } from "@/integrations/supabase/types";
 import CrmNavigation from "@/components/CrmNavigation";
 import combinedLogo from "@/assets/combined-logo.png";
 import { setPageMeta } from "@/lib/seo";
+import CrmLoginCard from "@/components/CrmLoginCard";
+import { isCrmAdminEmail } from "@/lib/crmAuth";
 
-const ADMIN_EMAIL = "truelegacyworld@gmail.com";
 type EmailItem = Tables<"email_queue">;
 
 const EmailActivityAdmin = () => {
@@ -17,7 +18,7 @@ const EmailActivityAdmin = () => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [message, setMessage] = useState("");
-  const isAdmin = session?.user.email?.toLowerCase() === ADMIN_EMAIL;
+  const isAdmin = isCrmAdminEmail(session?.user.email);
 
   useEffect(() => {
     setPageMeta("Email Activity | True Legacy CRM", "Private True Legacy email activity portal.");
@@ -57,30 +58,8 @@ const EmailActivityAdmin = () => {
     await loadItems();
   };
 
-  const signIn = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const email = String(new FormData(event.currentTarget).get("email") || "").trim().toLowerCase();
-    if (email !== ADMIN_EMAIL) { setMessage("This portal is restricted to the authorized administrator."); return; }
-    const { error } = await kangenSupabase.auth.signInWithOtp({ email, options: { emailRedirectTo: `${window.location.origin}/admin/email-activity` } });
-    setMessage(error ? "The secure sign-in link could not be sent." : "Check your email for your secure sign-in link.");
-  };
-
   if (loadingSession) return <div className="min-h-screen bg-background" />;
-  if (!session || !isAdmin) return (
-    <main className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="w-full max-w-md rounded-3xl border border-accent/20 bg-card/70 p-8 text-center shadow-glow">
-        <img src={combinedLogo} alt="True Legacy" className="mx-auto h-16" />
-        <div className="mx-auto mt-8 flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent"><LockKeyhole className="h-7 w-7" /></div>
-        <h1 className="mt-5 text-3xl font-black">Private email portal</h1>
-        <p className="mt-3 text-sm text-foreground/60">Sign in securely to monitor confirmations and follow-up emails.</p>
-        <form onSubmit={signIn} className="mt-7 grid gap-4">
-          <input required name="email" type="email" defaultValue={ADMIN_EMAIL} className="h-12 rounded-xl border border-border bg-background px-4 outline-none focus:border-accent/60" />
-          <button className="h-12 rounded-xl bg-primary font-black uppercase tracking-wider text-primary-foreground shadow-glow">Send secure sign-in link</button>
-        </form>
-        {message && <p className="mt-4 text-sm text-accent">{message}</p>}
-      </div>
-    </main>
-  );
+  if (!session || !isAdmin) return <CrmLoginCard message={message} redirectPath="/admin/email-activity" setMessage={setMessage} />;
 
   const totals = {
     sent: items.filter((item) => item.status === "sent").length,

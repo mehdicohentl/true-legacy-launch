@@ -1,14 +1,15 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
-import { BriefcaseBusiness, ChevronDown, ChevronUp, Download, LockKeyhole, LogOut, Search } from "lucide-react";
+import { BriefcaseBusiness, ChevronDown, ChevronUp, Download, LogOut, Search } from "lucide-react";
 import { kangenSupabase } from "@/integrations/supabase/kangenClient";
 import type { Tables } from "@/integrations/supabase/types";
 import combinedLogo from "@/assets/combined-logo.png";
 import { setPageMeta } from "@/lib/seo";
 import CrmNavigation from "@/components/CrmNavigation";
 import WhatsAppContactButton from "@/components/WhatsAppContactButton";
+import CrmLoginCard from "@/components/CrmLoginCard";
+import { isCrmAdminEmail } from "@/lib/crmAuth";
 
-const ADMIN_EMAIL = "truelegacyworld@gmail.com";
 type Application = Tables<"team_applications">;
 
 const TeamApplicationsAdmin = () => {
@@ -30,7 +31,7 @@ const TeamApplicationsAdmin = () => {
     return () => data.subscription.unsubscribe();
   }, []);
 
-  const isAdmin = session?.user.email?.toLowerCase() === ADMIN_EMAIL;
+  const isAdmin = isCrmAdminEmail(session?.user.email);
 
   useEffect(() => {
     if (!isAdmin) return;
@@ -48,18 +49,6 @@ const TeamApplicationsAdmin = () => {
     return applications.filter((item) => Object.values(item).join(" ").toLowerCase().includes(query));
   }, [applications, search]);
 
-  const signIn = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setMessage("");
-    const email = String(new FormData(event.currentTarget).get("email") || "").trim().toLowerCase();
-    if (email !== ADMIN_EMAIL) {
-      setMessage("This portal is restricted to the authorized True Legacy administrator.");
-      return;
-    }
-    const { error } = await kangenSupabase.auth.signInWithOtp({ email, options: { emailRedirectTo: `${window.location.origin}/admin/team-applications` } });
-    setMessage(error ? "The secure sign-in link could not be sent. Please try again." : "Check your email for your secure sign-in link.");
-  };
-
   const exportCsv = () => {
     const clean = (value: string) => `"${value.replace(/"/g, '""')}"`;
     const header = ["Submitted", "Name", "Email", "Phone", "Country", "Language", "Occupation", "Social", "Entrepreneurial fit", "Commitment", "Business experience", "Growth investment", "Income goal", "Motivation", "Investment level", "Start timeline", "Strategy call commitment", "Additional message"];
@@ -76,18 +65,7 @@ const TeamApplicationsAdmin = () => {
   if (loadingSession) return <div className="min-h-screen bg-background" />;
 
   if (!session || !isAdmin) {
-    return (
-      <main className="flex min-h-screen items-center justify-center bg-background px-4">
-        <div className="w-full max-w-md rounded-3xl border border-accent/20 bg-card/70 p-8 text-center shadow-glow">
-          <img src={combinedLogo} alt="True Legacy" className="mx-auto h-16" />
-          <div className="mx-auto mt-8 flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent"><LockKeyhole className="h-7 w-7" /></div>
-          <h1 className="mt-5 text-3xl font-black">Private CRM portal</h1>
-          <p className="mt-3 text-sm leading-relaxed text-foreground/60">Enter the authorized administrator email. We will send a secure sign-in link—no password required.</p>
-          <form onSubmit={signIn} className="mt-7 grid gap-4"><input required name="email" type="email" autoComplete="email" placeholder="Administrator email" defaultValue={ADMIN_EMAIL} className="h-12 rounded-xl border border-border bg-background px-4 outline-none focus:border-accent/60" /><button className="h-12 rounded-xl bg-primary font-black uppercase tracking-wider text-primary-foreground shadow-glow">Send secure sign-in link</button></form>
-          {message && <p className="mt-4 text-sm text-accent">{message}</p>}
-        </div>
-      </main>
-    );
+    return <CrmLoginCard message={message} redirectPath="/admin/team-applications" setMessage={setMessage} />;
   }
 
   const detailLabel = (label: string, value: string | null) => <div className="rounded-xl border border-border/70 bg-background/60 p-4"><p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">{label}</p><p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-foreground/80">{value || "—"}</p></div>;

@@ -190,7 +190,10 @@ Deno.serve(async (request) => {
   const body = await request.json().catch(() => ({}));
   const token = request.headers.get("Authorization")?.replace(/^Bearer\s+/i, "") || "";
   const { data: authData } = token ? await admin.auth.getUser(token) : { data: { user: null } };
-  const isAdmin = authData.user?.email?.toLowerCase() === "truelegacyworld@gmail.com";
+  const { data: adminMembership } = authData.user
+    ? await supabase.from("crm_memberships").select("user_id").eq("user_id", authData.user.id).eq("role", "admin").eq("active", true).maybeSingle()
+    : { data: null };
+  const isAdmin = Boolean(adminMembership);
   const selection = "id, recipient_email, recipient_name, language, lead_type, template_key, payload";
   let query = admin.from("email_queue").select(selection).eq("status", "pending").lte("scheduled_for", new Date().toISOString()).order("scheduled_for", { ascending: true }).limit(25);
 

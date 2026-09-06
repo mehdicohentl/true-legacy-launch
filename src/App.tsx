@@ -53,6 +53,7 @@ const App = () => (
           <Route path="/global/kangen-guide" element={<KangenGuidePage lang="en" />} />
           <Route path="/latam/guia-kangen" element={<KangenGuidePage lang="es" />} />
           <Route path="/admin/kangen-leads" element={<KangenLeadsAdmin />} />
+          <Route path="/crm" element={<Navigate to="/admin/kangen-leads" replace />} />
           <Route path="/global/emguarde-guide" element={<EmguardeGuidePage lang="en" />} />
           <Route path="/latam/guia-emguarde" element={<EmguardeGuidePage lang="es" />} />
           <Route path="/admin/emguarde-leads" element={<EmguardeLeadsAdmin />} />
